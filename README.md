@@ -26,7 +26,7 @@ L'IA est documentee et anticipee, mais aucune API IA n'est appelee par l'applica
 
 - Application locale Vite + React + TypeScript.
 - Donnees locales TypeScript.
-- 18 ressources de demonstration.
+- 18 ressources de demonstration, dont un lot aligne sur l'usage enseignant: copier, imprimer, adapter, contribuer.
 - Bibliotheque filtrable et recherche texte.
 - Pages Accueil, Demo, Bibliotheque, Collections, Detail ressource, Communaute, Gabarits, Vision, Technologies et IA, Documentation.
 - Fiches ressources copiables et imprimables pour un usage enseignant immédiat.

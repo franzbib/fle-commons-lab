@@ -132,9 +132,9 @@ export const demoResources: Resource[] = [
   },
   {
     id: 'a2-passe-compose-week-end',
-    title: 'Raconter son week-end au passé composé',
+    title: 'Passé composé: raconter son week-end en 5 phrases',
     summary:
-      'Exercice progressif pour choisir l’auxiliaire et produire un mini-récit personnel.',
+      'Fiche A2 prête à copier pour réviser être/avoir, écrire un court récit et corriger en binômes.',
     level: 'A2',
     durationMinutes: 50,
     durationCategory: '30_60_min',
@@ -156,7 +156,7 @@ export const demoResources: Resource[] = [
     sourceType: 'document_cree',
     teacherPreparationLevel: 'faible',
     createdAt: '2026-01-18',
-    updatedAt: '2026-05-18',
+    updatedAt: '2026-05-23',
     content: {
       objectives: {
         title: 'Objectifs',
@@ -169,19 +169,46 @@ export const demoResources: Resource[] = [
       lessonPlan: {
         title: 'Déroulé',
         items: [
-          'Classer des verbes par auxiliaire.',
-          'Compléter quatre phrases.',
-          'Rédiger cinq phrases personnelles.',
-          'Relire en binômes avec une grille simple.',
+          'Distribuer le support étudiant et classer les verbes par auxiliaire.',
+          'Compléter quatre phrases modèles avant de passer à la production libre.',
+          'Rédiger cinq phrases personnelles sur un week-end fictif ou réel.',
+          'Relire en binômes avec une grille simple: auxiliaire, participe passé, ordre des événements.',
+        ],
+      },
+      studentInstructions: {
+        title: 'Support étudiant',
+        items: [
+          'Classez les verbes: aller, regarder, sortir, manger, visiter, rester.',
+          'Complétez: Samedi, je ___ allé(e) au marché. Le soir, j’___ regardé un film.',
+          'Écrivez cinq phrases pour raconter votre week-end. Utilisez au moins deux verbes avec être.',
+          'Échangez votre texte avec un binôme et vérifiez les auxiliaires.',
+        ],
+      },
+      teacherGuide: {
+        title: 'Guide professeur',
+        items: [
+          'Commencer par un exemple personnel très court pour rassurer le groupe.',
+          'Accepter un week-end inventé si les apprenants ne veulent pas parler de leur vie privée.',
+          'Faire corriger seulement trois points: auxiliaire, participe passé, compréhensibilité.',
         ],
       },
       answerKey: {
         title: 'Corrigé',
-        items: ['Je suis allé(e).', 'J’ai regardé.', 'Nous avons mangé.', 'Elle est sortie.'],
+        items: [
+          'Je suis allé(e) au marché.',
+          'J’ai regardé un film.',
+          'Nous avons mangé chez des amis.',
+          'Elle est sortie avec sa sœur.',
+          'Avec être, rappeler l’accord seulement si le groupe l’a déjà travaillé.',
+        ],
       },
       variants: {
         title: 'Variantes',
-        items: ['Transformer le récit écrit en mini-interview orale.'],
+        items: [
+          'Version très guidée: fournir une liste de verbes et d’horaires.',
+          'Version orale: transformer le récit écrit en mini-interview.',
+          'Version adaptation: remplacer le week-end par une journée de stage ou de cours.',
+        ],
       },
     },
     versions: [
@@ -196,6 +223,19 @@ export const demoResources: Resource[] = [
       },
     ],
     reviewSummary: defaultReview,
+    usageFeedbacks: [
+      {
+        id: 'feedback-a2-weekend-binomes',
+        authorName: 'Julie, enseignante FLE',
+        context: 'Groupe A2 adultes, reprise après une leçon sur être et avoir',
+        actualDurationMinutes: 55,
+        groupLevel: 'A2',
+        whatWorked: 'La grille de relecture rend la correction moins magistrale.',
+        difficulties: 'Les accords avec être demandent plus de temps que prévu.',
+        suggestedChanges: 'Ajouter une version sans accord pour les groupes A2 fragiles.',
+        createdAt: '2026-05-23',
+      },
+    ],
     contributionSuggestions: [
       {
         id: 'suggest-weekend-corrige',
@@ -211,9 +251,9 @@ export const demoResources: Resource[] = [
   },
   {
     id: 'b1-pronoms-y-en-ville',
-    title: 'Les pronoms y et en dans la ville',
+    title: 'Y et en: répondre vite dans la ville',
     summary:
-      'Séquence courte pour employer y et en à partir de lieux urbains et de petites courses.',
+      'Séquence B1 normalisée à partir de mini-dialogues: observation, exercices, corrigé et dialogue final.',
     level: 'B1',
     durationMinutes: 70,
     durationCategory: '60_120_min',
@@ -226,20 +266,24 @@ export const demoResources: Resource[] = [
     resourceTemplate: 'grammaire_inductive',
     activityFormat: 'petits_groupes',
     classroomMode: 'videoprojection',
-    status: 'brouillon',
-    reuseReadiness: 'a_completer',
-    license: 'a_verifier',
+    status: 'utilisable',
+    reuseReadiness: 'pret_a_tester',
+    license: 'CC_BY_SA',
     authors: ['Equipe demo FLE'],
     tags: ['y', 'en', 'ville', 'grammaire'],
     materialNeeded: ['mini-dialogues', 'plan de quartier fictif'],
     sourceType: 'document_cree',
     teacherPreparationLevel: 'moyen',
     createdAt: '2026-02-10',
-    updatedAt: '2026-05-18',
+    updatedAt: '2026-05-23',
     content: {
       objectives: {
         title: 'Objectifs',
-        items: ['Remplacer un lieu par y', 'Remplacer une quantité par en'],
+        items: [
+          'Remplacer un lieu déjà mentionné par y',
+          'Remplacer un complément introduit par de par en',
+          'Réutiliser les deux pronoms dans un dialogue de quartier',
+        ],
       },
       lessonPlan: {
         title: 'Déroulé',
@@ -252,22 +296,51 @@ export const demoResources: Resource[] = [
       },
       teacherGuide: {
         title: 'Guide professeur',
-        items: ['Différer les cas complexes et privilégier les usages fréquents.'],
+        items: [
+          'Présenter cette fiche comme une ressource normalisée issue d’un brouillon de classe fictif.',
+          'Différer les cas complexes et privilégier les usages fréquents: aller à, parler de, avoir besoin de.',
+          'Corriger d’abord le choix y/en, puis seulement ensuite la place du pronom.',
+        ],
+      },
+      studentInstructions: {
+        title: 'Support étudiant',
+        items: [
+          'Observez: Tu vas à la médiathèque ? Oui, j’y vais cet après-midi.',
+          'Observez: Tu as besoin de tickets ? Oui, j’en ai besoin pour demain.',
+          'Transformez: Je vais au marché. / Tu parles de ce quartier. / Nous avons besoin de deux formulaires.',
+          'Préparez un dialogue: une personne cherche un service, l’autre répond avec y ou en.',
+        ],
+      },
+      answerKey: {
+        title: 'Corrigé',
+        items: [
+          'Je vais au marché. -> J’y vais.',
+          'Tu parles de ce quartier. -> Tu en parles.',
+          'Nous avons besoin de deux formulaires. -> Nous en avons besoin.',
+          'Critère de réussite du dialogue: au moins deux pronoms correctement employés.',
+        ],
       },
       variants: {
         title: 'Variantes',
-        items: ['Utiliser une carte numérique projetée sans collecte de données.'],
+        items: [
+          'Version B1 fragile: fournir y ou en dans une marge à choisir.',
+          'Version plus libre: ajouter un plan de quartier fictif et des cartes missions.',
+          'Version numérique: utiliser une carte projetée sans collecte de données.',
+        ],
       },
     },
     versions: [
       {
         id: 'b1-y-en-v01',
         versionNumber: '0.1',
-        label: 'version initiale',
-        changelog: ['Première structuration de la séquence.'],
+        label: 'ressource normalisée',
+        changelog: [
+          'Transformation d’un brouillon de mini-dialogues en fiche structurée.',
+          'Ajout du support étudiant et d’un corrigé copiable.',
+        ],
         createdAt: '2026-02-10',
         createdBy: 'Equipe demo FLE',
-        status: 'brouillon',
+        status: 'utilisable',
       },
     ],
     techMetadata: {
@@ -281,12 +354,24 @@ export const demoResources: Resource[] = [
       privacyConsiderations: ['Ne pas utiliser une carte affichant des adresses personnelles.'],
     },
     reviewSummary: { ...defaultReview, digitalReadinessScore: 3 },
+    contributionSuggestions: [
+      {
+        id: 'suggest-y-en-version-a2',
+        type: 'variante_niveau',
+        title: 'Préparer une adaptation A2 très guidée',
+        description:
+          'Réduire la fiche à trois transformations avec seulement aller à et parler de.',
+        status: 'en_attente',
+        proposedBy: 'Contributrice grammaire démo',
+        createdAt: '2026-05-23',
+      },
+    ],
   },
   {
     id: 'b1-debat-limiter-ecrans',
     title: 'Débat guidé: faut-il limiter les écrans ?',
     summary:
-      'Activité d’argumentation pour exprimer accord, désaccord et réserve sur les usages numériques.',
+      'Activité orale B1 prête à lancer: cartes d’opinion, rôles simples et critères de réussite.',
     level: 'B1',
     durationMinutes: 60,
     durationCategory: '30_60_min',
@@ -308,7 +393,7 @@ export const demoResources: Resource[] = [
     sourceType: 'document_cree',
     teacherPreparationLevel: 'faible',
     createdAt: '2026-02-18',
-    updatedAt: '2026-05-19',
+    updatedAt: '2026-05-23',
     content: {
       objectives: {
         title: 'Objectifs',
@@ -317,18 +402,45 @@ export const demoResources: Resource[] = [
       lessonPlan: {
         title: 'Déroulé',
         items: [
-          'Classer des affirmations.',
-          'Préparer un argument et un exemple.',
-          'Discuter en groupes avec un observateur.',
+          'Distribuer quatre affirmations courtes sur les écrans.',
+          'Classer les affirmations: d’accord, pas d’accord, ça dépend.',
+          'Préparer un argument et un exemple en binômes.',
+          'Discuter en groupes de quatre avec un observateur.',
+          'Faire remonter deux expressions utiles et une difficulté.',
         ],
       },
       studentInstructions: {
         title: 'Consignes étudiant',
-        items: ['Utilisez au moins deux expressions: je pense que, pourtant, en revanche.'],
+        items: [
+          'Choisissez une affirmation: Il faut limiter les écrans le soir. / Les écrans aident à apprendre. / Les réseaux sociaux font perdre du temps. / Les jeux vidéo peuvent être utiles.',
+          'Préparez votre opinion avec un exemple.',
+          'Pendant le débat, utilisez au moins deux expressions: je pense que, pourtant, en revanche, ça dépend.',
+          'Écoutez un camarade et répondez à son argument.',
+        ],
+      },
+      teacherGuide: {
+        title: 'Guide professeur',
+        items: [
+          'Limiter le nombre d’affirmations si le groupe parle peu.',
+          'Donner un rôle d’observateur simple: noter une expression d’accord, une expression de désaccord, une nuance.',
+          'Ne pas transformer l’activité en débat sur la vie privée des apprenants.',
+        ],
       },
       answerKey: {
         title: 'Corrigé',
-        items: ['Pas de corrigé unique: observer clarté, interaction et nuance.'],
+        items: [
+          'Pas de corrigé unique.',
+          'Critères observables: opinion compréhensible, exemple concret, réaction à un pair, au moins une nuance.',
+          'Exemples acceptables: Je suis d’accord parce que... / En revanche... / Ça dépend de...',
+        ],
+      },
+      variants: {
+        title: 'Variantes',
+        items: [
+          'Version courte: débat mouvant en deux colonnes, sans préparation écrite.',
+          'Version B2: ajouter une synthèse orale finale en une minute.',
+          'Version sans thème écrans: remplacer par transports, alimentation ou apprentissage des langues.',
+        ],
       },
     },
     versions: [
@@ -343,12 +455,37 @@ export const demoResources: Resource[] = [
       },
     ],
     reviewSummary: defaultReview,
+    usageFeedbacks: [
+      {
+        id: 'feedback-ecrans-observateur',
+        authorName: 'Marc, enseignant FLE',
+        context: 'Groupe B1 hétérogène, 14 apprenants',
+        actualDurationMinutes: 58,
+        groupLevel: 'B1',
+        whatWorked: 'Le rôle d’observateur aide les apprenants plus réservés à participer.',
+        difficulties: 'Le thème peut devenir trop personnel si les exemples portent sur la famille.',
+        suggestedChanges: 'Ajouter des cartes exemples neutres pour éviter les récits trop privés.',
+        createdAt: '2026-05-23',
+      },
+    ],
+    contributionSuggestions: [
+      {
+        id: 'suggest-ecrans-cartes-neutres',
+        type: 'clarification_consigne',
+        title: 'Ajouter des cartes exemples neutres',
+        description:
+          'Prévoir des exemples fictifs pour aider les groupes qui manquent d’idées sans demander de données personnelles.',
+        status: 'en_attente',
+        proposedBy: 'Enseignante orale démo',
+        createdAt: '2026-05-23',
+      },
+    ],
   },
   {
     id: 'b2-reformuler-information-presse',
-    title: 'Reformuler une information de presse',
+    title: 'Reformuler une brève de presse fictive',
     summary:
-      'Fiche B2 pour identifier une information principale et produire une reformulation neutre.',
+      'Fiche B2 copiable pour repérer l’essentiel, comparer trois reformulations et produire une version neutre.',
     level: 'B2',
     durationMinutes: 75,
     durationCategory: '60_120_min',
@@ -361,8 +498,8 @@ export const demoResources: Resource[] = [
     resourceTemplate: 'analyse_de_document',
     activityFormat: 'individuel',
     classroomMode: 'accompagnement_enseignant',
-    status: 'utilisable',
-    reuseReadiness: 'pret_a_utiliser',
+    status: 'teste',
+    reuseReadiness: 'teste_en_classe',
     license: 'CC_BY',
     authors: ['Equipe demo FLE'],
     tags: ['presse', 'reformulation', 'médiation'],
@@ -370,7 +507,7 @@ export const demoResources: Resource[] = [
     sourceType: 'texte',
     teacherPreparationLevel: 'moyen',
     createdAt: '2026-03-02',
-    updatedAt: '2026-05-16',
+    updatedAt: '2026-05-23',
     content: {
       objectives: {
         title: 'Objectifs',
@@ -385,29 +522,74 @@ export const demoResources: Resource[] = [
           'Produire une reformulation de 50 mots.',
         ],
       },
+      studentInstructions: {
+        title: 'Support étudiant',
+        items: [
+          'Texte fictif: La mairie ouvre samedi un nouvel espace de lecture dans le quartier nord. Il sera gratuit et accessible trois soirs par semaine.',
+          'Soulignez l’information principale.',
+          'Choisissez la meilleure reformulation parmi trois propositions données par l’enseignant.',
+          'Écrivez une reformulation neutre en 45 à 60 mots.',
+        ],
+      },
+      teacherGuide: {
+        title: 'Guide professeur',
+        items: [
+          'Rappeler qu’il ne s’agit pas de résumer tout le texte, mais de transmettre l’information utile.',
+          'Faire comparer fidélité et neutralité avant de corriger la langue.',
+          'Utiliser uniquement des brèves fictives ou libres pour éviter les droits de presse.',
+        ],
+      },
       answerKey: {
         title: 'Corrigé',
-        items: ['Critères: fidélité, concision, clarté, neutralité.'],
+        items: [
+          'Information principale attendue: ouverture d’un nouvel espace de lecture gratuit dans un quartier.',
+          'Critères: fidélité, concision, clarté, neutralité.',
+          'Exemple possible: Un nouvel espace de lecture gratuit ouvrira samedi dans le quartier nord et accueillera le public trois soirs par semaine.',
+        ],
+      },
+      variants: {
+        title: 'Variantes',
+        items: [
+          'Version B1+: réduire à une reformulation en une phrase.',
+          'Version B2 avancé: transformer la brève en annonce institutionnelle.',
+          'Version contribution: demander à un collègue de proposer une autre brève fictive.',
+        ],
       },
     },
     versions: [
       {
         id: 'b2-presse-v1',
         versionNumber: '1.0',
-        label: 'version initiale',
-        changelog: ['Création d’un texte source original.'],
+        label: 'version testée',
+        changelog: [
+          'Création d’un texte source original.',
+          'Ajout d’un exemple de reformulation et de critères plus explicites.',
+        ],
         createdAt: '2026-03-05',
         createdBy: 'Equipe demo FLE',
-        status: 'utilisable',
+        status: 'teste',
       },
     ],
     reviewSummary: defaultReview,
+    usageFeedbacks: [
+      {
+        id: 'feedback-presse-reformulation',
+        authorName: 'Sonia, enseignante FLE',
+        context: 'Atelier B2, préparation à la médiation écrite',
+        actualDurationMinutes: 70,
+        groupLevel: 'B2',
+        whatWorked: 'Les critères fidélité / neutralité évitent les reformulations trop personnelles.',
+        difficulties: 'Certains apprenants recopient presque tout le texte source.',
+        suggestedChanges: 'Ajouter une contrainte de longueur plus visible dans le support étudiant.',
+        createdAt: '2026-05-23',
+      },
+    ],
   },
   {
     id: 'mixte-demarche-administrative-en-ligne',
-    title: 'Comprendre une démarche administrative en ligne',
+    title: 'Comprendre une démarche administrative fictive',
     summary:
-      'Ressource B1/B2 pour repérer actions, documents et délais dans une consigne administrative fictive.',
+      'Compréhension B1/B2 imprimable pour repérer action, justificatif et délai sans utiliser de vraies données.',
     level: 'mixte',
     durationMinutes: 55,
     durationCategory: '30_60_min',
@@ -429,7 +611,7 @@ export const demoResources: Resource[] = [
     sourceType: 'document_administratif',
     teacherPreparationLevel: 'moyen',
     createdAt: '2026-03-10',
-    updatedAt: '2026-05-19',
+    updatedAt: '2026-05-23',
     content: {
       objectives: {
         title: 'Objectifs',
@@ -437,11 +619,52 @@ export const demoResources: Resource[] = [
       },
       lessonPlan: {
         title: 'Déroulé',
-        items: ['Lire la consigne fictive.', 'Compléter un tableau action/document/délai.', 'Reformuler la démarche à un pair.'],
+        items: [
+          'Présenter le document comme une capture fictive, sans donnée personnelle.',
+          'Lire la consigne individuellement.',
+          'Compléter un tableau action/document/délai.',
+          'Comparer en binômes puis reformuler la démarche à un pair.',
+        ],
+      },
+      studentInstructions: {
+        title: 'Support étudiant',
+        items: [
+          'Document fictif: Pour confirmer votre inscription, envoyez une pièce d’identité, un justificatif de domicile et le formulaire signé avant le 15 juin.',
+          'Complétez le tableau: action à faire / document demandé / date limite.',
+          'Expliquez la démarche à un camarade en commençant par: D’abord..., ensuite..., enfin...',
+        ],
+      },
+      teacherGuide: {
+        title: 'Guide professeur',
+        items: [
+          'Insister sur la stratégie de lecture: chercher les verbes d’action, les documents et les dates.',
+          'Ne jamais utiliser un vrai dossier administratif d’apprenant.',
+          'Faire reformuler oralement pour vérifier la compréhension avant la correction écrite.',
+        ],
+      },
+      answerKey: {
+        title: 'Corrigé',
+        items: [
+          'Action: envoyer ou déposer le dossier.',
+          'Documents: pièce d’identité, justificatif de domicile, formulaire signé.',
+          'Date limite: avant le 15 juin.',
+          'Reformulation possible: Il faut préparer trois documents et les envoyer avant le 15 juin.',
+        ],
       },
       techNotes: {
         title: 'Notes techniques',
-        items: ['Utiliser un document fictif pour éviter toute donnée personnelle.'],
+        items: [
+          'Utiliser un document fictif pour éviter toute donnée personnelle.',
+          'La fiche fonctionne aussi en version papier: aucun compte ni site réel n’est nécessaire.',
+        ],
+      },
+      variants: {
+        title: 'Variantes',
+        items: [
+          'Version sans ordinateur: distribuer une fausse capture imprimée.',
+          'Version autonomie: ajouter un deuxième document fictif plus court.',
+          'Version contribution: demander à un enseignant de proposer une autre situation administrative originale.',
+        ],
       },
     },
     versions: [
@@ -466,12 +689,37 @@ export const demoResources: Resource[] = [
       privacyConsiderations: ['Ne jamais utiliser de vraie donnée administrative d’apprenant.'],
     },
     reviewSummary: { ...defaultReview, digitalReadinessScore: 4 },
+    usageFeedbacks: [
+      {
+        id: 'feedback-admin-tableau',
+        authorName: 'Claire, formatrice linguistique',
+        context: 'Groupe B1/B2 en atelier de littératie administrative',
+        actualDurationMinutes: 60,
+        groupLevel: 'B1',
+        whatWorked: 'Le tableau action/document/délai rend la tâche très concrète.',
+        difficulties: 'Le vocabulaire justificatif et formulaire doit être pré-enseigné.',
+        suggestedChanges: 'Ajouter une mini-liste lexicale au support étudiant.',
+        createdAt: '2026-05-23',
+      },
+    ],
+    contributionSuggestions: [
+      {
+        id: 'suggest-admin-lexique',
+        type: 'ajout_corrige',
+        title: 'Ajouter un encadré lexique',
+        description:
+          'Prévoir quatre définitions simples: justificatif, formulaire, pièce d’identité, délai.',
+        status: 'en_attente',
+        proposedBy: 'Contributrice littératie démo',
+        createdAt: '2026-05-23',
+      },
+    ],
   },
   {
     id: 'a2-b1-logement-signaler-probleme',
-    title: 'Décrire un logement et signaler un problème',
+    title: 'Logement: signaler une panne et demander une réparation',
     summary:
-      'Jeu de rôle pour décrire une pièce, signaler une panne et demander une intervention.',
+      'Jeu de rôle A2/B1 testé en classe, avec cartes situations, expressions utiles et critères de réussite.',
     level: 'mixte',
     durationMinutes: 60,
     durationCategory: '30_60_min',
@@ -493,19 +741,58 @@ export const demoResources: Resource[] = [
     sourceType: 'document_cree',
     teacherPreparationLevel: 'faible',
     createdAt: '2026-03-12',
-    updatedAt: '2026-05-10',
+    updatedAt: '2026-05-23',
     content: {
       objectives: {
         title: 'Objectifs',
-        items: ['Nommer des éléments du logement', 'Formuler une demande d’intervention'],
+        items: [
+          'Nommer des éléments du logement',
+          'Décrire une panne ou un problème simple',
+          'Formuler une demande d’intervention polie',
+        ],
       },
       lessonPlan: {
         title: 'Déroulé',
-        items: ['Associer images et mots.', 'Préparer une carte problème.', 'Jouer un échange locataire-propriétaire.'],
+        items: [
+          'Faire associer pièces du logement et problèmes possibles.',
+          'Distribuer une carte situation à chaque binôme.',
+          'Préparer un dialogue de six répliques.',
+          'Jouer l’échange locataire / propriétaire ou locataire / agence.',
+          'Faire relever deux expressions réutilisables au tableau.',
+        ],
+      },
+      studentInstructions: {
+        title: 'Support étudiant',
+        items: [
+          'Choisissez une situation: la douche ne fonctionne pas; la fenêtre ferme mal; il y a une fuite dans la cuisine; le chauffage ne marche pas.',
+          'Préparez un dialogue de six répliques.',
+          'Utilisez au moins deux expressions: Je voudrais signaler..., Il y a..., Est-ce que vous pouvez... ?',
+          'Terminez par une demande claire: Pouvez-vous envoyer quelqu’un ? / Quand est-ce possible ?',
+        ],
+      },
+      teacherGuide: {
+        title: 'Guide professeur',
+        items: [
+          'Modéliser un échange très court avant de distribuer les cartes.',
+          'Pour A2, donner les expressions utiles imprimées; pour B1, demander une justification du problème.',
+          'Faire rejouer une scène en changeant le délai ou le degré d’urgence.',
+        ],
       },
       answerKey: {
         title: 'Corrigé',
-        items: ['Pas de corrigé unique: vérifier description, problème, demande et politesse.'],
+        items: [
+          'Pas de corrigé unique.',
+          'Attendus: problème localisé, demande polie, solution ou délai demandé.',
+          'Exemple: Bonjour, je voudrais signaler un problème. Il y a une fuite dans la cuisine. Pouvez-vous envoyer quelqu’un cette semaine ?',
+        ],
+      },
+      variants: {
+        title: 'Variantes',
+        items: [
+          'A2: dialogue à trous avec expressions fournies.',
+          'B1: ajouter une négociation sur le délai.',
+          'Distanciel: jouer la scène en message vocal court, sans upload dans la v0.',
+        ],
       },
     },
     versions: [
@@ -520,6 +807,31 @@ export const demoResources: Resource[] = [
       },
     ],
     reviewSummary: defaultReview,
+    usageFeedbacks: [
+      {
+        id: 'feedback-logement-jeu-role',
+        authorName: 'Amel, enseignante FLE',
+        context: 'Groupe A2/B1, 10 apprenants adultes',
+        actualDurationMinutes: 62,
+        groupLevel: 'A2',
+        whatWorked: 'Les cartes problèmes donnent rapidement envie de jouer la scène.',
+        difficulties: 'Les apprenants A2 ont besoin d’un modèle de dialogue au tableau.',
+        suggestedChanges: 'Ajouter une version très guidée pour A2 faible.',
+        createdAt: '2026-05-23',
+      },
+    ],
+    contributionSuggestions: [
+      {
+        id: 'suggest-logement-version-a2',
+        type: 'variante_niveau',
+        title: 'Ajouter une version A2 à trous',
+        description:
+          'Créer un support étudiant avec dialogue incomplet pour les groupes qui n’osent pas encore improviser.',
+        status: 'acceptee',
+        proposedBy: 'Collectif activités orales',
+        createdAt: '2026-05-23',
+      },
+    ],
   },
   {
     id: 'b1-cause-consequence-quotidien',
@@ -846,9 +1158,9 @@ export const demoResources: Resource[] = [
   },
   {
     id: 'b2-esprit-critique-reponse-ia',
-    title: 'Esprit critique: vérifier une réponse produite par une IA',
+    title: 'Esprit critique: vérifier une réponse IA fictive',
     summary:
-      'Atelier B2 pour questionner une réponse IA fictive, repérer imprécisions et demander des justifications.',
+      'Atelier B2 imprimable: analyser une réponse fictive, repérer les généralisations et reformuler avec prudence.',
     level: 'B2',
     durationMinutes: 70,
     durationCategory: '60_120_min',
@@ -870,11 +1182,67 @@ export const demoResources: Resource[] = [
     sourceType: 'interaction_ia',
     teacherPreparationLevel: 'moyen',
     createdAt: '2026-05-02',
-    updatedAt: '2026-05-20',
+    updatedAt: '2026-05-23',
     content: {
-      objectives: { title: 'Objectifs', items: ['Identifier une affirmation non sourcée', 'Formuler une demande de clarification', 'Vérifier une information simple'] },
-      lessonPlan: { title: 'Déroulé', items: ['Lire une réponse IA fictive.', 'Classer affirmations sûres/incertaines.', 'Proposer une question de vérification.', 'Réécrire une réponse prudente.'] },
-      aiNotes: { title: 'Notes IA', items: ['La réponse IA est fournie comme document fictif: aucun appel API n’est réalisé.'] },
+      objectives: {
+        title: 'Objectifs',
+        items: [
+          'Identifier une affirmation non sourcée',
+          'Repérer une généralisation excessive',
+          'Formuler une demande de clarification',
+          'Réécrire une réponse plus prudente',
+        ],
+      },
+      lessonPlan: {
+        title: 'Déroulé',
+        items: [
+          'Distribuer la réponse IA fictive imprimée.',
+          'Faire surligner trois affirmations à vérifier.',
+          'Classer les affirmations: fiable, à vérifier, trop vague, probablement faux.',
+          'Rédiger une question de vérification pour chaque affirmation douteuse.',
+          'Réécrire collectivement une réponse plus prudente.',
+        ],
+      },
+      studentInstructions: {
+        title: 'Support étudiant',
+        items: [
+          'Extrait fictif: Dans toutes les villes francophones, les habitants utilisent exactement les mêmes expressions de politesse. Il suffit donc d’apprendre une liste unique.',
+          'Soulignez les mots qui semblent trop généraux.',
+          'Écrivez deux questions pour vérifier cette réponse.',
+          'Reformulez le texte en ajoutant des expressions de prudence: il semble que, selon le contexte, il est possible que.',
+        ],
+      },
+      teacherGuide: {
+        title: 'Guide professeur',
+        items: [
+          'Préciser que la réponse est fictive et créée pour la classe.',
+          'Ne pas demander aux apprenants de se connecter à un outil IA.',
+          'Centrer l’activité sur la vérification et la nuance, pas sur la performance technique de l’outil.',
+        ],
+      },
+      answerKey: {
+        title: 'Corrigé',
+        items: [
+          'Points problématiques: toutes les villes francophones, exactement les mêmes expressions, liste unique.',
+          'Questions possibles: Dans quels pays ou régions ? Dans quels contextes ? Quelle source permet de vérifier ?',
+          'Reformulation possible: Les expressions de politesse peuvent varier selon les pays, les régions et les situations. Il est utile d’apprendre des exemples, mais il faut aussi observer le contexte.',
+        ],
+      },
+      variants: {
+        title: 'Variantes',
+        items: [
+          'Sans IA: présenter l’extrait comme une réponse automatique fictive, sans nommer d’outil.',
+          'B1+: réduire l’activité à deux affirmations et une reformulation guidée.',
+          'C1: ajouter un débat sur les sources, les biais et la responsabilité de vérification.',
+        ],
+      },
+      aiNotes: {
+        title: 'Notes IA',
+        items: [
+          'La réponse IA est fournie comme document fictif: aucun appel API n’est réalisé.',
+          'L’activité peut être copiée et imprimée sans compte, sans connexion et sans collecte de données.',
+        ],
+      },
     },
     versions: [
       {
@@ -908,6 +1276,19 @@ export const demoResources: Resource[] = [
       safeguards: ['Travailler sur une réponse fictive', 'Exiger une étape de vérification humaine'],
     },
     reviewSummary: { ...defaultReview, aiReadinessScore: 5, digitalReadinessScore: 4 },
+    usageFeedbacks: [
+      {
+        id: 'feedback-verif-ia-fictive',
+        authorName: 'Karim, enseignant FLE',
+        context: 'Groupe B2, atelier esprit critique',
+        actualDurationMinutes: 72,
+        groupLevel: 'B2',
+        whatWorked: 'Le caractère fictif de la réponse évite les problèmes de compte et de données.',
+        difficulties: 'Les apprenants veulent parfois corriger le style avant de vérifier le contenu.',
+        suggestedChanges: 'Ajouter une consigne visible: vérifier d’abord, reformuler ensuite.',
+        createdAt: '2026-05-23',
+      },
+    ],
     contributionSuggestions: [
       {
         id: 'suggest-verif-ia-droits',

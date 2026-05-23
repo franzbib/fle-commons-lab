@@ -181,3 +181,13 @@ Journal chronologique synthétique des interventions importantes. Les dates sont
 - Décisions : utiliser les sections existantes du modèle pour produire du texte copiable; garder le formulaire de contribution purement visuel
 - Limites volontaires : aucune donnée envoyée, aucun stockage local, aucun upload, aucune authentification, aucune restriction d'accès
 - Commit associé si connu : commit en cours
+
+## 2026-05-23 — Ressources démo alignées sur l'usage enseignant
+
+- Outil principal : Codex
+- Objectif : rendre un lot représentatif de ressources de démonstration plus immédiatement compréhensible, copiable, imprimable et adaptable
+- Résultat : 7 fiches locales enrichies avec titres plus directs, résumés orientés usage, supports étudiants, guides professeur, corrigés, variantes, retours d'usage et propositions d'amélioration simulées
+- Fichiers principaux : `src/data/demoResources.ts`, `PROJECT_STATE_FOR_LLMS.md`, `docs/project-journal.md`
+- Décisions : ne pas réécrire toute la bibliothèque; améliorer les ressources les plus représentatives pour montrer la promesse "copier, imprimer, adapter, contribuer sans compétence technique"
+- Limites volontaires : aucune nouvelle fonctionnalité, aucun changement profond du modèle, aucun contenu protégé, aucun backend, aucun upload, aucun appel IA réel
+- Commit associé si connu : commit en cours
