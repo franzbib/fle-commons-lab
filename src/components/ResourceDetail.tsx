@@ -24,6 +24,8 @@ import { Badge } from './Badge'
 import { CollapsibleSection } from './CollapsibleSection'
 import { ResourceCopyActions } from './ResourceCopyActions'
 import { ResourceDetailTabs, type ResourceDetailTab } from './ResourceDetailTabs'
+import { ResourceViewActions } from './ResourceViewActions'
+import { formatLearnerViewForCopy, formatTeacherViewForCopy } from '../utils/resourceText'
 
 type ResourceDetailProps = {
   resource: Resource
@@ -186,6 +188,12 @@ function LearnerTab({ resource }: { resource: Resource }) {
         sont masqués dans cet onglet.
       </div>
 
+      <ResourceViewActions
+        copyLabel="Copier le contenu apprenant"
+        copyText={formatLearnerViewForCopy(resource)}
+        printLabel="Imprimer le contenu apprenant"
+      />
+
       <section className="detail-section learner-content-section">
         <h2>Support étudiant</h2>
         <ContentSections resource={resource} sectionKeys={learnerContentSections} />
@@ -197,6 +205,12 @@ function LearnerTab({ resource }: { resource: Resource }) {
 function TeacherTab({ resource }: { resource: Resource }) {
   return (
     <>
+      <ResourceViewActions
+        copyLabel="Copier les notes prof"
+        copyText={formatTeacherViewForCopy(resource)}
+        printLabel="Imprimer les notes prof"
+      />
+
       <section className="detail-section">
         <h2>Animation, corrigés et variantes</h2>
         <ContentSections resource={resource} sectionKeys={teacherContentSections} />

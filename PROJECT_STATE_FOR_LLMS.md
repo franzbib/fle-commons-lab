@@ -20,6 +20,7 @@ Fonctionnalites presentes:
 - filtres pedagogiques, numeriques et IA;
 - fiches detail avec actions de copie et impression;
 - fiches detail organisees en onglets: vue d'ensemble, contenu apprenant, corriges & notes prof;
+- actions locales de copie et d'impression pour le contenu apprenant et les notes professeur, sans generation de PDF/Word;
 - collections locales et pages detail de collection;
 - propositions d'amelioration simulees dans certaines fiches;
 - retours d'usage simules mieux visibles;
@@ -155,6 +156,7 @@ docs/
   conversion-workflow.md
   deployment.md
   decision-log.md
+  export-and-print-strategy.md
   drive-corpus-analysis.md
   editorial-copy-audit.md
   git-sync-audit.md
@@ -243,6 +245,7 @@ L'analyse du corpus Drive recommande de documenter ou d'etudier plus tard trois 
 - L'interface suit une lecture progressive: carte = decision rapide; fiche detail = prise en main puis blocs experts repliables.
 - Les fiches detail utilisent des onglets locaux pour separer la decision rapide, le contenu projetable aux apprenants et l'espace enseignant avec corriges, notes, retours et audit.
 - L'onglet `Contenu apprenant` ne doit jamais afficher les corriges, le guide professeur, les retours d'usage, l'audit simule ou les notes internes.
+- Les actions de copie/impression restent locales: `navigator.clipboard.writeText` et `window.print`; elles ne generent pas de PDF/Word et n'envoient aucune donnee.
 - L'interface publique doit privilegier le vocabulaire enseignant: copier, imprimer, proposer une ressource, corrige, guide professeur. Les termes Markdown, YAML, pull request, fork, build ou repository ne doivent pas devenir le parcours principal.
 - Les pages visibles doivent distinguer explicitement ce qui fonctionne, ce qui est simule, ce qui est conceptuel et ce qui reste en roadmap.
 - Les boutons de copie utilisent les sections existantes du modele (`studentInstructions`, `teacherGuide`, `answerKey`) et une transformation locale en texte propre; ils n'envoient aucune donnee.
@@ -323,7 +326,7 @@ Variables obligatoires: aucune
 12. Preciser une charte de validation pedagogique.
 13. Documenter un schema Supabase futur sans installer Supabase.
 14. Definir une charte d'usage IA avant tout prototype actif.
-15. Prioriser les fonctions copier, imprimer, exporter Word/PDF avant tout workflow communautaire complexe.
+15. Prioriser les fonctions copier et imprimer avant tout workflow communautaire complexe; etudier les exports Word/PDF plus tard seulement apres validation des besoins.
 16. Prototyper plus tard un formulaire non persistant de retour d'usage court.
 17. Relire les ressources demo ameliorees avec des enseignants FLE presses: les blocs copiables sont-ils assez clairs ?
 

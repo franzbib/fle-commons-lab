@@ -42,6 +42,11 @@ Cette vue est pensee pour la projection ou la distribution:
 
 Regle stricte: ne jamais afficher dans cet onglet les corriges, le guide professeur, les retours d'usage, l'audit simule, les notes internes ou les criteres detailles.
 
+Actions disponibles:
+
+- copier le contenu apprenant;
+- imprimer le contenu apprenant avec l'impression navigateur.
+
 ### Corriges & Notes prof
 
 Cette vue rassemble ce qui est reserve a l'enseignant:
@@ -57,6 +62,11 @@ Cette vue rassemble ce qui est reserve a l'enseignant:
 - licence, acces, versions et audit simule.
 
 Ces informations restent accessibles, mais elles ne polluent plus l'espace apprenant.
+
+Actions disponibles:
+
+- copier les notes professeur;
+- imprimer les notes professeur avec l'impression navigateur.
 
 ## Articulation avec la divulgation progressive
 
@@ -75,5 +85,6 @@ Les details secondaires restent repliables dans les vues pertinentes. La regle c
 - Aucun mode professeur securise.
 - Aucun stockage de preference d'onglet.
 - Aucun backend.
+- Aucun export PDF ou Word genere par l'application.
 
 La separation est une aide UI locale, pas un systeme de droits.

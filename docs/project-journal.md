@@ -244,3 +244,13 @@ Journal chronologique synthÃ©tique des interventions importantes. Les dates so
 - Decisions : garder toute l'information accessible; isoler seulement l'affichage apprenant pour la projection ou distribution; ne pas creer de restriction d'acces reelle.
 - Limites volontaires : aucune modification du modele metier, aucun backend, aucune auth, aucun Supabase, aucun paiement, aucun appel IA reel, aucun stockage de preference.
 - Commit associe si connu : commit en cours
+
+## 2026-05-23 — Copie et impression ciblées par onglet ressource
+
+- Outil principal : Codex
+- Objectif : faciliter la réutilisation immédiate des fiches sans créer d'export PDF/Word ni de backend.
+- Résultat : ajout de boutons locaux pour copier le contenu apprenant, copier les notes professeur et imprimer la vue active; documentation d'une stratégie d'export future.
+- Fichiers principaux : `src/components/ResourceDetail.tsx`, `src/components/ResourceViewActions.tsx`, `src/utils/resourceText.ts`, `src/styles/global.css`, `docs/export-and-print-strategy.md`, `docs/ux-resource-tabs.md`.
+- Décisions : utiliser seulement `navigator.clipboard.writeText` et `window.print`; garder la séparation apprenant/professeur; différer les exports PDF et Word.
+- Limites volontaires : aucun backend, aucune génération de fichier, aucun stockage, aucune authentification, aucune dépendance lourde, aucun appel IA réel.
+- Commit associé si connu : commit en cours

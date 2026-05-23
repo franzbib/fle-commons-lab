@@ -591,11 +591,21 @@ button:disabled {
   padding: 18px 22px;
 }
 
+.view-actions-panel {
+  display: grid;
+  gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 12px;
+}
+
 .copy-actions-panel h2 {
   margin: 0 0 6px;
 }
 
-.copy-actions {
+.copy-actions,
+.view-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -1038,6 +1048,7 @@ button:disabled {
   .site-header,
   .back-link,
   .copy-actions-panel,
+  .view-actions-panel,
   .resource-tab-list,
   .filters-panel,
   .resource-card-footer,

@@ -116,3 +116,11 @@
 - L'onglet `Contenu apprenant` ne montre pas le corrige, le guide professeur, les retours d'usage, l'audit simule ou les notes internes.
 - L'onglet `Corriges & Notes prof` garde accessibles le guide professeur, le corrige, les variantes, les retours d'usage et les details complementaires.
 - Aucune information n'est supprimee pour isoler le contenu apprenant; elle est deplacee vers la vue adaptee.
+
+## Copie Et Impression Des Vues Ressource
+
+- Les boutons de copie ciblée doivent rester locaux et utiliser uniquement le presse-papiers navigateur.
+- L'impression doit rester une impression navigateur de la vue active; aucun PDF ou Word ne doit être généré par l'application sans décision explicite.
+- La copie ou l'impression du contenu apprenant ne doit pas inclure le corrigé, le guide professeur, les retours d'usage, l'audit simulé ou les notes IA/numériques détaillées.
+- La copie des notes professeur peut inclure guide, corrigé, variantes, notes d'usage, notes IA/numériques utiles et retours d'usage.
+- Les boutons d'action doivent être masqués à l'impression.
