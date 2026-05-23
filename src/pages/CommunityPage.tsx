@@ -6,7 +6,8 @@ export function CommunityPage() {
         <h1>Préparer une communauté autour des ressources</h1>
         <p>
           La v0.2 ne crée pas de compte, de forum ou de persistance. Elle montre le cadre
-          dans lequel des enseignants pourront proposer, relire et améliorer des ressources.
+          dans lequel des enseignants pourront proposer, relire et améliorer des ressources,
+          sans devoir passer par Git, YAML ou un vocabulaire technique.
         </p>
       </header>
 
@@ -15,7 +16,8 @@ export function CommunityPage() {
         <p>
           Un enseignant pourra proposer une ressource, signaler une erreur, ajouter une
           variante, documenter un retour d’usage ou clarifier une licence. Chaque
-          contribution devra rester reliée à une ressource précise.
+          contribution devra rester reliée à une ressource précise. Dans la démo actuelle,
+          ces parcours sont illustrés par des données locales et une maquette non connectée.
         </p>
       </section>
 

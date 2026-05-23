@@ -40,3 +40,7 @@ La page conceptuelle `#/contribution-space` montre un futur espace de contributi
 ## Limite volontaire
 
 Aucune contribution n'est persistee dans cette version. Les objets communautaires servent a tester le modele et a rendre visible la direction du projet.
+
+## Alignement editorial 2026-05-23
+
+La communaute est aujourd'hui representee par des collections locales, retours d'usage simules, propositions d'amelioration simulees et une maquette de depot brut. Aucun commentaire, compte, notification, forum ou workflow persistant n'est actif.

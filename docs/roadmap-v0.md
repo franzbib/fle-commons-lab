@@ -19,11 +19,12 @@ Statut: en cours.
 - Améliorer le modèle de ressource à partir de retours enseignants.
 - Ajouter de vrais supports convertis, libres ou internes.
 - Stabiliser le format source Markdown avec frontmatter YAML.
-- Ajouter un petit validateur local de métadonnées, sans import automatique.
+- Améliorer le validateur local existant, sans import automatique.
 - Stabiliser la gouvernance des agents IA et des contributeurs futurs.
 - Expérimenter l’audit manuel ou semi-manuel.
 - Stabiliser les statuts et types.
 - Ajouter des tests légers.
+- Continuer à aligner les textes visibles avec l'état réel: actif, simulé, conceptuel ou futur.
 
 ## Phase 2: Persistance Minimale
 

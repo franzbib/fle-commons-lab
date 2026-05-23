@@ -5,8 +5,9 @@ export function ResourceFormatPage() {
         <p className="eyebrow">Format ouvert</p>
         <h1>Ressources Markdown avec frontmatter YAML</h1>
         <p>
-          FLE Commons Lab prepare un format source lisible par les enseignants et exploitable
-          par des outils: un fichier Markdown structure, precede de metadonnees YAML.
+          FLE Commons Lab prépare un format source expérimental: un fichier Markdown
+          structuré, précédé de métadonnées YAML. Ce format aide les contributeurs
+          techniques, mais il n’est pas le parcours principal de l’enseignant ordinaire.
         </p>
       </header>
 
@@ -24,7 +25,18 @@ export function ResourceFormatPage() {
         <p>
           Une ressource Markdown est un format de contribution futur. Les fiches affichees
           dans l'application restent aujourd'hui des donnees TypeScript locales. Aucun import
-          automatique n'est actif dans la v0.
+          automatique n'est actif dans la v0: un exemple Markdown n'est donc pas encore une
+          ressource validée ni affichée automatiquement.
+        </p>
+      </section>
+
+      <section>
+        <h2>Validation locale</h2>
+        <p>
+          La commande <code>npm run validate:resources</code> vérifie les exemples Markdown
+          présents dans <code>examples/resources-markdown/</code>. Elle contrôle seulement
+          la structure minimale: frontmatter, champs obligatoires, sections attendues et
+          quelques valeurs contrôlées.
         </p>
       </section>
 
@@ -33,13 +45,16 @@ export function ResourceFormatPage() {
         <p>
           Un enseignant pourra proposer un fichier avec titre, niveau, duree, objectifs,
           deroule, support etudiant, guide professeur, corrige, variantes, licence et notes
-          sur les droits. La validation humaine restera indispensable avant publication.
+          sur les droits. La validation humaine restera indispensable avant publication:
+          niveau, consignes, corrigé, droit d’auteur et licence ne sont pas validés par le
+          script.
         </p>
       </section>
 
       <section className="non-persistent-note">
-        Aucun upload, aucun parser YAML et aucune conversion automatique ne sont implementes
-        dans cette version. Le format est documente pour preparer une suite sobre.
+        Aucun upload, aucun parser YAML complet et aucune conversion automatique ne sont
+        implémentés dans cette version. Le format est documenté pour préparer une suite
+        sobre, relisible et juridiquement prudente.
       </section>
     </main>
   )

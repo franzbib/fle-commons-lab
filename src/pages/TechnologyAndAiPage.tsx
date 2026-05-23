@@ -6,7 +6,8 @@ export function TechnologyAndAiPage() {
         <h1>Documenter les usages, sans automatiser trop tôt</h1>
         <p>
           FLE Commons Lab doit pouvoir accueillir des pratiques numériques et IA, mais la
-          v0 n’appelle aucune API. Les usages sont décrits, discutés et encadrés.
+          v0 n’appelle aucune API. Les usages sont décrits, discutés et encadrés dans les
+          métadonnées des ressources; aucune donnée utilisateur n’est envoyée à un modèle.
         </p>
       </header>
 
@@ -20,11 +21,22 @@ export function TechnologyAndAiPage() {
       </section>
 
       <section>
+        <h2>Ressource IA ou plateforme IA ?</h2>
+        <p>
+          Une ressource peut parler d’IA, proposer une activité avec une réponse fictive ou
+          documenter un usage possible. Cela ne signifie pas que la plateforme interroge un
+          modèle. Dans la v0, les champs IA servent à classer, filtrer et expliciter les
+          précautions pédagogiques.
+        </p>
+      </section>
+
+      <section>
         <h2>Dans cette v0</h2>
         <p>
           Les ressources peuvent indiquer un usage numérique ou IA possible. Ces champs
           servent à classer, filtrer et préparer l’architecture. Aucun appel OpenAI,
-          Claude, Gemini ou autre fournisseur n’est effectué.
+          Claude, Gemini ou autre fournisseur n’est effectué, aucune clé API n’est requise
+          et aucune correction automatique n’est active.
         </p>
       </section>
 
@@ -46,7 +58,8 @@ export function TechnologyAndAiPage() {
           Audit pédagogique déclenché manuellement, conversion de supports, suggestion de
           variantes, repérage de consignes floues, aide à la création de corrigés,
           métadonnées assistées, recherche sémantique et recommandations. Rien de cela
-          n’est branché aujourd’hui.
+          n’est branché aujourd’hui. Si ces pistes existent plus tard, elles devront être
+          déclenchées manuellement et passer par une couche serveur sécurisée.
         </p>
       </section>
     </main>

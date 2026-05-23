@@ -66,3 +66,9 @@ Le projet peut évoluer vers:
 - un laboratoire de communs pédagogiques.
 
 Cette ouverture est volontaire. La v0 doit préserver les options sans coder prématurément les étapes futures.
+
+## Alignement editorial 2026-05-23
+
+Les pages visibles doivent employer un vocabulaire clair pour les enseignants: ressource, fiche, support etudiant, guide professeur, corrige, retour d'usage, contribution. Les termes techniques comme Markdown, YAML, GitHub ou pull request restent utiles dans la documentation experte, mais ne doivent pas devenir le parcours principal de consultation ou de contribution.
+
+La v0 doit toujours distinguer quatre niveaux: fonctionnalite active, donnee simulee, concept documente et piste future.

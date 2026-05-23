@@ -224,3 +224,13 @@ Journal chronologique synthÃ©tique des interventions importantes. Les dates so
 - Décisions : garder des ressources concises et fictives; privilégier les usages copier, imprimer, adapter avant toute sophistication technique
 - Limites volontaires : aucune fonctionnalité technique ajoutée, aucun changement de modèle, aucun contenu externe copié, aucun backend, aucune authentification, aucun Supabase, aucun upload, aucun appel IA réel
 - Commit associé si connu : commit en cours
+
+## 2026-05-23 � Audit editorial transversal des textes visibles
+
+- Outil principal : Codex
+- Objectif : aligner les pages visibles et la documentation centrale sur l'etat reel du projet apres les evolutions recentes
+- Resultat : pages Accueil, A propos, Documentation, Technologies et IA, Format ressource, Communaute et Etat du projet clarifiees; creation de `docs/editorial-copy-audit.md`
+- Fichiers principaux : `src/pages/HomePage.tsx`, `src/pages/AboutPage.tsx`, `src/pages/DocumentationPage.tsx`, `src/pages/TechnologyAndAiPage.tsx`, `src/pages/ResourceFormatPage.tsx`, `src/pages/CommunityPage.tsx`, `src/pages/ProjectStatusPage.tsx`, `docs/editorial-copy-audit.md`, `PROJECT_STATE_FOR_LLMS.md`, `README.md`
+- Decisions : distinguer explicitement fonctionnalite active, donnee simulee, concept futur et roadmap; ne pas presenter l'IA, l'acces reserve, la contribution ou le validateur comme des services actifs au-dela de leur perimetre reel
+- Limites volontaires : aucune fonctionnalite ajoutee, aucun backend, aucune auth, aucun Supabase, aucun paiement, aucun upload, aucun appel IA reel
+- Commit associe si connu : commit en cours

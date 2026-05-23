@@ -7,9 +7,9 @@ export function HomePage() {
         <p className="eyebrow">Projet open source expérimental</p>
         <h1>Transformer des supports FLE dispersés en communs pédagogiques structurés.</h1>
         <p>
-          FLE Commons Lab pose un premier socle local pour consulter, organiser et
-          documenter des ressources pédagogiques FLE. Cette v0 fonctionne sans backend,
-          sans IA, sans Supabase et sans variable d’environnement obligatoire.
+          FLE Commons Lab est une forge ouverte de ressources FLE. La v0 est une démo
+          statique: elle permet de consulter, filtrer, copier et imprimer des fiches
+          locales, sans compte, sans paiement, sans backend, sans Supabase et sans appel IA.
         </p>
         <div className="hero-actions">
           <a className="primary-button" href="#/library">
@@ -25,22 +25,22 @@ export function HomePage() {
         <article>
           <h2>{demoResources.length} ressources locales</h2>
           <p>
-            Les données sont stockées en TypeScript pour stabiliser le modèle avant toute
-            persistance.
+            Les ressources de démonstration testent le modèle: support étudiant, guide
+            professeur, corrigé, versions, retours d’usage et propositions simulées.
           </p>
         </article>
         <article>
-          <h2>Fondations avant plateforme</h2>
+          <h2>Démo statique, trajectoire ouverte</h2>
           <p>
-            Contributions, audit IA et Supabase sont anticipés dans l’architecture et la
-            documentation, pas implémentés.
+            Les contributions, l’audit IA, les accès membres et Supabase sont documentés
+            comme pistes futures. Rien de tout cela n’est actif dans cette version.
           </p>
         </article>
         <article>
-          <h2>Supports vivants</h2>
+          <h2>Copier, imprimer, adapter</h2>
           <p>
-            Chaque ressource prévoit versions simulées, retours d’usage et sections
-            pédagogiques réutilisables.
+            L’interface privilégie le point de vue enseignant: comprendre vite une fiche,
+            récupérer les blocs utiles et garder la trace des améliorations possibles.
           </p>
         </article>
       </section>

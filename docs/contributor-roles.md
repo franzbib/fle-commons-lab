@@ -97,3 +97,7 @@ Une contribution peut demander:
 - validation mainteneur.
 
 La v0 ne code aucun de ces droits. Elle documente seulement le vocabulaire.
+
+## Alignement editorial 2026-05-23
+
+Les roles de contributeurs restent des reperes de gouvernance future. Ils ne correspondent pas a des comptes actifs, permissions techniques, badges publics ou droits d'acces reels dans la v0.

@@ -104,3 +104,7 @@ La soutenabilité ne doit pas transformer FLE Commons Lab en plateforme fermée.
 - Aucune restriction d'accès réelle.
 - Aucune clé Stripe ou autre fournisseur.
 - Aucun backend.
+
+## Alignement editorial 2026-05-23
+
+Dans l'application et la documentation publique, les champs `accessLevel` et `monetizationStatus` doivent etre presentes comme des champs conceptuels. Ils ne creent aucun compte, aucun paiement, aucune restriction reelle et aucun paywall dans la v0.

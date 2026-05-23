@@ -380,3 +380,7 @@ Jouez un dialogue entre une personne perdue et une personne qui aide.
 
 Contenu original de demonstration.
 ```
+
+## Alignement editorial 2026-05-23
+
+Le dossier `examples/resources-markdown/` contient des exemples sources valides pour tester le format. La commande `npm run validate:resources` verifie leur structure minimale, mais ne les importe pas dans l'application et ne les transforme pas en ressources validees. La relecture enseignante et la verification des droits restent obligatoires.

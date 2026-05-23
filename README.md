@@ -38,9 +38,9 @@ L'IA est documentee et anticipee, mais aucune API IA n'est appelee par l'applica
 - Documentation conceptuelle des accès et de la soutenabilité.
 - Première couche d'identité visuelle "Laboratoire Typographique".
 - Interface de bibliothèque organisée par divulgation progressive: cartes allégées, filtres avancés repliables et détails experts consultables à la demande.
-- 5 exemples Markdown fictifs dans `examples/resources-markdown/`.
+- 8 exemples Markdown fictifs dans `examples/resources-markdown/`.
 - Analyse du corpus Drive documentée comme référence de conception, sans import ni copie des documents originaux.
-- Validateur local minimal des exemples Markdown.
+- Validateur local minimal des exemples Markdown via `npm run validate:resources`.
 - Tests Vitest sur les filtres et les collections.
 - Templates GitHub pour bugs, suggestions de ressources, propositions d'amelioration et pull requests.
 
@@ -120,6 +120,7 @@ PROJECT_STATE_FOR_LLMS.md
 - Aucun import Google Drive.
 - Aucun stockage des donnees saisies dans le prototype de contribution.
 - Le validateur Markdown ne crée aucune ressource dans l'application.
+- Les champs IA, accès et soutenabilité restent descriptifs ou conceptuels.
 
 ## Documentation utile
 
@@ -146,6 +147,8 @@ PROJECT_STATE_FOR_LLMS.md
 - `docs/conversion-workflow.md`
 - `docs/conversion-experiments.md`
 - `docs/drive-corpus-analysis.md`
+- `docs/raw-resource-intake-form-spec.md`
+- `docs/editorial-copy-audit.md`
 - `docs/technology-and-ai.md`
 - `docs/deployment.md`
 - `docs/git-sync-audit.md`
@@ -167,8 +170,7 @@ Les fichiers de reprise et de traçabilité sont:
 - Relire les ressources de demonstration avec des enseignants FLE.
 - Stabiliser le modele communautaire avant toute base de donnees.
 - Convertir de vrais supports libres ou internes.
-- Prototyper plus tard un petit validateur local de frontmatter.
-- Améliorer ensuite ce validateur sans en faire un importeur automatique.
+- Améliorer le validateur local sans en faire un importeur automatique.
 - Definir une charte de contribution et de validation.
 - Stabiliser la gouvernance des agents et contributeurs avant toute authentification.
 - Étudier les scénarios d'accès réservé seulement après stabilisation pédagogique et juridique.

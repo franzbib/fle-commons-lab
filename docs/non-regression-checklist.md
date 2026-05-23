@@ -99,6 +99,8 @@
 - `docs/decision-log.md` est mis à jour si une décision structurante est prise.
 - `README.md` est mis à jour si commandes, structure ou comportement visible changent.
 - Aucun document ne présente comme existante une fonctionnalité seulement future.
+- Les textes visibles distinguent clairement fonctionnalité active, donnée simulée, concept futur et élément de roadmap.
+- Les pages publiques ne laissent pas croire qu'une IA, un paiement, un compte ou un backend est actif.
 
 ## Identité visuelle
 

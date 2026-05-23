@@ -62,3 +62,7 @@ Ces champs sont descriptifs. Ils n’activent rien.
 - Recommandations de ressources.
 
 Ces pistes devront être déclenchées manuellement, documentées, testées et protégées par un backend ou une fonction serveur si elles utilisent des clés privées.
+
+## Alignement editorial 2026-05-23
+
+Dans les textes visibles, preferer "IA documentee" ou "usage IA possible" a "IA integree". Une ressource peut parler d'IA, utiliser une reponse fictive ou documenter des garde-fous sans que FLE Commons Lab appelle une API. La v0 n'envoie aucune donnee utilisateur a un modele, ne stocke aucune cle et ne produit aucune correction automatique.
