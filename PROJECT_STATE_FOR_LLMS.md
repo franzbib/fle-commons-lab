@@ -33,6 +33,7 @@ Fonctionnalites presentes:
 - exemples de ressources Markdown dans `examples/resources-markdown/`.
 - validateur local minimal des exemples Markdown via `npm run validate:resources`.
 - documentation de deploiement Vercel dans `docs/deployment.md`.
+- audit de synchronisation GitHub / local / Vercel dans `docs/git-sync-audit.md`.
 - guide permanent des agents IA dans `AGENTS.md`.
 - documentation des roles contributeurs futurs et de l'espace de contribution conceptuel.
 
@@ -124,6 +125,7 @@ docs/
   conversion-experiments.md
   conversion-workflow.md
   deployment.md
+  git-sync-audit.md
   markdown-resource-format.md
   resource-model.md
   technology-and-ai.md
@@ -179,6 +181,9 @@ Le validateur local vérifie seulement une conformité minimale des exemples Mar
 - Markdown + frontmatter YAML retenu comme format de contribution lisible et versionnable.
 - Le validateur Markdown est autonome en Node et n'ajoute aucune dépendance YAML.
 - Le projet est deployable sur Vercel comme site statique Vite: build `npm run build`, sortie `dist`.
+- URL Vercel publique vérifiée: `https://fle-commons-lab.vercel.app`.
+- Synchronisation vérifiée: `HEAD` local = `origin/main` = `3b038c16bbc04be9145ebb79e2faa95a37217d81` au moment de l'audit du 2026-05-23.
+- Le dépôt GitHub public affiche bien les fichiers du projet sur la branche `main`.
 - La demo publique ne collecte pas de donnees utilisateur.
 - Les roles contributeurs sont purement descriptifs dans `src/types/community.ts`.
 - `AGENTS.md` est le guide de travail prioritaire pour Codex, ChatGPT, Antigravity et autres LLM.
@@ -221,6 +226,8 @@ npm run validate:resources
 npm run build
 git status
 git remote -v
+git log --oneline --decorate -5
+git ls-remote origin refs/heads/main
 ```
 
 Pour Vercel:

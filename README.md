@@ -74,8 +74,12 @@ La v0 est deployable comme site statique Vite.
 - Build command: `npm run build`
 - Output directory: `dist`
 - Variables d'environnement obligatoires: aucune
+- URL publique connue: `https://fle-commons-lab.vercel.app`
+- Branche attendue: `main`
 
 Ne jamais ajouter de secret dans Vercel sans documentation et decision explicite. La demo publique fonctionne avec des donnees locales statiques, sans collecte de donnees utilisateur et sans appel IA reel.
+
+Voir aussi `docs/deployment.md` et `docs/git-sync-audit.md` pour verifier la coherence entre local, GitHub et Vercel.
 
 ## Structure
 
@@ -123,6 +127,7 @@ PROJECT_STATE_FOR_LLMS.md
 - `docs/conversion-experiments.md`
 - `docs/technology-and-ai.md`
 - `docs/deployment.md`
+- `docs/git-sync-audit.md`
 - `docs/environment.md`
 - `PROJECT_STATE_FOR_LLMS.md`
 
