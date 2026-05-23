@@ -26,6 +26,7 @@
 
 - Les métadonnées principales sont visibles.
 - Les sections pédagogiques s’affichent.
+- Les ressources démo représentatives contiennent un support étudiant, un guide professeur et un corrigé ou des critères réellement copiables.
 - Les versions simulées sont visibles.
 - Les retours d’usage simulés ou le placeholder sont visibles.
 - Les propositions d’amélioration simulées ou le placeholder sont visibles.

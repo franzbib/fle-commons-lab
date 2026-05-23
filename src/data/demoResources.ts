@@ -835,9 +835,9 @@ export const demoResources: Resource[] = [
   },
   {
     id: 'b1-cause-consequence-quotidien',
-    title: 'Cause et conséquence à partir de situations quotidiennes',
+    title: 'Cause et conséquence: expliquer un retard ou un problème',
     summary:
-      'Exercice contextualisé pour utiliser parce que, donc et à cause de dans des phrases utiles.',
+      'Fiche B1 imprimable pour relier des situations quotidiennes avec parce que, donc et à cause de.',
     level: 'B1',
     durationMinutes: 45,
     durationCategory: '30_60_min',
@@ -859,11 +859,60 @@ export const demoResources: Resource[] = [
     sourceType: 'document_cree',
     teacherPreparationLevel: 'faible',
     createdAt: '2026-03-22',
-    updatedAt: '2026-05-10',
+    updatedAt: '2026-05-23',
     content: {
-      objectives: { title: 'Objectifs', items: ['Distinguer cause et conséquence', 'Employer trois connecteurs fréquents'] },
-      lessonPlan: { title: 'Déroulé', items: ['Classer des phrases.', 'Relier des propositions.', 'Produire trois phrases personnelles.'] },
-      answerKey: { title: 'Corrigé', items: ['parce que introduit une cause; donc introduit une conséquence.'] },
+      objectives: {
+        title: 'Objectifs',
+        items: [
+          'Distinguer cause et conséquence dans une situation simple',
+          'Employer parce que, donc et à cause de',
+          'Produire trois phrases utiles pour expliquer un problème quotidien',
+        ],
+      },
+      lessonPlan: {
+        title: 'Déroulé',
+        items: [
+          '5 min: faire identifier cause et conséquence dans un exemple au tableau.',
+          '10 min: classer six fragments de phrases en deux colonnes.',
+          '15 min: relier des propositions avec le connecteur adapté.',
+          '10 min: produire trois phrases personnelles ou fictives.',
+          '5 min: correction rapide avec justification du connecteur choisi.',
+        ],
+      },
+      studentInstructions: {
+        title: 'Support étudiant',
+        items: [
+          'Classez: le bus est en retard / je suis arrivé après le début du cours / il pleut / la sortie est annulée.',
+          'Reliez les phrases: Je suis fatigué ___ j’ai travaillé tard. Il pleut, ___ nous restons à la maison.',
+          'Transformez avec à cause de: Le train est supprimé parce qu’il y a une panne.',
+          'Écrivez trois phrases pour expliquer un retard, une annulation ou un changement de programme.',
+        ],
+      },
+      teacherGuide: {
+        title: 'Guide professeur',
+        items: [
+          'Privilégier des situations neutres: météo, transports, organisation, matériel.',
+          'Faire reformuler oralement avant l’écriture si le groupe est fragile.',
+          'Point de vigilance: à cause de introduit un nom ou groupe nominal, pas une phrase complète.',
+        ],
+      },
+      answerKey: {
+        title: 'Corrigé',
+        items: [
+          'Je suis fatigué parce que j’ai travaillé tard.',
+          'Il pleut, donc nous restons à la maison.',
+          'Le train est supprimé à cause d’une panne.',
+          'Réponse acceptable si le lien logique est clair et si le connecteur est grammaticalement possible.',
+        ],
+      },
+      variants: {
+        title: 'Variantes',
+        items: [
+          'Simplification: ne travailler que parce que et donc.',
+          'Complexification: ajouter c’est pourquoi et en raison de.',
+          'Adaptation orale: chaque binôme tire une situation et explique le problème à la classe.',
+        ],
+      },
     },
     versions: [
       {
@@ -877,12 +926,25 @@ export const demoResources: Resource[] = [
       },
     ],
     reviewSummary: defaultReview,
+    usageFeedbacks: [
+      {
+        id: 'feedback-cause-consequence-retards',
+        authorName: 'Lucie, enseignante FLE',
+        context: 'Groupe B1 adultes, séance de remédiation grammaticale',
+        actualDurationMinutes: 48,
+        groupLevel: 'B1',
+        whatWorked: 'Les situations de transport et de météo parlent immédiatement au groupe.',
+        difficulties: 'À cause de demande un exemple nominal très explicite.',
+        suggestedChanges: 'Prévoir deux phrases supplémentaires avec grâce à pour une future extension.',
+        createdAt: '2026-05-23',
+      },
+    ],
   },
   {
     id: 'b2-expose-carte-mentale-numerique',
-    title: 'Préparer un court exposé avec une carte mentale numérique',
+    title: 'Exposé B2: préparer un plan avec une carte mentale',
     summary:
-      'Atelier B2 pour organiser une présentation de trois minutes avec une carte mentale projetable.',
+      'Atelier B2 prêt à adapter pour organiser un exposé de trois minutes, avec alternative papier.',
     level: 'B2',
     durationMinutes: 90,
     durationCategory: '60_120_min',
@@ -904,11 +966,67 @@ export const demoResources: Resource[] = [
     sourceType: 'document_cree',
     teacherPreparationLevel: 'moyen',
     createdAt: '2026-04-01',
-    updatedAt: '2026-05-16',
+    updatedAt: '2026-05-23',
     content: {
-      objectives: { title: 'Objectifs', items: ['Organiser des idées', 'Présenter un plan clair', 'Utiliser un support numérique simple'] },
-      lessonPlan: { title: 'Déroulé', items: ['Comparer deux plans.', 'Créer une carte mentale.', 'Présenter en petits groupes.'] },
-      techNotes: { title: 'Notes techniques', items: ['Prévoir une alternative papier si l’outil est indisponible.'] },
+      objectives: {
+        title: 'Objectifs',
+        items: [
+          'Organiser des idées en trois parties',
+          'Préparer une introduction et une conclusion courtes',
+          'Utiliser une carte mentale comme support de prise de parole',
+        ],
+      },
+      lessonPlan: {
+        title: 'Déroulé',
+        items: [
+          '10 min: comparer un plan linéaire et une carte mentale très simple.',
+          '15 min: choisir un sujet connu et lister les idées principales.',
+          '25 min: créer une carte mentale numérique ou papier.',
+          '25 min: présenter en petits groupes pendant trois minutes.',
+          '15 min: retour avec une grille: plan, transitions, clarté du support.',
+        ],
+      },
+      studentInstructions: {
+        title: 'Support étudiant',
+        items: [
+          'Choisissez un sujet simple: un lieu, une habitude, un projet, une expérience d’apprentissage.',
+          'Créez trois branches: idée 1, idée 2, exemple.',
+          'Ajoutez deux transitions: d’abord, ensuite, pour terminer.',
+          'Présentez votre sujet en trois minutes sans lire des phrases complètes.',
+        ],
+      },
+      teacherGuide: {
+        title: 'Guide professeur',
+        items: [
+          'Laisser le choix entre outil numérique et feuille A4 pour éviter un blocage technique.',
+          'Demander des mots-clés, pas des paragraphes sur la carte mentale.',
+          'Point de vigilance: vérifier que le support aide la parole au lieu de la remplacer.',
+        ],
+      },
+      answerKey: {
+        title: 'Critères de réussite',
+        items: [
+          'La carte contient des mots-clés lisibles, pas un texte complet.',
+          'L’exposé annonce un plan simple et respecte environ trois minutes.',
+          'Au moins deux transitions structurent la présentation.',
+          'Le support ne contient pas de données personnelles identifiantes.',
+        ],
+      },
+      variants: {
+        title: 'Variantes',
+        items: [
+          'Simplification: fournir un modèle de carte avec trois branches déjà nommées.',
+          'Complexification: ajouter une question du public et une réponse improvisée.',
+          'Autonomie: faire préparer la carte à la maison puis présenter en classe.',
+        ],
+      },
+      techNotes: {
+        title: 'Notes techniques',
+        items: [
+          'Prévoir une alternative papier si l’outil est indisponible.',
+          'Aucun compte n’est nécessaire si l’enseignant utilise une feuille, un tableau ou un outil déjà autorisé par l’établissement.',
+        ],
+      },
     },
     versions: [
       {
@@ -932,12 +1050,25 @@ export const demoResources: Resource[] = [
       privacyConsiderations: ['Éviter les noms complets et données personnelles dans la carte.'],
     },
     reviewSummary: { ...defaultReview, digitalReadinessScore: 4 },
+    usageFeedbacks: [
+      {
+        id: 'feedback-expose-carte-mentale',
+        authorName: 'Thomas, enseignant FLE',
+        context: 'Groupe B2, préparation à un exposé court',
+        actualDurationMinutes: 92,
+        groupLevel: 'B2',
+        whatWorked: 'L’alternative papier évite de perdre du temps avec les comptes et connexions.',
+        difficulties: 'Certains apprenants écrivent des phrases complètes sur la carte.',
+        suggestedChanges: 'Ajouter un exemple de carte avec seulement huit mots-clés.',
+        createdAt: '2026-05-23',
+      },
+    ],
   },
   {
     id: 'a1-a2-phonetique-y-u',
-    title: 'Phonétique: distinguer [y] et [u]',
+    title: 'Phonétique: entendre et dire [y] / [u]',
     summary:
-      'Discrimination et production guidée autour de paires comme tu/tout, rue/roue, vu/vous.',
+      'Rituel A1/A2 testé pour travailler tu/tout, rue/roue et vu/vous en dix minutes réutilisables.',
     level: 'mixte',
     durationMinutes: 30,
     durationCategory: '15_30_min',
@@ -959,11 +1090,59 @@ export const demoResources: Resource[] = [
     sourceType: 'document_cree',
     teacherPreparationLevel: 'faible',
     createdAt: '2026-04-08',
-    updatedAt: '2026-05-11',
+    updatedAt: '2026-05-23',
     content: {
-      objectives: { title: 'Objectifs', items: ['Reconnaître deux sons proches', 'Produire des paires minimales'] },
-      lessonPlan: { title: 'Déroulé', items: ['Montrer la position des lèvres.', 'Lever une carte pendant l’écoute.', 'Répéter des paires courtes.'] },
-      studentInstructions: { title: 'Support étudiant', items: ['tu / tout', 'rue / roue', 'vu / vous'] },
+      objectives: {
+        title: 'Objectifs',
+        items: [
+          'Reconnaître les sons [y] et [u] dans des mots courts',
+          'Produire des paires minimales avec un geste d’aide',
+          'Gagner en confiance dans une correction phonétique brève',
+        ],
+      },
+      lessonPlan: {
+        title: 'Déroulé',
+        items: [
+          '3 min: montrer la position des lèvres pour [y] et [u].',
+          '7 min: l’enseignant lit une paire, les apprenants lèvent la carte U ou OU.',
+          '10 min: répétition guidée en petits groupes.',
+          '5 min: mini-défi: un apprenant lit, les autres identifient.',
+          '5 min: retour rapide sur les mots les plus difficiles.',
+        ],
+      },
+      studentInstructions: {
+        title: 'Support étudiant',
+        items: [
+          'Écoutez et montrez la bonne carte: U ou OU.',
+          'Répétez les paires: tu / tout, rue / roue, vu / vous, su / sous.',
+          'Choisissez trois mots et lisez-les à un camarade.',
+          'Votre camarade montre la carte entendue.',
+        ],
+      },
+      teacherGuide: {
+        title: 'Guide professeur',
+        items: [
+          'Utiliser un geste stable: lèvres arrondies et avancées pour [u], lèvres arrondies mais langue plus en avant pour [y].',
+          'Corriger peu et souvent, sans interrompre longuement la communication.',
+          'Point de vigilance: ne pas humilier les apprenants qui n’entendent pas encore la différence.',
+        ],
+      },
+      answerKey: {
+        title: 'Corrigé',
+        items: [
+          '[y]: tu, rue, vu, su.',
+          '[u]: tout, roue, vous, sous.',
+          'Critère de réussite: l’apprenant identifie au moins trois paires sur quatre ou sait demander une répétition.',
+        ],
+      },
+      variants: {
+        title: 'Variantes',
+        items: [
+          'Simplification: ne travailler que deux paires pendant cinq minutes.',
+          'Complexification: intégrer les mots dans de courtes phrases: Tu vas rue Hugo ? Vous allez sous le pont ?',
+          'Autonomie: les apprenants s’entraînent deux par deux avec les cartes.',
+        ],
+      },
     },
     versions: [
       {
@@ -977,12 +1156,25 @@ export const demoResources: Resource[] = [
       },
     ],
     reviewSummary: defaultReview,
+    usageFeedbacks: [
+      {
+        id: 'feedback-phonetique-y-u',
+        authorName: 'Nadia, enseignante FLE',
+        context: 'Groupe A1/A2 plurilingue, rituel en début de cours',
+        actualDurationMinutes: 28,
+        groupLevel: 'A1',
+        whatWorked: 'Les cartes U / OU rendent l’écoute active sans matériel lourd.',
+        difficulties: 'La production reste difficile pour certains, même quand la perception progresse.',
+        suggestedChanges: 'Répéter le rituel sur trois séances plutôt que tout corriger en une fois.',
+        createdAt: '2026-05-23',
+      },
+    ],
   },
   {
     id: 'b1-enquete-suspect-temoin-indice',
-    title: 'Enquête en classe: suspect, témoin, indice',
+    title: 'Enquête en classe: interroger, comparer, accuser',
     summary:
-      'Jeu d’interaction pour poser des questions, comparer des indices et formuler une hypothèse.',
+      'Jeu B1 prêt à imprimer avec rôles fictifs, questions au passé et critères pour formuler une hypothèse.',
     level: 'B1',
     durationMinutes: 65,
     durationCategory: '60_120_min',
@@ -1004,11 +1196,60 @@ export const demoResources: Resource[] = [
     sourceType: 'document_cree',
     teacherPreparationLevel: 'moyen',
     createdAt: '2026-04-15',
-    updatedAt: '2026-05-18',
+    updatedAt: '2026-05-23',
     content: {
-      objectives: { title: 'Objectifs', items: ['Interroger un témoin', 'Comparer des informations', 'Formuler une hypothèse'] },
-      lessonPlan: { title: 'Déroulé', items: ['Distribuer les rôles.', 'Interroger deux témoins.', 'Comparer les indices.', 'Présenter l’hypothèse du groupe.'] },
-      variants: { title: 'Variantes', items: ['Ajouter une grille collaborative numérique si le groupe est équipé.'] },
+      objectives: {
+        title: 'Objectifs',
+        items: [
+          'Poser des questions au passé',
+          'Comparer des informations contradictoires',
+          'Formuler une hypothèse avec peut-être, je pense que, il est possible que',
+        ],
+      },
+      lessonPlan: {
+        title: 'Déroulé',
+        items: [
+          '10 min: présenter la situation fictive et les rôles.',
+          '10 min: préparer trois questions par groupe.',
+          '20 min: interroger deux témoins et noter les indices.',
+          '15 min: comparer les informations dans le groupe.',
+          '10 min: présenter une hypothèse et une justification.',
+        ],
+      },
+      studentInstructions: {
+        title: 'Support étudiant',
+        items: [
+          'Situation fictive: la clé de la salle multimédia a disparu après la pause.',
+          'Rôles possibles: témoin A, témoin B, responsable de salle, apprenant pressé, apprenant distrait.',
+          'Préparez trois questions: Où étiez-vous ? Qu’est-ce que vous avez vu ? À quelle heure êtes-vous parti(e) ?',
+          'Présentez votre hypothèse: Nous pensons que... parce que...',
+        ],
+      },
+      teacherGuide: {
+        title: 'Guide professeur',
+        items: [
+          'Insister sur le caractère fictif et léger de l’enquête.',
+          'Donner une carte rôle courte à chaque apprenant; éviter les scénarios trop complexes.',
+          'Relancer avec: Quelle information est sûre ? Quelle information est seulement possible ?',
+        ],
+      },
+      answerKey: {
+        title: 'Critères de réussite',
+        items: [
+          'Les questions utilisent un temps du passé compréhensible.',
+          'L’hypothèse s’appuie sur au moins deux indices.',
+          'Le groupe distingue fait observé et supposition.',
+          'Exemple: Nous pensons que la clé est restée dans la cafétéria parce que le témoin A a vu le responsable avec son plateau.',
+        ],
+      },
+      variants: {
+        title: 'Variantes',
+        items: [
+          'Simplification: fournir les questions déjà rédigées.',
+          'Complexification: ajouter un indice contradictoire à discuter.',
+          'Adaptation numérique: utiliser une grille collaborative si le groupe est équipé, sans compte obligatoire.',
+        ],
+      },
     },
     versions: [
       {
@@ -1022,12 +1263,25 @@ export const demoResources: Resource[] = [
       },
     ],
     reviewSummary: defaultReview,
+    usageFeedbacks: [
+      {
+        id: 'feedback-enquete-classe-b1',
+        authorName: 'Romain, enseignant FLE',
+        context: 'Groupe B1, fin de séance orale',
+        actualDurationMinutes: 68,
+        groupLevel: 'B1',
+        whatWorked: 'Le mystère simple déclenche beaucoup de questions sans expliquer trop longtemps.',
+        difficulties: 'Certains groupes confondent indice et opinion.',
+        suggestedChanges: 'Ajouter une mini-grille fait / hypothèse pour guider la synthèse.',
+        createdAt: '2026-05-23',
+      },
+    ],
   },
   {
     id: 'b2-notes-video-courte',
-    title: 'Prendre des notes à partir d’une vidéo courte',
+    title: 'Vidéo courte B2: prendre des notes sans tout écrire',
     summary:
-      'Fiche B2 pour sélectionner des informations utiles dans une vidéo courte et produire une synthèse.',
+      'Fiche B2 avec grille de notes, critères de synthèse et précaution claire sur les droits vidéo.',
     level: 'B2',
     durationMinutes: 75,
     durationCategory: '60_120_min',
@@ -1049,11 +1303,68 @@ export const demoResources: Resource[] = [
     sourceType: 'video',
     teacherPreparationLevel: 'important',
     createdAt: '2026-04-20',
-    updatedAt: '2026-05-17',
+    updatedAt: '2026-05-23',
     content: {
-      objectives: { title: 'Objectifs', items: ['Repérer les informations importantes', 'Organiser ses notes', 'Produire une synthèse orale'] },
-      lessonPlan: { title: 'Déroulé', items: ['Première écoute globale.', 'Deuxième écoute avec grille.', 'Comparaison en binômes.', 'Synthèse de 60 secondes.'] },
-      techNotes: { title: 'Notes techniques', items: ['Utiliser une vidéo libre ou produite par l’enseignant.'] },
+      objectives: {
+        title: 'Objectifs',
+        items: [
+          'Repérer les informations importantes sans tout transcrire',
+          'Organiser ses notes en mots-clés',
+          'Produire une synthèse orale de 60 secondes',
+        ],
+      },
+      lessonPlan: {
+        title: 'Déroulé',
+        items: [
+          '10 min: annoncer le thème et expliquer la grille de notes.',
+          '5 min: première écoute ou visionnage global sans prise de notes détaillée.',
+          '15 min: deuxième écoute avec grille mots-clés / chiffres / exemples.',
+          '15 min: comparaison en binômes et clarification.',
+          '20 min: synthèse orale de 60 secondes par binôme.',
+          '10 min: retour sur les stratégies de prise de notes.',
+        ],
+      },
+      studentInstructions: {
+        title: 'Support étudiant',
+        items: [
+          'Pendant la première écoute, notez seulement le thème général.',
+          'Pendant la deuxième écoute, complétez trois colonnes: mots-clés / chiffres ou dates / exemples.',
+          'Ne rédigez pas des phrases complètes.',
+          'Avec un binôme, préparez une synthèse de 60 secondes: sujet, deux informations importantes, un exemple.',
+        ],
+      },
+      teacherGuide: {
+        title: 'Guide professeur',
+        items: [
+          'Utiliser uniquement une vidéo libre, créée par l’enseignant ou autorisée pour la classe.',
+          'Si les droits ne sont pas clairs, garder la ressource comme gabarit et remplacer le support.',
+          'Point de vigilance: les apprenants B2 écrivent souvent trop; valoriser les mots-clés.',
+        ],
+      },
+      answerKey: {
+        title: 'Critères de réussite',
+        items: [
+          'Les notes distinguent mots-clés, chiffres et exemples.',
+          'La synthèse ne suit pas mot à mot la vidéo.',
+          'La synthèse annonce le sujet et sélectionne deux informations importantes.',
+          'Les informations incertaines sont formulées avec prudence: il semble que, environ, selon la vidéo.',
+        ],
+      },
+      variants: {
+        title: 'Variantes',
+        items: [
+          'Simplification: utiliser un audio de 45 secondes produit par l’enseignant.',
+          'Complexification: demander une synthèse écrite de 80 mots après l’oral.',
+          'Autonomie: faire comparer deux grilles de notes anonymisées.',
+        ],
+      },
+      techNotes: {
+        title: 'Notes techniques',
+        items: [
+          'Utiliser une vidéo libre ou produite par l’enseignant.',
+          'Ne pas intégrer de vidéo protégée dans le dépôt; la fiche reste un gabarit si le support n’est pas libre.',
+        ],
+      },
     },
     versions: [
       {
@@ -1077,6 +1388,19 @@ export const demoResources: Resource[] = [
       privacyConsiderations: ['Vérifier les droits de la vidéo avant diffusion.'],
     },
     reviewSummary: { ...defaultReview, digitalReadinessScore: 3 },
+    usageFeedbacks: [
+      {
+        id: 'feedback-video-notes-b2',
+        authorName: 'Sarah, enseignante FLE',
+        context: 'Groupe B2, préparation à une synthèse orale courte',
+        actualDurationMinutes: 78,
+        groupLevel: 'B2',
+        whatWorked: 'La contrainte de 60 secondes force à sélectionner les informations.',
+        difficulties: 'La qualité dépend beaucoup du choix de la vidéo.',
+        suggestedChanges: 'Créer plus tard une version avec audio original fourni et droits clairs.',
+        createdAt: '2026-05-23',
+      },
+    ],
   },
   {
     id: 'b1-b2-atelier-ia-ameliorer-consigne',
@@ -1304,9 +1628,9 @@ export const demoResources: Resource[] = [
   },
   {
     id: 'c1-debat-traduction-automatique',
-    title: 'Débat: traduction automatique et apprentissage des langues',
+    title: 'C1: débattre de la traduction automatique',
     summary:
-      'Débat C1 sur les apports, limites et usages responsables de la traduction automatique.',
+      'Débat C1 adaptable avec affirmations fictives, grille d’arguments et garde-fous sur les données.',
     level: 'C1',
     durationMinutes: 90,
     durationCategory: '60_120_min',
@@ -1319,8 +1643,8 @@ export const demoResources: Resource[] = [
     resourceTemplate: 'document_declencheur',
     activityFormat: 'classe_entiere',
     classroomMode: 'hybride',
-    status: 'brouillon',
-    reuseReadiness: 'a_adapter',
+    status: 'utilisable',
+    reuseReadiness: 'pret_a_tester',
     license: 'CC_BY',
     authors: ['Collectif demo FLE'],
     tags: ['traduction automatique', 'débat', 'C1'],
@@ -1328,21 +1652,73 @@ export const demoResources: Resource[] = [
     sourceType: 'document_cree',
     teacherPreparationLevel: 'moyen',
     createdAt: '2026-05-03',
-    updatedAt: '2026-05-20',
+    updatedAt: '2026-05-23',
     content: {
-      objectives: { title: 'Objectifs', items: ['Nuancer une position', 'Comparer usages et risques', 'Formuler une recommandation responsable'] },
-      lessonPlan: { title: 'Déroulé', items: ['Classer des affirmations.', 'Préparer arguments et concessions.', 'Débattre avec modération.', 'Rédiger une charte d’usage.'] },
-      variants: { title: 'Variantes', items: ['Variante sans outil: travailler uniquement sur des situations d’usage.'] },
+      objectives: {
+        title: 'Objectifs',
+        items: [
+          'Nuancer une position sur un outil langagier',
+          'Comparer bénéfices, limites et risques',
+          'Formuler une recommandation responsable pour l’apprentissage des langues',
+        ],
+      },
+      lessonPlan: {
+        title: 'Déroulé',
+        items: [
+          '10 min: classer des affirmations en accord / désaccord / à discuter.',
+          '15 min: préparer un argument, une concession et un exemple fictif.',
+          '30 min: débattre en deux groupes avec un modérateur.',
+          '20 min: rédiger une mini-charte d’usage responsable en cinq règles.',
+          '15 min: mise en commun et choix des formulations les plus nuancées.',
+        ],
+      },
+      studentInstructions: {
+        title: 'Support étudiant',
+        items: [
+          'Classez ces affirmations: La traduction automatique aide à comprendre un texte. / Elle empêche d’apprendre. / Elle est utile si on vérifie le résultat. / Elle pose problème avec des textes personnels.',
+          'Préparez: un argument pour, un argument contre, une concession.',
+          'Pendant le débat, utilisez au moins deux expressions: certes, néanmoins, à condition que, il faut distinguer.',
+          'Rédigez une règle de charte: On peut utiliser la traduction automatique pour..., mais il faut...',
+        ],
+      },
+      teacherGuide: {
+        title: 'Guide professeur',
+        items: [
+          'Ne pas demander aux apprenants de soumettre un texte personnel à un outil.',
+          'Privilégier des situations fictives: devoir maison, message administratif, lecture d’article.',
+          'Relancer avec: Qu’est-ce qui aide l’apprentissage ? Qu’est-ce qui le remplace ?',
+        ],
+      },
+      answerKey: {
+        title: 'Critères de réussite',
+        items: [
+          'L’apprenant formule une position nuancée, pas seulement pour ou contre.',
+          'Il distingue usage de compréhension, production, correction et vérification.',
+          'La charte mentionne au moins un garde-fou: données personnelles, vérification, non-substitution du travail.',
+          'Exemple: On peut utiliser un traducteur pour vérifier une hypothèse de sens, mais il faut comparer avec le contexte et retravailler la phrase soi-même.',
+        ],
+      },
+      variants: {
+        title: 'Variantes',
+        items: [
+          'Simplification B2: réduire à quatre affirmations et supprimer la charte finale.',
+          'Complexification C1+: ajouter une synthèse écrite argumentative de 150 mots.',
+          'Variante sans outil: travailler uniquement sur des situations d’usage fictives.',
+        ],
+      },
     },
     versions: [
       {
         id: 'traduction-auto-v01',
         versionNumber: '0.1',
-        label: 'version initiale',
-        changelog: ['Création du débat et des affirmations.'],
+        label: 'consignes clarifiées',
+        changelog: [
+          'Création du débat et des affirmations.',
+          'Ajout d’une grille d’arguments et de critères de charte responsable.',
+        ],
         createdAt: '2026-05-03',
         createdBy: 'Collectif demo FLE',
-        status: 'brouillon',
+        status: 'utilisable',
       },
     ],
     aiMetadata: {
@@ -1356,6 +1732,19 @@ export const demoResources: Resource[] = [
       safeguards: ['Travailler sur phrases fictives', 'Comparer plusieurs traductions', 'Demander une justification linguistique'],
     },
     reviewSummary: { ...defaultReview, aiReadinessScore: 3 },
+    usageFeedbacks: [
+      {
+        id: 'feedback-traduction-auto-c1',
+        authorName: 'Élise, enseignante FLE',
+        context: 'Groupe C1 universitaire, débat de fin de module',
+        actualDurationMinutes: 88,
+        groupLevel: 'C1',
+        whatWorked: 'La charte finale oblige le groupe à dépasser les opinions générales.',
+        difficulties: 'Le débat peut devenir trop technique si les outils sont comparés en détail.',
+        suggestedChanges: 'Recentrer sur les stratégies d’apprentissage plutôt que sur les performances des outils.',
+        createdAt: '2026-05-23',
+      },
+    ],
   },
   {
     id: 'mixte-creer-ressource-fle-ouverte',
@@ -1480,9 +1869,9 @@ export const demoResources: Resource[] = [
   },
   {
     id: 'a0-rituel-images-mots',
-    title: 'A0: rituel images-mots pour entrer dans le lexique',
+    title: 'A0: rituel images-mots en 12 minutes',
     summary:
-      'Rituel très court pour associer images, gestes et premiers mots sans support écrit complexe.',
+      'Rituel débutant sans texte complexe pour associer cinq mots de classe, images libres et gestes.',
     level: 'A0',
     durationMinutes: 12,
     durationCategory: 'moins_15_min',
@@ -1504,10 +1893,59 @@ export const demoResources: Resource[] = [
     sourceType: 'image',
     teacherPreparationLevel: 'faible',
     createdAt: '2026-05-06',
-    updatedAt: '2026-05-20',
+    updatedAt: '2026-05-23',
     content: {
-      objectives: { title: 'Objectifs', items: ['Comprendre cinq mots de classe', 'Associer un mot à une image ou un geste'] },
-      lessonPlan: { title: 'Déroulé', items: ['Montrer une image.', 'Dire le mot.', 'Faire répéter avec geste.', 'Retrouver l’image nommée.'] },
+      objectives: {
+        title: 'Objectifs',
+        items: [
+          'Comprendre cinq mots de classe',
+          'Associer un mot à une image ou un geste',
+          'Réagir à une consigne très courte sans passer par l’écrit',
+        ],
+      },
+      lessonPlan: {
+        title: 'Déroulé',
+        items: [
+          '2 min: montrer les cinq images et dire les mots.',
+          '3 min: faire répéter avec un geste associé.',
+          '3 min: dire un mot; les apprenants montrent ou touchent l’image.',
+          '2 min: enlever une image et demander: Qu’est-ce qui manque ?',
+          '2 min: refaire le rituel plus vite pour installer la mémorisation.',
+        ],
+      },
+      studentInstructions: {
+        title: 'Support étudiant',
+        items: [
+          'Écoutez le mot.',
+          'Montrez l’image.',
+          'Répétez avec le geste.',
+          'Mots proposés: stylo, cahier, table, porte, téléphone.',
+        ],
+      },
+      teacherGuide: {
+        title: 'Guide professeur',
+        items: [
+          'Utiliser uniquement des images originales, pictogrammes libres ou objets réels.',
+          'Ne pas demander de lecture au premier tour si le groupe est A0.',
+          'Point de vigilance: garder le rythme court; ce rituel peut revenir plusieurs fois dans la semaine.',
+        ],
+      },
+      answerKey: {
+        title: 'Critères de réussite',
+        items: [
+          'L’apprenant associe au moins trois mots à l’image ou à l’objet.',
+          'Il peut répéter deux mots de manière reconnaissable.',
+          'Il comprend la consigne Montrez... avec l’aide du geste.',
+        ],
+      },
+      variants: {
+        title: 'Variantes',
+        items: [
+          'Simplification: travailler seulement trois mots.',
+          'Complexification A1: ajouter C’est un / une...',
+          'Adaptation sans images: utiliser de vrais objets de la salle.',
+        ],
+      },
     },
     versions: [
       {
@@ -1521,6 +1959,19 @@ export const demoResources: Resource[] = [
       },
     ],
     reviewSummary: defaultReview,
+    usageFeedbacks: [
+      {
+        id: 'feedback-a0-images-mots',
+        authorName: 'Mina, enseignante FLE',
+        context: 'Groupe A0 adultes, première semaine',
+        actualDurationMinutes: 14,
+        groupLevel: 'A0',
+        whatWorked: 'Les objets réels fonctionnent mieux que les images quand le groupe est très débutant.',
+        difficulties: 'Téléphone est utile mais plus difficile à prononcer.',
+        suggestedChanges: 'Prévoir une variante avec seulement objets de classe faciles à montrer.',
+        createdAt: '2026-05-23',
+      },
+    ],
   },
 ]
 

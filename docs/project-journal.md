@@ -215,3 +215,12 @@ Journal chronologique synthÃ©tique des interventions importantes. Les dates so
 ## 2026-05-23 : Resynchronisation de la sp�cification UX avec la maquette v0
 - **Action** : Alignement de `docs/raw-resource-intake-form-spec.md` avec les microcopies finales du composant `ContributionSpacePage.tsx`.
 - **Statut** : Document de sp�cification mis � jour. Le parcours "Proposer une ressource" est stable pour la v0.
+## 2026-05-23 — Deuxième lot de ressources démo prêtes à réutiliser
+
+- Outil principal : Codex
+- Objectif : enrichir 7 ressources encore trop synthétiques pour passer le test du "prof pressé"
+- Résultat : ajout de supports étudiants exploitables, guides professeur concrets, corrigés ou critères, variantes et retours d'usage simulés pour cause/conséquence B1, phonétique [y]/[u], enquête B1, prise de notes vidéo B2, débat traduction automatique C1, exposé carte mentale B2 et rituel A0
+- Fichiers principaux : `src/data/demoResources.ts`, `PROJECT_STATE_FOR_LLMS.md`, `docs/project-journal.md`, `docs/non-regression-checklist.md`
+- Décisions : garder des ressources concises et fictives; privilégier les usages copier, imprimer, adapter avant toute sophistication technique
+- Limites volontaires : aucune fonctionnalité technique ajoutée, aucun changement de modèle, aucun contenu externe copié, aucun backend, aucune authentification, aucun Supabase, aucun upload, aucun appel IA réel
+- Commit associé si connu : commit en cours

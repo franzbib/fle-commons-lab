@@ -15,7 +15,7 @@ Fonctionnalites presentes:
 - accueil;
 - page Demo / Etat du projet;
 - bibliotheque de 18 ressources de demonstration;
-- ressources de demonstration partiellement realignees sur la doctrine enseignant: copier, imprimer, adapter et contribuer sans competence technique;
+- ressources de demonstration realignees progressivement sur la doctrine enseignant: copier, imprimer, adapter et contribuer sans competence technique;
 - recherche texte;
 - filtres pedagogiques, numeriques et IA;
 - fiches detail avec actions de copie et impression;
@@ -235,7 +235,7 @@ L'analyse du corpus Drive recommande de documenter ou d'etudier plus tard trois 
 - L'interface suit une lecture progressive: carte = decision rapide; fiche detail = prise en main puis blocs experts repliables.
 - L'interface publique doit privilegier le vocabulaire enseignant: copier, imprimer, proposer une ressource, corrige, guide professeur. Les termes Markdown, YAML, pull request, fork, build ou repository ne doivent pas devenir le parcours principal.
 - Les boutons de copie utilisent les sections existantes du modele (`studentInstructions`, `teacherGuide`, `answerKey`) et une transformation locale en texte propre; ils n'envoient aucune donnee.
-- Les ressources demo les plus representatives doivent renseigner clairement `studentInstructions`, `teacherGuide` et `answerKey` pour rendre les boutons de copie utiles immediatement.
+- Les ressources demo les plus representatives doivent renseigner clairement `studentInstructions`, `teacherGuide` et `answerKey` pour rendre les boutons de copie utiles immediatement. Deux lots editoriaux ont deja ete enrichis, dont grammaire cause/consequence, phonetique [y]/[u], enquete en classe, prise de notes video, traduction automatique, expose carte mentale et rituel A0.
 - Le prototype de proposition de ressource brute est visuel et non connecte: aucun stockage, aucune API, aucun `localStorage`.
 - Aucune information du modele n'a ete supprimee: les metadonnees, versions, retours, propositions, audit, IA, numerique, licence et acces restent disponibles.
 - Le corpus Google Drive observe sert uniquement de reference de conception pour gabarits et exemples fictifs; les documents sources ne doivent pas etre importes ni publies sans verification.
