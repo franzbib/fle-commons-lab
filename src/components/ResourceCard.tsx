@@ -20,6 +20,9 @@ export function ResourceCard({ resource }: ResourceCardProps) {
         <Badge tone="level">{resource.level}</Badge>
         <Badge>{formatResourceType(resource.resourceType)}</Badge>
         <Badge tone="status">{formatStatus(resource.status)}</Badge>
+        {resource.normalizationMetadata?.normalizationStatus === 'en_analyse' ? (
+          <Badge tone="status">Brouillon / Brut</Badge>
+        ) : null}
       </div>
       <h2>
         <a href={`#/resources/${resource.id}`}>{resource.title}</a>
