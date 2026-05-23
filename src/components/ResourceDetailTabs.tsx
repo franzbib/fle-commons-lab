@@ -92,6 +92,7 @@ export function ResourceDetailTabs({ tabs, defaultTabId }: ResourceDetailTabsPro
         role="tabpanel"
         aria-labelledby={`${baseId}-${activeTab.id}-tab`}
       >
+        <h2 className="print-view-title">{activeTab.label}</h2>
         <p className="tab-description">{activeTab.description}</p>
         {activeTab.content}
       </div>

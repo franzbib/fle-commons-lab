@@ -53,9 +53,26 @@ L'impression actuelle est volontairement simple:
 - la navigation est masquee;
 - les boutons d'action sont masques;
 - la vue active reste lisible;
+- un titre imprime indique la vue active;
 - les blocs pedagogiques evitent les coupures disgracieuses.
+- les fonds colores sont reduits pour rester lisibles en noir et blanc.
 
 L'objectif n'est pas encore de produire un PDF parfait. L'enseignant peut utiliser la fonction d'impression du navigateur pour imprimer ou enregistrer en PDF si son systeme le permet.
+
+Limites de `window.print`:
+
+- le rendu depend du navigateur;
+- les marges finales dependent du systeme;
+- l'application ne controle pas le nom du fichier si l'utilisateur imprime en PDF;
+- seule la vue active est imprimee, ce qui oblige a choisir consciemment entre fiche apprenant et notes professeur.
+
+## Recommandations pour les ressources longues
+
+- Garder les consignes apprenant courtes et directement utilisables.
+- Placer les corriges et criteres dans `answerKey`, pas dans `studentInstructions`.
+- Placer les consignes d'animation dans `teacherGuide` ou `lessonPlan`.
+- Eviter les blocs uniques trop longs: preferer plusieurs items courts.
+- Verifier que les notes IA/numeriques restent dans l'espace professeur quand elles ne sont pas necessaires aux apprenants.
 
 ## Exports futurs
 

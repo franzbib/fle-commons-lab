@@ -661,6 +661,10 @@ button:disabled {
   gap: 18px;
 }
 
+.print-view-title {
+  display: none;
+}
+
 .tab-description,
 .learner-mode-note {
   border: 1px solid var(--border);
@@ -1043,6 +1047,7 @@ button:disabled {
     background: white;
     color: #111111;
     font-size: 11pt;
+    line-height: 1.45;
   }
 
   .site-header,
@@ -1076,6 +1081,40 @@ button:disabled {
     font-size: 12pt;
   }
 
+  h1,
+  h2,
+  h3,
+  summary {
+    break-after: avoid-page;
+    page-break-after: avoid;
+  }
+
+  p,
+  li,
+  dd {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .print-view-title {
+    display: block;
+    margin: 0 0 8pt;
+    border-bottom: 1px solid #999999;
+    padding-bottom: 6pt;
+    font-family: var(--font-mono);
+    font-size: 13pt;
+    text-transform: uppercase;
+  }
+
+  .tab-description,
+  .learner-mode-note,
+  .warning-note,
+  .non-persistent-note {
+    background: white;
+    border-color: #bbbbbb;
+    color: #111111;
+  }
+
   .detail-hero,
   .detail-section,
   .resource-tab-panel,
@@ -1083,7 +1122,7 @@ button:disabled {
   .content-section,
   .feedback-card {
     break-inside: avoid;
-    border: 1px solid #999999;
+    border: 1px solid #bbbbbb;
     box-shadow: none;
     page-break-inside: avoid;
   }
@@ -1091,12 +1130,12 @@ button:disabled {
   .detail-hero,
   .detail-section,
   .collapsible-content {
-    padding: 12pt;
+    padding: 10pt;
   }
 
   .collapsible-section summary {
-    border-bottom: 1px solid #999999;
-    padding: 10pt 12pt;
+    border-bottom: 1px solid #bbbbbb;
+    padding: 8pt 10pt;
   }
 
   .collapsible-section,
@@ -1114,14 +1153,27 @@ button:disabled {
 
   .detail-grid,
   .quick-facts,
-  .content-grid,
   .score-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 10pt;
+  }
+
+  .content-section {
+    padding: 10pt;
+  }
+
+  .content-section ul,
+  .timeline ul {
+    margin-bottom: 0;
+  }
+
   .badge,
   .tag-list span {
-    border-color: #999999;
+    border-color: #bbbbbb;
     color: #111111;
     background: white;
   }

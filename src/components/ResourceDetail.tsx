@@ -189,9 +189,9 @@ function LearnerTab({ resource }: { resource: Resource }) {
       </div>
 
       <ResourceViewActions
-        copyLabel="Copier le contenu apprenant"
+        copyLabel="Copier la fiche apprenant"
         copyText={formatLearnerViewForCopy(resource)}
-        printLabel="Imprimer le contenu apprenant"
+        printLabel="Imprimer la fiche apprenant"
       />
 
       <section className="detail-section learner-content-section">

@@ -50,6 +50,7 @@ Fonctionnalites presentes:
 - divulgation progressive appliquee a l'interface: cartes ressource allegees, filtres avances repliables et sections de detail consultables a la demande.
 - separation apprenant / enseignant documentee dans `docs/ux-resource-tabs.md`; le contenu apprenant masque les corriges, notes professeur, retours d'usage et audit simule.
 - styles d'impression dedies pour rendre les fiches ressources plus lisibles sur papier.
+- notes QA impression dans `docs/print-qa-notes.md` pour les ressources longues et les limites de `window.print`.
 - analyse exploratoire d'un corpus Google Drive dans `docs/drive-corpus-analysis.md`, a utiliser comme reference de conception et non comme source publiable par defaut.
 - document produit `docs/horizon-reception-product-consequences.md`, qui formalise les consequences de l'horizon de reception FLE : infrastructure technique invisible, priorite au copier-coller, aux exports, a l'impression propre, aux formulaires simples et a la contribution non technique.
 - audit editorial transversal dans `docs/editorial-copy-audit.md` pour aligner les pages visibles et la documentation sur l'etat reel du projet.
@@ -163,6 +164,7 @@ docs/
   horizon-reception-product-consequences.md
   markdown-resource-format.md
   project-journal.md
+  print-qa-notes.md
   prompting-rules.md
   raw-resource-intake-form-spec.md
   resource-model.md
@@ -246,6 +248,7 @@ L'analyse du corpus Drive recommande de documenter ou d'etudier plus tard trois 
 - Les fiches detail utilisent des onglets locaux pour separer la decision rapide, le contenu projetable aux apprenants et l'espace enseignant avec corriges, notes, retours et audit.
 - L'onglet `Contenu apprenant` ne doit jamais afficher les corriges, le guide professeur, les retours d'usage, l'audit simule ou les notes internes.
 - Les actions de copie/impression restent locales: `navigator.clipboard.writeText` et `window.print`; elles ne generent pas de PDF/Word et n'envoient aucune donnee.
+- L'impression navigateur imprime la vue active avec un titre de vue, en gardant les boutons et la navigation hors impression; la fiche apprenant imprimee ne contient pas les corriges.
 - L'interface publique doit privilegier le vocabulaire enseignant: copier, imprimer, proposer une ressource, corrige, guide professeur. Les termes Markdown, YAML, pull request, fork, build ou repository ne doivent pas devenir le parcours principal.
 - Les pages visibles doivent distinguer explicitement ce qui fonctionne, ce qui est simule, ce qui est conceptuel et ce qui reste en roadmap.
 - Les boutons de copie utilisent les sections existantes du modele (`studentInstructions`, `teacherGuide`, `answerKey`) et une transformation locale en texte propre; ils n'envoient aucune donnee.

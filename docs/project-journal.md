@@ -254,3 +254,13 @@ Journal chronologique synthÃ©tique des interventions importantes. Les dates so
 - Décisions : utiliser seulement `navigator.clipboard.writeText` et `window.print`; garder la séparation apprenant/professeur; différer les exports PDF et Word.
 - Limites volontaires : aucun backend, aucune génération de fichier, aucun stockage, aucune authentification, aucune dépendance lourde, aucun appel IA réel.
 - Commit associé si connu : commit en cours
+
+## 2026-05-23 — Stabilisation impression des vues ressource longues
+
+- Outil principal : Codex
+- Objectif : améliorer la lisibilité de l'impression navigateur pour les fiches longues sans créer d'export PDF/Word.
+- Résultat : titre imprimé de la vue active, contenu pédagogique en une colonne, bordures et fonds assagis, règles de coupure de page renforcées et notes QA dédiées.
+- Fichiers principaux : `src/components/ResourceDetailTabs.tsx`, `src/components/ResourceDetail.tsx`, `src/styles/global.css`, `docs/export-and-print-strategy.md`, `docs/print-qa-notes.md`, `PROJECT_STATE_FOR_LLMS.md`, `docs/non-regression-checklist.md`.
+- Décisions : continuer à imprimer seulement la vue active; garder `window.print`; ne pas générer de fichier; vérifier la séparation stricte apprenant/professeur.
+- Limites volontaires : aucun export PDF/Word, aucun backend, aucune dépendance lourde, aucun changement du modèle `Resource`, aucune authentification, aucun appel IA réel.
+- Commit associé si connu : commit en cours

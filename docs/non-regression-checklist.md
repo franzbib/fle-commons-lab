@@ -124,3 +124,12 @@
 - La copie ou l'impression du contenu apprenant ne doit pas inclure le corrigé, le guide professeur, les retours d'usage, l'audit simulé ou les notes IA/numériques détaillées.
 - La copie des notes professeur peut inclure guide, corrigé, variantes, notes d'usage, notes IA/numériques utiles et retours d'usage.
 - Les boutons d'action doivent être masqués à l'impression.
+
+## QA Impression Ressources Longues
+
+- Tester au moins une fiche longue avec contenu apprenant, une fiche avec corrigé/guide développé et une fiche avec notes IA ou numériques.
+- L'impression doit afficher un titre de vue clair: fiche apprenant ou notes prof.
+- Les boutons, la navigation, les filtres et actions non pertinentes doivent être masqués à l'impression.
+- Les bordures et fonds doivent rester lisibles en noir et blanc.
+- Le contenu imprimé doit rester sur une colonne quand la lecture pédagogique prime sur la densité.
+- Les titres de sections ne doivent pas être volontairement isolés en bas de page.
