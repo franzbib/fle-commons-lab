@@ -53,6 +53,7 @@ Fonctionnalites presentes:
 - styles d'impression dedies pour rendre les fiches ressources plus lisibles sur papier.
 - notes QA impression dans `docs/print-qa-notes.md` pour les ressources longues et les limites de `window.print`.
 - documentation des alertes de preparation enseignant dans `docs/teacher-preparation-alerts.md`.
+- trace d'absence du rapport `docs/teacher-quick-test-report.md` dans `docs/teacher-quick-test-report-missing.md`; les corrections prioritaires connues ont ete traitees par `178cf04`.
 - analyse exploratoire d'un corpus Google Drive dans `docs/drive-corpus-analysis.md`, a utiliser comme reference de conception et non comme source publiable par defaut.
 - document produit `docs/horizon-reception-product-consequences.md`, qui formalise les consequences de l'horizon de reception FLE : infrastructure technique invisible, priorite au copier-coller, aux exports, a l'impression propre, aux formulaires simples et a la contribution non technique.
 - audit editorial transversal dans `docs/editorial-copy-audit.md` pour aligner les pages visibles et la documentation sur l'etat reel du projet.
@@ -175,6 +176,7 @@ docs/
   resource-model.md
   technology-and-ai.md
   teacher-preparation-alerts.md
+  teacher-quick-test-report-missing.md
   ui-implementation-notes.md
   ux-information-architecture.md
   ux-progressive-disclosure.md

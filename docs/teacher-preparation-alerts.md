@@ -13,6 +13,12 @@ Le test "prof presse" montre qu'une ressource peut etre pedagogiquement claire m
 
 Ces alertes rendent ces gestes visibles avant l'entree en classe.
 
+## Trace du rapport de recette
+
+Le rapport mentionne sous le nom `docs/teacher-quick-test-report.md` n'a pas ete retrouve sur les branches accessibles lors de la verification du 2026-05-23. Voir `docs/teacher-quick-test-report-missing.md`.
+
+Les points connus du rapport ont tout de meme ete traites dans le commit `178cf04 ux: add teacher preparation alerts to resource views`.
+
 ## Types d'alertes
 
 La v0 prevoit des types simples:

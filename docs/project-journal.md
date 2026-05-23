@@ -284,3 +284,13 @@ Journal chronologique synthÃ©tique des interventions importantes. Les dates so
 - Decisions : afficher un resume en vue d'ensemble et les alertes completes dans `Corriges & Notes prof`; ne jamais les afficher dans `Contenu apprenant`.
 - Limites volontaires : aucun backend, aucune notification, aucun export, aucune auth, aucun Supabase, aucun appel IA reel, aucune dependance lourde.
 - Commit associe si connu : commit en cours
+
+## 2026-05-23 — Recherche du rapport Prof presse
+
+- Outil principal : Codex
+- Objectif : recuperer `docs/teacher-quick-test-report.md` depuis une branche distante si le rapport existait hors de `main`.
+- Resultat : le fichier exact n'a pas ete retrouve sur `main`, `origin/main`, `origin/exploring-resource-conversion-methodology` ni `backup/teacher-reuse-work-before-sync`; creation de `docs/teacher-quick-test-report-missing.md` pour documenter l'absence.
+- Fichiers principaux : `docs/teacher-quick-test-report-missing.md`, `docs/teacher-preparation-alerts.md`, `PROJECT_STATE_FOR_LLMS.md`, `docs/project-journal.md`.
+- Decisions : ne pas inventer le rapport; documenter que les points connus du brief ont ete traites par le commit `178cf04`.
+- Limites volontaires : aucune fusion de branche, aucune modification applicative, aucun changement du modele, aucun backend, aucune auth, aucun Supabase, aucun appel IA reel.
+- Commit associe si connu : commit en cours
