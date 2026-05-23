@@ -19,6 +19,9 @@ export function ResourceCard({ resource }: ResourceCardProps) {
         <Badge>{formatResourceType(resource.resourceType)}</Badge>
         <Badge>{formatResourceTemplate(resource.resourceTemplate)}</Badge>
         <Badge tone="status">{formatStatus(resource.status)}</Badge>
+        {resource.normalizationMetadata?.normalizationStatus === 'en_analyse' ? (
+          <Badge tone="status">Brouillon / Brut</Badge>
+        ) : null}
         {resource.techMetadata?.usesDigitalTool ? <Badge>Numérique</Badge> : null}
         {resource.aiMetadata?.usesAI ? <Badge>IA documentée</Badge> : null}
       </div>
