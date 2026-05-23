@@ -141,3 +141,33 @@ Ce fichier consigne les décisions structurantes du projet. Une décision active
 - Conséquences : cartes allégées, tags limités avec compteur, filtres avancés repliables, sections détail consultables à la demande.
 - Ce qu'il ne faut pas faire sans nouvelle décision : supprimer des champs pour simplifier l'interface, masquer définitivement les données expertes ou ajouter un moteur de préférences utilisateur.
 - Documents liés : `docs/ux-progressive-disclosure.md`, `docs/ux-information-architecture.md`
+
+## Décision 15 — Rendre l'infrastructure technique invisible pour l'usage enseignant
+
+- Statut : active
+- Contexte : l'horizon de réception du projet montre que la majorité des enseignants de FLE cherche d'abord une ressource claire, copiable, adaptable et imprimable, non une interface technique.
+- Décision : Markdown, YAML, GitHub et les pull requests doivent rester des couches internes ou expertes, et ne pas structurer l'expérience principale de consultation ou de contribution ordinaire.
+- Raisons : éviter le découragement par la technique, respecter la culture professionnelle FLE fondée sur Word, PDF, Google Drive, copier-coller et adaptation rapide.
+- Conséquences : l'interface publique doit prioriser filtres CECRL, lisibilité immédiate, copie, exports, impression, formulaires simples et retours d'usage courts.
+- Ce qu'il ne faut pas faire sans nouvelle décision : demander aux enseignants ordinaires de contribuer via Git, YAML ou Markdown brut ; exposer le frontmatter dans les parcours publics ; faire dépendre la contribution d'une pull request.
+- Documents liés : `docs/horizon-reception-product-consequences.md`, `docs/ux-progressive-disclosure.md`, `docs/contribution-space-concept.md`
+
+## Décision 16 — Faire de la normalisation non technique un axe central du projet
+
+- Statut : active / à implémenter progressivement
+- Contexte : le projet vise une communauté de FLE dans laquelle beaucoup d'enseignants disposent de ressources utiles mais hétérogènes, incomplètes ou techniquement non normalisées.
+- Décision : prévoir un sas de normalisation capable d'accueillir des ressources brutes et de les transformer en ressources structurées après relecture humaine.
+- Raisons : permettre la contribution sans compétence technique et enrichir le commun sans exiger une ressource parfaite dès le premier dépôt.
+- Conséquences : les contributions reconnues pourront inclure ressource brute, plan de séance, corrigé séparé, retour d'usage, adaptation, relecture et participation à la normalisation.
+- Ce qu'il ne faut pas faire sans nouvelle décision : publication automatique sans validation pédagogique, linguistique et juridique ; upload ou stockage réel en v0 ; import automatique depuis Google Drive.
+- Documents liés : `docs/horizon-reception-product-consequences.md`, `docs/contribution-workflow-v0.md`, `docs/conversion-workflow.md`
+
+## Décision 17 — Adopter la réciprocité contributive comme direction communautaire
+
+- Statut : active / sans restriction réelle en v0
+- Contexte : le projet doit encourager la participation sans devenir un simple modèle payant ou fermé.
+- Décision : conserver l'idée suivante comme direction : accès de découverte gratuit, puis accès élargi associé à une contribution utile au commun pédagogique.
+- Raisons : soutenir le commun, valoriser les retours d'usage et éviter une consommation purement extractive.
+- Conséquences : les futurs niveaux d'accès devront reconnaître des contributions diverses, non seulement des ressources complètes.
+- Ce qu'il ne faut pas faire sans nouvelle décision : activer un paywall, imposer un paiement, restreindre réellement les ressources en v0 ou confondre contribution et compétence technique.
+- Documents liés : `docs/access-and-sustainability-model.md`, `docs/community-model.md`, `docs/horizon-reception-product-consequences.md`
