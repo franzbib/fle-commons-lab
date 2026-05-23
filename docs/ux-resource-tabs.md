@@ -25,6 +25,7 @@ Cette vue aide a decider rapidement si la ressource convient:
 - modalite;
 - materiel;
 - apercu court du deroule;
+- preparation pratique resumee si la ressource demande cartes, media, groupes ou impression;
 - metadonnees completes consultables a la demande.
 
 Les actions de copie restent visibles dans cette vue, car elle correspond a la prise en main par l'enseignant.
@@ -59,9 +60,12 @@ Cette vue rassemble ce qui est reserve a l'enseignant:
 - retours d'usage;
 - propositions d'amelioration;
 - notes IA et numeriques;
+- alertes de preparation enseignant;
 - licence, acces, versions et audit simule.
 
 Ces informations restent accessibles, mais elles ne polluent plus l'espace apprenant.
+
+Les alertes de preparation sont reservees a l'enseignant: elles peuvent signaler du materiel a preparer, une video a tester, des cartes a decouper ou une organisation de groupe. Elles ne doivent pas apparaitre dans l'onglet apprenant.
 
 Actions disponibles:
 

@@ -274,3 +274,13 @@ Journal chronologique synthÃ©tique des interventions importantes. Les dates so
 - Decisions : ameliorer les donnees locales sans toucher au modele, aux onglets, au backend ou a l'architecture; garder les ressources concises et fictives.
 - Limites volontaires : aucune fonctionnalite technique ajoutee, aucun contenu protege, aucune dependance, aucun backend, aucun Supabase, aucune authentification, aucun appel IA reel.
 - Commit associe si connu : commit en cours
+
+## 2026-05-23 — Alertes pratiques de preparation enseignant
+
+- Outil principal : Codex
+- Objectif : rendre visibles les points logistiques du test prof presse sans alourdir la fiche apprenant.
+- Resultat : ajout du champ optionnel `preparationAlerts`, du composant `TeacherPreparationAlerts`, d'alertes pour cause/consequence B1, enquete B1, prise de notes video B2 et rituel A0, et documentation dediee.
+- Fichiers principaux : `src/types/resource.ts`, `src/components/TeacherPreparationAlerts.tsx`, `src/components/ResourceDetail.tsx`, `src/data/demoResources.ts`, `docs/teacher-preparation-alerts.md`, `docs/resource-model.md`, `PROJECT_STATE_FOR_LLMS.md`.
+- Decisions : afficher un resume en vue d'ensemble et les alertes completes dans `Corriges & Notes prof`; ne jamais les afficher dans `Contenu apprenant`.
+- Limites volontaires : aucun backend, aucune notification, aucun export, aucune auth, aucun Supabase, aucun appel IA reel, aucune dependance lourde.
+- Commit associe si connu : commit en cours

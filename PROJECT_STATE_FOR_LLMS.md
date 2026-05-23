@@ -21,6 +21,7 @@ Fonctionnalites presentes:
 - fiches detail avec actions de copie et impression;
 - fiches detail organisees en onglets: vue d'ensemble, contenu apprenant, corriges & notes prof;
 - actions locales de copie et d'impression pour le contenu apprenant et les notes professeur, sans generation de PDF/Word;
+- alertes pratiques de preparation enseignant dans la vue d'ensemble et les notes prof, jamais dans le contenu apprenant;
 - collections locales et pages detail de collection;
 - propositions d'amelioration simulees dans certaines fiches;
 - retours d'usage simules mieux visibles;
@@ -51,6 +52,7 @@ Fonctionnalites presentes:
 - separation apprenant / enseignant documentee dans `docs/ux-resource-tabs.md`; le contenu apprenant masque les corriges, notes professeur, retours d'usage et audit simule.
 - styles d'impression dedies pour rendre les fiches ressources plus lisibles sur papier.
 - notes QA impression dans `docs/print-qa-notes.md` pour les ressources longues et les limites de `window.print`.
+- documentation des alertes de preparation enseignant dans `docs/teacher-preparation-alerts.md`.
 - analyse exploratoire d'un corpus Google Drive dans `docs/drive-corpus-analysis.md`, a utiliser comme reference de conception et non comme source publiable par defaut.
 - document produit `docs/horizon-reception-product-consequences.md`, qui formalise les consequences de l'horizon de reception FLE : infrastructure technique invisible, priorite au copier-coller, aux exports, a l'impression propre, aux formulaires simples et a la contribution non technique.
 - audit editorial transversal dans `docs/editorial-copy-audit.md` pour aligner les pages visibles et la documentation sur l'etat reel du projet.
@@ -111,6 +113,7 @@ src/
     ResourceCard.tsx
     ResourceDetail.tsx
     ResourceDetailTabs.tsx
+    TeacherPreparationAlerts.tsx
     ResourceFilters.tsx
     CollapsibleSection.tsx
     CompactTagList.tsx
@@ -171,6 +174,7 @@ docs/
   raw-resource-intake-form-spec.md
   resource-model.md
   technology-and-ai.md
+  teacher-preparation-alerts.md
   ui-implementation-notes.md
   ux-information-architecture.md
   ux-progressive-disclosure.md
@@ -201,6 +205,7 @@ Types principaux:
 - `ResourceVersion`
 - `UsageFeedback`
 - `ResourceReviewSummary`
+- `PreparationAlert`
 - `TechMetadata`
 - `AiMetadata`
 - `ContributionSuggestion`
@@ -249,6 +254,7 @@ L'analyse du corpus Drive recommande de documenter ou d'etudier plus tard trois 
 - L'interface suit une lecture progressive: carte = decision rapide; fiche detail = prise en main puis blocs experts repliables.
 - Les fiches detail utilisent des onglets locaux pour separer la decision rapide, le contenu projetable aux apprenants et l'espace enseignant avec corriges, notes, retours et audit.
 - L'onglet `Contenu apprenant` ne doit jamais afficher les corriges, le guide professeur, les retours d'usage, l'audit simule ou les notes internes.
+- Les alertes de preparation enseignant sont optionnelles (`preparationAlerts`) et ne doivent jamais apparaitre dans l'onglet `Contenu apprenant`.
 - Les actions de copie/impression restent locales: `navigator.clipboard.writeText` et `window.print`; elles ne generent pas de PDF/Word et n'envoient aucune donnee.
 - L'impression navigateur imprime la vue active avec un titre de vue, en gardant les boutons et la navigation hors impression; la fiche apprenant imprimee ne contient pas les corriges.
 - L'interface publique doit privilegier le vocabulaire enseignant: copier, imprimer, proposer une ressource, corrige, guide professeur. Les termes Markdown, YAML, pull request, fork, build ou repository ne doivent pas devenir le parcours principal.

@@ -36,8 +36,25 @@ Champs facultatifs:
 - `reviewSummary`
 - `techMetadata`
 - `aiMetadata`
+- `preparationAlerts`
 - `contributionSuggestions`
 - `collectionIds`
+
+## Alertes de preparation enseignant
+
+`preparationAlerts` est un champ facultatif destine aux gestes pratiques avant la seance. Il aide un enseignant presse a reperer ce qu'il doit imprimer, decouper, tester, projeter ou organiser.
+
+Types d'alertes:
+
+- `materiel`;
+- `impression_decoupage`;
+- `media`;
+- `organisation`;
+- `temps_preparation`;
+- `vigilance`;
+- `impression`.
+
+Ces alertes s'affichent dans la vue d'ensemble et dans `Corriges & Notes prof`, jamais dans `Contenu apprenant`.
 
 ## Taxonomie Pédagogique
 

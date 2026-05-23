@@ -142,3 +142,12 @@
 - Les corriges peuvent etre fermes, critéries ou constitues d'exemples acceptables selon le type d'activite.
 - Les ressources enrichies doivent rester compatibles avec la copie et l'impression des onglets.
 - Aucun contenu externe ou protege ne doit etre introduit dans les supports demo.
+
+## Alertes De Preparation Enseignant
+
+- Les alertes de preparation restent facultatives et locales dans `preparationAlerts`.
+- Les alertes peuvent apparaitre dans la vue d'ensemble sous forme de resume discret.
+- Les alertes completes doivent apparaitre dans `Corriges & Notes prof`, pres du haut.
+- Les alertes professeur ne doivent jamais apparaitre dans `Contenu apprenant`.
+- L'impression de la fiche apprenant ne doit pas contenir les alertes professeur.
+- Les alertes ne remplacent pas les metadonnees `materialNeeded`, `teacherPreparationLevel`, `techMetadata` ou les notes pedagogiques.

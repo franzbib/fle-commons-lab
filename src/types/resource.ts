@@ -202,6 +202,16 @@ export const contributorStatuses = [
   'moderateur',
 ] as const
 
+export const preparationAlertTypes = [
+  'materiel',
+  'impression_decoupage',
+  'media',
+  'organisation',
+  'temps_preparation',
+  'vigilance',
+  'impression',
+] as const
+
 export type CefrLevel = (typeof cefrLevels)[number]
 export type DurationCategory = (typeof durationCategories)[number]
 export type ResourceSkill = (typeof resourceSkills)[number]
@@ -223,6 +233,7 @@ export type ContributionStatus = (typeof contributionStatuses)[number]
 export type CollectionVisibility = (typeof collectionVisibilities)[number]
 export type NormalizationStatus = (typeof normalizationStatuses)[number]
 export type ContributorStatus = (typeof contributorStatuses)[number]
+export type PreparationAlertType = (typeof preparationAlertTypes)[number]
 
 export type NormalizationMetadata = {
   originalFormat?: string
@@ -318,6 +329,12 @@ export type ContributionSuggestion = {
   createdAt: string
 }
 
+export type PreparationAlert = {
+  type: PreparationAlertType
+  label: string
+  detail: string
+}
+
 export type Collection = {
   id: string
   title: string
@@ -357,6 +374,7 @@ export type Resource = {
   materialNeeded: string[]
   sourceType: SourceType
   teacherPreparationLevel: TeacherPreparationLevel
+  preparationAlerts?: PreparationAlert[]
   createdAt: string
   updatedAt: string
   content: ResourceContent

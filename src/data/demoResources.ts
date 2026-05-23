@@ -858,6 +858,9 @@ export const demoResources: Resource[] = [
     materialNeeded: ['fiche imprimable'],
     sourceType: 'document_cree',
     teacherPreparationLevel: 'faible',
+    preparationAlerts: [
+      { type: 'impression', label: 'Fiche à imprimer ou projeter', detail: 'Prévoir une copie apprenant ou une projection du corpus court et des phrases à transformer.' },
+    ],
     createdAt: '2026-03-22',
     updatedAt: '2026-05-23',
     content: {
@@ -1203,6 +1206,11 @@ export const demoResources: Resource[] = [
     materialNeeded: ['cartes rôles', 'indices fictifs'],
     sourceType: 'document_cree',
     teacherPreparationLevel: 'moyen',
+    preparationAlerts: [
+      { type: 'impression_decoupage', label: 'Cartes rôles à préparer', detail: 'Imprimer ou recopier les rôles et alibis avant la séance; éviter de les afficher tous au tableau.' },
+      { type: 'organisation', label: 'Groupes à organiser', detail: 'Prévoir des groupes de 4 à 5 et une rotation courte pour les entretiens de témoins.' },
+      { type: 'vigilance', label: 'Indices à révéler progressivement', detail: 'Ne pas donner tous les indices dès le départ afin de préserver la phase de questionnement.' },
+    ],
     createdAt: '2026-04-15',
     updatedAt: '2026-05-23',
     content: {
@@ -1314,6 +1322,11 @@ export const demoResources: Resource[] = [
     materialNeeded: ['vidéo courte libre ou créée', 'grille de notes'],
     sourceType: 'video',
     teacherPreparationLevel: 'important',
+    preparationAlerts: [
+      { type: 'media', label: 'Vidéo courte à choisir', detail: 'Sélectionner une vidéo libre, créée ou autorisée; noter le lien ou le titre du support avant le cours.' },
+      { type: 'media', label: 'Son et projection à tester', detail: 'Vérifier le son, l’image, le mode plein écran et la possibilité de revoir le document deux fois.' },
+      { type: 'vigilance', label: 'Droits à vérifier', detail: 'Si les droits ne sont pas clairs, utiliser la fiche comme gabarit et remplacer le média.' },
+    ],
     createdAt: '2026-04-20',
     updatedAt: '2026-05-23',
     content: {
@@ -1910,6 +1923,11 @@ export const demoResources: Resource[] = [
     materialNeeded: ['images originales ou pictogrammes libres'],
     sourceType: 'image',
     teacherPreparationLevel: 'faible',
+    preparationAlerts: [
+      { type: 'materiel', label: 'Images ou objets à préparer', detail: 'Préparer cinq images libres, pictogrammes ou objets réels visibles de loin.' },
+      { type: 'vigilance', label: 'Consignes très courtes', detail: 'Limiter les consignes à écouter, montrer, répéter; accompagner chaque mot d’un geste stable.' },
+      { type: 'impression', label: 'Affichage clair', detail: 'Tester la taille des images si elles sont projetées ou imprimées.' },
+    ],
     createdAt: '2026-05-06',
     updatedAt: '2026-05-23',
     content: {

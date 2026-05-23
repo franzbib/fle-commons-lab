@@ -25,6 +25,7 @@ import { CollapsibleSection } from './CollapsibleSection'
 import { ResourceCopyActions } from './ResourceCopyActions'
 import { ResourceDetailTabs, type ResourceDetailTab } from './ResourceDetailTabs'
 import { ResourceViewActions } from './ResourceViewActions'
+import { TeacherPreparationAlerts } from './TeacherPreparationAlerts'
 import { formatLearnerViewForCopy, formatTeacherViewForCopy } from '../utils/resourceText'
 
 type ResourceDetailProps = {
@@ -131,6 +132,8 @@ function OverviewTab({
         </div>
       </section>
 
+      <TeacherPreparationAlerts resource={resource} variant="summary" />
+
       <ResourceCopyActions resource={resource} />
 
       <section className="detail-section">
@@ -210,6 +213,8 @@ function TeacherTab({ resource }: { resource: Resource }) {
         copyText={formatTeacherViewForCopy(resource)}
         printLabel="Imprimer les notes prof"
       />
+
+      <TeacherPreparationAlerts resource={resource} />
 
       <section className="detail-section">
         <h2>Animation, corrigés et variantes</h2>
