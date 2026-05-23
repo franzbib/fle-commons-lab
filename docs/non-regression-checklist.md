@@ -9,7 +9,8 @@
 - `npm run build` passe.
 - `npm run lint` passe si le lint est configuré.
 - `npm run test` passe si les tests sont configurés.
-- Les pages Accueil, Démo, Bibliothèque, Collections, Détail collection, Détail ressource, Communauté, Espace de contribution, Gabarits, Vision, Technologies et IA, Documentation s’affichent.
+- Les pages Accueil, Démo, Bibliothèque, Collections, Détail collection, Détail ressource, Communauté, Espace de contribution, Gabarits, Vision, Technologies et IA, Atelier IA & FLE, Documentation s’affichent.
+- L'accueil présente clairement les deux entrées principales: bibliothèque FLE et Atelier IA & FLE.
 
 ## Bibliothèque
 
@@ -101,6 +102,7 @@
 - Aucun document ne présente comme existante une fonctionnalité seulement future.
 - Les textes visibles distinguent clairement fonctionnalité active, donnée simulée, concept futur et élément de roadmap.
 - Les pages publiques ne laissent pas croire qu'une IA, un paiement, un compte ou un backend est actif.
+- L'accueil distingue ce qui est actif, expérimental et non actif.
 
 ## Identité visuelle
 

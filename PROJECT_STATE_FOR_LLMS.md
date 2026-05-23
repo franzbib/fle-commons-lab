@@ -12,7 +12,7 @@ Le depot contient une application locale Vite + React + TypeScript.
 
 Fonctionnalites presentes:
 
-- accueil;
+- accueil oriente autour de deux portes d'entree: bibliotheque de ressources FLE et Atelier IA & FLE;
 - page Demo / Etat du projet;
 - bibliotheque de 18 ressources de demonstration;
 - ressources de demonstration realignees progressivement sur la doctrine enseignant: copier, imprimer, adapter et contribuer sans competence technique;
@@ -284,6 +284,7 @@ L'analyse du corpus Drive recommande de documenter ou d'etudier plus tard trois 
 - Le prototype de proposition de ressource brute est visuel et non connecte: aucun stockage, aucune API, aucun `localStorage`.
 - L'Atelier IA & FLE est une bibliotheque statique d'usages, tutoriels, prompts modeles et exemples remplis a copier dans l'outil choisi par l'enseignant. Il ne contient aucun chatbot, aucun appel API IA, aucun stockage de prompts saisis et aucune collecte de donnees utilisateur. La page affiche un bandeau explicite pour eviter de croire que FLE Commons Lab execute les prompts.
 - Le garde-fou CECRL est obligatoire pour les prompts d'adaptation, correction, evaluation ou production par niveau: une IA fournit une hypothese de travail, jamais une validation de niveau.
+- La page d'accueil doit rester une table d'orientation sobre: chercher une ressource FLE, ouvrir l'Atelier IA & FLE, puis distinguer actif, experimental et non actif.
 - Aucune information du modele n'a ete supprimee: les metadonnees, versions, retours, propositions, audit, IA, numerique, licence et acces restent disponibles.
 - Le corpus Google Drive observe sert uniquement de reference de conception pour gabarits et exemples fictifs; les documents sources ne doivent pas etre importes ni publies sans verification.
 - `AGENTS.md` est le guide de travail prioritaire pour Codex, ChatGPT, Antigravity et autres LLM.

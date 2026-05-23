@@ -314,3 +314,13 @@ Journal chronologique synthÃ©tique des interventions importantes. Les dates so
 - Decisions : garder l'Atelier IA entierement statique; ne pas ajouter de champ de saisie traite, de chatbot, d'appel API ou de stockage; traiter le CECRL comme hypothese de travail a verifier humainement.
 - Limites volontaires : aucune IA reelle, aucune collecte, aucun backend, aucun Supabase, aucune authentification, aucun paiement, aucune dependance lourde.
 - Commit associe si connu : commit en cours
+
+## 2026-05-23 — Accueil clarifie autour des deux portes d'entree
+
+- Outil principal : Codex
+- Objectif : rendre la page d'accueil plus lisible en distinguant immediatement la bibliotheque de ressources FLE et l'Atelier IA & FLE.
+- Resultat : ajout de deux grandes cartes d'orientation et d'une section `Actif / Experimental / Non actif`.
+- Fichiers principaux : `src/pages/HomePage.tsx`, `src/styles/global.css`, `README.md`, `PROJECT_STATE_FOR_LLMS.md`, `docs/non-regression-checklist.md`.
+- Decisions : garder une page sobre, non commerciale, sans nouvelle fonctionnalite metier; clarifier ce qui fonctionne vraiment et ce qui reste futur ou conceptuel.
+- Limites volontaires : aucun backend, aucun Supabase, aucune authentification, aucun paiement, aucun appel IA, aucune collecte, aucune nouvelle dependance.
+- Commit associe si connu : commit en cours
