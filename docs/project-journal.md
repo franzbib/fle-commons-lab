@@ -210,3 +210,8 @@ Journal chronologique synthÃƒÂ©tique des interventions importantes. Les dates so
 - **Action** : Correction lexicale (ContributionSpacePage.tsx).
 - **Décision** : Remplacement des termes trop internes ('sas', 'modérateurs') par un vocabulaire enseignant ('mise au propre', 'équipe de relecture'). La case des droits n'est plus cochée par défaut. Le bouton d'envoi affiche explicitement 'Terminer la démonstration'.
 - **Statut** : Maquette v0 ajustée.
+
+
+## 2026-05-23 : Resynchronisation de la spécification UX avec la maquette v0
+- **Action** : Alignement de `docs/raw-resource-intake-form-spec.md` avec les microcopies finales du composant `ContributionSpacePage.tsx`.
+- **Statut** : Document de spécification mis à jour. Le parcours "Proposer une ressource" est stable pour la v0.

@@ -37,7 +37,7 @@ Le formulaire est pensé comme un tunnel en 5 étapes.
 *But : Récupérer la matière brute sans exiger de mise en forme.*
 
 - **Titre affiché** : "Collez votre contenu"
-- **Microcopie d'aide** : "Ne vous souciez pas de la mise en page. Nos modérateurs se chargeront de tout remettre au propre."
+- **Microcopie d'aide** : "L'équipe de relecture pourra ensuite aider à structurer la ressource."
 - **Champs** :
   - **Zone de texte libre (Textarea grand format) [Obligatoire]** : "Collez ici votre texte, vos consignes, ou décrivez votre activité..."
   - **Zone de dépôt de fichier (Optionnel, futur)** : "Ou glissez un fichier Word/PDF ici."
@@ -71,7 +71,7 @@ Le formulaire est pensé comme un tunnel en 5 étapes.
 - **Microcopie d'aide** : "Votre aide permet au projet de rester gratuit et indépendant. Ce dépôt comptera comme une participation active."
 - **Champs** :
   - **Pseudonyme ou Prénom (Champ texte) [Facultatif]** : "Sous quel nom souhaitez-vous être crédité ?"
-  - **Bouton d'envoi final** : `Envoyer au Sas de Mise au propre`
+  - **Bouton d'envoi final** : `Terminer la démonstration`
 
 ---
 
@@ -93,7 +93,7 @@ Lorsque l'enseignant consultera plus tard la liste de ses contributions, les sta
 
 | Statut Technique (`NormalizationStatus`) | Affichage Interface (Professeur) | Explication (Tooltip) |
 |------------------------------------------|----------------------------------|------------------------|
-| `soumise` | **Bien reçu !** | "Votre proposition est bien arrivée dans notre sas." |
+| `soumise` | **Bien reçu !** | "Votre proposition a bien été reçue." |
 | `en_analyse` | **À clarifier** | "Nous avons une question sur votre dépôt (ex: droits d'auteur)." |
 | `en_normalisation` | **Mise en page en cours** | "L'équipe structure votre brouillon au format du site." |
 | `en_relecture` | **Relecture croisée** | "Un autre professeur vérifie la cohérence pédagogique." |
@@ -111,7 +111,7 @@ Lorsque l'enseignant consultera plus tard la liste de ses contributions, les sta
 ### Profil B : Karim, enseignant expérimenté (Séquence complexe)
 - **Situation** : Il a une séquence géniale sur l'écologie (4 pages de texte).
 - **Parcours** : Il choisit "Activité ou séquence" (Étape 1). Il copie-colle brutalement ses 4 pages Word dans la zone (Étape 2). Il indique "B2" (Étape 3) et "Création personnelle" (Étape 4).
-- **Résultat** : Il n'a pas eu à s'arracher les cheveux sur la mise en page web. Le sas transformera ses 4 pages en sections structurées (`objectives`, `lessonPlan`, etc.).
+- **Résultat** : Il n'a pas eu à s'arracher les cheveux sur la mise en page web. L'équipe de relecture aidera à structurer ses 4 pages en sections (`objectives`, `lessonPlan`, etc.).
 
 ### Profil C : Sofia (Retour d'usage)
 - **Situation** : Elle a testé le "Jeu du Monstre". Elle veut juste dire que ça a pris 30min au lieu de 20min.
