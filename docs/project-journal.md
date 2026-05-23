@@ -264,3 +264,13 @@ Journal chronologique synthÃ©tique des interventions importantes. Les dates so
 - Décisions : continuer à imprimer seulement la vue active; garder `window.print`; ne pas générer de fichier; vérifier la séparation stricte apprenant/professeur.
 - Limites volontaires : aucun export PDF/Word, aucun backend, aucune dépendance lourde, aucun changement du modèle `Resource`, aucune authentification, aucun appel IA réel.
 - Commit associé si connu : commit en cours
+
+## 2026-05-23 — Passe editoriale prof presse sur 7 ressources demo
+
+- Outil principal : Codex
+- Objectif : rendre 7 ressources de demonstration plus directement exploitables en classe avec les vues apprenant/professeur, la copie et l'impression.
+- Resultat : enrichissement des supports apprenants, guides professeur, corriges/criteres et consignes de reutilisation pour cause/consequence B1, phonetique [y]/[u], enquete B1, prise de notes video B2, expose carte mentale B2, debat traduction automatique C1 et rituel A0 images-mots.
+- Fichiers principaux : `src/data/demoResources.ts`, `docs/editorial-quality-notes.md`, `PROJECT_STATE_FOR_LLMS.md`, `docs/non-regression-checklist.md`, `docs/project-journal.md`.
+- Decisions : ameliorer les donnees locales sans toucher au modele, aux onglets, au backend ou a l'architecture; garder les ressources concises et fictives.
+- Limites volontaires : aucune fonctionnalite technique ajoutee, aucun contenu protege, aucune dependance, aucun backend, aucun Supabase, aucune authentification, aucun appel IA reel.
+- Commit associe si connu : commit en cours

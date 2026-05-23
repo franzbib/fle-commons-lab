@@ -133,3 +133,12 @@
 - Les bordures et fonds doivent rester lisibles en noir et blanc.
 - Le contenu imprimé doit rester sur une colonne quand la lecture pédagogique prime sur la densité.
 - Les titres de sections ne doivent pas être volontairement isolés en bas de page.
+
+## Qualite Editoriale Des Ressources Demo
+
+- Les ressources de demonstration enrichies doivent rester courtes, originales et pedagogiquement plausibles.
+- Chaque ressource representative doit garder une separation nette entre `studentInstructions`, `teacherGuide` et `answerKey`.
+- Le contenu apprenant ne doit contenir ni corrige, ni note professeur, ni retour d'usage.
+- Les corriges peuvent etre fermes, critéries ou constitues d'exemples acceptables selon le type d'activite.
+- Les ressources enrichies doivent rester compatibles avec la copie et l'impression des onglets.
+- Aucun contenu externe ou protege ne doit etre introduit dans les supports demo.

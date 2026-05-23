@@ -54,6 +54,7 @@ Fonctionnalites presentes:
 - analyse exploratoire d'un corpus Google Drive dans `docs/drive-corpus-analysis.md`, a utiliser comme reference de conception et non comme source publiable par defaut.
 - document produit `docs/horizon-reception-product-consequences.md`, qui formalise les consequences de l'horizon de reception FLE : infrastructure technique invisible, priorite au copier-coller, aux exports, a l'impression propre, aux formulaires simples et a la contribution non technique.
 - audit editorial transversal dans `docs/editorial-copy-audit.md` pour aligner les pages visibles et la documentation sur l'etat reel du projet.
+- notes de qualite editoriale des ressources demo dans `docs/editorial-quality-notes.md`.
 - specification du formulaire de depot brut dans `docs/raw-resource-intake-form-spec.md`; le composant visible reste une maquette locale non connectee.
 
 Le dossier local est un depot Git rattache a:
@@ -160,6 +161,7 @@ docs/
   export-and-print-strategy.md
   drive-corpus-analysis.md
   editorial-copy-audit.md
+  editorial-quality-notes.md
   git-sync-audit.md
   horizon-reception-product-consequences.md
   markdown-resource-format.md
@@ -252,7 +254,7 @@ L'analyse du corpus Drive recommande de documenter ou d'etudier plus tard trois 
 - L'interface publique doit privilegier le vocabulaire enseignant: copier, imprimer, proposer une ressource, corrige, guide professeur. Les termes Markdown, YAML, pull request, fork, build ou repository ne doivent pas devenir le parcours principal.
 - Les pages visibles doivent distinguer explicitement ce qui fonctionne, ce qui est simule, ce qui est conceptuel et ce qui reste en roadmap.
 - Les boutons de copie utilisent les sections existantes du modele (`studentInstructions`, `teacherGuide`, `answerKey`) et une transformation locale en texte propre; ils n'envoient aucune donnee.
-- Les ressources demo les plus representatives doivent renseigner clairement `studentInstructions`, `teacherGuide` et `answerKey` pour rendre les boutons de copie utiles immediatement. Deux lots editoriaux ont deja ete enrichis, dont grammaire cause/consequence, phonetique [y]/[u], enquete en classe, prise de notes video, traduction automatique, expose carte mentale et rituel A0.
+- Les ressources demo les plus representatives doivent renseigner clairement `studentInstructions`, `teacherGuide` et `answerKey` pour rendre les boutons de copie utiles immediatement. Les ressources grammaire cause/consequence, phonetique [y]/[u], enquete en classe, prise de notes video, traduction automatique, expose carte mentale et rituel A0 ont ete enrichies pour le test du "prof presse".
 - Le prototype de proposition de ressource brute est visuel et non connecte: aucun stockage, aucune API, aucun `localStorage`.
 - Aucune information du modele n'a ete supprimee: les metadonnees, versions, retours, propositions, audit, IA, numerique, licence et acces restent disponibles.
 - Le corpus Google Drive observe sert uniquement de reference de conception pour gabarits et exemples fictifs; les documents sources ne doivent pas etre importes ni publies sans verification.

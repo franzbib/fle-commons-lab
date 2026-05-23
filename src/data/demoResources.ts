@@ -882,10 +882,11 @@ export const demoResources: Resource[] = [
       studentInstructions: {
         title: 'Support étudiant',
         items: [
-          'Classez: le bus est en retard / je suis arrivé après le début du cours / il pleut / la sortie est annulée.',
-          'Reliez les phrases: Je suis fatigué ___ j’ai travaillé tard. Il pleut, ___ nous restons à la maison.',
+          'Corpus court: 1. Il pleut beaucoup. La sortie est annulée. 2. Le bus est en retard. Je suis arrivé après le début du cours. 3. Il y a une panne. Le train est supprimé.',
+          'Repérez dans chaque situation: quelle phrase donne la cause ? quelle phrase donne la conséquence ?',
+          'Reliez avec le connecteur adapté: Je suis fatigué ___ j’ai travaillé tard. Il pleut, ___ nous restons à la maison.',
           'Transformez avec à cause de: Le train est supprimé parce qu’il y a une panne.',
-          'Écrivez trois phrases pour expliquer un retard, une annulation ou un changement de programme.',
+          'Réemploi guidé: écrivez trois phrases pour expliquer un retard, une annulation ou un changement de programme.',
         ],
       },
       teacherGuide: {
@@ -894,6 +895,7 @@ export const demoResources: Resource[] = [
           'Privilégier des situations neutres: météo, transports, organisation, matériel.',
           'Faire reformuler oralement avant l’écriture si le groupe est fragile.',
           'Point de vigilance: à cause de introduit un nom ou groupe nominal, pas une phrase complète.',
+          'Faire verbaliser la différence: la cause répond à pourquoi ?; la conséquence répond à quel résultat ?',
         ],
       },
       answerKey: {
@@ -902,6 +904,8 @@ export const demoResources: Resource[] = [
           'Je suis fatigué parce que j’ai travaillé tard.',
           'Il pleut, donc nous restons à la maison.',
           'Le train est supprimé à cause d’une panne.',
+          'Cause attendue: il pleut beaucoup / le bus est en retard / il y a une panne.',
+          'Conséquence attendue: la sortie est annulée / je suis arrivé après le début du cours / le train est supprimé.',
           'Réponse acceptable si le lien logique est clair et si le connecteur est grammaticalement possible.',
         ],
       },
@@ -990,8 +994,9 @@ export const demoResources: Resource[] = [
         title: 'Support étudiant',
         items: [
           'Choisissez un sujet simple: un lieu, une habitude, un projet, une expérience d’apprentissage.',
-          'Créez trois branches: idée 1, idée 2, exemple.',
+          'Créez une carte avec ce modèle: sujet au centre / idée 1 / idée 2 / exemple / conclusion.',
           'Ajoutez deux transitions: d’abord, ensuite, pour terminer.',
+          'Préparez une phrase d’introduction et une phrase de conclusion, mais pas de texte complet.',
           'Présentez votre sujet en trois minutes sans lire des phrases complètes.',
         ],
       },
@@ -1001,12 +1006,14 @@ export const demoResources: Resource[] = [
           'Laisser le choix entre outil numérique et feuille A4 pour éviter un blocage technique.',
           'Demander des mots-clés, pas des paragraphes sur la carte mentale.',
           'Point de vigilance: vérifier que le support aide la parole au lieu de la remplacer.',
+          'Montrer un modèle minimal au tableau: 1 sujet central, 4 branches, 8 mots-clés maximum.',
         ],
       },
       answerKey: {
         title: 'Critères de réussite',
         items: [
           'La carte contient des mots-clés lisibles, pas un texte complet.',
+          'La carte reprend le modèle sujet / deux idées / exemple / conclusion.',
           'L’exposé annonce un plan simple et respecte environ trois minutes.',
           'Au moins deux transitions structurent la présentation.',
           'Le support ne contient pas de données personnelles identifiantes.',
@@ -1114,8 +1121,9 @@ export const demoResources: Resource[] = [
         title: 'Support étudiant',
         items: [
           'Écoutez et montrez la bonne carte: U ou OU.',
-          'Répétez les paires: tu / tout, rue / roue, vu / vous, su / sous.',
-          'Choisissez trois mots et lisez-les à un camarade.',
+          'Répétez les paires: tu / tout, rue / roue, vu / vous, su / sous, du / doux.',
+          'Cochez ce que vous entendez: 1. tu ou tout ? 2. rue ou roue ? 3. vu ou vous ? 4. du ou doux ?',
+          'Mini-production: choisissez trois mots et dites une phrase très courte, par exemple: Tu vas rue Hugo ? / Vous êtes sous la table ?',
           'Votre camarade montre la carte entendue.',
         ],
       },
@@ -1130,8 +1138,8 @@ export const demoResources: Resource[] = [
       answerKey: {
         title: 'Corrigé',
         items: [
-          '[y]: tu, rue, vu, su.',
-          '[u]: tout, roue, vous, sous.',
+          '[y]: tu, rue, vu, su, du.',
+          '[u]: tout, roue, vous, sous, doux.',
           'Critère de réussite: l’apprenant identifie au moins trois paires sur quatre ou sait demander une répétition.',
         ],
       },
@@ -1220,8 +1228,10 @@ export const demoResources: Resource[] = [
         title: 'Support étudiant',
         items: [
           'Situation fictive: la clé de la salle multimédia a disparu après la pause.',
-          'Rôles possibles: témoin A, témoin B, responsable de salle, apprenant pressé, apprenant distrait.',
+          'Rôles: suspect, témoin, responsable de salle, apprenant pressé, apprenant distrait. Chacun reçoit un alibi court.',
+          'Indices à noter: lieu, heure, objet vu, personne rencontrée, information incertaine.',
           'Préparez trois questions: Où étiez-vous ? Qu’est-ce que vous avez vu ? À quelle heure êtes-vous parti(e) ?',
+          'Mini-synthèse: écrivez deux faits sûrs, une hypothèse et un doute.',
           'Présentez votre hypothèse: Nous pensons que... parce que...',
         ],
       },
@@ -1231,6 +1241,7 @@ export const demoResources: Resource[] = [
           'Insister sur le caractère fictif et léger de l’enquête.',
           'Donner une carte rôle courte à chaque apprenant; éviter les scénarios trop complexes.',
           'Relancer avec: Quelle information est sûre ? Quelle information est seulement possible ?',
+          'Distribuer au tableau une grille en trois colonnes: faits / indices / hypothèses.',
         ],
       },
       answerKey: {
@@ -1238,7 +1249,8 @@ export const demoResources: Resource[] = [
         items: [
           'Les questions utilisent un temps du passé compréhensible.',
           'L’hypothèse s’appuie sur au moins deux indices.',
-          'Le groupe distingue fait observé et supposition.',
+          'Le groupe distingue fait observé, indice et supposition.',
+          'La mini-synthèse contient au moins un alibi et une information à vérifier.',
           'Exemple: Nous pensons que la clé est restée dans la cafétéria parce que le témoin A a vu le responsable avec son plateau.',
         ],
       },
@@ -1328,9 +1340,10 @@ export const demoResources: Resource[] = [
         title: 'Support étudiant',
         items: [
           'Pendant la première écoute, notez seulement le thème général.',
-          'Pendant la deuxième écoute, complétez trois colonnes: mots-clés / chiffres ou dates / exemples.',
-          'Ne rédigez pas des phrases complètes.',
-          'Avec un binôme, préparez une synthèse de 60 secondes: sujet, deux informations importantes, un exemple.',
+          'Pendant la deuxième écoute, complétez la grille: thème général / mots-clés / chiffres ou dates / exemples / question restante.',
+          'Ne rédigez pas des phrases complètes: utilisez des mots, flèches et abréviations.',
+          'Avec un binôme, comparez vos notes et barrez les informations incertaines.',
+          'Préparez une synthèse de 60 secondes: sujet, deux informations importantes, un exemple, une précaution si nécessaire.',
         ],
       },
       teacherGuide: {
@@ -1339,6 +1352,7 @@ export const demoResources: Resource[] = [
           'Utiliser uniquement une vidéo libre, créée par l’enseignant ou autorisée pour la classe.',
           'Si les droits ne sont pas clairs, garder la ressource comme gabarit et remplacer le support.',
           'Point de vigilance: les apprenants B2 écrivent souvent trop; valoriser les mots-clés.',
+          'Si la vidéo contient trop de noms propres ou chiffres, réduire l’objectif à trois informations essentielles.',
         ],
       },
       answerKey: {
@@ -1348,6 +1362,7 @@ export const demoResources: Resource[] = [
           'La synthèse ne suit pas mot à mot la vidéo.',
           'La synthèse annonce le sujet et sélectionne deux informations importantes.',
           'Les informations incertaines sont formulées avec prudence: il semble que, environ, selon la vidéo.',
+          'La synthèse respecte la durée annoncée et ne reprend pas de phrases complètes du document.',
         ],
       },
       variants: {
@@ -1676,7 +1691,8 @@ export const demoResources: Resource[] = [
         title: 'Support étudiant',
         items: [
           'Classez ces affirmations: La traduction automatique aide à comprendre un texte. / Elle empêche d’apprendre. / Elle est utile si on vérifie le résultat. / Elle pose problème avec des textes personnels.',
-          'Préparez: un argument pour, un argument contre, une concession.',
+          'Préparez: un argument pour, un argument contre, une concession et un exemple fictif.',
+          'Ajoutez un contre-argument à une idée que vous ne partagez pas totalement.',
           'Pendant le débat, utilisez au moins deux expressions: certes, néanmoins, à condition que, il faut distinguer.',
           'Rédigez une règle de charte: On peut utiliser la traduction automatique pour..., mais il faut...',
         ],
@@ -1687,6 +1703,7 @@ export const demoResources: Resource[] = [
           'Ne pas demander aux apprenants de soumettre un texte personnel à un outil.',
           'Privilégier des situations fictives: devoir maison, message administratif, lecture d’article.',
           'Relancer avec: Qu’est-ce qui aide l’apprentissage ? Qu’est-ce qui le remplace ?',
+          'Veiller à ne pas caricaturer les positions: demander systématiquement un bénéfice, une limite et une condition d’usage.',
         ],
       },
       answerKey: {
@@ -1694,6 +1711,7 @@ export const demoResources: Resource[] = [
         items: [
           'L’apprenant formule une position nuancée, pas seulement pour ou contre.',
           'Il distingue usage de compréhension, production, correction et vérification.',
+          'Il formule au moins un contre-argument recevable avant de défendre sa position.',
           'La charte mentionne au moins un garde-fou: données personnelles, vérification, non-substitution du travail.',
           'Exemple: On peut utiliser un traducteur pour vérifier une hypothèse de sens, mais il faut comparer avec le contexte et retravailler la phrase soi-même.',
         ],
@@ -1920,6 +1938,7 @@ export const demoResources: Resource[] = [
           'Montrez l’image.',
           'Répétez avec le geste.',
           'Mots proposés: stylo, cahier, table, porte, téléphone.',
+          'Trace de travail: dessinez ou entourez l’objet entendu. Aucun mot écrit n’est obligatoire.',
         ],
       },
       teacherGuide: {
@@ -1927,6 +1946,7 @@ export const demoResources: Resource[] = [
         items: [
           'Utiliser uniquement des images originales, pictogrammes libres ou objets réels.',
           'Ne pas demander de lecture au premier tour si le groupe est A0.',
+          'Associer chaque mot à un geste simple: écrire, ouvrir, poser, montrer, appeler.',
           'Point de vigilance: garder le rythme court; ce rituel peut revenir plusieurs fois dans la semaine.',
         ],
       },
@@ -1936,6 +1956,7 @@ export const demoResources: Resource[] = [
           'L’apprenant associe au moins trois mots à l’image ou à l’objet.',
           'Il peut répéter deux mots de manière reconnaissable.',
           'Il comprend la consigne Montrez... avec l’aide du geste.',
+          'La réussite peut être non verbale: geste correct, objet montré, image associée.',
         ],
       },
       variants: {
