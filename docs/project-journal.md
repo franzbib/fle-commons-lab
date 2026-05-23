@@ -304,3 +304,13 @@ Journal chronologique synthÃ©tique des interventions importantes. Les dates so
 - Décisions : rester sur des contenus locaux statiques; les prompts sont copiés par l'enseignant dans l'outil de son choix; aucune IA n'est intégrée au site.
 - Limites volontaires : aucun appel API IA, aucun chatbot, aucun stockage de prompt, aucune collecte de données utilisateur, aucun backend, aucun Supabase, aucune authentification, aucun paiement.
 - Commit associé si connu : commit en cours
+
+## 2026-05-23 — Clarification des prompts Atelier IA & FLE
+
+- Outil principal : Codex
+- Objectif : appliquer la relecture `docs/ai-workshop-review.md` pour lever les ambiguites entre bibliotheque de prompts statique et IA integree.
+- Resultat : ajout d'un bandeau "pas d'IA integree", exemples remplis pour les 8 prompts, boutons de copie distincts pour le modele et l'exemple, garde-fou CECRL visible et documentation de redaction des prompts.
+- Fichiers principaux : `src/pages/AiWorkshopPage.tsx`, `src/data/aiWorkshop.ts`, `src/types/aiWorkshop.ts`, `src/components/CopyPromptButton.tsx`, `docs/ai-workshop-implementation.md`, `docs/ai-workshop-copy-guidelines.md`, `PROJECT_STATE_FOR_LLMS.md`.
+- Decisions : garder l'Atelier IA entierement statique; ne pas ajouter de champ de saisie traite, de chatbot, d'appel API ou de stockage; traiter le CECRL comme hypothese de travail a verifier humainement.
+- Limites volontaires : aucune IA reelle, aucune collecte, aucun backend, aucun Supabase, aucune authentification, aucun paiement, aucune dependance lourde.
+- Commit associe si connu : commit en cours

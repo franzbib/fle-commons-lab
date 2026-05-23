@@ -904,6 +904,23 @@ button:disabled {
   border-color: var(--color-amethyst);
 }
 
+.ai-static-notice {
+  border: 2px solid var(--color-amethyst);
+  border-left-width: 8px;
+  background: color-mix(in srgb, var(--color-amethyst) 8%, var(--surface));
+  padding: 18px;
+  box-shadow: var(--shadow-hard);
+}
+
+.ai-static-notice h2 {
+  margin: 0 0 8px;
+}
+
+.ai-static-notice p {
+  margin: 0;
+  max-width: 880px;
+}
+
 .ai-workshop-filters {
   grid-template-columns: repeat(2, minmax(180px, 1fr));
 }
@@ -936,11 +953,34 @@ button:disabled {
   line-height: 1.55;
 }
 
+.prompt-text-example {
+  border-left-color: var(--color-highlight);
+}
+
 .prompt-copy-action {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 10px;
+}
+
+.prompt-copy-button {
+  font-weight: 800;
+}
+
+.prompt-block-title {
+  margin: 6px 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.cefr-caution {
+  border: 1px solid var(--color-border-strong);
+  border-left: 4px solid var(--color-highlight);
+  background: color-mix(in srgb, var(--color-highlight) 18%, var(--surface));
+  margin: 0;
+  padding: 12px;
 }
 
 .prompt-meta-grid {

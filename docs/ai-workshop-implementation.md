@@ -9,12 +9,16 @@ La page `Atelier IA & FLE` est une section statique de l'application. Elle conti
 - 4 parcours d'initiation;
 - 5 mini-tutoriels;
 - 8 prompts commentes;
+- un exemple rempli court pour chaque prompt;
 - des filtres locaux par categorie et difficulte;
-- un bouton `Copier le prompt`.
+- deux boutons de copie explicites: `Copier le prompt modele` et `Copier l'exemple rempli`;
+- un bandeau visible rappelant que le site ne contient aucune IA integree.
 
 ## Pourquoi la section reste statique
 
 La v0 ne doit pas integrer d'appel IA. Les prompts sont des supports pedagogiques a copier dans l'outil choisi par l'enseignant. Le site ne recoit pas, ne stocke pas et n'envoie pas de texte utilisateur.
+
+Aucun champ de saisie n'est traite par FLE Commons Lab. Le bouton de copie utilise seulement le presse-papiers du navigateur et ne declenche aucun appel reseau.
 
 ## Fichiers principaux
 
@@ -42,17 +46,21 @@ Ajouter une entree dans `promptRecipes` avec:
 
 - un usage pedagogique;
 - un texte de prompt contenant des zones a remplir entre crochets;
+- un exemple rempli court, fictif et juridiquement sur;
 - l'entree necessaire;
 - la sortie attendue;
 - les risques;
 - la checklist de verification;
 - des idees d'adaptation.
 
+Si le prompt mentionne un niveau CECRL, une adaptation de niveau, une correction ou une grille, ajouter un garde-fou CECRL: le niveau propose par une IA est une hypothese de travail, jamais une validation.
+
 ## Regles de prudence
 
 - Ne pas demander de donnees personnelles d'apprenants.
 - Ne pas copier de contenu protege sans droits.
 - Verifier le niveau CECRL, les exemples, le corrige et les consignes.
+- Rappeler que le CECRL ne peut pas etre valide automatiquement par une IA.
 - Ne pas presenter l'IA comme un evaluateur automatique.
 - Garder le jugement enseignant au centre.
 

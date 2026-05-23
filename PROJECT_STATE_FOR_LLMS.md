@@ -31,7 +31,7 @@ Fonctionnalites presentes:
 - page Format Markdown;
 - page Vision;
 - page Technologies et IA;
-- page Atelier IA & FLE statique avec mini-tutoriels, parcours d'initiation et prompts copiables;
+- page Atelier IA & FLE statique avec mini-tutoriels, parcours d'initiation, prompts modeles et exemples remplis copiables;
 - page Documentation reorganisee par grands blocs;
 - templates GitHub pour issues et pull requests.
 - rapport Antigravity `docs/conversion-experiments.md`;
@@ -60,7 +60,7 @@ Fonctionnalites presentes:
 - audit editorial transversal dans `docs/editorial-copy-audit.md` pour aligner les pages visibles et la documentation sur l'etat reel du projet.
 - notes de qualite editoriale des ressources demo dans `docs/editorial-quality-notes.md`.
 - specification du formulaire de depot brut dans `docs/raw-resource-intake-form-spec.md`; le composant visible reste une maquette locale non connectee.
-- cadrage Antigravity de l'Atelier IA & FLE dans `docs/ai-workshop-section-concept.md` et implementation statique documentee dans `docs/ai-workshop-implementation.md`.
+- cadrage Antigravity de l'Atelier IA & FLE dans `docs/ai-workshop-section-concept.md`, relecture dans `docs/ai-workshop-review.md`, implementation statique dans `docs/ai-workshop-implementation.md` et regles de redaction dans `docs/ai-workshop-copy-guidelines.md`.
 
 Le dossier local est un depot Git rattache a:
 
@@ -159,6 +159,8 @@ docs/
   access-and-sustainability-model.md
   ai-workshop-section-concept.md
   ai-workshop-implementation.md
+  ai-workshop-copy-guidelines.md
+  ai-workshop-review.md
   agent-workflow.md
   branding-directions.md
   change-report-template.md
@@ -238,7 +240,7 @@ Types principaux:
 
 Les champs IA sont descriptifs. Ils servent a documenter des usages pedagogiques possibles, pas a appeler un service.
 
-Les types de l'Atelier IA & FLE servent uniquement a afficher des contenus statiques: tutoriels, parcours d'initiation et prompts commentes. Le bouton de copie copie un prompt local dans le presse-papiers; il ne stocke rien et n'appelle aucun fournisseur IA.
+Les types de l'Atelier IA & FLE servent uniquement a afficher des contenus statiques: tutoriels, parcours d'initiation, prompts commentes et exemples remplis. Les boutons de copie copient un prompt local ou un exemple local dans le presse-papiers; ils ne stockent rien et n'appellent aucun fournisseur IA.
 
 Le format Markdown + frontmatter YAML est documente comme format source futur. Il n'est pas importe automatiquement.
 
@@ -280,7 +282,8 @@ L'analyse du corpus Drive recommande de documenter ou d'etudier plus tard trois 
 - Les boutons de copie utilisent les sections existantes du modele (`studentInstructions`, `teacherGuide`, `answerKey`) et une transformation locale en texte propre; ils n'envoient aucune donnee.
 - Les ressources demo les plus representatives doivent renseigner clairement `studentInstructions`, `teacherGuide` et `answerKey` pour rendre les boutons de copie utiles immediatement. Les ressources grammaire cause/consequence, phonetique [y]/[u], enquete en classe, prise de notes video, traduction automatique, expose carte mentale et rituel A0 ont ete enrichies pour le test du "prof presse".
 - Le prototype de proposition de ressource brute est visuel et non connecte: aucun stockage, aucune API, aucun `localStorage`.
-- L'Atelier IA & FLE est une bibliotheque statique d'usages, tutoriels et prompts a copier dans l'outil choisi par l'enseignant. Il ne contient aucun chatbot, aucun appel API IA, aucun stockage de prompts saisis et aucune collecte de donnees utilisateur.
+- L'Atelier IA & FLE est une bibliotheque statique d'usages, tutoriels, prompts modeles et exemples remplis a copier dans l'outil choisi par l'enseignant. Il ne contient aucun chatbot, aucun appel API IA, aucun stockage de prompts saisis et aucune collecte de donnees utilisateur. La page affiche un bandeau explicite pour eviter de croire que FLE Commons Lab execute les prompts.
+- Le garde-fou CECRL est obligatoire pour les prompts d'adaptation, correction, evaluation ou production par niveau: une IA fournit une hypothese de travail, jamais une validation de niveau.
 - Aucune information du modele n'a ete supprimee: les metadonnees, versions, retours, propositions, audit, IA, numerique, licence et acces restent disponibles.
 - Le corpus Google Drive observe sert uniquement de reference de conception pour gabarits et exemples fictifs; les documents sources ne doivent pas etre importes ni publies sans verification.
 - `AGENTS.md` est le guide de travail prioritaire pour Codex, ChatGPT, Antigravity et autres LLM.
@@ -359,7 +362,7 @@ Variables obligatoires: aucune
 15. Prioriser les fonctions copier et imprimer avant tout workflow communautaire complexe; etudier les exports Word/PDF plus tard seulement apres validation des besoins.
 16. Prototyper plus tard un formulaire non persistant de retour d'usage court.
 17. Relire les ressources demo ameliorees avec des enseignants FLE presses: les blocs copiables sont-ils assez clairs ?
-18. Tester l'Atelier IA & FLE avec des enseignants debutants et verifier que les prompts statiques restent utiles sans integration IA dans la plateforme.
+18. Tester l'Atelier IA & FLE avec des enseignants debutants et verifier que les prompts statiques, les exemples remplis et les boutons de copie restent comprehensibles sans integration IA dans la plateforme.
 
 ## 11. A ne pas faire sans validation explicite
 

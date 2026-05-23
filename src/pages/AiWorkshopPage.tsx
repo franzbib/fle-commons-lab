@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Badge } from '../components/Badge'
 import { CopyPromptButton } from '../components/CopyPromptButton'
-import { aiTutorials, initiationPaths, promptRecipes } from '../data/aiWorkshop'
+import { aiTutorials, globalCefrCaution, initiationPaths, promptRecipes } from '../data/aiWorkshop'
 import {
   aiDifficultyLevels,
   aiWorkshopCategories,
@@ -12,26 +12,26 @@ import {
 
 const categoryLabels: Record<AiWorkshopCategory, string> = {
   prise_en_main: 'Prise en main',
-  preparer_activite: 'Préparer une activité',
+  preparer_activite: 'Preparer une activite',
   simplifier_adapter: 'Simplifier / adapter',
-  creer_exercices: 'Créer des exercices',
-  corriger_remedier: 'Corriger / remédier',
-  differencier: 'Différencier',
-  verifier_reponse_ia: 'Vérifier une réponse IA',
-  creer_corrige: 'Créer un corrigé',
-  preparer_oral: 'Préparer l’oral',
+  creer_exercices: 'Creer des exercices',
+  corriger_remedier: 'Corriger / remedier',
+  differencier: 'Differencier',
+  verifier_reponse_ia: 'Verifier une reponse IA',
+  creer_corrige: 'Creer un corrige',
+  preparer_oral: 'Preparer l’oral',
 }
 
 const difficultyLabels: Record<AiDifficultyLevel, string> = {
-  debutant: 'Débutant',
-  intermediaire: 'Intermédiaire',
-  avance: 'Avancé',
+  debutant: 'Debutant',
+  intermediaire: 'Intermediaire',
+  avance: 'Avance',
 }
 
 const riskLabels: Record<AiRiskLevel, string> = {
   faible: 'Risque faible',
-  modere: 'Risque modéré',
-  eleve: 'Risque élevé',
+  modere: 'Risque modere',
+  eleve: 'Risque eleve',
 }
 
 export function AiWorkshopPage() {
@@ -57,27 +57,37 @@ export function AiWorkshopPage() {
         <h1>Utiliser l’IA comme brouillon, jamais comme pilote automatique</h1>
         <p>
           Cette section accompagne les enseignants de FLE avec des tutoriels courts, des
-          prompts copiables et des garde-fous. Aucune IA n’est intégrée au site: les prompts
-          sont à copier dans l’outil choisi par l’enseignant, puis à relire humainement.
+          prompts copiables et des garde-fous. Aucune IA n’est integree au site: les prompts
+          sont a copier dans l’outil choisi par l’enseignant, puis a relire humainement.
         </p>
       </header>
 
+      <section className="ai-static-notice" aria-labelledby="ai-static-notice-title">
+        <h2 id="ai-static-notice-title">Pas d’IA integree ici</h2>
+        <p>
+          FLE Commons Lab n'execute aucun prompt. Aucun texte n'est collecte, stocke ou
+          envoye a un modele. Les instructions ci-dessous sont des modeles a copier dans
+          l'outil IA choisi par l'enseignant, avec relecture humaine obligatoire.
+        </p>
+      </section>
+
       <section className="detail-section ai-safety-panel">
-        <h2>Garde-fous non négociables</h2>
+        <h2>Garde-fous non negociables</h2>
         <div className="intro-grid">
           <article>
-            <h3>Données</h3>
-            <p>Ne copiez jamais de données personnelles d’étudiants dans un outil IA.</p>
+            <h3>Donnees</h3>
+            <p>Ne copiez jamais de donnees personnelles d’etudiants dans un outil IA.</p>
           </article>
           <article>
-            <h3>Vérification</h3>
-            <p>Relisez le niveau, les consignes, les exemples et les corrigés avant usage.</p>
+            <h3>Verification</h3>
+            <p>Relisez le niveau, les consignes, les exemples et les corriges avant usage.</p>
           </article>
           <article>
             <h3>Jugement enseignant</h3>
-            <p>L’IA peut aider au brouillon; elle ne décide pas de l’objectif pédagogique.</p>
+            <p>L’IA peut aider au brouillon; elle ne decide pas de l’objectif pedagogique.</p>
           </article>
         </div>
+        <p className="non-persistent-note">{globalCefrCaution}</p>
       </section>
 
       <section>
@@ -106,13 +116,15 @@ export function AiWorkshopPage() {
               <p>{tutorial.summary}</p>
               <p className="muted">{tutorial.targetTeacherNeed}</p>
               <div className="content-section">
-                <h4>Étapes</h4>
+                <h4>Etapes</h4>
                 <ol>
                   {tutorial.steps.map((step) => (
                     <li key={step}>{step}</li>
                   ))}
                 </ol>
               </div>
+              <PromptInfo title="Garde-fous" items={tutorial.safeguards} />
+              <PromptInfo title="Pieges a eviter" items={tutorial.commonPitfalls} />
               <div className="tag-list">
                 {tutorial.tags.map((tag) => (
                   <span key={tag}>{tag}</span>
@@ -125,13 +137,13 @@ export function AiWorkshopPage() {
 
       <section>
         <div className="results-heading">
-          <h2>Bibliothèque de prompts</h2>
-          <span>{filteredPrompts.length} prompts affichés</span>
+          <h2>Bibliotheque de prompts</h2>
+          <span>{filteredPrompts.length} prompts affiches</span>
         </div>
 
         <div className="filters-panel ai-workshop-filters">
           <label className="field">
-            <span>Catégorie</span>
+            <span>Categorie</span>
             <select
               value={categoryFilter}
               onChange={(event) =>
@@ -147,7 +159,7 @@ export function AiWorkshopPage() {
             </select>
           </label>
           <label className="field">
-            <span>Difficulté</span>
+            <span>Difficulte</span>
             <select
               value={difficultyFilter}
               onChange={(event) =>
@@ -176,16 +188,31 @@ export function AiWorkshopPage() {
               </div>
               <h3>{prompt.title}</h3>
               <p>{prompt.pedagogicalUse}</p>
+              {prompt.cefrCaution ? (
+                <p className="cefr-caution">
+                  <strong>Garde-fou CECRL.</strong> {prompt.cefrCaution}
+                </p>
+              ) : null}
+
+              <h4 className="prompt-block-title">Prompt modele</h4>
               <pre className="prompt-text">{prompt.promptText}</pre>
-              <CopyPromptButton promptText={prompt.promptText} />
+              <CopyPromptButton promptText={prompt.promptText} label="Copier le prompt modele" />
+
+              <h4 className="prompt-block-title">Exemple rempli</h4>
+              <pre className="prompt-text prompt-text-example">{prompt.filledExample}</pre>
+              <CopyPromptButton promptText={prompt.filledExample} label="Copier l'exemple rempli" />
+
               <div className="prompt-meta-grid">
-                <PromptInfo title="Entrée nécessaire" items={prompt.requiredInput} />
-                <PromptInfo title="Vérifications" items={prompt.verificationChecklist} />
+                <PromptInfo title="Ce que vous devez fournir" items={prompt.requiredInput} />
+                <PromptInfo
+                  title="Ce que l'enseignant doit verifier"
+                  items={prompt.verificationChecklist}
+                />
                 <PromptInfo title="Risques" items={prompt.risks} />
                 <PromptInfo title="Adaptations" items={prompt.adaptationIdeas} />
               </div>
               <p className="non-persistent-note">
-                Sortie attendue: {prompt.expectedOutput}. Contrôle enseignant:{' '}
+                Ce que l'IA va produire: {prompt.expectedOutput}. Controle enseignant:{' '}
                 {prompt.teacherControlLevel}.
               </p>
             </article>

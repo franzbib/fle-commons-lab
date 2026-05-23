@@ -42,6 +42,8 @@ export type PromptRecipe = {
   difficulty: AiDifficultyLevel
   riskLevel: AiRiskLevel
   promptText: string
+  filledExample: string
+  cefrCaution?: string
   requiredInput: string[]
   expectedOutput: string
   teacherControlLevel: TeacherControlLevel

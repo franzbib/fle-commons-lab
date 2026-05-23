@@ -156,7 +156,9 @@
 
 - La page `#/ai-workshop` reste une section documentaire et pedagogique statique.
 - Les tutoriels et prompts viennent de donnees locales TypeScript, sans backend.
-- Le bouton de copie copie uniquement le texte du prompt dans le presse-papiers.
+- Les boutons de copie copient uniquement le prompt modele ou l'exemple rempli dans le presse-papiers.
+- Chaque prompt contient un exemple rempli court, fictif et sans donnees personnelles.
+- Les prompts lies au niveau, a l'adaptation, a la correction ou a l'evaluation rappellent le garde-fou CECRL.
 - Aucun prompt saisi par un utilisateur n'est stocke, collecte ou envoye.
 - Aucun appel OpenAI, Claude, Gemini ou autre fournisseur IA n'est ajoute.
 - La page indique clairement que les prompts sont a copier dans l'outil choisi par l'enseignant.
