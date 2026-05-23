@@ -5,6 +5,8 @@ import {
   formatAiUseCase,
   formatBoolean,
   formatClassroomMode,
+  formatContributionStatus,
+  formatContributionType,
   formatDate,
   formatDigitalFormat,
   formatDurationCategory,
@@ -216,6 +218,53 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
         )}
         <div className="non-persistent-note">
           Zone illustrative: aucun retour n’est enregistré dans la v0.
+        </div>
+      </section>
+
+      <section className="detail-section">
+        <h2>Pourquoi les retours d’usage sont importants ?</h2>
+        <p>
+          Un support mutualisable gagne en valeur quand il garde la trace de ses essais en
+          classe: duree reelle, niveau du groupe, points d'appui, difficultes et adaptations.
+          Ces retours restent simules dans la v0.2, mais ils preparent une validation
+          communautaire plus utile qu'une simple note.
+        </p>
+      </section>
+
+      <section className="detail-section">
+        <h2>Propositions d’amélioration</h2>
+        {resource.contributionSuggestions && resource.contributionSuggestions.length > 0 ? (
+          <div className="feedback-list">
+            {resource.contributionSuggestions.map((suggestion) => (
+              <article key={suggestion.id} className="feedback-card">
+                <div className="card-topline">
+                  <Badge>{formatContributionType(suggestion.type)}</Badge>
+                  <Badge tone="status">{formatContributionStatus(suggestion.status)}</Badge>
+                </div>
+                <h3>{suggestion.title}</h3>
+                <p>{suggestion.description}</p>
+                <p className="muted">
+                  Propose par {suggestion.proposedBy} le {formatDate(suggestion.createdAt)}
+                </p>
+              </article>
+            ))}
+          </div>
+        ) : (
+          <p className="muted">
+            Aucune proposition simulee n'est associee a cette ressource pour l'instant.
+          </p>
+        )}
+        <div className="non-persistent-note action-note">
+          <div>
+            <strong>Proposer une amelioration</strong>
+            <p>
+              Fonction non persistante dans la v0.2. Cette zone prepare le futur workflow
+              communautaire, sans formulaire serveur ni authentification.
+            </p>
+          </div>
+          <button type="button" className="secondary-button" disabled>
+            Proposer une amelioration
+          </button>
         </div>
       </section>
 

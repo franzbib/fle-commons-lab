@@ -297,6 +297,8 @@ export type Collection = {
   resourceIds: string[]
   visibility: CollectionVisibility
   tags: string[]
+  curatorName?: string
+  createdAt: string
 }
 
 export type Resource = {

@@ -1,19 +1,37 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Layout } from './components/Layout'
-import { demoResources, themes } from './data/demoResources'
+import { demoCollections, demoResources, themes } from './data/demoResources'
 import { AboutPage } from './pages/AboutPage'
+import { CollectionPage } from './pages/CollectionPage'
+import { CollectionsPage } from './pages/CollectionsPage'
+import { CommunityPage } from './pages/CommunityPage'
 import { DocumentationPage } from './pages/DocumentationPage'
 import { HomePage } from './pages/HomePage'
 import { LibraryPage } from './pages/LibraryPage'
+import { ResourceFormatPage } from './pages/ResourceFormatPage'
 import { ResourcePage } from './pages/ResourcePage'
+import { TemplatesPage } from './pages/TemplatesPage'
 import { TechnologyAndAiPage } from './pages/TechnologyAndAiPage'
+import { getCollectionById } from './utils/collections'
 import { emptyResourceFilters, type ResourceFiltersValue } from './utils/filters'
 
-export type AppRoute = 'home' | 'library' | 'resource' | 'about' | 'technology' | 'docs'
+export type AppRoute =
+  | 'home'
+  | 'library'
+  | 'resource'
+  | 'resourceFormat'
+  | 'collections'
+  | 'collection'
+  | 'community'
+  | 'templates'
+  | 'about'
+  | 'technology'
+  | 'docs'
 
 type ParsedRoute = {
   route: AppRoute
   resourceId?: string
+  collectionId?: string
 }
 
 function App() {
@@ -38,6 +56,7 @@ function App() {
   const currentResource = demoResources.find(
     (resource) => resource.id === parsedRoute.resourceId,
   )
+  const currentCollection = getCollectionById(demoCollections, parsedRoute.collectionId)
 
   return (
     <Layout currentRoute={parsedRoute.route}>
@@ -52,6 +71,15 @@ function App() {
         />
       ) : null}
       {parsedRoute.route === 'resource' ? <ResourcePage resource={currentResource} /> : null}
+      {parsedRoute.route === 'resourceFormat' ? <ResourceFormatPage /> : null}
+      {parsedRoute.route === 'collections' ? (
+        <CollectionsPage collections={demoCollections} resources={demoResources} />
+      ) : null}
+      {parsedRoute.route === 'collection' ? (
+        <CollectionPage collection={currentCollection} resources={demoResources} />
+      ) : null}
+      {parsedRoute.route === 'community' ? <CommunityPage /> : null}
+      {parsedRoute.route === 'templates' ? <TemplatesPage /> : null}
       {parsedRoute.route === 'about' ? <AboutPage /> : null}
       {parsedRoute.route === 'technology' ? <TechnologyAndAiPage /> : null}
       {parsedRoute.route === 'docs' ? <DocumentationPage /> : null}
@@ -73,6 +101,26 @@ function parseHash(hash: string): ParsedRoute {
 
   if (routeSegment === 'resources') {
     return { route: 'resource', resourceId }
+  }
+
+  if (routeSegment === 'resource-format') {
+    return { route: 'resourceFormat' }
+  }
+
+  if (routeSegment === 'collections' && resourceId) {
+    return { route: 'collection', collectionId: resourceId }
+  }
+
+  if (routeSegment === 'collections') {
+    return { route: 'collections' }
+  }
+
+  if (routeSegment === 'community' || routeSegment === 'contribute') {
+    return { route: 'community' }
+  }
+
+  if (routeSegment === 'templates') {
+    return { route: 'templates' }
   }
 
   if (routeSegment === 'about') {

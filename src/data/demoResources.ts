@@ -116,6 +116,18 @@ export const demoResources: Resource[] = [
       safeguards: ['Activité entièrement réalisable sans outil numérique.'],
     },
     reviewSummary: defaultReview,
+    contributionSuggestions: [
+      {
+        id: 'suggest-a1-presenter-icons',
+        type: 'variante_numerique',
+        title: 'Prévoir une version avec pictogrammes libres',
+        description:
+          'Ajouter une variante projetable avec pictogrammes libres pour les groupes grands débutants peu lecteurs.',
+        status: 'en_attente',
+        proposedBy: 'Enseignant contributeur démo',
+        createdAt: '2026-05-22',
+      },
+    ],
     collectionIds: ['premiers-cours'],
   },
   {
@@ -184,6 +196,18 @@ export const demoResources: Resource[] = [
       },
     ],
     reviewSummary: defaultReview,
+    contributionSuggestions: [
+      {
+        id: 'suggest-weekend-corrige',
+        type: 'ajout_corrige',
+        title: 'Ajouter une grille de relecture plus explicite',
+        description:
+          'Distinguer auxiliaire, participe passé et accord avec être dans la phase de correction.',
+        status: 'integree',
+        proposedBy: 'Atelier grammaire démo',
+        createdAt: '2026-05-21',
+      },
+    ],
   },
   {
     id: 'b1-pronoms-y-en-ville',
@@ -807,6 +831,18 @@ export const demoResources: Resource[] = [
       safeguards: ['Comparer avec une reformulation humaine', 'Conserver la décision finale à l’enseignant'],
     },
     reviewSummary: { ...defaultReview, digitalReadinessScore: 4, aiReadinessScore: 4 },
+    contributionSuggestions: [
+      {
+        id: 'suggest-ia-consigne-garde-fous',
+        type: 'variante_ia',
+        title: 'Ajouter une version sans compte IA',
+        description:
+          'Prévoir un corpus de réponses IA fictives pour les établissements où les comptes IA sont interdits.',
+        status: 'acceptee',
+        proposedBy: 'Groupe sobriété numérique',
+        createdAt: '2026-05-23',
+      },
+    ],
   },
   {
     id: 'b2-esprit-critique-reponse-ia',
@@ -872,6 +908,18 @@ export const demoResources: Resource[] = [
       safeguards: ['Travailler sur une réponse fictive', 'Exiger une étape de vérification humaine'],
     },
     reviewSummary: { ...defaultReview, aiReadinessScore: 5, digitalReadinessScore: 4 },
+    contributionSuggestions: [
+      {
+        id: 'suggest-verif-ia-droits',
+        type: 'signalement_droit_auteur',
+        title: 'Clarifier l’origine des exemples de réponses IA',
+        description:
+          'Ajouter une note indiquant que les réponses utilisées sont fictives et rédigées pour la classe.',
+        status: 'en_attente',
+        proposedBy: 'Relectrice droits et licences',
+        createdAt: '2026-05-24',
+      },
+    ],
   },
   {
     id: 'c1-debat-traduction-automatique',
@@ -1098,24 +1146,96 @@ export const demoResources: Resource[] = [
 export const demoCollections: Collection[] = [
   {
     id: 'premiers-cours',
-    title: 'Premiers cours et mise en confiance',
+    title: 'Premières séances A1-A2',
     description: 'Ressources courtes pour installer la parole et les routines de classe.',
-    resourceIds: ['a1-se-presenter-sans-numerique', 'a0-rituel-images-mots'],
+    resourceIds: [
+      'a1-se-presenter-sans-numerique',
+      'a0-rituel-images-mots',
+      'a2-passe-compose-week-end',
+    ],
     visibility: 'publique',
     tags: ['débutants', 'oral', 'rituels'],
+    curatorName: 'Collectif démo FLE',
+    createdAt: '2026-05-20',
   },
   {
     id: 'numerique-et-ia',
-    title: 'Numérique, IA et esprit critique',
+    title: 'Technologies et IA en classe de FLE',
     description: 'Ressources qui documentent des usages numériques ou IA sans intégration technique.',
     resourceIds: [
       'b1-b2-atelier-ia-ameliorer-consigne',
       'b2-esprit-critique-reponse-ia',
       'c1-debat-traduction-automatique',
       'b1-prompt-roleplay-entretien',
+      'b2-expose-carte-mentale-numerique',
     ],
     visibility: 'publique',
     tags: ['IA', 'littératie numérique', 'prudence'],
+    curatorName: 'Laboratoire démo IA pédagogique',
+    createdAt: '2026-05-21',
+  },
+  {
+    id: 'grammaire-inductive-b1',
+    title: 'Grammaire inductive B1',
+    description:
+      'Supports pour observer, classer et réemployer des points grammaticaux en contexte.',
+    resourceIds: [
+      'b1-pronoms-y-en-ville',
+      'b1-cause-consequence-quotidien',
+      'a2-passe-compose-week-end',
+    ],
+    visibility: 'partagee',
+    tags: ['grammaire', 'B1', 'observation'],
+    curatorName: 'Atelier grammaire démo',
+    createdAt: '2026-05-22',
+  },
+  {
+    id: 'activites-orales-courtes',
+    title: 'Activités orales courtes',
+    description:
+      'Activités faciles à lancer pour faire parler les apprenants sans matériel lourd.',
+    resourceIds: [
+      'a1-se-presenter-sans-numerique',
+      'b1-debat-limiter-ecrans',
+      'b1-enquete-suspect-temoin-indice',
+      'a2-b1-logement-signaler-probleme',
+    ],
+    visibility: 'publique',
+    tags: ['oral', 'interaction', 'classe'],
+    curatorName: 'Collectif activités orales',
+    createdAt: '2026-05-22',
+  },
+  {
+    id: 'sans-preparation-lourde',
+    title: 'Supports testables sans préparation lourde',
+    description:
+      'Ressources prêtes à essayer rapidement, avec peu de matériel ou une alternative papier.',
+    resourceIds: [
+      'a0-rituel-images-mots',
+      'a1-a2-phonetique-y-u',
+      'b1-cause-consequence-quotidien',
+      'b1-debat-limiter-ecrans',
+    ],
+    visibility: 'publique',
+    tags: ['sobriété', 'prêt à tester', 'faible préparation'],
+    curatorName: 'Gardien sobriété démo',
+    createdAt: '2026-05-23',
+  },
+  {
+    id: 'ressources-pretes-a-adapter',
+    title: 'Ressources prêtes à adapter',
+    description:
+      'Supports dont la structure est volontairement ouverte pour créer des variantes de niveau, contexte ou modalité.',
+    resourceIds: [
+      'mixte-creer-ressource-fle-ouverte',
+      'mixte-demarche-administrative-en-ligne',
+      'b2-notes-video-courte',
+      'b2-reformuler-information-presse',
+    ],
+    visibility: 'partagee',
+    tags: ['adaptation', 'versionnage', 'communs'],
+    curatorName: 'FLE Commons Lab démo',
+    createdAt: '2026-05-23',
   },
 ]
 

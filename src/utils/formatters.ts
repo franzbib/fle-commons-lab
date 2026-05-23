@@ -3,6 +3,9 @@ import type {
   AiAssistanceLevel,
   AiUseCase,
   ClassroomMode,
+  CollectionVisibility,
+  ContributionStatus,
+  ContributionType,
   DigitalFormat,
   DurationCategory,
   EditorialStatus,
@@ -197,6 +200,31 @@ const aiAssistanceLabels: LabelMap<AiAssistanceLevel> = {
   experimental: 'Expérimental',
 }
 
+const collectionVisibilityLabels: LabelMap<CollectionVisibility> = {
+  privee: 'Privée',
+  partagee: 'Partagée',
+  publique: 'Publique',
+}
+
+const contributionTypeLabels: LabelMap<ContributionType> = {
+  correction: 'Correction',
+  ajout_corrige: 'Ajout de corrigé',
+  clarification_consigne: 'Clarification de consigne',
+  variante_niveau: 'Variante de niveau',
+  variante_numerique: 'Variante numérique',
+  variante_ia: 'Variante IA',
+  retour_usage: 'Retour d’usage',
+  signalement_droit_auteur: 'Signalement droit d’auteur',
+  autre: 'Autre',
+}
+
+const contributionStatusLabels: LabelMap<ContributionStatus> = {
+  en_attente: 'En attente',
+  acceptee: 'Acceptée',
+  refusee: 'Refusée',
+  integree: 'Intégrée',
+}
+
 export const sectionOrder: ResourceSectionKey[] = [
   'objectives',
   'prerequisites',
@@ -269,6 +297,18 @@ export function formatAiUseCase(value: AiUseCase): string {
 
 export function formatAiAssistanceLevel(value: AiAssistanceLevel): string {
   return aiAssistanceLabels[value]
+}
+
+export function formatCollectionVisibility(value: CollectionVisibility): string {
+  return collectionVisibilityLabels[value]
+}
+
+export function formatContributionType(value: ContributionType): string {
+  return contributionTypeLabels[value]
+}
+
+export function formatContributionStatus(value: ContributionStatus): string {
+  return contributionStatusLabels[value]
 }
 
 export function formatBoolean(value: boolean): string {

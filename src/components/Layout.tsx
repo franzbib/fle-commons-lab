@@ -8,11 +8,19 @@ type LayoutProps = {
 
 const navItems: Array<{ route: AppRoute; label: string }> = [
   { route: 'home', label: 'Accueil' },
-  { route: 'library', label: 'Bibliothèque' },
+  { route: 'library', label: 'Bibliotheque' },
+  { route: 'collections', label: 'Collections' },
+  { route: 'community', label: 'Communaute' },
+  { route: 'templates', label: 'Gabarits' },
+  { route: 'resourceFormat', label: 'Format' },
   { route: 'about', label: 'Vision' },
   { route: 'technology', label: 'Technologies et IA' },
   { route: 'docs', label: 'Documentation' },
 ]
+
+function isCurrentRoute(currentRoute: AppRoute, itemRoute: AppRoute) {
+  return currentRoute === itemRoute || (currentRoute === 'collection' && itemRoute === 'collections')
+}
 
 export function Layout({ children, currentRoute }: LayoutProps) {
   return (
@@ -22,15 +30,21 @@ export function Layout({ children, currentRoute }: LayoutProps) {
           <span className="brand-mark">FLE</span>
           <span>
             <strong>FLE Commons Lab</strong>
-            <small>Socle local expérimental</small>
+            <small>Socle local experimental</small>
           </span>
         </a>
         <nav className="site-nav" aria-label="Navigation principale">
           {navItems.map((item) => (
             <a
               key={item.route}
-              href={item.route === 'home' ? '#/' : `#/${item.route}`}
-              aria-current={currentRoute === item.route ? 'page' : undefined}
+              href={
+                item.route === 'home'
+                  ? '#/'
+                  : item.route === 'resourceFormat'
+                    ? '#/resource-format'
+                    : `#/${item.route}`
+              }
+              aria-current={isCurrentRoute(currentRoute, item.route) ? 'page' : undefined}
             >
               {item.label}
             </a>
