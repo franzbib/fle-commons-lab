@@ -288,3 +288,15 @@ Variables obligatoires: aucune
 - Ajouter un vrai workflow communautaire persistant.
 - Exposer une cle serveur cote frontend.
 - Rendre le projet dependant d'un fournisseur IA.
+
+## Direction Stratégique Confirmée : Réciprocité Contributive et Sas de Normalisation
+
+**À L'ATTENTION DE TOUS LES AGENTS (Codex, Antigravity, etc.) :**
+Le projet s'oriente vers un modèle de *réciprocité contributive* (accès en l'échange de contributions) et intègre le concept de *sas de normalisation* pour ingérer des ressources brutes.
+
+Cependant, dans la v0 actuelle :
+- Ne **PAS** développer ou implémenter Supabase, Clerk, NextAuth, ou tout système de base de données backend.
+- Ne **PAS** mettre en place de restriction réelle d'accès ou de murs payants dans l'application.
+- Garder la contribution conceptuellement accessible (pas de jargon de développeur).
+- Nous nous contentons de préparer les concepts, les types optionnels TypeScript (NormalizationStatus, ContributorStatus) et la documentation.
+La priorité reste la v0 statique et documentaire.

@@ -186,6 +186,22 @@ export const contributionStatuses = [
 
 export const collectionVisibilities = ['privee', 'partagee', 'publique'] as const
 
+export const normalizationStatuses = [
+  'soumise',
+  'en_analyse',
+  'en_normalisation',
+  'en_relecture',
+  'normalisee',
+] as const
+
+export const contributorStatuses = [
+  'decouverte',
+  'inscrit',
+  'contributeur_actif',
+  'contributeur_reconnu',
+  'moderateur',
+] as const
+
 export type CefrLevel = (typeof cefrLevels)[number]
 export type DurationCategory = (typeof durationCategories)[number]
 export type ResourceSkill = (typeof resourceSkills)[number]
@@ -205,6 +221,16 @@ export type AiAssistanceLevel = (typeof aiAssistanceLevels)[number]
 export type ContributionType = (typeof contributionTypes)[number]
 export type ContributionStatus = (typeof contributionStatuses)[number]
 export type CollectionVisibility = (typeof collectionVisibilities)[number]
+export type NormalizationStatus = (typeof normalizationStatuses)[number]
+export type ContributorStatus = (typeof contributorStatuses)[number]
+
+export type NormalizationMetadata = {
+  originalFormat?: string
+  originalSourceUrl?: string
+  submittedBy?: string
+  normalizationStatus?: NormalizationStatus
+  legalWarning?: string
+}
 
 export type ResourceSectionKey =
   | 'objectives'
@@ -339,6 +365,7 @@ export type Resource = {
   reviewSummary?: ResourceReviewSummary
   techMetadata?: TechMetadata
   aiMetadata?: AiMetadata
+  normalizationMetadata?: NormalizationMetadata
   contributionSuggestions?: ContributionSuggestion[]
   collectionIds?: string[]
 }
