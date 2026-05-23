@@ -151,3 +151,13 @@ Journal chronologique synthétique des interventions importantes. Les dates sont
 - Décisions : appliquer le principe "ne pas supprimer l'information, la hiérarchiser"
 - Limites volontaires : pas de moteur de préférences, pas de refonte complète, pas de suppression de champ métier
 - Commit associé si connu : commit en cours
+
+## 2026-05-23 — Analyse exploratoire d'un corpus Google Drive
+
+- Outil principal : ChatGPT avec connecteur Google Drive
+- Objectif : analyser un dossier Drive de supports FLE comme corpus de référence temporaire pour les futurs gabarits du projet
+- Résultat : rapport documentaire `docs/drive-corpus-analysis.md` décrivant la typologie des supports, les risques, les champs faciles ou difficiles à inférer et les gabarits recommandés
+- Fichiers principaux : `docs/drive-corpus-analysis.md`
+- Décisions : utiliser le corpus Drive comme référence de conception, pas comme source publiable par défaut; ne pas importer automatiquement les documents; créer plus tard des exemples fictifs ou anonymisés
+- Limites volontaires : pas d'import Drive, pas de copie de contenus protégés, pas d'accès réel, pas de Supabase, pas d'upload, pas de backend
+- Commit associé si connu : `61e6562 docs: add Drive corpus analysis`
