@@ -151,3 +151,13 @@
 - Les alertes professeur ne doivent jamais apparaitre dans `Contenu apprenant`.
 - L'impression de la fiche apprenant ne doit pas contenir les alertes professeur.
 - Les alertes ne remplacent pas les metadonnees `materialNeeded`, `teacherPreparationLevel`, `techMetadata` ou les notes pedagogiques.
+
+## Atelier IA & FLE Statique
+
+- La page `#/ai-workshop` reste une section documentaire et pedagogique statique.
+- Les tutoriels et prompts viennent de donnees locales TypeScript, sans backend.
+- Le bouton de copie copie uniquement le texte du prompt dans le presse-papiers.
+- Aucun prompt saisi par un utilisateur n'est stocke, collecte ou envoye.
+- Aucun appel OpenAI, Claude, Gemini ou autre fournisseur IA n'est ajoute.
+- La page indique clairement que les prompts sont a copier dans l'outil choisi par l'enseignant.
+- Les garde-fous restent visibles: pas de donnees personnelles, verification humaine, respect des droits, controle enseignant.

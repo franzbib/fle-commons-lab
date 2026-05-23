@@ -24,6 +24,8 @@ const docGroups = [
     title: 'Technologies, IA et sobriete',
     items: [
       ['Technologies et IA', 'docs/technology-and-ai.md'],
+      ['Cadrage Atelier IA & FLE', 'docs/ai-workshop-section-concept.md'],
+      ['Implementation Atelier IA & FLE', 'docs/ai-workshop-implementation.md'],
       ['Architecture v0', 'docs/architecture-v0.md'],
       ['Environnement', 'docs/environment.md'],
       ['Checklist de non-regression', 'docs/non-regression-checklist.md'],

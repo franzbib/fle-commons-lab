@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Layout } from './components/Layout'
 import { demoCollections, demoResources, themes } from './data/demoResources'
 import { AboutPage } from './pages/AboutPage'
+import { AiWorkshopPage } from './pages/AiWorkshopPage'
 import { CollectionPage } from './pages/CollectionPage'
 import { CollectionsPage } from './pages/CollectionsPage'
 import { CommunityPage } from './pages/CommunityPage'
@@ -30,6 +31,7 @@ export type AppRoute =
   | 'templates'
   | 'about'
   | 'technology'
+  | 'aiWorkshop'
   | 'docs'
 
 type ParsedRoute = {
@@ -88,6 +90,7 @@ function App() {
       {parsedRoute.route === 'templates' ? <TemplatesPage /> : null}
       {parsedRoute.route === 'about' ? <AboutPage /> : null}
       {parsedRoute.route === 'technology' ? <TechnologyAndAiPage /> : null}
+      {parsedRoute.route === 'aiWorkshop' ? <AiWorkshopPage /> : null}
       {parsedRoute.route === 'docs' ? <DocumentationPage /> : null}
     </Layout>
   )
@@ -143,6 +146,10 @@ function parseHash(hash: string): ParsedRoute {
 
   if (routeSegment === 'technology') {
     return { route: 'technology' }
+  }
+
+  if (routeSegment === 'ai-workshop') {
+    return { route: 'aiWorkshop' }
   }
 
   if (routeSegment === 'docs') {

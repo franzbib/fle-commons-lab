@@ -18,6 +18,7 @@ const navItems: Array<{ route: AppRoute; label: string }> = [
   { route: 'resourceFormat', label: 'Format' },
   { route: 'about', label: 'Vision' },
   { route: 'technology', label: 'Technologies et IA' },
+  { route: 'aiWorkshop', label: 'Atelier IA & FLE' },
   { route: 'docs', label: 'Documentation' },
 ]
 
@@ -49,6 +50,8 @@ export function Layout({ children, currentRoute }: LayoutProps) {
                       ? '#/resource-format'
                       : item.route === 'contributionSpace'
                         ? '#/contribution-space'
+                        : item.route === 'aiWorkshop'
+                          ? '#/ai-workshop'
                         : `#/${item.route}`
               }
               aria-current={isCurrentRoute(currentRoute, item.route) ? 'page' : undefined}

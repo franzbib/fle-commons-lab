@@ -19,6 +19,7 @@ Le projet prepare:
 - des propositions d'amelioration simulees;
 - une future logique de contribution ouverte.
 - un futur format source Markdown avec frontmatter YAML.
+- un Atelier IA & FLE statique avec mini-tutoriels et prompts copiables.
 
 L'IA est documentee et anticipee, mais aucune API IA n'est appelee par l'application.
 
@@ -28,7 +29,8 @@ L'IA est documentee et anticipee, mais aucune API IA n'est appelee par l'applica
 - Donnees locales TypeScript.
 - 18 ressources de demonstration, dont un lot aligne sur l'usage enseignant: copier, imprimer, adapter, contribuer.
 - Bibliotheque filtrable et recherche texte.
-- Pages Accueil, Demo, Bibliotheque, Collections, Detail ressource, Communaute, Gabarits, Vision, Technologies et IA, Documentation.
+- Pages Accueil, Demo, Bibliotheque, Collections, Detail ressource, Communaute, Gabarits, Vision, Technologies et IA, Atelier IA & FLE, Documentation.
+- Page Atelier IA & FLE statique: mini-tutoriels, prompts commentes et garde-fous pour enseignants, sans appel IA ni collecte.
 - Fiches ressources copiables et imprimables pour un usage enseignant immédiat.
 - Page conceptuelle Espace de contribution.
 - Prototype non persistant de proposition de ressource brute.
@@ -150,6 +152,8 @@ PROJECT_STATE_FOR_LLMS.md
 - `docs/raw-resource-intake-form-spec.md`
 - `docs/editorial-copy-audit.md`
 - `docs/technology-and-ai.md`
+- `docs/ai-workshop-section-concept.md`
+- `docs/ai-workshop-implementation.md`
 - `docs/deployment.md`
 - `docs/git-sync-audit.md`
 - `docs/environment.md`
@@ -168,6 +172,7 @@ Les fichiers de reprise et de traçabilité sont:
 ## Prochaines etapes possibles
 
 - Relire les ressources de demonstration avec des enseignants FLE.
+- Tester les contenus statiques de l'Atelier IA & FLE avec des enseignants debutants et confirmer que les prompts restent comprehensibles hors du site.
 - Stabiliser le modele communautaire avant toute base de donnees.
 - Convertir de vrais supports libres ou internes.
 - Améliorer le validateur local sans en faire un importeur automatique.

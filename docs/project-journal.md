@@ -294,3 +294,13 @@ Journal chronologique synthÃ©tique des interventions importantes. Les dates so
 - Decisions : ne pas inventer le rapport; documenter que les points connus du brief ont ete traites par le commit `178cf04`.
 - Limites volontaires : aucune fusion de branche, aucune modification applicative, aucun changement du modele, aucun backend, aucune auth, aucun Supabase, aucun appel IA reel.
 - Commit associe si connu : commit en cours
+
+## 2026-05-23 — Atelier IA & FLE statique
+
+- Outil principal : Codex
+- Objectif : créer une première section visible pour accompagner les enseignants FLE dans des usages IA pratiques, critiques et contrôlés.
+- Résultat : ajout d'une page `Atelier IA & FLE` avec garde-fous, parcours d'initiation, 5 mini-tutoriels et 8 prompts commentés copiables.
+- Fichiers principaux : `src/pages/AiWorkshopPage.tsx`, `src/data/aiWorkshop.ts`, `src/types/aiWorkshop.ts`, `src/components/CopyPromptButton.tsx`, `docs/ai-workshop-implementation.md`, `PROJECT_STATE_FOR_LLMS.md`.
+- Décisions : rester sur des contenus locaux statiques; les prompts sont copiés par l'enseignant dans l'outil de son choix; aucune IA n'est intégrée au site.
+- Limites volontaires : aucun appel API IA, aucun chatbot, aucun stockage de prompt, aucune collecte de données utilisateur, aucun backend, aucun Supabase, aucune authentification, aucun paiement.
+- Commit associé si connu : commit en cours
