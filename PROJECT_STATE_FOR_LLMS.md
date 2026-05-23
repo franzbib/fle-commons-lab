@@ -362,7 +362,9 @@ L'etude de reception confirme trois profils :
 Consequence active : l'interface publique doit etre pensee d'abord pour le premier profil, tandis que les parcours de contribution doivent viser le deuxieme. Le troisieme reste essentiel pour maintenir la forge, mais ne doit pas imposer ses outils au public majoritaire.
 
 
-## SpÈcification UX : Formulaire de dÈpÙt
+## Maquette UX : Formulaire de d√©p√¥t
 
 **NOTE POUR LES PROCHAINES SESSIONS :**
-Le composant ContributionSpacePage.tsx devra Ítre implÈmentÈ VISUELLEMENT (maquette) en respectant ‡ la lettre le document docs/raw-resource-intake-form-spec.md. Ne **JAMAIS** ajouter de backend, de base de donnÈes (Supabase), ou d'authentification pour rendre le formulaire fonctionnel. Le bouton 'Envoyer' affichera simplement un message statique pÈdagogique.
+Le composant `ContributionSpacePage.tsx` a √©t√© impl√©ment√© VISUELLEMENT (maquette) en respectant √† la lettre le document `docs/raw-resource-intake-form-spec.md`. 
+Le formulaire utilise un √©tat local React uniquement (`useState`) pour naviguer entre les 5 √©tapes.
+Ne **JAMAIS** ajouter de backend, de base de donn√©es (Supabase), ou d'authentification pour rendre le formulaire fonctionnel. Le bouton 'Envoyer' affiche simplement un message statique p√©dagogique de d√©monstration.
