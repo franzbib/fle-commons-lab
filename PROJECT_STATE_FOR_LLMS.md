@@ -37,15 +37,16 @@ Fonctionnalites presentes:
 - guide permanent des agents IA dans `AGENTS.md`.
 - documentation des roles contributeurs futurs et de l'espace de contribution conceptuel.
 - journal chronologique dans `docs/project-journal.md`.
-- journal des décisions structurantes dans `docs/decision-log.md`.
-- modèle de rapport dans `docs/change-report-template.md`.
-- règles de prompting dans `docs/prompting-rules.md`.
-- documentation conceptuelle des accès et de la soutenabilité dans `docs/access-and-sustainability-model.md`.
-- direction visuelle "Laboratoire Typographique" documentée dans `docs/branding-directions.md` et `docs/visual-identity-v0.md`.
-- première couche UI appliquée dans `src/styles/global.css` avec notes dans `docs/ui-implementation-notes.md`.
+- journal des decisions structurantes dans `docs/decision-log.md`.
+- modele de rapport dans `docs/change-report-template.md`.
+- regles de prompting dans `docs/prompting-rules.md`.
+- documentation conceptuelle des acces et de la soutenabilite dans `docs/access-and-sustainability-model.md`.
+- direction visuelle "Laboratoire Typographique" documentee dans `docs/branding-directions.md` et `docs/visual-identity-v0.md`.
+- premiere couche UI appliquee dans `src/styles/global.css` avec notes dans `docs/ui-implementation-notes.md`.
 - rapport Antigravity `docs/ux-progressive-disclosure.md` et documentation d'architecture d'information dans `docs/ux-information-architecture.md`.
-- divulgation progressive appliquée à l'interface: cartes ressource allégées, filtres avancés repliables et sections de détail consultables à la demande.
-- analyse exploratoire d'un corpus Google Drive dans `docs/drive-corpus-analysis.md`, à utiliser comme référence de conception et non comme source publiable par défaut.
+- divulgation progressive appliquee a l'interface: cartes ressource allegees, filtres avances repliables et sections de detail consultables a la demande.
+- analyse exploratoire d'un corpus Google Drive dans `docs/drive-corpus-analysis.md`, a utiliser comme reference de conception et non comme source publiable par defaut.
+- document produit `docs/horizon-reception-product-consequences.md`, qui formalise les consequences de l'horizon de reception FLE : infrastructure technique invisible, priorite au copier-coller, aux exports, a l'impression propre, aux formulaires simples et a la contribution non technique.
 
 Le dossier local est un depot Git rattache a:
 
@@ -84,8 +85,8 @@ Dependances runtime: `react`, `react-dom`.
 - Chat.
 - Forum.
 - Paiement.
-- Restriction réelle d'accès.
-- Abonnement ou monétisation active.
+- Restriction reelle d'acces.
+- Abonnement ou monetisation active.
 - Commentaires persistants.
 - Workflow communautaire reel.
 
@@ -147,6 +148,7 @@ docs/
   decision-log.md
   drive-corpus-analysis.md
   git-sync-audit.md
+  horizon-reception-product-consequences.md
   markdown-resource-format.md
   project-journal.md
   prompting-rules.md
@@ -199,11 +201,11 @@ Les champs IA sont descriptifs. Ils servent a documenter des usages pedagogiques
 
 Le format Markdown + frontmatter YAML est documente comme format source futur. Il n'est pas importe automatiquement.
 
-Le validateur local vérifie seulement une conformité minimale des exemples Markdown: frontmatter, champs obligatoires, sections attendues et valeurs contrôlées simples.
+Le validateur local verifie seulement une conformite minimale des exemples Markdown: frontmatter, champs obligatoires, sections attendues et valeurs controlees simples.
 
-Les champs d'accès et de soutenabilité sont conceptuels et facultatifs: `accessLevel`, `monetizationStatus`, `visibilityNotes`, `licenseNotes`. Ils ne créent aucune restriction réelle.
+Les champs d'acces et de soutenabilite sont conceptuels et facultatifs: `accessLevel`, `monetizationStatus`, `visibilityNotes`, `licenseNotes`. Ils ne creent aucune restriction reelle.
 
-L'analyse du corpus Drive recommande de documenter ou d'étudier plus tard trois notions supplémentaires avant tout import: complétude pédagogique, statut des droits et usage comme référence temporaire.
+L'analyse du corpus Drive recommande de documenter ou d'etudier plus tard trois notions supplementaires avant tout import: completude pedagogique, statut des droits et usage comme reference temporaire.
 
 ## 7. Decisions importantes
 
@@ -215,22 +217,26 @@ L'analyse du corpus Drive recommande de documenter ou d'étudier plus tard trois
 - IA et Supabase anticipes uniquement par types, taxonomie et documentation.
 - Tests unitaires legers avec Vitest.
 - Markdown + frontmatter YAML retenu comme format de contribution lisible et versionnable.
-- Le validateur Markdown est autonome en Node et n'ajoute aucune dépendance YAML.
+- Le validateur Markdown est autonome en Node et n'ajoute aucune dependance YAML.
 - Le projet est deployable sur Vercel comme site statique Vite: build `npm run build`, sortie `dist`.
-- URL Vercel publique vérifiée: `https://fle-commons-lab.vercel.app`.
-- Synchronisation vérifiée: `HEAD` local = `origin/main` = `3b038c16bbc04be9145ebb79e2faa95a37217d81` au moment de l'audit du 2026-05-23.
-- Le dépôt GitHub public affiche bien les fichiers du projet sur la branche `main`.
+- URL Vercel publique verifiee: `https://fle-commons-lab.vercel.app`.
+- Synchronisation verifiee: `HEAD` local = `origin/main` = `3b038c16bbc04be9145ebb79e2faa95a37217d81` au moment de l'audit du 2026-05-23.
+- Le depot GitHub public affiche bien les fichiers du projet sur la branche `main`.
 - La demo publique ne collecte pas de donnees utilisateur.
 - Les roles contributeurs sont purement descriptifs dans `src/types/community.ts`.
-- Les niveaux d'accès futurs sont purement descriptifs dans `src/types/access.ts`.
-- Aucun paiement, abonnement, Stripe, restriction réelle, auth ou backend n'est actif.
-- L'identité visuelle appliquée reste une v0 sobre: tokens CSS, logo temporaire, favicon, badges typographiques et cartes type fiche d'index.
-- L'interface suit une lecture progressive: carte = décision rapide; fiche détail = prise en main puis blocs experts repliables.
-- Aucune information du modèle n'a été supprimée: les métadonnées, versions, retours, propositions, audit, IA, numérique, licence et accès restent disponibles.
-- Le corpus Google Drive observé sert uniquement de référence de conception pour gabarits et exemples fictifs; les documents sources ne doivent pas être importés ni publiés sans vérification.
+- Les niveaux d'acces futurs sont purement descriptifs dans `src/types/access.ts`.
+- Aucun paiement, abonnement, Stripe, restriction reelle, auth ou backend n'est actif.
+- L'identite visuelle appliquee reste une v0 sobre: tokens CSS, logo temporaire, favicon, badges typographiques et cartes type fiche d'index.
+- L'interface suit une lecture progressive: carte = decision rapide; fiche detail = prise en main puis blocs experts repliables.
+- Aucune information du modele n'a ete supprimee: les metadonnees, versions, retours, propositions, audit, IA, numerique, licence et acces restent disponibles.
+- Le corpus Google Drive observe sert uniquement de reference de conception pour gabarits et exemples fictifs; les documents sources ne doivent pas etre importes ni publies sans verification.
 - `AGENTS.md` est le guide de travail prioritaire pour Codex, ChatGPT, Antigravity et autres LLM.
-- Toute intervention significative doit maintenir la documentation de traçabilité: `PROJECT_STATE_FOR_LLMS.md`, `docs/project-journal.md`, `docs/decision-log.md` si nécessaire.
+- Toute intervention significative doit maintenir la documentation de tracabilite: `PROJECT_STATE_FOR_LLMS.md`, `docs/project-journal.md`, `docs/decision-log.md` si necessaire.
 - Validation enseignante obligatoire pour niveau, consignes, corriges, droits et licences.
+- L'infrastructure Markdown/YAML/Git doit rester invisible pour l'utilisateur enseignant non technicien.
+- La contribution ordinaire doit passer par des formulaires, retours d'usage, depots bruts ou corrections simples, non par des pull requests.
+- La reciprocite contributive est une direction structurante, mais aucune restriction reelle d'acces ne doit etre implementee en v0.
+- Le sas de normalisation des ressources brutes devient un axe central du projet.
 
 ## 8. Variables d'environnement
 
@@ -285,23 +291,26 @@ Variables obligatoires: aucune
 
 1. Relire les collections et propositions simulees avec des enseignants FLE.
 2. Stabiliser les statuts de contribution avant toute persistance.
-3. Relire la doctrine `docs/access-and-sustainability-model.md` avant toute discussion d'accès réservé.
-4. Lire `docs/drive-corpus-analysis.md` avant de créer de nouveaux gabarits ou exemples Markdown inspirés de supports existants.
+3. Relire la doctrine `docs/access-and-sustainability-model.md` avant toute discussion d'acces reserve.
+4. Lire `docs/drive-corpus-analysis.md` avant de creer de nouveaux gabarits ou exemples Markdown inspires de supports existants.
 5. Utiliser `docs/change-report-template.md` comme format standard de bilan.
 6. Relire `AGENTS.md` avec les pratiques reelles du projet.
-7. Améliorer le validateur local si de nouveaux exemples Markdown apparaissent.
+7. Ameliorer le validateur local si de nouveaux exemples Markdown apparaissent.
 8. Tester l'architecture d'information avec deux ou trois enseignants FLE.
 9. Ajouter quelques supports libres convertis en ressources structurees.
 10. Preciser une charte de validation pedagogique.
 11. Documenter un schema Supabase futur sans installer Supabase.
 12. Definir une charte d'usage IA avant tout prototype actif.
+13. Prioriser les fonctions copier, imprimer, exporter Word/PDF avant tout workflow communautaire complexe.
+14. Prototyper plus tard un formulaire non persistant de proposition de ressource brute.
+15. Prototyper plus tard un formulaire non persistant de retour d'usage court.
 
 ## 11. A ne pas faire sans validation explicite
 
 - Installer Supabase ou Firebase.
 - Ajouter une authentification.
 - Ajouter des roles reels ou permissions reelles.
-- Ajouter Stripe, paiement, abonnement ou restriction réelle d'accès.
+- Ajouter Stripe, paiement, abonnement ou restriction reelle d'acces.
 - Ajouter un appel IA reel.
 - Creer une cle API ou `.env.local`.
 - Ajouter une base de donnees.
@@ -311,18 +320,31 @@ Variables obligatoires: aucune
 - Ajouter une dependance YAML sans decision explicite.
 - Ajouter un chat, forum ou messagerie.
 - Ajouter un vrai workflow communautaire persistant.
-- Copier dans le dépôt des contenus Drive dont les droits, sources et données personnelles n'ont pas été vérifiés.
+- Copier dans le depot des contenus Drive dont les droits, sources et donnees personnelles n'ont pas ete verifies.
 - Exposer une cle serveur cote frontend.
 - Rendre le projet dependant d'un fournisseur IA.
+- Faire de GitHub, Markdown ou YAML le parcours principal de contribution pour les enseignants non techniciens.
+- Publier automatiquement une ressource brute sans verification humaine.
 
-## Direction Strat�gique Confirm�e : R�ciprocit� Contributive et Sas de Normalisation
+## Direction Strategique Confirmee : Reciprocite Contributive et Sas de Normalisation
 
-**� L'ATTENTION DE TOUS LES AGENTS (Codex, Antigravity, etc.) :**
-Le projet s'oriente vers un mod�le de *r�ciprocit� contributive* (acc�s en l'�change de contributions) et int�gre le concept de *sas de normalisation* pour ing�rer des ressources brutes.
+**A L'ATTENTION DE TOUS LES AGENTS (Codex, Antigravity, etc.) :**
+Le projet s'oriente vers un modele de *reciprocite contributive* (acces elargi associe a des contributions utiles) et integre le concept de *sas de normalisation* pour ingerer des ressources brutes.
 
 Cependant, dans la v0 actuelle :
-- Ne **PAS** d�velopper ou impl�menter Supabase, Clerk, NextAuth, ou tout syst�me de base de donn�es backend.
-- Ne **PAS** mettre en place de restriction r�elle d'acc�s ou de murs payants dans l'application.
-- Garder la contribution conceptuellement accessible (pas de jargon de d�veloppeur).
-- Nous nous contentons de pr�parer les concepts, les types optionnels TypeScript (NormalizationStatus, ContributorStatus) et la documentation.
-La priorit� reste la v0 statique et documentaire.
+- Ne **PAS** developper ou implementer Supabase, Clerk, NextAuth, ou tout systeme de base de donnees backend.
+- Ne **PAS** mettre en place de restriction reelle d'acces ou de murs payants dans l'application.
+- Garder la contribution conceptuellement accessible (pas de jargon de developpeur).
+- Ne pas exposer Markdown, YAML ou Git comme parcours principal pour l'enseignant ordinaire.
+- Nous nous contentons de preparer les concepts, les types optionnels TypeScript et la documentation.
+La priorite reste la v0 statique et documentaire.
+
+## Horizon de reception FLE
+
+L'etude de reception confirme trois profils :
+
+- enseignants-consommateurs presses : ils veulent chercher, copier, adapter et imprimer ;
+- concepteurs-contributeurs pedagogiques : ils peuvent proposer, corriger, adapter ou relire, mais pas necessairement via Git ;
+- enseignants technophiles : ils peuvent maintenir les formats ouverts, schemas, validateurs et contributions GitHub.
+
+Consequence active : l'interface publique doit etre pensee d'abord pour le premier profil, tandis que les parcours de contribution doivent viser le deuxieme. Le troisieme reste essentiel pour maintenir la forge, mais ne doit pas imposer ses outils au public majoritaire.
