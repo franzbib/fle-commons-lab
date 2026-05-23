@@ -19,6 +19,7 @@ Fonctionnalites presentes:
 - recherche texte;
 - filtres pedagogiques, numeriques et IA;
 - fiches detail avec actions de copie et impression;
+- fiches detail organisees en onglets: vue d'ensemble, contenu apprenant, corriges & notes prof;
 - collections locales et pages detail de collection;
 - propositions d'amelioration simulees dans certaines fiches;
 - retours d'usage simules mieux visibles;
@@ -46,6 +47,7 @@ Fonctionnalites presentes:
 - premiere couche UI appliquee dans `src/styles/global.css` avec notes dans `docs/ui-implementation-notes.md`.
 - rapport Antigravity `docs/ux-progressive-disclosure.md` et documentation d'architecture d'information dans `docs/ux-information-architecture.md`.
 - divulgation progressive appliquee a l'interface: cartes ressource allegees, filtres avances repliables et sections de detail consultables a la demande.
+- separation apprenant / enseignant documentee dans `docs/ux-resource-tabs.md`; le contenu apprenant masque les corriges, notes professeur, retours d'usage et audit simule.
 - styles d'impression dedies pour rendre les fiches ressources plus lisibles sur papier.
 - analyse exploratoire d'un corpus Google Drive dans `docs/drive-corpus-analysis.md`, a utiliser comme reference de conception et non comme source publiable par defaut.
 - document produit `docs/horizon-reception-product-consequences.md`, qui formalise les consequences de l'horizon de reception FLE : infrastructure technique invisible, priorite au copier-coller, aux exports, a l'impression propre, aux formulaires simples et a la contribution non technique.
@@ -105,6 +107,7 @@ src/
     Layout.tsx
     ResourceCard.tsx
     ResourceDetail.tsx
+    ResourceDetailTabs.tsx
     ResourceFilters.tsx
     CollapsibleSection.tsx
     CompactTagList.tsx
@@ -165,6 +168,7 @@ docs/
   ui-implementation-notes.md
   ux-information-architecture.md
   ux-progressive-disclosure.md
+  ux-resource-tabs.md
   visual-identity-v0.md
   environment.md
   git-workflow.md
@@ -237,6 +241,8 @@ L'analyse du corpus Drive recommande de documenter ou d'etudier plus tard trois 
 - Aucun paiement, abonnement, Stripe, restriction reelle, auth ou backend n'est actif.
 - L'identite visuelle appliquee reste une v0 sobre: tokens CSS, logo temporaire, favicon, badges typographiques et cartes type fiche d'index.
 - L'interface suit une lecture progressive: carte = decision rapide; fiche detail = prise en main puis blocs experts repliables.
+- Les fiches detail utilisent des onglets locaux pour separer la decision rapide, le contenu projetable aux apprenants et l'espace enseignant avec corriges, notes, retours et audit.
+- L'onglet `Contenu apprenant` ne doit jamais afficher les corriges, le guide professeur, les retours d'usage, l'audit simule ou les notes internes.
 - L'interface publique doit privilegier le vocabulaire enseignant: copier, imprimer, proposer une ressource, corrige, guide professeur. Les termes Markdown, YAML, pull request, fork, build ou repository ne doivent pas devenir le parcours principal.
 - Les pages visibles doivent distinguer explicitement ce qui fonctionne, ce qui est simule, ce qui est conceptuel et ce qui reste en roadmap.
 - Les boutons de copie utilisent les sections existantes du modele (`studentInstructions`, `teacherGuide`, `answerKey`) et une transformation locale en texte propre; ils n'envoient aucune donnee.

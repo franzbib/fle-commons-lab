@@ -608,6 +608,74 @@ button:disabled {
   font-weight: 700;
 }
 
+.resource-tabs {
+  display: grid;
+  gap: 18px;
+}
+
+.resource-tab-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-bottom: 1px solid var(--color-border-strong);
+  padding-bottom: 8px;
+}
+
+.resource-tab {
+  min-height: 40px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  color: var(--muted);
+  background: var(--surface);
+  padding: 0 12px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.resource-tab:hover {
+  border-color: var(--color-border-strong);
+  color: var(--text-strong);
+}
+
+.resource-tab[aria-selected='true'] {
+  border-color: var(--color-border-strong);
+  color: var(--text-strong);
+  background: var(--color-highlight);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.82);
+}
+
+.resource-tab-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.tab-description,
+.learner-mode-note {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  color: var(--muted);
+  background: var(--surface-muted);
+  padding: 10px 12px;
+}
+
+.learner-mode-note {
+  border-left: 4px solid var(--color-info);
+  color: var(--text-strong);
+}
+
+.learner-content-section {
+  background: var(--surface);
+}
+
+.lesson-plan-preview {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 22px;
+}
+
 .collapsible-section {
   border: 1px solid var(--color-border-strong);
   border-radius: var(--radius);
@@ -970,6 +1038,7 @@ button:disabled {
   .site-header,
   .back-link,
   .copy-actions-panel,
+  .resource-tab-list,
   .filters-panel,
   .resource-card-footer,
   .non-persistent-note.action-note {
@@ -998,6 +1067,7 @@ button:disabled {
 
   .detail-hero,
   .detail-section,
+  .resource-tab-panel,
   .collapsible-section,
   .content-section,
   .feedback-card {

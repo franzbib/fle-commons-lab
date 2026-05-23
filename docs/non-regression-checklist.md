@@ -109,3 +109,10 @@
 - L'interface ne devient pas une landing page commerciale.
 - Les tokens CSS restent centralisés dans `src/styles/global.css`.
 - `docs/ui-implementation-notes.md` est mis à jour si les composants visuels changent.
+
+## UX Onglets Ressource
+
+- La fiche ressource propose les onglets `Vue d'ensemble`, `Contenu apprenant` et `Corriges & Notes prof`.
+- L'onglet `Contenu apprenant` ne montre pas le corrige, le guide professeur, les retours d'usage, l'audit simule ou les notes internes.
+- L'onglet `Corriges & Notes prof` garde accessibles le guide professeur, le corrige, les variantes, les retours d'usage et les details complementaires.
+- Aucune information n'est supprimee pour isoler le contenu apprenant; elle est deplacee vers la vue adaptee.

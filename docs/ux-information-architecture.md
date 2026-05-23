@@ -36,13 +36,15 @@ La carte ne doit pas afficher toutes les metadonnees, toutes les notes IA, les v
 
 ## Fiche detail
 
-La fiche detail est organisee en trois temps:
+La fiche detail est maintenant organisee par onglets simples:
 
-1. prise en main rapide: titre, resume, niveau, duree, competence, type, statut, objectif principal, modalite et materiel;
-2. contenu pedagogique principal: objectifs, prerequis, deroule, support etudiant, guide professeur, corrige, variantes;
-3. sections complementaires repliables: metadonnees completes, IA et numerique, licence et acces, notes complementaires, versions, retours d'usage, propositions et audit simule.
+1. `Vue d'ensemble`: prise en main rapide, resume, niveau, duree, competence, type, statut, objectif principal, modalite, materiel, apercu court du deroule et metadonnees consultables;
+2. `Contenu apprenant`: objectifs, prerequis et support etudiant projetables ou distribuables;
+3. `Corriges & Notes prof`: deroule d'animation, guide professeur, corrige, variantes, retours d'usage, IA/numerique, licence, versions, propositions et audit simule.
 
-Cette organisation allege la lecture sans retirer de champ.
+Cette organisation allege la lecture sans retirer de champ. Elle evite surtout d'afficher les reponses ou notes professeur quand l'enseignant projette une consigne aux apprenants.
+
+Voir aussi `docs/ux-resource-tabs.md`.
 
 ## Filtres
 
@@ -69,6 +71,7 @@ Les filtres avances restent disponibles a la demande:
 
 - Une information masquee par defaut doit rester accessible.
 - Aucun champ du modele `Resource` ne doit etre supprime pour alleger l'interface.
+- Le contenu apprenant ne doit pas afficher le corrige, le guide professeur, les retours d'usage ou l'audit simule.
 - Les ressources sans IA ou sans numerique doivent rester visibles.
 - Les donnees conceptuelles d'acces ne doivent pas creer de paywall.
 - Les sections repliables ne remplacent pas la documentation du modele.

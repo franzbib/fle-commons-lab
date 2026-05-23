@@ -234,3 +234,13 @@ Journal chronologique synthÃ©tique des interventions importantes. Les dates so
 - Decisions : distinguer explicitement fonctionnalite active, donnee simulee, concept futur et roadmap; ne pas presenter l'IA, l'acces reserve, la contribution ou le validateur comme des services actifs au-dela de leur perimetre reel
 - Limites volontaires : aucune fonctionnalite ajoutee, aucun backend, aucune auth, aucun Supabase, aucun paiement, aucun upload, aucun appel IA reel
 - Commit associe si connu : commit en cours
+
+## 2026-05-23 — Onglets apprenant / professeur dans les fiches ressources
+
+- Outil principal : Codex
+- Objectif : eviter qu'un enseignant projette par erreur les corriges ou notes professeur en classe.
+- Resultat : ajout d'onglets locaux `Vue d'ensemble`, `Contenu apprenant` et `Corriges & Notes prof` dans `ResourceDetail`; creation d'une documentation UX dediee.
+- Fichiers principaux : `src/components/ResourceDetail.tsx`, `src/components/ResourceDetailTabs.tsx`, `src/styles/global.css`, `docs/ux-resource-tabs.md`, `docs/ux-information-architecture.md`, `PROJECT_STATE_FOR_LLMS.md`, `docs/non-regression-checklist.md`.
+- Decisions : garder toute l'information accessible; isoler seulement l'affichage apprenant pour la projection ou distribution; ne pas creer de restriction d'acces reelle.
+- Limites volontaires : aucune modification du modele metier, aucun backend, aucune auth, aucun Supabase, aucun paiement, aucun appel IA reel, aucun stockage de preference.
+- Commit associe si connu : commit en cours

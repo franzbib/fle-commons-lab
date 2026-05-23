@@ -23,22 +23,23 @@ import {
 import { Badge } from './Badge'
 import { CollapsibleSection } from './CollapsibleSection'
 import { ResourceCopyActions } from './ResourceCopyActions'
+import { ResourceDetailTabs, type ResourceDetailTab } from './ResourceDetailTabs'
 
 type ResourceDetailProps = {
   resource: Resource
 }
 
-const primaryContentSections: ResourceSectionKey[] = [
+const learnerContentSections: ResourceSectionKey[] = [
   'objectives',
   'prerequisites',
-  'lessonPlan',
   'studentInstructions',
+]
+
+const teacherContentSections: ResourceSectionKey[] = [
+  'lessonPlan',
   'teacherGuide',
   'answerKey',
   'variants',
-]
-
-const secondaryContentSections: ResourceSectionKey[] = [
   'usageNotes',
   'techNotes',
   'aiNotes',
@@ -48,6 +49,35 @@ const secondaryContentSections: ResourceSectionKey[] = [
 export function ResourceDetail({ resource }: ResourceDetailProps) {
   const firstObjective = resource.content.objectives?.items[0] ?? 'Objectif à consulter'
   const materialNeeded = resource.materialNeeded.join(', ') || 'Aucun matériel spécifique'
+  const tabs: ResourceDetailTab[] = [
+    {
+      id: 'overview',
+      label: "Vue d'ensemble",
+      description:
+        "Aide à décider rapidement si la ressource convient avant d'ouvrir le contenu complet.",
+      content: (
+        <OverviewTab
+          resource={resource}
+          firstObjective={firstObjective}
+          materialNeeded={materialNeeded}
+        />
+      ),
+    },
+    {
+      id: 'learner',
+      label: 'Contenu apprenant',
+      description:
+        'Espace projetable ou distribuable : les corrigés, notes professeur et audits sont masqués.',
+      content: <LearnerTab resource={resource} />,
+    },
+    {
+      id: 'teacher',
+      label: 'Corrigés & Notes prof',
+      description:
+        "Espace enseignant : animation, corrigés, variantes, retours d'usage et détails complets.",
+      content: <TeacherTab resource={resource} />,
+    },
+  ]
 
   return (
     <article className="resource-detail">
@@ -69,6 +99,22 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
         ) : null}
       </header>
 
+      <ResourceDetailTabs tabs={tabs} defaultTabId="overview" />
+    </article>
+  )
+}
+
+function OverviewTab({
+  resource,
+  firstObjective,
+  materialNeeded,
+}: {
+  resource: Resource
+  firstObjective: string
+  materialNeeded: string
+}) {
+  return (
+    <>
       <section className="detail-section quick-start" aria-label="Prise en main rapide">
         <h2>Prise en main rapide</h2>
         <div className="detail-grid quick-facts">
@@ -86,8 +132,8 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
       <ResourceCopyActions resource={resource} />
 
       <section className="detail-section">
-        <h2>Contenu pédagogique principal</h2>
-        <ContentSections resource={resource} sectionKeys={primaryContentSections} />
+        <h2>Aperçu du déroulé</h2>
+        <LessonPlanPreview resource={resource} />
       </section>
 
       <CollapsibleSection title="Métadonnées complètes">
@@ -128,6 +174,33 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
           </div>
         </div>
       </CollapsibleSection>
+    </>
+  )
+}
+
+function LearnerTab({ resource }: { resource: Resource }) {
+  return (
+    <>
+      <div className="learner-mode-note">
+        Mode projection / apprenant : les corrigés, notes professeur, retours d'usage et audits
+        sont masqués dans cet onglet.
+      </div>
+
+      <section className="detail-section learner-content-section">
+        <h2>Support étudiant</h2>
+        <ContentSections resource={resource} sectionKeys={learnerContentSections} />
+      </section>
+    </>
+  )
+}
+
+function TeacherTab({ resource }: { resource: Resource }) {
+  return (
+    <>
+      <section className="detail-section">
+        <h2>Animation, corrigés et variantes</h2>
+        <ContentSections resource={resource} sectionKeys={teacherContentSections} />
+      </section>
 
       <CollapsibleSection title="IA et numérique">
         <section className="nested-detail-block">
@@ -143,7 +216,10 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
                   label="Format numérique"
                   value={formatDigitalFormat(resource.techMetadata.digitalFormat)}
                 />
-                <Fact label="Internet requis" value={formatBoolean(resource.techMetadata.requiresInternet)} />
+                <Fact
+                  label="Internet requis"
+                  value={formatBoolean(resource.techMetadata.requiresInternet)}
+                />
                 <Fact label="Compte requis" value={formatBoolean(resource.techMetadata.requiresAccount)} />
                 <Fact
                   label="Difficulté technique"
@@ -221,10 +297,6 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
             Cette ressource ne doit pas être publiée largement avant vérification de la licence.
           </p>
         ) : null}
-      </CollapsibleSection>
-
-      <CollapsibleSection title="Notes complémentaires">
-        <ContentSections resource={resource} sectionKeys={secondaryContentSections} />
       </CollapsibleSection>
 
       <CollapsibleSection title="Versions simulées">
@@ -355,7 +427,23 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
           </ul>
         </CollapsibleSection>
       ) : null}
-    </article>
+    </>
+  )
+}
+
+function LessonPlanPreview({ resource }: { resource: Resource }) {
+  const lessonPlanItems = resource.content.lessonPlan?.items.slice(0, 3) ?? []
+
+  if (lessonPlanItems.length === 0) {
+    return <p className="muted">Aucun aperçu du déroulé n'est renseigné.</p>
+  }
+
+  return (
+    <ol className="lesson-plan-preview">
+      {lessonPlanItems.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ol>
   )
 }
 
