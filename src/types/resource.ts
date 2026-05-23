@@ -1,3 +1,5 @@
+import type { AccessLevel, MonetizationStatus } from './access'
+
 export const cefrLevels = ['A0', 'A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'mixte'] as const
 
 export const durationCategories = [
@@ -320,6 +322,10 @@ export type Resource = {
   status: EditorialStatus
   reuseReadiness: ReuseReadiness
   license: ResourceLicense
+  accessLevel?: AccessLevel
+  monetizationStatus?: MonetizationStatus
+  visibilityNotes?: string
+  licenseNotes?: string
   authors: string[]
   tags: string[]
   materialNeeded: string[]

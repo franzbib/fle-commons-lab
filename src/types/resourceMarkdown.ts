@@ -1,4 +1,8 @@
 import type {
+  AccessLevel,
+  MonetizationStatus,
+} from './access'
+import type {
   ActivityFormat,
   AiMetadata,
   CefrLevel,
@@ -33,6 +37,10 @@ export type ResourceFrontmatter = {
   status: EditorialStatus
   reuseReadiness: ReuseReadiness
   license: ResourceLicense
+  accessLevel?: AccessLevel
+  monetizationStatus?: MonetizationStatus
+  visibilityNotes?: string
+  licenseNotes?: string
   authors: string[]
   tags: string[]
   materialNeeded: string[]

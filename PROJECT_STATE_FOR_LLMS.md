@@ -40,6 +40,7 @@ Fonctionnalites presentes:
 - journal des décisions structurantes dans `docs/decision-log.md`.
 - modèle de rapport dans `docs/change-report-template.md`.
 - règles de prompting dans `docs/prompting-rules.md`.
+- documentation conceptuelle des accès et de la soutenabilité dans `docs/access-and-sustainability-model.md`.
 
 Le dossier local est un depot Git rattache a:
 
@@ -77,6 +78,8 @@ Dependances runtime: `react`, `react-dom`.
 - Chat.
 - Forum.
 - Paiement.
+- Restriction réelle d'accès.
+- Abonnement ou monétisation active.
 - Commentaires persistants.
 - Workflow communautaire reel.
 
@@ -116,10 +119,12 @@ src/
     formatters.ts
   types/resourceMarkdown.ts
   types/community.ts
+  types/access.ts
 scripts/
   validate-markdown-resources.mjs
   validate-markdown-resources.test.mjs
 docs/
+  access-and-sustainability-model.md
   agent-workflow.md
   change-report-template.md
   community-model.md
@@ -170,12 +175,17 @@ Types principaux:
 - `ContributionStatus`
 - `ResourceEditorialStatus`
 - `ContributionReviewLevel`
+- `AccessLevel`
+- `MonetizationStatus`
+- `MembershipTier`
 
 Les champs IA sont descriptifs. Ils servent a documenter des usages pedagogiques possibles, pas a appeler un service.
 
 Le format Markdown + frontmatter YAML est documente comme format source futur. Il n'est pas importe automatiquement.
 
 Le validateur local vérifie seulement une conformité minimale des exemples Markdown: frontmatter, champs obligatoires, sections attendues et valeurs contrôlées simples.
+
+Les champs d'accès et de soutenabilité sont conceptuels et facultatifs: `accessLevel`, `monetizationStatus`, `visibilityNotes`, `licenseNotes`. Ils ne créent aucune restriction réelle.
 
 ## 7. Decisions importantes
 
@@ -194,6 +204,8 @@ Le validateur local vérifie seulement une conformité minimale des exemples Mar
 - Le dépôt GitHub public affiche bien les fichiers du projet sur la branche `main`.
 - La demo publique ne collecte pas de donnees utilisateur.
 - Les roles contributeurs sont purement descriptifs dans `src/types/community.ts`.
+- Les niveaux d'accès futurs sont purement descriptifs dans `src/types/access.ts`.
+- Aucun paiement, abonnement, Stripe, restriction réelle, auth ou backend n'est actif.
 - `AGENTS.md` est le guide de travail prioritaire pour Codex, ChatGPT, Antigravity et autres LLM.
 - Toute intervention significative doit maintenir la documentation de traçabilité: `PROJECT_STATE_FOR_LLMS.md`, `docs/project-journal.md`, `docs/decision-log.md` si nécessaire.
 - Validation enseignante obligatoire pour niveau, consignes, corriges, droits et licences.
@@ -251,19 +263,21 @@ Variables obligatoires: aucune
 
 1. Relire les collections et propositions simulees avec des enseignants FLE.
 2. Stabiliser les statuts de contribution avant toute persistance.
-3. Utiliser `docs/change-report-template.md` comme format standard de bilan.
-4. Relire `AGENTS.md` avec les pratiques reelles du projet.
-5. Améliorer le validateur local si de nouveaux exemples Markdown apparaissent.
-6. Ajouter quelques supports libres convertis en ressources structurees.
-7. Preciser une charte de validation pedagogique.
-8. Documenter un schema Supabase futur sans installer Supabase.
-9. Definir une charte d'usage IA avant tout prototype actif.
+3. Relire la doctrine `docs/access-and-sustainability-model.md` avant toute discussion d'accès réservé.
+4. Utiliser `docs/change-report-template.md` comme format standard de bilan.
+5. Relire `AGENTS.md` avec les pratiques reelles du projet.
+6. Améliorer le validateur local si de nouveaux exemples Markdown apparaissent.
+7. Ajouter quelques supports libres convertis en ressources structurees.
+8. Preciser une charte de validation pedagogique.
+9. Documenter un schema Supabase futur sans installer Supabase.
+10. Definir une charte d'usage IA avant tout prototype actif.
 
 ## 11. A ne pas faire sans validation explicite
 
 - Installer Supabase ou Firebase.
 - Ajouter une authentification.
 - Ajouter des roles reels ou permissions reelles.
+- Ajouter Stripe, paiement, abonnement ou restriction réelle d'accès.
 - Ajouter un appel IA reel.
 - Creer une cle API ou `.env.local`.
 - Ajouter une base de donnees.

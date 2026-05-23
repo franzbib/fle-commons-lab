@@ -33,6 +33,7 @@ L'IA est documentee et anticipee, mais aucune API IA n'est appelee par l'applica
 - Page Format pour expliquer la logique Markdown + YAML.
 - Guide `AGENTS.md` pour les agents IA.
 - Documentation des roles contributeurs futurs.
+- Documentation conceptuelle des accès et de la soutenabilité.
 - Exemples Markdown dans `examples/resources-markdown/`.
 - Validateur local minimal des exemples Markdown.
 - Tests Vitest sur les filtres et les collections.
@@ -108,6 +109,7 @@ PROJECT_STATE_FOR_LLMS.md
 - Aucun systeme de contribution persistant.
 - Aucun commentaire persistant.
 - Aucun chat, forum ou messagerie.
+- Aucun paiement, abonnement ou restriction réelle d'accès.
 - Aucun stockage de PDF ou upload.
 - Aucun import automatique de fichiers Markdown.
 - Le validateur Markdown ne crée aucune ressource dans l'application.
@@ -120,6 +122,7 @@ PROJECT_STATE_FOR_LLMS.md
 - `docs/decision-log.md`
 - `docs/change-report-template.md`
 - `docs/prompting-rules.md`
+- `docs/access-and-sustainability-model.md`
 - `docs/resource-model.md`
 - `docs/agent-workflow.md`
 - `docs/community-model.md`
@@ -155,6 +158,7 @@ Les fichiers de reprise et de traçabilité sont:
 - Améliorer ensuite ce validateur sans en faire un importeur automatique.
 - Definir une charte de contribution et de validation.
 - Stabiliser la gouvernance des agents et contributeurs avant toute authentification.
+- Étudier les scénarios d'accès réservé seulement après stabilisation pédagogique et juridique.
 - Documenter un futur schema Supabase sans l'implementer.
 - Prototyper plus tard un audit IA manuel, jamais automatique par defaut.
 

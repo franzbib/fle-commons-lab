@@ -46,6 +46,11 @@
 - `.env`, `.env.local` et `.env.*.local` restent ignorés.
 - Aucune dépendance backend, IA, Supabase ou auth n’a été ajoutée sans décision explicite.
 - Aucun role reel, permission ou systeme d'authentification n'a ete ajoute.
+- Aucun paiement réel n'a été ajouté sans décision explicite.
+- Aucune clé de paiement n'apparaît dans le dépôt.
+- Aucune ressource publique ne doit être masquée par erreur.
+- Aucune documentation ne présente un accès payant comme déjà actif.
+- Les champs d'accès restent facultatifs tant que l'authentification n'existe pas.
 - Aucun appel IA réel n’a été ajouté sans décision explicite.
 - Aucune clé API n’apparaît dans le code ou la documentation.
 - Le projet ne devient pas dépendant d’un fournisseur IA.

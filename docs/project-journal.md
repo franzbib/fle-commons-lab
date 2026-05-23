@@ -121,3 +121,13 @@ Journal chronologique synthétique des interventions importantes. Les dates sont
 - Décisions : toute intervention significative doit mettre à jour la documentation de reprise
 - Limites volontaires : pas de fonctionnalité applicative ajoutée
 - Commit associé si connu : commit en cours
+
+## 2026-05-23 — Modèle conceptuel d'accès et de soutenabilité
+
+- Outil principal : Codex
+- Objectif : préparer la possibilité future de ressources publiques, privées, membres, institutionnelles ou premium sans implémenter de paiement
+- Résultat : doctrine d'accès, types descriptifs, champs optionnels sur `Resource` et `ResourceFrontmatter`
+- Fichiers principaux : `docs/access-and-sustainability-model.md`, `src/types/access.ts`, `docs/resource-model.md`, `docs/decision-log.md`
+- Décisions : le code et les modèles de base restent ouverts; les statuts d'accès sont conceptuels; aucun paiement n'est actif
+- Limites volontaires : pas de Stripe, pas d'abonnement, pas d'authentification, pas de backend, pas de restriction réelle
+- Commit associé si connu : commit en cours

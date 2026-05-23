@@ -12,6 +12,15 @@ Un statut de contribution decrit l'etape d'une proposition.
 
 Ces trois dimensions ne doivent pas etre confondues.
 
+Il faut aussi distinguer:
+
+- rôle communautaire: participation, contribution, relecture;
+- rôle éditorial: capacité future à valider ou demander des corrections;
+- statut de membre: accès éventuel à un espace ou à des contenus réservés;
+- statut de soutien: contribution financière éventuelle.
+
+Un membre payant éventuel ne doit pas automatiquement devenir validateur pédagogique. Une institution ne doit pas automatiquement être mainteneur technique. Un contributeur reconnu ne doit pas nécessairement être membre payant.
+
 ## Statuts de personnes
 
 ### nouveau_contributeur

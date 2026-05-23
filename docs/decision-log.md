@@ -111,3 +111,13 @@ Ce fichier consigne les décisions structurantes du projet. Une décision active
 - Conséquences : `AGENTS.md` et `docs/agent-workflow.md` guident les interventions.
 - Ce qu'il ne faut pas faire sans nouvelle décision : laisser un agent élargir seul le périmètre ou réécrire l'application principale.
 - Documents liés : `AGENTS.md`, `docs/agent-workflow.md`
+
+## Décision 12 — Prévoir des niveaux d'accès sans implémenter de paiement
+
+- Statut : provisoire / à réviser plus tard
+- Contexte : le projet pourrait un jour accueillir des ressources publiques, privées, institutionnelles, réservées à des membres ou éventuellement premium.
+- Décision : documenter et typer légèrement les niveaux d'accès et statuts de soutenabilité, sans paiement ni authentification.
+- Raisons : ne pas bloquer une architecture future tout en gardant le projet open source, sobre et centré sur les communs pédagogiques.
+- Conséquences : ajout de types descriptifs `AccessLevel`, `MonetizationStatus` et `MembershipTier`; champs optionnels sur `Resource` et `ResourceFrontmatter`.
+- Ce qu'il ne faut pas faire sans nouvelle décision : ajouter Stripe, paiement, abonnement, restriction réelle d'accès, auth, backend, Supabase ou offre commerciale.
+- Documents liés : `docs/access-and-sustainability-model.md`, `src/types/access.ts`, `docs/resource-model.md`

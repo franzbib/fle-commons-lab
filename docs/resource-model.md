@@ -24,7 +24,8 @@ Champs principaux:
 - `theme`, `lexicalThemes`, `grammarPoints`
 - `resourceType`, `resourceTemplate`, `activityFormat`, `classroomMode`
 - `status`, `reuseReadiness`
-- `license`, `authors`, `tags`
+- `license`, `accessLevel`, `monetizationStatus`, `visibilityNotes`, `licenseNotes`
+- `authors`, `tags`
 - `materialNeeded`, `sourceType`, `teacherPreparationLevel`
 - `createdAt`, `updatedAt`
 - `content`, `versions`
@@ -89,6 +90,30 @@ Réutilisabilité: `a_completer`, `pret_a_tester`, `pret_a_utiliser`, `teste_en_
 Licences: `CC_BY`, `CC_BY_SA`, `CC_BY_NC`, `CC_BY_NC_SA`, `domaine_public`, `tous_droits_reserves`, `a_verifier`.
 
 Les licences doivent être vérifiées avant publication publique. Le projet ne doit pas encourager la copie de contenus protégés.
+
+## Accès et soutenabilité
+
+Les champs suivants sont optionnels et conceptuels:
+
+- `accessLevel`
+- `monetizationStatus`
+- `visibilityNotes`
+- `licenseNotes`
+
+`accessLevel` décrit une visibilité future possible dans une plateforme avec authentification. Il ne remplace pas `license`.
+
+`license` décrit les droits juridiques de réutilisation. Une ressource peut être publique avec une licence restrictive, ou réservée à une équipe tout en gardant une licence ouverte selon son contexte.
+
+`status` reste un statut éditorial. Il indique la maturité pédagogique de la ressource, pas son accès.
+
+Exemples:
+
+- Une ressource peut être `valide` mais `members_only`.
+- Une ressource peut être `brouillon` mais `private`.
+- Une ressource peut être `public` avec licence `CC_BY_NC_SA`.
+- Une ressource peut être `premium` mais issue d'un contenu entièrement original.
+
+Ces champs ne créent aucune restriction réelle dans la v0. Voir `docs/access-and-sustainability-model.md`.
 
 ## Exemple Minimal
 

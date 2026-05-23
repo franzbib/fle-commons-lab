@@ -37,6 +37,16 @@ export function AboutPage() {
           pour qu’un enseignant, un développeur ou un agent IA puisse reprendre le travail.
         </p>
       </section>
+
+      <section>
+        <h2>Accès, licences et soutenabilité</h2>
+        <p>
+          Le socle du projet reste open source et aucun paiement n’est actif. Certaines
+          ressources pourraient plus tard avoir des conditions d’accès différentes selon leur
+          origine, leur licence ou un cadre institutionnel, mais ces choix devront être
+          documentés, discutés et distincts du code ouvert.
+        </p>
+      </section>
     </main>
   )
 }

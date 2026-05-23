@@ -68,3 +68,14 @@ Exemples futurs possibles:
 - génération contrôlée de métadonnées;
 - recherche sémantique;
 - recommandations de ressources.
+
+## Accès, Membres Et Soutenabilité
+
+À étudier plus tard, sans implémentation en v0.
+
+- Définir si certaines ressources peuvent être publiques, privées, réservées à une équipe, réservées à des membres ou institutionnelles.
+- Distinguer clairement accès, licence, statut éditorial et rôle communautaire.
+- Étudier les risques éthiques d'un éventuel modèle payant.
+- Ne pas implémenter avant stabilisation du modèle de ressource et de contribution.
+- Toute restriction réelle dépendra d'une authentification, d'un backend et de décisions juridiques, pédagogiques et communautaires.
+- Supabase ou un autre backend ne devront être envisagés qu'après décision explicite.
