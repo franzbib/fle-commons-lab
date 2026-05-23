@@ -8,9 +8,11 @@ type LayoutProps = {
 
 const navItems: Array<{ route: AppRoute; label: string }> = [
   { route: 'home', label: 'Accueil' },
+  { route: 'projectStatus', label: 'Demo' },
   { route: 'library', label: 'Bibliotheque' },
   { route: 'collections', label: 'Collections' },
   { route: 'community', label: 'Communaute' },
+  { route: 'contributionSpace', label: 'Contribuer' },
   { route: 'templates', label: 'Gabarits' },
   { route: 'resourceFormat', label: 'Format' },
   { route: 'about', label: 'Vision' },
@@ -40,9 +42,13 @@ export function Layout({ children, currentRoute }: LayoutProps) {
               href={
                 item.route === 'home'
                   ? '#/'
-                  : item.route === 'resourceFormat'
-                    ? '#/resource-format'
-                    : `#/${item.route}`
+                  : item.route === 'projectStatus'
+                    ? '#/demo'
+                    : item.route === 'resourceFormat'
+                      ? '#/resource-format'
+                      : item.route === 'contributionSpace'
+                        ? '#/contribution-space'
+                        : `#/${item.route}`
               }
               aria-current={isCurrentRoute(currentRoute, item.route) ? 'page' : undefined}
             >

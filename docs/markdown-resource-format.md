@@ -8,6 +8,24 @@ Markdown est lisible par un enseignant, facile a versionner avec Git et compatib
 
 Ce format peut etre relu humainement et exploite plus tard par un import local, un validateur ou une base Supabase. Aucun de ces outils n'est actif dans la v0.
 
+## Validation locale minimale
+
+La commande suivante vérifie les exemples Markdown du dossier `examples/resources-markdown/`:
+
+```bash
+npm run validate:resources
+```
+
+Ce validateur contrôle seulement:
+
+- la présence du frontmatter délimité par `---`;
+- les champs obligatoires;
+- quelques valeurs contrôlées simples;
+- les sections Markdown minimales;
+- l'absence de champs obligatoires manifestement vides.
+
+Il ne crée pas de ressource dans l'application, ne transforme pas Markdown en objet `Resource` et ne remplace pas la relecture enseignante.
+
 ## Ressource source et ressource affichee
 
 Une ressource source est un fichier `.md` place par exemple dans `examples/resources-markdown/`.
@@ -145,11 +163,13 @@ Un enseignant doit relire:
 ## Limites de cette v0
 
 - Pas d'import automatique.
-- Pas de parser YAML.
+- Pas de parser YAML complet.
 - Pas d'upload.
 - Pas de stockage fichier.
 - Pas de validation automatique complete.
 - Pas de publication publique automatique.
+- Pas de vérification juridique réelle des licences.
+- Pas de vérification pédagogique complète.
 
 ## Exemple court
 

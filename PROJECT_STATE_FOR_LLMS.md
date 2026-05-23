@@ -13,6 +13,7 @@ Le depot contient une application locale Vite + React + TypeScript.
 Fonctionnalites presentes:
 
 - accueil;
+- page Demo / Etat du projet;
 - bibliotheque de 18 ressources de demonstration;
 - recherche texte;
 - filtres pedagogiques, numeriques et IA;
@@ -21,6 +22,7 @@ Fonctionnalites presentes:
 - propositions d'amelioration simulees dans certaines fiches;
 - retours d'usage simules mieux visibles;
 - page Communaute;
+- page Espace de contribution conceptuel;
 - page Gabarits pedagogiques;
 - page Format Markdown;
 - page Vision;
@@ -29,6 +31,10 @@ Fonctionnalites presentes:
 - templates GitHub pour issues et pull requests.
 - rapport Antigravity `docs/conversion-experiments.md`;
 - exemples de ressources Markdown dans `examples/resources-markdown/`.
+- validateur local minimal des exemples Markdown via `npm run validate:resources`.
+- documentation de deploiement Vercel dans `docs/deployment.md`.
+- guide permanent des agents IA dans `AGENTS.md`.
+- documentation des roles contributeurs futurs et de l'espace de contribution conceptuel.
 
 Le dossier local est un depot Git rattache a:
 
@@ -54,10 +60,11 @@ Dependances runtime: `react`, `react-dom`.
 - Base de donnees.
 - Backend.
 - Authentification.
+- Roles reels et permissions reelles.
 - Upload.
 - Stockage de fichiers.
 - Import automatique Markdown ou `.docx`.
-- Parser YAML actif.
+- Parser YAML complet.
 - Appels OpenAI, Claude, Gemini ou autre IA.
 - Embeddings.
 - Recherche vectorielle.
@@ -83,10 +90,12 @@ src/
   pages/
     HomePage.tsx
     LibraryPage.tsx
+    ProjectStatusPage.tsx
     ResourcePage.tsx
     CollectionsPage.tsx
     CollectionPage.tsx
     CommunityPage.tsx
+    ContributionSpacePage.tsx
     TemplatesPage.tsx
     ResourceFormatPage.tsx
     AboutPage.tsx
@@ -101,12 +110,20 @@ src/
     collections.test.ts
     formatters.ts
   types/resourceMarkdown.ts
+  types/community.ts
+scripts/
+  validate-markdown-resources.mjs
+  validate-markdown-resources.test.mjs
 docs/
+  agent-workflow.md
   community-model.md
   collections.md
   contribution-workflow-v0.md
+  contribution-space-concept.md
+  contributor-roles.md
   conversion-experiments.md
   conversion-workflow.md
+  deployment.md
   markdown-resource-format.md
   resource-model.md
   technology-and-ai.md
@@ -118,6 +135,7 @@ docs/
 examples/
   resources-markdown/
 README.md
+AGENTS.md
 PROJECT_STATE_FOR_LLMS.md
 ```
 
@@ -137,10 +155,17 @@ Types principaux:
 - `ContributionSuggestion`
 - `Collection`
 - `ResourceFrontmatter`
+- `ContributorRole`
+- `ContributorProfile`
+- `ContributionStatus`
+- `ResourceEditorialStatus`
+- `ContributionReviewLevel`
 
 Les champs IA sont descriptifs. Ils servent a documenter des usages pedagogiques possibles, pas a appeler un service.
 
 Le format Markdown + frontmatter YAML est documente comme format source futur. Il n'est pas importe automatiquement.
+
+Le validateur local vérifie seulement une conformité minimale des exemples Markdown: frontmatter, champs obligatoires, sections attendues et valeurs contrôlées simples.
 
 ## 7. Decisions importantes
 
@@ -152,6 +177,11 @@ Le format Markdown + frontmatter YAML est documente comme format source futur. I
 - IA et Supabase anticipes uniquement par types, taxonomie et documentation.
 - Tests unitaires legers avec Vitest.
 - Markdown + frontmatter YAML retenu comme format de contribution lisible et versionnable.
+- Le validateur Markdown est autonome en Node et n'ajoute aucune dépendance YAML.
+- Le projet est deployable sur Vercel comme site statique Vite: build `npm run build`, sortie `dist`.
+- La demo publique ne collecte pas de donnees utilisateur.
+- Les roles contributeurs sont purement descriptifs dans `src/types/community.ts`.
+- `AGENTS.md` est le guide de travail prioritaire pour Codex, ChatGPT, Antigravity et autres LLM.
 - Validation enseignante obligatoire pour niveau, consignes, corriges, droits et licences.
 
 ## 8. Variables d'environnement
@@ -187,25 +217,36 @@ npm run dev
 npm run typecheck
 npm run lint
 npm run test
+npm run validate:resources
 npm run build
 git status
 git remote -v
+```
+
+Pour Vercel:
+
+```text
+Build command: npm run build
+Output directory: dist
+Variables obligatoires: aucune
 ```
 
 ## 10. Prochaines etapes recommandees
 
 1. Relire les collections et propositions simulees avec des enseignants FLE.
 2. Stabiliser les statuts de contribution avant toute persistance.
-3. Construire un petit validateur local de frontmatter, sans import automatique lourd.
-4. Ajouter quelques supports libres convertis en ressources structurees.
-5. Preciser une charte de validation pedagogique.
-6. Documenter un schema Supabase futur sans installer Supabase.
-7. Definir une charte d'usage IA avant tout prototype actif.
+3. Relire `AGENTS.md` avec les pratiques reelles du projet.
+4. Améliorer le validateur local si de nouveaux exemples Markdown apparaissent.
+5. Ajouter quelques supports libres convertis en ressources structurees.
+6. Preciser une charte de validation pedagogique.
+7. Documenter un schema Supabase futur sans installer Supabase.
+8. Definir une charte d'usage IA avant tout prototype actif.
 
 ## 11. A ne pas faire sans validation explicite
 
 - Installer Supabase ou Firebase.
 - Ajouter une authentification.
+- Ajouter des roles reels ou permissions reelles.
 - Ajouter un appel IA reel.
 - Creer une cle API ou `.env.local`.
 - Ajouter une base de donnees.

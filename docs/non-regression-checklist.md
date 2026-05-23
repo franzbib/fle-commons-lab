@@ -9,7 +9,7 @@
 - `npm run build` passe.
 - `npm run lint` passe si le lint est configuré.
 - `npm run test` passe si les tests sont configurés.
-- Les pages Accueil, Bibliothèque, Collections, Détail collection, Détail ressource, Communauté, Gabarits, Vision, Technologies et IA, Documentation s’affichent.
+- Les pages Accueil, Démo, Bibliothèque, Collections, Détail collection, Détail ressource, Communauté, Espace de contribution, Gabarits, Vision, Technologies et IA, Documentation s’affichent.
 
 ## Bibliothèque
 
@@ -45,11 +45,13 @@
 - Aucun `.env.local` n’est présent dans Git.
 - `.env`, `.env.local` et `.env.*.local` restent ignorés.
 - Aucune dépendance backend, IA, Supabase ou auth n’a été ajoutée sans décision explicite.
+- Aucun role reel, permission ou systeme d'authentification n'a ete ajoute.
 - Aucun appel IA réel n’a été ajouté sans décision explicite.
 - Aucune clé API n’apparaît dans le code ou la documentation.
 - Le projet ne devient pas dépendant d’un fournisseur IA.
 - La v0 fonctionne sans variable d’environnement.
 - Aucun import automatique Markdown, `.docx` ou fichier utilisateur n’est ajouté sans décision explicite.
+- `npm run validate:resources` passe sur les exemples Markdown.
 
 ## Format Markdown Et Conversion
 
@@ -58,10 +60,14 @@
 - Un exemple Markdown n’est pas présenté comme une ressource validée.
 - Les documents authentiques ne sont pas copiés sans vérification des droits.
 - Toute conversion garde une étape de relecture enseignante.
+- Le validateur Markdown ne remplace ni l’expertise pédagogique ni la vérification juridique.
+- Le validateur ne crée pas de ressource dans l’application.
 
 ## Documentation
 
 - `PROJECT_STATE_FOR_LLMS.md` est à jour.
+- `AGENTS.md` reste coherent avec les contraintes du projet.
+- `docs/deployment.md` reste cohérent avec la configuration Vite/Vercel.
 - Les limites volontaires de la v0 sont encore explicites.
 - Les nouvelles décisions sont documentées.
 - Les données de démonstration restent originales et pédagogiquement plausibles.

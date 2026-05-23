@@ -111,6 +111,14 @@ Automatisable:
 - convertir titres, listes et questions;
 - placer les informations identifiees.
 
+Contrôle local possible:
+
+```bash
+npm run validate:resources
+```
+
+Cette commande vérifie les exemples Markdown du dépôt. Elle ne fait pas d'import automatique et ne garantit pas la qualité pédagogique.
+
 ## 9. Relire humainement
 
 Un enseignant relit:
@@ -157,3 +165,5 @@ Validation humaine obligatoire:
 - corriges ouverts;
 - droits et licences;
 - usage responsable des outils numeriques et IA.
+
+Le validateur local ne remplace aucune de ces validations.

@@ -2,6 +2,13 @@
 
 Ce document imagine comment un enseignant pourrait contribuer plus tard. Aucun workflow de contribution n’est implémenté en v0.
 
+Voir aussi:
+
+- `docs/contributor-roles.md` pour les statuts futurs de personnes, ressources et contributions.
+- `docs/contribution-space-concept.md` pour l'espace de contribution conceptuel.
+
+Important: aucun compte, role reel, permission ou workflow persistant n'existe dans la v0.
+
 ## Proposer Une Ressource
 
 Une proposition devrait contenir:

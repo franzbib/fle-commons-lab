@@ -31,6 +31,12 @@ Une proposition d'amelioration peut etre une correction, une clarification de co
 
 Les collections regroupent des ressources selon une intention: progression, besoin de classe, niveau, theme transversal, sobriete technique ou experimentation numerique. Elles preparent de futurs parcours sans imposer une seule organisation.
 
+## Gouvernance future
+
+La gouvernance doit distinguer les roles de personnes, les statuts de ressources et les statuts de contributions. Les statuts possibles sont documentes dans `docs/contributor-roles.md`.
+
+La page conceptuelle `#/contribution-space` montre un futur espace de contribution centre sur les ressources, sans compte ni permission reelle dans la v0.
+
 ## Limite volontaire
 
 Aucune contribution n'est persistee dans cette version. Les objets communautaires servent a tester le modele et a rendre visible la direction du projet.

@@ -20,6 +20,7 @@ Statut: en cours.
 - Ajouter de vrais supports convertis, libres ou internes.
 - Stabiliser le format source Markdown avec frontmatter YAML.
 - Ajouter un petit validateur local de métadonnées, sans import automatique.
+- Stabiliser la gouvernance des agents IA et des contributeurs futurs.
 - Expérimenter l’audit manuel ou semi-manuel.
 - Stabiliser les statuts et types.
 - Ajouter des tests légers.
@@ -43,6 +44,7 @@ Statut: en cours.
 - Export Markdown ou JSON.
 - Prototype d’import local Markdown vers `Resource`, après validation du format.
 - Collections simples.
+- Espace de contribution avec roles et statuts, seulement apres decision explicite.
 - Modération minimale.
 
 ## Phase 4: Assistance IA Manuelle

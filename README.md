@@ -28,9 +28,13 @@ L'IA est documentee et anticipee, mais aucune API IA n'est appelee par l'applica
 - Donnees locales TypeScript.
 - 18 ressources de demonstration.
 - Bibliotheque filtrable et recherche texte.
-- Pages Accueil, Bibliotheque, Collections, Detail ressource, Communaute, Gabarits, Vision, Technologies et IA, Documentation.
+- Pages Accueil, Demo, Bibliotheque, Collections, Detail ressource, Communaute, Gabarits, Vision, Technologies et IA, Documentation.
+- Page conceptuelle Espace de contribution.
 - Page Format pour expliquer la logique Markdown + YAML.
+- Guide `AGENTS.md` pour les agents IA.
+- Documentation des roles contributeurs futurs.
 - Exemples Markdown dans `examples/resources-markdown/`.
+- Validateur local minimal des exemples Markdown.
 - Tests Vitest sur les filtres et les collections.
 - Templates GitHub pour bugs, suggestions de ressources, propositions d'amelioration et pull requests.
 
@@ -58,9 +62,20 @@ npm run dev
 npm run typecheck
 npm run lint
 npm run test
+npm run validate:resources
 npm run build
 git status
 ```
+
+## Deploiement Vercel
+
+La v0 est deployable comme site statique Vite.
+
+- Build command: `npm run build`
+- Output directory: `dist`
+- Variables d'environnement obligatoires: aucune
+
+Ne jamais ajouter de secret dans Vercel sans documentation et decision explicite. La demo publique fonctionne avec des donnees locales statiques, sans collecte de donnees utilisateur et sans appel IA reel.
 
 ## Structure
 
@@ -91,17 +106,23 @@ PROJECT_STATE_FOR_LLMS.md
 - Aucun chat, forum ou messagerie.
 - Aucun stockage de PDF ou upload.
 - Aucun import automatique de fichiers Markdown.
+- Le validateur Markdown ne crée aucune ressource dans l'application.
 
 ## Documentation utile
 
+- `AGENTS.md`
 - `docs/resource-model.md`
+- `docs/agent-workflow.md`
 - `docs/community-model.md`
+- `docs/contributor-roles.md`
+- `docs/contribution-space-concept.md`
 - `docs/collections.md`
 - `docs/contribution-workflow-v0.md`
 - `docs/markdown-resource-format.md`
 - `docs/conversion-workflow.md`
 - `docs/conversion-experiments.md`
 - `docs/technology-and-ai.md`
+- `docs/deployment.md`
 - `docs/environment.md`
 - `PROJECT_STATE_FOR_LLMS.md`
 
@@ -111,7 +132,9 @@ PROJECT_STATE_FOR_LLMS.md
 - Stabiliser le modele communautaire avant toute base de donnees.
 - Convertir de vrais supports libres ou internes.
 - Prototyper plus tard un petit validateur local de frontmatter.
+- Améliorer ensuite ce validateur sans en faire un importeur automatique.
 - Definir une charte de contribution et de validation.
+- Stabiliser la gouvernance des agents et contributeurs avant toute authentification.
 - Documenter un futur schema Supabase sans l'implementer.
 - Prototyper plus tard un audit IA manuel, jamais automatique par defaut.
 

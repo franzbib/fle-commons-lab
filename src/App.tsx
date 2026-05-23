@@ -5,9 +5,11 @@ import { AboutPage } from './pages/AboutPage'
 import { CollectionPage } from './pages/CollectionPage'
 import { CollectionsPage } from './pages/CollectionsPage'
 import { CommunityPage } from './pages/CommunityPage'
+import { ContributionSpacePage } from './pages/ContributionSpacePage'
 import { DocumentationPage } from './pages/DocumentationPage'
 import { HomePage } from './pages/HomePage'
 import { LibraryPage } from './pages/LibraryPage'
+import { ProjectStatusPage } from './pages/ProjectStatusPage'
 import { ResourceFormatPage } from './pages/ResourceFormatPage'
 import { ResourcePage } from './pages/ResourcePage'
 import { TemplatesPage } from './pages/TemplatesPage'
@@ -18,11 +20,13 @@ import { emptyResourceFilters, type ResourceFiltersValue } from './utils/filters
 export type AppRoute =
   | 'home'
   | 'library'
+  | 'projectStatus'
   | 'resource'
   | 'resourceFormat'
   | 'collections'
   | 'collection'
   | 'community'
+  | 'contributionSpace'
   | 'templates'
   | 'about'
   | 'technology'
@@ -71,6 +75,7 @@ function App() {
         />
       ) : null}
       {parsedRoute.route === 'resource' ? <ResourcePage resource={currentResource} /> : null}
+      {parsedRoute.route === 'projectStatus' ? <ProjectStatusPage /> : null}
       {parsedRoute.route === 'resourceFormat' ? <ResourceFormatPage /> : null}
       {parsedRoute.route === 'collections' ? (
         <CollectionsPage collections={demoCollections} resources={demoResources} />
@@ -79,6 +84,7 @@ function App() {
         <CollectionPage collection={currentCollection} resources={demoResources} />
       ) : null}
       {parsedRoute.route === 'community' ? <CommunityPage /> : null}
+      {parsedRoute.route === 'contributionSpace' ? <ContributionSpacePage /> : null}
       {parsedRoute.route === 'templates' ? <TemplatesPage /> : null}
       {parsedRoute.route === 'about' ? <AboutPage /> : null}
       {parsedRoute.route === 'technology' ? <TechnologyAndAiPage /> : null}
@@ -103,6 +109,10 @@ function parseHash(hash: string): ParsedRoute {
     return { route: 'resource', resourceId }
   }
 
+  if (routeSegment === 'demo' || routeSegment === 'project-status') {
+    return { route: 'projectStatus' }
+  }
+
   if (routeSegment === 'resource-format') {
     return { route: 'resourceFormat' }
   }
@@ -117,6 +127,10 @@ function parseHash(hash: string): ParsedRoute {
 
   if (routeSegment === 'community' || routeSegment === 'contribute') {
     return { route: 'community' }
+  }
+
+  if (routeSegment === 'contribution-space') {
+    return { route: 'contributionSpace' }
   }
 
   if (routeSegment === 'templates') {
