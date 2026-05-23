@@ -204,3 +204,9 @@ Journal chronologique synthÃƒÂ©tique des interventions importantes. Les dates so
 - **Action** : Implémentation visuelle de la spécification UX dans src/pages/ContributionSpacePage.tsx.
 - **Décision** : Le formulaire est découpé en 5 étapes via un état local React (useState). Aucune donnée n'est persistée ni envoyée. Il s'agit d'un pur composant de démonstration.
 - **Statut** : Maquette v0 achevée et stylisée dans src/styles/global.css.
+
+
+## 2026-05-23 : Ajustement des microcopies du formulaire de dépôt
+- **Action** : Correction lexicale (ContributionSpacePage.tsx).
+- **Décision** : Remplacement des termes trop internes ('sas', 'modérateurs') par un vocabulaire enseignant ('mise au propre', 'équipe de relecture'). La case des droits n'est plus cochée par défaut. Le bouton d'envoi affiche explicitement 'Terminer la démonstration'.
+- **Statut** : Maquette v0 ajustée.

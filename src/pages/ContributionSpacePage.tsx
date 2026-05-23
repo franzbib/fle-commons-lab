@@ -87,7 +87,7 @@ export function ContributionSpacePage() {
             {step === 2 && (
               <fieldset className="wizard-step">
                 <legend>Collez votre contenu</legend>
-                <p className="wizard-help">Ne vous souciez pas de la mise en page. Nos modérateurs se chargeront de tout remettre au propre.</p>
+                <p className="wizard-help">L'équipe de relecture pourra ensuite aider à structurer la ressource.</p>
                 <label className="field field-wide">
                   <textarea
                     rows={8}
@@ -140,7 +140,7 @@ export function ContributionSpacePage() {
                   <label><input type="radio" name="prop_source" /> C'est inspiré d'une ressource existante, mais je l'ai fortement modifiée.</label>
                 </div>
                 <label className="field" style={{ marginTop: '1.5rem', flexDirection: 'row', alignItems: 'flex-start', gap: '0.5rem' }}>
-                  <input type="checkbox" defaultChecked />
+                  <input type="checkbox" />
                   <span style={{ fontWeight: 'normal', fontSize: '0.9rem', lineHeight: '1.4' }}>
                     J'accepte que ma ressource soit mise au propre et partagée gratuitement aux autres professeurs sous licence libre.
                   </span>
@@ -183,7 +183,7 @@ export function ContributionSpacePage() {
                 </button>
               ) : (
                 <button type="submit" className="primary-button">
-                  Envoyer au Sas de Mise au propre
+                  Terminer la démonstration
                 </button>
               )}
             </div>
