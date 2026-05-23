@@ -360,3 +360,9 @@ L'etude de reception confirme trois profils :
 - enseignants technophiles : ils peuvent maintenir les formats ouverts, schemas, validateurs et contributions GitHub.
 
 Consequence active : l'interface publique doit etre pensee d'abord pour le premier profil, tandis que les parcours de contribution doivent viser le deuxieme. Le troisieme reste essentiel pour maintenir la forge, mais ne doit pas imposer ses outils au public majoritaire.
+
+
+## Spécification UX : Formulaire de dépôt
+
+**NOTE POUR LES PROCHAINES SESSIONS :**
+Le composant ContributionSpacePage.tsx devra être implémenté VISUELLEMENT (maquette) en respectant à la lettre le document docs/raw-resource-intake-form-spec.md. Ne **JAMAIS** ajouter de backend, de base de données (Supabase), ou d'authentification pour rendre le formulaire fonctionnel. Le bouton 'Envoyer' affichera simplement un message statique pédagogique.
