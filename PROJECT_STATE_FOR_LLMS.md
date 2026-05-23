@@ -45,6 +45,7 @@ Fonctionnalites presentes:
 - première couche UI appliquée dans `src/styles/global.css` avec notes dans `docs/ui-implementation-notes.md`.
 - rapport Antigravity `docs/ux-progressive-disclosure.md` et documentation d'architecture d'information dans `docs/ux-information-architecture.md`.
 - divulgation progressive appliquée à l'interface: cartes ressource allégées, filtres avancés repliables et sections de détail consultables à la demande.
+- analyse exploratoire d'un corpus Google Drive dans `docs/drive-corpus-analysis.md`, à utiliser comme référence de conception et non comme source publiable par défaut.
 
 Le dossier local est un depot Git rattache a:
 
@@ -74,6 +75,7 @@ Dependances runtime: `react`, `react-dom`.
 - Upload.
 - Stockage de fichiers.
 - Import automatique Markdown ou `.docx`.
+- Import automatique depuis Google Drive.
 - Parser YAML complet.
 - Appels OpenAI, Claude, Gemini ou autre IA.
 - Embeddings.
@@ -143,6 +145,7 @@ docs/
   conversion-workflow.md
   deployment.md
   decision-log.md
+  drive-corpus-analysis.md
   git-sync-audit.md
   markdown-resource-format.md
   project-journal.md
@@ -200,6 +203,8 @@ Le validateur local vérifie seulement une conformité minimale des exemples Mar
 
 Les champs d'accès et de soutenabilité sont conceptuels et facultatifs: `accessLevel`, `monetizationStatus`, `visibilityNotes`, `licenseNotes`. Ils ne créent aucune restriction réelle.
 
+L'analyse du corpus Drive recommande de documenter ou d'étudier plus tard trois notions supplémentaires avant tout import: complétude pédagogique, statut des droits et usage comme référence temporaire.
+
 ## 7. Decisions importantes
 
 - Navigation par hash route, sans React Router.
@@ -222,6 +227,7 @@ Les champs d'accès et de soutenabilité sont conceptuels et facultatifs: `acces
 - L'identité visuelle appliquée reste une v0 sobre: tokens CSS, logo temporaire, favicon, badges typographiques et cartes type fiche d'index.
 - L'interface suit une lecture progressive: carte = décision rapide; fiche détail = prise en main puis blocs experts repliables.
 - Aucune information du modèle n'a été supprimée: les métadonnées, versions, retours, propositions, audit, IA, numérique, licence et accès restent disponibles.
+- Le corpus Google Drive observé sert uniquement de référence de conception pour gabarits et exemples fictifs; les documents sources ne doivent pas être importés ni publiés sans vérification.
 - `AGENTS.md` est le guide de travail prioritaire pour Codex, ChatGPT, Antigravity et autres LLM.
 - Toute intervention significative doit maintenir la documentation de traçabilité: `PROJECT_STATE_FOR_LLMS.md`, `docs/project-journal.md`, `docs/decision-log.md` si nécessaire.
 - Validation enseignante obligatoire pour niveau, consignes, corriges, droits et licences.
@@ -280,14 +286,15 @@ Variables obligatoires: aucune
 1. Relire les collections et propositions simulees avec des enseignants FLE.
 2. Stabiliser les statuts de contribution avant toute persistance.
 3. Relire la doctrine `docs/access-and-sustainability-model.md` avant toute discussion d'accès réservé.
-4. Utiliser `docs/change-report-template.md` comme format standard de bilan.
-5. Relire `AGENTS.md` avec les pratiques reelles du projet.
-6. Améliorer le validateur local si de nouveaux exemples Markdown apparaissent.
-7. Tester l'architecture d'information avec deux ou trois enseignants FLE.
-8. Ajouter quelques supports libres convertis en ressources structurees.
-9. Preciser une charte de validation pedagogique.
-10. Documenter un schema Supabase futur sans installer Supabase.
-11. Definir une charte d'usage IA avant tout prototype actif.
+4. Lire `docs/drive-corpus-analysis.md` avant de créer de nouveaux gabarits ou exemples Markdown inspirés de supports existants.
+5. Utiliser `docs/change-report-template.md` comme format standard de bilan.
+6. Relire `AGENTS.md` avec les pratiques reelles du projet.
+7. Améliorer le validateur local si de nouveaux exemples Markdown apparaissent.
+8. Tester l'architecture d'information avec deux ou trois enseignants FLE.
+9. Ajouter quelques supports libres convertis en ressources structurees.
+10. Preciser une charte de validation pedagogique.
+11. Documenter un schema Supabase futur sans installer Supabase.
+12. Definir une charte d'usage IA avant tout prototype actif.
 
 ## 11. A ne pas faire sans validation explicite
 
@@ -300,8 +307,10 @@ Variables obligatoires: aucune
 - Ajouter une base de donnees.
 - Ajouter upload ou stockage de fichiers.
 - Ajouter un import automatique Markdown ou `.docx`.
+- Ajouter un import automatique Google Drive.
 - Ajouter une dependance YAML sans decision explicite.
 - Ajouter un chat, forum ou messagerie.
 - Ajouter un vrai workflow communautaire persistant.
+- Copier dans le dépôt des contenus Drive dont les droits, sources et données personnelles n'ont pas été vérifiés.
 - Exposer une cle serveur cote frontend.
 - Rendre le projet dependant d'un fournisseur IA.
