@@ -131,3 +131,13 @@ Journal chronologique synthétique des interventions importantes. Les dates sont
 - Décisions : le code et les modèles de base restent ouverts; les statuts d'accès sont conceptuels; aucun paiement n'est actif
 - Limites volontaires : pas de Stripe, pas d'abonnement, pas d'authentification, pas de backend, pas de restriction réelle
 - Commit associé si connu : commit en cours
+
+## 2026-05-23 — Intégration visuelle Laboratoire Typographique
+
+- Outil principal : Antigravity pour la direction, Codex pour l'intégration
+- Objectif : appliquer une première couche visuelle plus marquée sans refonte complète
+- Résultat : tokens CSS, logo temporaire, favicon, badges typographiques, cartes ressources type fiche d'index
+- Fichiers principaux : `docs/visual-identity-v0.md`, `assets/branding/`, `src/styles/global.css`, `src/components/Badge.tsx`, `src/components/ResourceCard.tsx`
+- Décisions : retenir le laboratoire typographique comme direction v0, en gardant une intégration sobre et réversible
+- Limites volontaires : pas de dépendance UI lourde, pas de refonte globale, pas de changement métier
+- Commit associé si connu : commit en cours

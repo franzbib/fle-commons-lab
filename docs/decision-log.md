@@ -121,3 +121,13 @@ Ce fichier consigne les décisions structurantes du projet. Une décision active
 - Conséquences : ajout de types descriptifs `AccessLevel`, `MonetizationStatus` et `MembershipTier`; champs optionnels sur `Resource` et `ResourceFrontmatter`.
 - Ce qu'il ne faut pas faire sans nouvelle décision : ajouter Stripe, paiement, abonnement, restriction réelle d'accès, auth, backend, Supabase ou offre commerciale.
 - Documents liés : `docs/access-and-sustainability-model.md`, `src/types/access.ts`, `docs/resource-model.md`
+
+## Décision 13 — Adopter le Laboratoire Typographique comme direction visuelle v0
+
+- Statut : active / à réviser après retours utilisateurs
+- Contexte : Antigravity a proposé plusieurs pistes visuelles pour éviter une interface SaaS générique.
+- Décision : appliquer progressivement la direction "Laboratoire Typographique".
+- Raisons : cohérence avec Markdown, métadonnées, ressources structurées, documentation et laboratoire pédagogique.
+- Conséquences : tokens CSS papier/graphite/améthyste/jaune annotation, badges monospace, cartes type fiche d'index, logo temporaire.
+- Ce qu'il ne faut pas faire sans nouvelle décision : refonte totale, surcharge graphique, dépendance UI lourde, transformation commerciale de l'interface.
+- Documents liés : `docs/branding-directions.md`, `docs/visual-identity-v0.md`, `docs/ui-implementation-notes.md`

@@ -41,6 +41,8 @@ Fonctionnalites presentes:
 - modèle de rapport dans `docs/change-report-template.md`.
 - règles de prompting dans `docs/prompting-rules.md`.
 - documentation conceptuelle des accès et de la soutenabilité dans `docs/access-and-sustainability-model.md`.
+- direction visuelle "Laboratoire Typographique" documentée dans `docs/branding-directions.md` et `docs/visual-identity-v0.md`.
+- première couche UI appliquée dans `src/styles/global.css` avec notes dans `docs/ui-implementation-notes.md`.
 
 Le dossier local est un depot Git rattache a:
 
@@ -126,6 +128,7 @@ scripts/
 docs/
   access-and-sustainability-model.md
   agent-workflow.md
+  branding-directions.md
   change-report-template.md
   community-model.md
   collections.md
@@ -142,6 +145,8 @@ docs/
   prompting-rules.md
   resource-model.md
   technology-and-ai.md
+  ui-implementation-notes.md
+  visual-identity-v0.md
   environment.md
   git-workflow.md
 .github/
@@ -149,6 +154,8 @@ docs/
   pull_request_template.md
 examples/
   resources-markdown/
+assets/
+  branding/
 README.md
 AGENTS.md
 PROJECT_STATE_FOR_LLMS.md
@@ -206,6 +213,7 @@ Les champs d'accès et de soutenabilité sont conceptuels et facultatifs: `acces
 - Les roles contributeurs sont purement descriptifs dans `src/types/community.ts`.
 - Les niveaux d'accès futurs sont purement descriptifs dans `src/types/access.ts`.
 - Aucun paiement, abonnement, Stripe, restriction réelle, auth ou backend n'est actif.
+- L'identité visuelle appliquée reste une v0 sobre: tokens CSS, logo temporaire, favicon, badges typographiques et cartes type fiche d'index.
 - `AGENTS.md` est le guide de travail prioritaire pour Codex, ChatGPT, Antigravity et autres LLM.
 - Toute intervention significative doit maintenir la documentation de traçabilité: `PROJECT_STATE_FOR_LLMS.md`, `docs/project-journal.md`, `docs/decision-log.md` si nécessaire.
 - Validation enseignante obligatoire pour niveau, consignes, corriges, droits et licences.

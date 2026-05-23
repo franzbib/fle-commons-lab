@@ -84,3 +84,11 @@
 - `docs/decision-log.md` est mis à jour si une décision structurante est prise.
 - `README.md` est mis à jour si commandes, structure ou comportement visible changent.
 - Aucun document ne présente comme existante une fonctionnalité seulement future.
+
+## Identité visuelle
+
+- Les assets de marque utilisés existent dans `assets/branding/` ou `public/`.
+- Les badges restent lisibles et ne remplacent pas l'information textuelle.
+- L'interface ne devient pas une landing page commerciale.
+- Les tokens CSS restent centralisés dans `src/styles/global.css`.
+- `docs/ui-implementation-notes.md` est mis à jour si les composants visuels changent.

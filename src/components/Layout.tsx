@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import type { AppRoute } from '../App'
+import logoMarkUrl from '../../assets/branding/logo-temp.svg'
 
 type LayoutProps = {
   children: ReactNode
@@ -29,7 +30,7 @@ export function Layout({ children, currentRoute }: LayoutProps) {
     <div className="app-frame">
       <header className="site-header">
         <a className="brand" href="#/">
-          <span className="brand-mark">FLE</span>
+          <img className="brand-mark" src={logoMarkUrl} alt="" aria-hidden="true" />
           <span>
             <strong>FLE Commons Lab</strong>
             <small>Socle local experimental</small>

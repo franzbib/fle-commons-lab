@@ -34,6 +34,7 @@ L'IA est documentee et anticipee, mais aucune API IA n'est appelee par l'applica
 - Guide `AGENTS.md` pour les agents IA.
 - Documentation des roles contributeurs futurs.
 - Documentation conceptuelle des accès et de la soutenabilité.
+- Première couche d'identité visuelle "Laboratoire Typographique".
 - Exemples Markdown dans `examples/resources-markdown/`.
 - Validateur local minimal des exemples Markdown.
 - Tests Vitest sur les filtres et les collections.
@@ -122,6 +123,9 @@ PROJECT_STATE_FOR_LLMS.md
 - `docs/decision-log.md`
 - `docs/change-report-template.md`
 - `docs/prompting-rules.md`
+- `docs/branding-directions.md`
+- `docs/visual-identity-v0.md`
+- `docs/ui-implementation-notes.md`
 - `docs/access-and-sustainability-model.md`
 - `docs/resource-model.md`
 - `docs/agent-workflow.md`

@@ -14,13 +14,15 @@ type ResourceCardProps = {
 export function ResourceCard({ resource }: ResourceCardProps) {
   return (
     <article className="resource-card">
+      <div className="resource-serial">#{resource.id}</div>
       <div className="card-topline">
         <Badge tone="level">{resource.level}</Badge>
         <Badge>{formatResourceType(resource.resourceType)}</Badge>
         <Badge>{formatResourceTemplate(resource.resourceTemplate)}</Badge>
         <Badge tone="status">{formatStatus(resource.status)}</Badge>
-        {resource.techMetadata?.usesDigitalTool ? <Badge>Numérique</Badge> : null}
-        {resource.aiMetadata?.usesAI ? <Badge>IA documentée</Badge> : null}
+        {resource.techMetadata?.usesDigitalTool ? <Badge tone="tech">Numérique</Badge> : null}
+        {resource.aiMetadata?.usesAI ? <Badge tone="ai">IA documentée</Badge> : null}
+        {resource.accessLevel ? <Badge tone="access">{resource.accessLevel}</Badge> : null}
       </div>
       <h2>
         <a href={`#/resources/${resource.id}`}>{resource.title}</a>

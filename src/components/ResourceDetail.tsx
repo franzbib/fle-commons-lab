@@ -36,8 +36,9 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
           <Badge>{formatResourceType(resource.resourceType)}</Badge>
           <Badge>{formatResourceTemplate(resource.resourceTemplate)}</Badge>
           <Badge tone="status">{formatStatus(resource.status)}</Badge>
-          {resource.techMetadata?.usesDigitalTool ? <Badge>Numérique</Badge> : null}
-          {resource.aiMetadata?.usesAI ? <Badge>IA documentée</Badge> : null}
+          {resource.techMetadata?.usesDigitalTool ? <Badge tone="tech">Numérique</Badge> : null}
+          {resource.aiMetadata?.usesAI ? <Badge tone="ai">IA documentée</Badge> : null}
+          {resource.accessLevel ? <Badge tone="access">{resource.accessLevel}</Badge> : null}
         </div>
         <h1>{resource.title}</h1>
         <p>{resource.summary}</p>
