@@ -1,10 +1,16 @@
 import type {
+  AccessLevel,
+} from '../types/access'
+import type {
   CefrLevel,
   EditorialStatus,
   Resource,
+  ResourceLicense,
   ResourceSkill,
   ResourceTemplate,
   ResourceType,
+  SourceType,
+  TeacherPreparationLevel,
 } from '../types/resource'
 
 export type ResourceFiltersValue = {
@@ -17,6 +23,10 @@ export type ResourceFiltersValue = {
   status: EditorialStatus | 'all'
   usesDigitalTool: 'all' | 'yes' | 'no'
   usesAI: 'all' | 'yes' | 'no'
+  accessLevel: AccessLevel | 'all'
+  license: ResourceLicense | 'all'
+  teacherPreparationLevel: TeacherPreparationLevel | 'all'
+  sourceType: SourceType | 'all'
 }
 
 export const emptyResourceFilters: ResourceFiltersValue = {
@@ -29,6 +39,10 @@ export const emptyResourceFilters: ResourceFiltersValue = {
   status: 'all',
   usesDigitalTool: 'all',
   usesAI: 'all',
+  accessLevel: 'all',
+  license: 'all',
+  teacherPreparationLevel: 'all',
+  sourceType: 'all',
 }
 
 export function filterResources(
@@ -72,6 +86,15 @@ export function filterResources(
       filters.usesAI === 'all' ||
       (filters.usesAI === 'yes' && resource.aiMetadata?.usesAI === true) ||
       (filters.usesAI === 'no' && resource.aiMetadata?.usesAI !== true)
+    const matchesAccess =
+      filters.accessLevel === 'all' || resource.accessLevel === filters.accessLevel
+    const matchesLicense =
+      filters.license === 'all' || resource.license === filters.license
+    const matchesPreparation =
+      filters.teacherPreparationLevel === 'all' ||
+      resource.teacherPreparationLevel === filters.teacherPreparationLevel
+    const matchesSource =
+      filters.sourceType === 'all' || resource.sourceType === filters.sourceType
 
     return (
       matchesSearch &&
@@ -82,7 +105,11 @@ export function filterResources(
       matchesTheme &&
       matchesStatus &&
       matchesDigital &&
-      matchesAI
+      matchesAI &&
+      matchesAccess &&
+      matchesLicense &&
+      matchesPreparation &&
+      matchesSource
     )
   })
 }

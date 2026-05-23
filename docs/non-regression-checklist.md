@@ -31,6 +31,15 @@
 - Les propositions d’amélioration simulées ou le placeholder sont visibles.
 - La mention de non-persistance est claire.
 
+## Architecture De L'information UX
+
+- Les cartes restent centrées sur la décision rapide: titre, résumé court, niveau, compétence, durée, type, statut et quelques tags.
+- Les filtres essentiels restent visibles sans ouvrir les filtres avancés.
+- Les filtres avancés restent disponibles et fonctionnels.
+- Les fiches détail gardent une prise en main rapide en haut de page.
+- Les métadonnées complètes, IA/numérique, licence/accès, versions, retours, propositions et audit restent accessibles.
+- Aucune information n'est supprimée pour alléger l'interface; elle est seulement hiérarchisée ou repliée.
+
 ## Collections Et Communauté
 
 - Les collections locales s’affichent.

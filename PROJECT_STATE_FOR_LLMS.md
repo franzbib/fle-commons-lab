@@ -43,6 +43,8 @@ Fonctionnalites presentes:
 - documentation conceptuelle des accès et de la soutenabilité dans `docs/access-and-sustainability-model.md`.
 - direction visuelle "Laboratoire Typographique" documentée dans `docs/branding-directions.md` et `docs/visual-identity-v0.md`.
 - première couche UI appliquée dans `src/styles/global.css` avec notes dans `docs/ui-implementation-notes.md`.
+- rapport Antigravity `docs/ux-progressive-disclosure.md` et documentation d'architecture d'information dans `docs/ux-information-architecture.md`.
+- divulgation progressive appliquée à l'interface: cartes ressource allégées, filtres avancés repliables et sections de détail consultables à la demande.
 
 Le dossier local est un depot Git rattache a:
 
@@ -96,6 +98,8 @@ src/
     ResourceCard.tsx
     ResourceDetail.tsx
     ResourceFilters.tsx
+    CollapsibleSection.tsx
+    CompactTagList.tsx
   data/demoResources.ts
   pages/
     HomePage.tsx
@@ -146,6 +150,8 @@ docs/
   resource-model.md
   technology-and-ai.md
   ui-implementation-notes.md
+  ux-information-architecture.md
+  ux-progressive-disclosure.md
   visual-identity-v0.md
   environment.md
   git-workflow.md
@@ -214,6 +220,8 @@ Les champs d'accès et de soutenabilité sont conceptuels et facultatifs: `acces
 - Les niveaux d'accès futurs sont purement descriptifs dans `src/types/access.ts`.
 - Aucun paiement, abonnement, Stripe, restriction réelle, auth ou backend n'est actif.
 - L'identité visuelle appliquée reste une v0 sobre: tokens CSS, logo temporaire, favicon, badges typographiques et cartes type fiche d'index.
+- L'interface suit une lecture progressive: carte = décision rapide; fiche détail = prise en main puis blocs experts repliables.
+- Aucune information du modèle n'a été supprimée: les métadonnées, versions, retours, propositions, audit, IA, numérique, licence et accès restent disponibles.
 - `AGENTS.md` est le guide de travail prioritaire pour Codex, ChatGPT, Antigravity et autres LLM.
 - Toute intervention significative doit maintenir la documentation de traçabilité: `PROJECT_STATE_FOR_LLMS.md`, `docs/project-journal.md`, `docs/decision-log.md` si nécessaire.
 - Validation enseignante obligatoire pour niveau, consignes, corriges, droits et licences.
@@ -275,10 +283,11 @@ Variables obligatoires: aucune
 4. Utiliser `docs/change-report-template.md` comme format standard de bilan.
 5. Relire `AGENTS.md` avec les pratiques reelles du projet.
 6. Améliorer le validateur local si de nouveaux exemples Markdown apparaissent.
-7. Ajouter quelques supports libres convertis en ressources structurees.
-8. Preciser une charte de validation pedagogique.
-9. Documenter un schema Supabase futur sans installer Supabase.
-10. Definir une charte d'usage IA avant tout prototype actif.
+7. Tester l'architecture d'information avec deux ou trois enseignants FLE.
+8. Ajouter quelques supports libres convertis en ressources structurees.
+9. Preciser une charte de validation pedagogique.
+10. Documenter un schema Supabase futur sans installer Supabase.
+11. Definir une charte d'usage IA avant tout prototype actif.
 
 ## 11. A ne pas faire sans validation explicite
 

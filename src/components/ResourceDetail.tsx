@@ -1,4 +1,4 @@
-import type { Resource } from '../types/resource'
+import type { Resource, ResourceSectionKey } from '../types/resource'
 import {
   formatActivityFormat,
   formatAiAssistanceLevel,
@@ -19,15 +19,35 @@ import {
   formatStatus,
   formatTeacherPreparation,
   formatTechnicalDifficulty,
-  sectionOrder,
 } from '../utils/formatters'
 import { Badge } from './Badge'
+import { CollapsibleSection } from './CollapsibleSection'
 
 type ResourceDetailProps = {
   resource: Resource
 }
 
+const primaryContentSections: ResourceSectionKey[] = [
+  'objectives',
+  'prerequisites',
+  'lessonPlan',
+  'studentInstructions',
+  'teacherGuide',
+  'answerKey',
+  'variants',
+]
+
+const secondaryContentSections: ResourceSectionKey[] = [
+  'usageNotes',
+  'techNotes',
+  'aiNotes',
+  'versionHistory',
+]
+
 export function ResourceDetail({ resource }: ResourceDetailProps) {
+  const firstObjective = resource.content.objectives?.items[0] ?? 'Objectif à consulter'
+  const materialNeeded = resource.materialNeeded.join(', ') || 'Aucun matériel spécifique'
+
   return (
     <article className="resource-detail">
       <header className="detail-hero">
@@ -38,7 +58,6 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
           <Badge tone="status">{formatStatus(resource.status)}</Badge>
           {resource.techMetadata?.usesDigitalTool ? <Badge tone="tech">Numérique</Badge> : null}
           {resource.aiMetadata?.usesAI ? <Badge tone="ai">IA documentée</Badge> : null}
-          {resource.accessLevel ? <Badge tone="access">{resource.accessLevel}</Badge> : null}
         </div>
         <h1>{resource.title}</h1>
         <p>{resource.summary}</p>
@@ -49,128 +68,163 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
         ) : null}
       </header>
 
-      <section className="detail-grid" aria-label="Métadonnées générales">
-        <Fact label="Durée" value={`${resource.durationMinutes} min`} />
-        <Fact label="Catégorie durée" value={formatDurationCategory(resource.durationCategory)} />
-        <Fact label="Thème" value={resource.theme} />
-        <Fact label="Licence" value={formatLicense(resource.license)} />
-        <Fact label="Auteurs" value={resource.authors.join(', ')} />
-        <Fact label="Source" value={formatSourceType(resource.sourceType)} />
-        <Fact label="Préparation enseignant" value={formatTeacherPreparation(resource.teacherPreparationLevel)} />
-        <Fact label="Réutilisabilité" value={formatReuseReadiness(resource.reuseReadiness)} />
-        <Fact label="Créée le" value={formatDate(resource.createdAt)} />
-        <Fact label="Mise à jour le" value={formatDate(resource.updatedAt)} />
+      <section className="detail-section quick-start" aria-label="Prise en main rapide">
+        <h2>Prise en main rapide</h2>
+        <div className="detail-grid quick-facts">
+          <Fact label="Niveau" value={resource.level} />
+          <Fact label="Durée" value={`${resource.durationMinutes} min`} />
+          <Fact label="Compétence" value={formatSkill(resource.mainSkill)} />
+          <Fact label="Type" value={formatResourceType(resource.resourceType)} />
+          <Fact label="Statut" value={formatStatus(resource.status)} />
+          <Fact label="Objectif" value={firstObjective} />
+          <Fact label="Modalité" value={formatClassroomMode(resource.classroomMode)} />
+          <Fact label="Matériel" value={materialNeeded} />
+        </div>
       </section>
 
       <section className="detail-section">
-        <h2>Classification pédagogique</h2>
+        <h2>Contenu pédagogique principal</h2>
+        <ContentSections resource={resource} sectionKeys={primaryContentSections} />
+      </section>
+
+      <CollapsibleSection title="Métadonnées complètes">
         <div className="detail-grid">
-          <Fact label="Compétence principale" value={formatSkill(resource.mainSkill)} />
+          <Fact label="Catégorie durée" value={formatDurationCategory(resource.durationCategory)} />
+          <Fact label="Thème" value={resource.theme} />
+          <Fact label="Auteurs" value={resource.authors.join(', ')} />
+          <Fact label="Source" value={formatSourceType(resource.sourceType)} />
+          <Fact
+            label="Préparation enseignant"
+            value={formatTeacherPreparation(resource.teacherPreparationLevel)}
+          />
+          <Fact label="Réutilisabilité" value={formatReuseReadiness(resource.reuseReadiness)} />
+          <Fact label="Créée le" value={formatDate(resource.createdAt)} />
+          <Fact label="Mise à jour le" value={formatDate(resource.updatedAt)} />
           <Fact
             label="Compétences secondaires"
             value={resource.secondarySkills.map(formatSkill).join(', ') || 'Aucune'}
           />
-          <Fact label="Format d’activité" value={formatActivityFormat(resource.activityFormat)} />
-          <Fact label="Modalité" value={formatClassroomMode(resource.classroomMode)} />
+          <Fact label="Format d'activité" value={formatActivityFormat(resource.activityFormat)} />
+          <Fact label="Gabarit" value={formatResourceTemplate(resource.resourceTemplate)} />
+          <Fact label="Identifiant" value={resource.id} />
         </div>
-        <div className="tag-list">
-          {[...resource.lexicalThemes, ...resource.grammarPoints].map((item) => (
-            <span key={item}>{item}</span>
-          ))}
-        </div>
-      </section>
-
-      <section className="detail-section">
-        <h2>Classification technologie</h2>
-        {resource.techMetadata ? (
-          <div className="detail-grid">
-            <Fact label="Outil numérique" value={formatBoolean(resource.techMetadata.usesDigitalTool)} />
-            <Fact label="Format numérique" value={formatDigitalFormat(resource.techMetadata.digitalFormat)} />
-            <Fact label="Internet requis" value={formatBoolean(resource.techMetadata.requiresInternet)} />
-            <Fact label="Compte requis" value={formatBoolean(resource.techMetadata.requiresAccount)} />
-            <Fact
-              label="Difficulté technique"
-              value={formatTechnicalDifficulty(resource.techMetadata.technicalDifficulty)}
-            />
-            <Fact
-              label="Outils suggérés"
-              value={resource.techMetadata.digitalTools.join(', ') || 'Aucun'}
-            />
+        <div className="metadata-tags">
+          <h3>Thèmes lexicaux et points de langue</h3>
+          <div className="tag-list">
+            {[...resource.lexicalThemes, ...resource.grammarPoints].map((item) => (
+              <span key={item}>{item}</span>
+            ))}
           </div>
-        ) : (
-          <p className="muted">Aucune métadonnée numérique spécifique.</p>
-        )}
-      </section>
-
-      <section className="detail-section">
-        <h2>Classification IA</h2>
-        {resource.aiMetadata ? (
-          <>
-            <div className="detail-grid">
-              <Fact label="Usage IA" value={formatBoolean(resource.aiMetadata.usesAI)} />
-              <Fact label="Cas d’usage" value={formatAiUseCase(resource.aiMetadata.aiUseCase)} />
-              <Fact
-                label="Niveau d’assistance"
-                value={formatAiAssistanceLevel(resource.aiMetadata.aiAssistanceLevel)}
-              />
-              <Fact
-                label="IA face étudiant"
-                value={formatBoolean(resource.aiMetadata.studentFacingAI)}
-              />
-              <Fact
-                label="Contrôle enseignant requis"
-                value={formatBoolean(resource.aiMetadata.teacherControlRequired)}
-              />
-              <Fact
-                label="Outils suggérés"
-                value={resource.aiMetadata.suggestedTools.join(', ') || 'Aucun'}
-              />
-            </div>
-            <p className="non-persistent-note">
-              Les usages IA sont documentés pour préparer de futures pratiques. Aucun appel IA
-              n’est activé dans cette v0.
-            </p>
-          </>
-        ) : (
-          <p className="muted">Aucun usage IA prévu pour cette ressource.</p>
-        )}
-      </section>
-
-      <section className="detail-section">
-        <h2>Tags</h2>
-        <div className="tag-list">
-          {resource.tags.map((tag) => (
-            <span key={tag}>{tag}</span>
-          ))}
         </div>
-      </section>
-
-      <section className="detail-section">
-        <h2>Contenu pédagogique</h2>
-        <div className="content-grid">
-          {sectionOrder.map((sectionKey) => {
-            const section = resource.content[sectionKey]
-
-            if (!section) {
-              return null
-            }
-
-            return (
-              <section key={sectionKey} className="content-section">
-                <h3>{section.title}</h3>
-                <ul>
-                  {section.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </section>
-            )
-          })}
+        <div className="metadata-tags">
+          <h3>Tags</h3>
+          <div className="tag-list">
+            {resource.tags.map((tag) => (
+              <span key={tag}>{tag}</span>
+            ))}
+          </div>
         </div>
-      </section>
+      </CollapsibleSection>
 
-      <section className="detail-section">
-        <h2>Versions simulées</h2>
+      <CollapsibleSection title="IA et numérique">
+        <section className="nested-detail-block">
+          <h3>Classification technologie</h3>
+          {resource.techMetadata ? (
+            <>
+              <div className="detail-grid">
+                <Fact
+                  label="Outil numérique"
+                  value={formatBoolean(resource.techMetadata.usesDigitalTool)}
+                />
+                <Fact
+                  label="Format numérique"
+                  value={formatDigitalFormat(resource.techMetadata.digitalFormat)}
+                />
+                <Fact label="Internet requis" value={formatBoolean(resource.techMetadata.requiresInternet)} />
+                <Fact label="Compte requis" value={formatBoolean(resource.techMetadata.requiresAccount)} />
+                <Fact
+                  label="Difficulté technique"
+                  value={formatTechnicalDifficulty(resource.techMetadata.technicalDifficulty)}
+                />
+                <Fact
+                  label="Outils suggérés"
+                  value={resource.techMetadata.digitalTools.join(', ') || 'Aucun'}
+                />
+                <Fact
+                  label="Appareils"
+                  value={resource.techMetadata.deviceRequirements.join(', ') || 'Aucun'}
+                />
+                <Fact
+                  label="Vie privée"
+                  value={resource.techMetadata.privacyConsiderations.join(', ') || 'Aucune'}
+                />
+              </div>
+            </>
+          ) : (
+            <p className="muted">Aucune métadonnée numérique spécifique.</p>
+          )}
+        </section>
+
+        <section className="nested-detail-block">
+          <h3>Classification IA</h3>
+          {resource.aiMetadata ? (
+            <>
+              <div className="detail-grid">
+                <Fact label="Usage IA" value={formatBoolean(resource.aiMetadata.usesAI)} />
+                <Fact label="Cas d'usage" value={formatAiUseCase(resource.aiMetadata.aiUseCase)} />
+                <Fact
+                  label="Niveau d'assistance"
+                  value={formatAiAssistanceLevel(resource.aiMetadata.aiAssistanceLevel)}
+                />
+                <Fact
+                  label="IA face étudiant"
+                  value={formatBoolean(resource.aiMetadata.studentFacingAI)}
+                />
+                <Fact
+                  label="Contrôle enseignant requis"
+                  value={formatBoolean(resource.aiMetadata.teacherControlRequired)}
+                />
+                <Fact
+                  label="Outils suggérés"
+                  value={resource.aiMetadata.suggestedTools.join(', ') || 'Aucun'}
+                />
+                <Fact label="Risques" value={resource.aiMetadata.risks.join(', ') || 'Aucun'} />
+                <Fact
+                  label="Garde-fous"
+                  value={resource.aiMetadata.safeguards.join(', ') || 'Aucun'}
+                />
+              </div>
+              <p className="non-persistent-note">
+                Les usages IA sont documentés pour préparer de futures pratiques. Aucun appel IA
+                n'est activé dans cette v0.
+              </p>
+            </>
+          ) : (
+            <p className="muted">Aucun usage IA prévu pour cette ressource.</p>
+          )}
+        </section>
+      </CollapsibleSection>
+
+      <CollapsibleSection title="Licence et accès">
+        <div className="detail-grid">
+          <Fact label="Licence" value={formatLicense(resource.license)} />
+          <Fact label="Accès futur" value={resource.accessLevel ?? 'Non renseigné'} />
+          <Fact label="Soutenabilité" value={resource.monetizationStatus ?? 'Non renseignée'} />
+          <Fact label="Notes d'accès" value={resource.visibilityNotes ?? 'Aucune'} />
+          <Fact label="Notes de licence" value={resource.licenseNotes ?? 'Aucune'} />
+        </div>
+        {resource.license === 'a_verifier' ? (
+          <p className="warning-note">
+            Cette ressource ne doit pas être publiée largement avant vérification de la licence.
+          </p>
+        ) : null}
+      </CollapsibleSection>
+
+      <CollapsibleSection title="Notes complémentaires">
+        <ContentSections resource={resource} sectionKeys={secondaryContentSections} />
+      </CollapsibleSection>
+
+      <CollapsibleSection title="Versions simulées">
         <ol className="timeline">
           {resource.versions.map((version) => (
             <li key={version.id}>
@@ -189,10 +243,9 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
             </li>
           ))}
         </ol>
-      </section>
+      </CollapsibleSection>
 
-      <section className="detail-section">
-        <h2>Retours d’usage</h2>
+      <CollapsibleSection title="Retours d'usage">
         {resource.usageFeedbacks && resource.usageFeedbacks.length > 0 ? (
           <div className="feedback-list">
             {resource.usageFeedbacks.map((feedback) => (
@@ -215,25 +268,19 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
             ))}
           </div>
         ) : (
-          <p className="muted">Aucun retour d’usage simulé pour cette ressource.</p>
+          <p className="muted">Aucun retour d'usage simulé pour cette ressource.</p>
         )}
         <div className="non-persistent-note">
-          Zone illustrative: aucun retour n’est enregistré dans la v0.
+          <strong>Pourquoi les retours d'usage sont importants ?</strong>
+          <p>
+            Un support mutualisable gagne en valeur quand il garde la trace de ses essais en
+            classe: durée réelle, niveau du groupe, points d'appui, difficultés et adaptations.
+            Ces retours restent simulés dans la v0.2.
+          </p>
         </div>
-      </section>
+      </CollapsibleSection>
 
-      <section className="detail-section">
-        <h2>Pourquoi les retours d’usage sont importants ?</h2>
-        <p>
-          Un support mutualisable gagne en valeur quand il garde la trace de ses essais en
-          classe: duree reelle, niveau du groupe, points d'appui, difficultes et adaptations.
-          Ces retours restent simules dans la v0.2, mais ils preparent une validation
-          communautaire plus utile qu'une simple note.
-        </p>
-      </section>
-
-      <section className="detail-section">
-        <h2>Propositions d’amélioration</h2>
+      <CollapsibleSection title="Propositions d'amélioration">
         {resource.contributionSuggestions && resource.contributionSuggestions.length > 0 ? (
           <div className="feedback-list">
             {resource.contributionSuggestions.map((suggestion) => (
@@ -245,33 +292,32 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
                 <h3>{suggestion.title}</h3>
                 <p>{suggestion.description}</p>
                 <p className="muted">
-                  Propose par {suggestion.proposedBy} le {formatDate(suggestion.createdAt)}
+                  Proposé par {suggestion.proposedBy} le {formatDate(suggestion.createdAt)}
                 </p>
               </article>
             ))}
           </div>
         ) : (
           <p className="muted">
-            Aucune proposition simulee n'est associee a cette ressource pour l'instant.
+            Aucune proposition simulée n'est associée à cette ressource pour l'instant.
           </p>
         )}
         <div className="non-persistent-note action-note">
           <div>
-            <strong>Proposer une amelioration</strong>
+            <strong>Proposer une amélioration</strong>
             <p>
-              Fonction non persistante dans la v0.2. Cette zone prepare le futur workflow
+              Fonction non persistante dans la v0.2. Cette zone prépare le futur workflow
               communautaire, sans formulaire serveur ni authentification.
             </p>
           </div>
           <button type="button" className="secondary-button" disabled>
-            Proposer une amelioration
+            Proposer une amélioration
           </button>
         </div>
-      </section>
+      </CollapsibleSection>
 
       {resource.reviewSummary ? (
-        <section className="detail-section">
-          <h2>Audit simulé</h2>
+        <CollapsibleSection title="Audit simulé">
           <div className="score-grid">
             <Fact label="Clarté" value={`${resource.reviewSummary.clarityScore}/5`} />
             <Fact label="Réutilisation" value={`${resource.reviewSummary.reusabilityScore}/5`} />
@@ -280,12 +326,21 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
               label="Fiabilité linguistique"
               value={`${resource.reviewSummary.languageReliabilityScore}/5`}
             />
-            <Fact label="Préparation numérique" value={`${resource.reviewSummary.digitalReadinessScore}/5`} />
+            <Fact
+              label="Préparation numérique"
+              value={`${resource.reviewSummary.digitalReadinessScore}/5`}
+            />
             <Fact label="Préparation IA" value={`${resource.reviewSummary.aiReadinessScore}/5`} />
           </div>
           <h3>Forces</h3>
           <ul>
             {resource.reviewSummary.strengths.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+          <h3>Points à surveiller</h3>
+          <ul>
+            {resource.reviewSummary.issues.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
@@ -295,9 +350,40 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
               <li key={item}>{item}</li>
             ))}
           </ul>
-        </section>
+        </CollapsibleSection>
       ) : null}
     </article>
+  )
+}
+
+function ContentSections({
+  resource,
+  sectionKeys,
+}: {
+  resource: Resource
+  sectionKeys: ResourceSectionKey[]
+}) {
+  const availableSections = sectionKeys
+    .map((sectionKey) => resource.content[sectionKey])
+    .filter((section) => section !== undefined)
+
+  if (availableSections.length === 0) {
+    return <p className="muted">Aucune section renseignée.</p>
+  }
+
+  return (
+    <div className="content-grid">
+      {availableSections.map((section) => (
+        <section key={section.title} className="content-section">
+          <h3>{section.title}</h3>
+          <ul>
+            {section.items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
   )
 }
 

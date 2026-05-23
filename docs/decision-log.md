@@ -131,3 +131,13 @@ Ce fichier consigne les décisions structurantes du projet. Une décision active
 - Conséquences : tokens CSS papier/graphite/améthyste/jaune annotation, badges monospace, cartes type fiche d'index, logo temporaire.
 - Ce qu'il ne faut pas faire sans nouvelle décision : refonte totale, surcharge graphique, dépendance UI lourde, transformation commerciale de l'interface.
 - Documents liés : `docs/branding-directions.md`, `docs/visual-identity-v0.md`, `docs/ui-implementation-notes.md`
+
+## Décision 14 — Hiérarchiser l'information par divulgation progressive
+
+- Statut : active / à réviser après retours enseignants
+- Contexte : les ressources FLE contiennent beaucoup de métadonnées utiles, mais tout afficher en permanence ralentit la décision.
+- Décision : conserver toutes les informations, mais distinguer carte de décision rapide, prise en main de fiche détail et sections expertes repliables.
+- Raisons : faciliter le scan enseignant sans appauvrir le modèle de ressource.
+- Conséquences : cartes allégées, tags limités avec compteur, filtres avancés repliables, sections détail consultables à la demande.
+- Ce qu'il ne faut pas faire sans nouvelle décision : supprimer des champs pour simplifier l'interface, masquer définitivement les données expertes ou ajouter un moteur de préférences utilisateur.
+- Documents liés : `docs/ux-progressive-disclosure.md`, `docs/ux-information-architecture.md`

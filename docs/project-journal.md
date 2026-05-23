@@ -141,3 +141,13 @@ Journal chronologique synthétique des interventions importantes. Les dates sont
 - Décisions : retenir le laboratoire typographique comme direction v0, en gardant une intégration sobre et réversible
 - Limites volontaires : pas de dépendance UI lourde, pas de refonte globale, pas de changement métier
 - Commit associé si connu : commit en cours
+
+## 2026-05-23 — Divulgation progressive de l'information
+
+- Outil principal : Antigravity pour le rapport UX, Codex pour l'intégration
+- Objectif : alléger la navigation enseignant sans supprimer les métadonnées du projet
+- Résultat : cartes ressource plus compactes, tags limités avec compteur, filtres avancés repliables, fiche détail organisée en prise en main rapide puis sections complémentaires
+- Fichiers principaux : `docs/ux-progressive-disclosure.md`, `docs/ux-information-architecture.md`, `src/components/ResourceCard.tsx`, `src/components/ResourceDetail.tsx`, `src/components/ResourceFilters.tsx`
+- Décisions : appliquer le principe "ne pas supprimer l'information, la hiérarchiser"
+- Limites volontaires : pas de moteur de préférences, pas de refonte complète, pas de suppression de champ métier
+- Commit associé si connu : commit en cours

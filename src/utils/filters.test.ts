@@ -83,6 +83,27 @@ describe('filterResources', () => {
     expect(results.every((resource) => resource.aiMetadata?.usesAI !== true)).toBe(true)
   })
 
+  it('filters by license, preparation level and source type', () => {
+    const licenseResults = filterResources(demoResources, withFilters({ license: 'CC_BY_SA' }))
+    const preparationResults = filterResources(
+      demoResources,
+      withFilters({ teacherPreparationLevel: 'faible' }),
+    )
+    const sourceResults = filterResources(
+      demoResources,
+      withFilters({ sourceType: 'document_cree' }),
+    )
+
+    expect(licenseResults.length).toBeGreaterThan(0)
+    expect(licenseResults.every((resource) => resource.license === 'CC_BY_SA')).toBe(true)
+    expect(preparationResults.length).toBeGreaterThan(0)
+    expect(
+      preparationResults.every((resource) => resource.teacherPreparationLevel === 'faible'),
+    ).toBe(true)
+    expect(sourceResults.length).toBeGreaterThan(0)
+    expect(sourceResults.every((resource) => resource.sourceType === 'document_cree')).toBe(true)
+  })
+
   it('searches in title, summary, tags and themes', () => {
     const byTitle = filterResources(demoResources, withFilters({ search: 'phonétique' }))
     const byTag = filterResources(demoResources, withFilters({ search: 'versionnage' }))

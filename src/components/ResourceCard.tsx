@@ -6,6 +6,7 @@ import {
   formatStatus,
 } from '../utils/formatters'
 import { Badge } from './Badge'
+import { CompactTagList } from './CompactTagList'
 
 type ResourceCardProps = {
   resource: Resource
@@ -18,16 +19,12 @@ export function ResourceCard({ resource }: ResourceCardProps) {
       <div className="card-topline">
         <Badge tone="level">{resource.level}</Badge>
         <Badge>{formatResourceType(resource.resourceType)}</Badge>
-        <Badge>{formatResourceTemplate(resource.resourceTemplate)}</Badge>
         <Badge tone="status">{formatStatus(resource.status)}</Badge>
-        {resource.techMetadata?.usesDigitalTool ? <Badge tone="tech">Numérique</Badge> : null}
-        {resource.aiMetadata?.usesAI ? <Badge tone="ai">IA documentée</Badge> : null}
-        {resource.accessLevel ? <Badge tone="access">{resource.accessLevel}</Badge> : null}
       </div>
       <h2>
         <a href={`#/resources/${resource.id}`}>{resource.title}</a>
       </h2>
-      <p>{resource.summary}</p>
+      <p className="resource-summary">{resource.summary}</p>
       <dl className="card-facts">
         <div>
           <dt>Compétence</dt>
@@ -42,10 +39,15 @@ export function ResourceCard({ resource }: ResourceCardProps) {
           <dd>{resource.durationMinutes} min</dd>
         </div>
       </dl>
-      <div className="tag-list" aria-label="Tags">
-        {resource.tags.slice(0, 5).map((tag) => (
-          <span key={tag}>{tag}</span>
-        ))}
+      <div className="resource-card-footer">
+        <CompactTagList tags={resource.tags} />
+        <div className="resource-indicators" aria-label="Indicateurs">
+          <span>{formatResourceTemplate(resource.resourceTemplate)}</span>
+          {resource.techMetadata?.usesDigitalTool ? <span>NUM</span> : null}
+          {resource.aiMetadata?.usesAI ? <span>IA</span> : null}
+          {resource.license === 'a_verifier' ? <span>LIC?</span> : null}
+          {resource.accessLevel ? <span>ACCÈS</span> : null}
+        </div>
       </div>
     </article>
   )
