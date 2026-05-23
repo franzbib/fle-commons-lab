@@ -22,7 +22,7 @@ import {
   sectionOrder,
 } from '../utils/formatters'
 import { Badge } from './Badge'
-
+import { CollapsibleSection } from './CollapsibleSection'
 type ResourceDetailProps = {
   resource: Resource
 }
@@ -48,39 +48,40 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
         ) : null}
       </header>
 
-      <section className="detail-grid" aria-label="Métadonnées générales">
-        <Fact label="Durée" value={`${resource.durationMinutes} min`} />
-        <Fact label="Catégorie durée" value={formatDurationCategory(resource.durationCategory)} />
-        <Fact label="Thème" value={resource.theme} />
-        <Fact label="Licence" value={formatLicense(resource.license)} />
-        <Fact label="Auteurs" value={resource.authors.join(', ')} />
-        <Fact label="Source" value={formatSourceType(resource.sourceType)} />
-        <Fact label="Préparation enseignant" value={formatTeacherPreparation(resource.teacherPreparationLevel)} />
-        <Fact label="Réutilisabilité" value={formatReuseReadiness(resource.reuseReadiness)} />
-        <Fact label="Créée le" value={formatDate(resource.createdAt)} />
-        <Fact label="Mise à jour le" value={formatDate(resource.updatedAt)} />
+      <section className="detail-section">
+        <h2>Prise en main rapide</h2>
+        <div className="detail-grid">
+          <Fact label="Niveau" value={resource.level} />
+          <Fact label="Durée" value={`${resource.durationMinutes} min`} />
+          <Fact label="Compétence principale" value={formatSkill(resource.mainSkill)} />
+          <Fact label="Modalité" value={formatClassroomMode(resource.classroomMode)} />
+          <Fact label="Format" value={formatActivityFormat(resource.activityFormat)} />
+        </div>
       </section>
 
-      <section className="detail-section">
-        <h2>Classification pédagogique</h2>
-        <div className="detail-grid">
-          <Fact label="Compétence principale" value={formatSkill(resource.mainSkill)} />
+      <CollapsibleSection title="Métadonnées complètes et classification">
+        <section className="detail-grid" style={{ marginBottom: '14px' }}>
+          <Fact label="Thème" value={resource.theme} />
+          <Fact label="Catégorie durée" value={formatDurationCategory(resource.durationCategory)} />
+          <Fact label="Licence" value={formatLicense(resource.license)} />
+          <Fact label="Auteurs" value={resource.authors.join(', ')} />
+          <Fact label="Source" value={formatSourceType(resource.sourceType)} />
+          <Fact label="Préparation" value={formatTeacherPreparation(resource.teacherPreparationLevel)} />
+          <Fact label="Réutilisabilité" value={formatReuseReadiness(resource.reuseReadiness)} />
+          <Fact label="Créée le" value={formatDate(resource.createdAt)} />
           <Fact
             label="Compétences secondaires"
             value={resource.secondarySkills.map(formatSkill).join(', ') || 'Aucune'}
           />
-          <Fact label="Format d’activité" value={formatActivityFormat(resource.activityFormat)} />
-          <Fact label="Modalité" value={formatClassroomMode(resource.classroomMode)} />
-        </div>
+        </section>
         <div className="tag-list">
           {[...resource.lexicalThemes, ...resource.grammarPoints].map((item) => (
             <span key={item}>{item}</span>
           ))}
         </div>
-      </section>
+      </CollapsibleSection>
 
-      <section className="detail-section">
-        <h2>Classification technologie</h2>
+      <CollapsibleSection title="Classification technologie">
         {resource.techMetadata ? (
           <div className="detail-grid">
             <Fact label="Outil numérique" value={formatBoolean(resource.techMetadata.usesDigitalTool)} />
@@ -99,10 +100,9 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
         ) : (
           <p className="muted">Aucune métadonnée numérique spécifique.</p>
         )}
-      </section>
+      </CollapsibleSection>
 
-      <section className="detail-section">
-        <h2>Classification IA</h2>
+      <CollapsibleSection title="Classification IA">
         {resource.aiMetadata ? (
           <>
             <div className="detail-grid">
@@ -125,7 +125,7 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
                 value={resource.aiMetadata.suggestedTools.join(', ') || 'Aucun'}
               />
             </div>
-            <p className="non-persistent-note">
+            <p className="non-persistent-note" style={{ marginTop: '14px' }}>
               Les usages IA sont documentés pour préparer de futures pratiques. Aucun appel IA
               n’est activé dans cette v0.
             </p>
@@ -133,16 +133,15 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
         ) : (
           <p className="muted">Aucun usage IA prévu pour cette ressource.</p>
         )}
-      </section>
+      </CollapsibleSection>
 
-      <section className="detail-section">
-        <h2>Tags</h2>
+      <CollapsibleSection title="Tags (Mots-clés)">
         <div className="tag-list">
           {resource.tags.map((tag) => (
             <span key={tag}>{tag}</span>
           ))}
         </div>
-      </section>
+      </CollapsibleSection>
 
       <section className="detail-section">
         <h2>Contenu pédagogique</h2>
@@ -168,8 +167,7 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
         </div>
       </section>
 
-      <section className="detail-section">
-        <h2>Versions simulées</h2>
+      <CollapsibleSection title="Versions simulées">
         <ol className="timeline">
           {resource.versions.map((version) => (
             <li key={version.id}>
@@ -188,18 +186,16 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
             </li>
           ))}
         </ol>
-      </section>
+      </CollapsibleSection>
 
-      <section className="detail-section">
-        <h2>Retours d’usage</h2>
+      <CollapsibleSection title="Retours d’usage">
         {resource.usageFeedbacks && resource.usageFeedbacks.length > 0 ? (
           <div className="feedback-list">
             {resource.usageFeedbacks.map((feedback) => (
               <article key={feedback.id} className="feedback-card">
-                <h3>{feedback.authorName}</h3>
-                <p className="muted">
-                  {feedback.context} · {feedback.groupLevel} · {feedback.actualDurationMinutes}{' '}
-                  min
+                <h3 style={{ margin: 0, fontSize: '1rem' }}>{feedback.authorName}</h3>
+                <p className="muted" style={{ marginBottom: '8px' }}>
+                  {feedback.context} · {feedback.groupLevel} · {feedback.actualDurationMinutes} min
                 </p>
                 <p>
                   <strong>Ce qui a fonctionné:</strong> {feedback.whatWorked}
@@ -216,61 +212,34 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
         ) : (
           <p className="muted">Aucun retour d’usage simulé pour cette ressource.</p>
         )}
-        <div className="non-persistent-note">
-          Zone illustrative: aucun retour n’est enregistré dans la v0.
-        </div>
-      </section>
+      </CollapsibleSection>
 
-      <section className="detail-section">
-        <h2>Pourquoi les retours d’usage sont importants ?</h2>
-        <p>
-          Un support mutualisable gagne en valeur quand il garde la trace de ses essais en
-          classe: duree reelle, niveau du groupe, points d'appui, difficultes et adaptations.
-          Ces retours restent simules dans la v0.2, mais ils preparent une validation
-          communautaire plus utile qu'une simple note.
-        </p>
-      </section>
-
-      <section className="detail-section">
-        <h2>Propositions d’amélioration</h2>
+      <CollapsibleSection title="Propositions d’amélioration">
         {resource.contributionSuggestions && resource.contributionSuggestions.length > 0 ? (
           <div className="feedback-list">
             {resource.contributionSuggestions.map((suggestion) => (
               <article key={suggestion.id} className="feedback-card">
-                <div className="card-topline">
+                <div className="card-topline" style={{ marginBottom: '8px' }}>
                   <Badge>{formatContributionType(suggestion.type)}</Badge>
                   <Badge tone="status">{formatContributionStatus(suggestion.status)}</Badge>
                 </div>
-                <h3>{suggestion.title}</h3>
+                <h3 style={{ margin: 0, fontSize: '1rem' }}>{suggestion.title}</h3>
                 <p>{suggestion.description}</p>
-                <p className="muted">
-                  Propose par {suggestion.proposedBy} le {formatDate(suggestion.createdAt)}
+                <p className="muted" style={{ marginTop: '8px' }}>
+                  Proposé par {suggestion.proposedBy} le {formatDate(suggestion.createdAt)}
                 </p>
               </article>
             ))}
           </div>
         ) : (
           <p className="muted">
-            Aucune proposition simulee n'est associee a cette ressource pour l'instant.
+            Aucune proposition n'est associée à cette ressource pour l'instant.
           </p>
         )}
-        <div className="non-persistent-note action-note">
-          <div>
-            <strong>Proposer une amelioration</strong>
-            <p>
-              Fonction non persistante dans la v0.2. Cette zone prepare le futur workflow
-              communautaire, sans formulaire serveur ni authentification.
-            </p>
-          </div>
-          <button type="button" className="secondary-button" disabled>
-            Proposer une amelioration
-          </button>
-        </div>
-      </section>
+      </CollapsibleSection>
 
       {resource.reviewSummary ? (
-        <section className="detail-section">
-          <h2>Audit simulé</h2>
+        <CollapsibleSection title="Audit simulé">
           <div className="score-grid">
             <Fact label="Clarté" value={`${resource.reviewSummary.clarityScore}/5`} />
             <Fact label="Réutilisation" value={`${resource.reviewSummary.reusabilityScore}/5`} />
@@ -282,19 +251,19 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
             <Fact label="Préparation numérique" value={`${resource.reviewSummary.digitalReadinessScore}/5`} />
             <Fact label="Préparation IA" value={`${resource.reviewSummary.aiReadinessScore}/5`} />
           </div>
-          <h3>Forces</h3>
+          <h3 style={{ fontSize: '1rem', marginTop: '16px' }}>Forces</h3>
           <ul>
             {resource.reviewSummary.strengths.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
-          <h3>Recommandations</h3>
+          <h3 style={{ fontSize: '1rem', marginTop: '16px' }}>Recommandations</h3>
           <ul>
             {resource.reviewSummary.recommendations.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
-        </section>
+        </CollapsibleSection>
       ) : null}
     </article>
   )

@@ -22,8 +22,8 @@ export function ResourceCard({ resource }: ResourceCardProps) {
         {resource.normalizationMetadata?.normalizationStatus === 'en_analyse' ? (
           <Badge tone="status">Brouillon / Brut</Badge>
         ) : null}
-        {resource.techMetadata?.usesDigitalTool ? <Badge>Numérique</Badge> : null}
-        {resource.aiMetadata?.usesAI ? <Badge>IA documentée</Badge> : null}
+        {resource.techMetadata?.usesDigitalTool ? <span>💻</span> : null}
+        {resource.aiMetadata?.usesAI ? <span>✨</span> : null}
       </div>
       <h2>
         <a href={`#/resources/${resource.id}`}>{resource.title}</a>
@@ -44,9 +44,12 @@ export function ResourceCard({ resource }: ResourceCardProps) {
         </div>
       </dl>
       <div className="tag-list" aria-label="Tags">
-        {resource.tags.slice(0, 5).map((tag) => (
+        {resource.tags.slice(0, 3).map((tag) => (
           <span key={tag}>{tag}</span>
         ))}
+        {resource.tags.length > 3 && (
+          <span className="tag-more">+{resource.tags.length - 3}</span>
+        )}
       </div>
     </article>
   )
