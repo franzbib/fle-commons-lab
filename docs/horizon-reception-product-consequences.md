@@ -193,13 +193,13 @@ Aucune publication automatique ne doit etre prevue sans verification linguistiqu
 ### Court terme
 
 1. Stabiliser les cartes ressources et les fiches detail.
-2. Ameliorer la copie, l'impression et la lisibilite.
+2. Ameliorer la copie, l'impression et la lisibilite. Premiere couche appliquee: boutons de copie pour les blocs identifiables d'une fiche, copie de la fiche complete et styles d'impression dedies.
 3. Produire des ressources exemplaires et vraiment reutilisables.
-4. Documenter la contribution non technique.
+4. Documenter la contribution non technique. Premiere couche appliquee: prototype non persistant "Proposer une ressource brute" dans l'espace de contribution.
 
 ### Moyen terme
 
-1. Prototyper un formulaire de proposition de ressource brute, sans persistance.
+1. Ameliorer le prototype de proposition de ressource brute, sans persistance, a partir de retours enseignants.
 2. Prototyper un formulaire de retour d'usage, sans persistance.
 3. Decrire les statuts de normalisation et de validation.
 4. Definir les conditions d'acces elargi, sans restriction reelle.

@@ -17,12 +17,12 @@ Fonctionnalites presentes:
 - bibliotheque de 18 ressources de demonstration;
 - recherche texte;
 - filtres pedagogiques, numeriques et IA;
-- fiches detail;
+- fiches detail avec actions de copie et impression;
 - collections locales et pages detail de collection;
 - propositions d'amelioration simulees dans certaines fiches;
 - retours d'usage simules mieux visibles;
 - page Communaute;
-- page Espace de contribution conceptuel;
+- page Espace de contribution conceptuel avec prototype non persistant de proposition de ressource brute;
 - page Gabarits pedagogiques;
 - page Format Markdown;
 - page Vision;
@@ -30,7 +30,7 @@ Fonctionnalites presentes:
 - page Documentation;
 - templates GitHub pour issues et pull requests.
 - rapport Antigravity `docs/conversion-experiments.md`;
-- exemples de ressources Markdown dans `examples/resources-markdown/`.
+- 5 exemples de ressources Markdown fictifs et originaux dans `examples/resources-markdown/`.
 - validateur local minimal des exemples Markdown via `npm run validate:resources`.
 - documentation de deploiement Vercel dans `docs/deployment.md`.
 - audit de synchronisation GitHub / local / Vercel dans `docs/git-sync-audit.md`.
@@ -45,6 +45,7 @@ Fonctionnalites presentes:
 - premiere couche UI appliquee dans `src/styles/global.css` avec notes dans `docs/ui-implementation-notes.md`.
 - rapport Antigravity `docs/ux-progressive-disclosure.md` et documentation d'architecture d'information dans `docs/ux-information-architecture.md`.
 - divulgation progressive appliquee a l'interface: cartes ressource allegees, filtres avances repliables et sections de detail consultables a la demande.
+- styles d'impression dedies pour rendre les fiches ressources plus lisibles sur papier.
 - analyse exploratoire d'un corpus Google Drive dans `docs/drive-corpus-analysis.md`, a utiliser comme reference de conception et non comme source publiable par defaut.
 - document produit `docs/horizon-reception-product-consequences.md`, qui formalise les consequences de l'horizon de reception FLE : infrastructure technique invisible, priorite au copier-coller, aux exports, a l'impression propre, aux formulaires simples et a la contribution non technique.
 
@@ -89,6 +90,7 @@ Dependances runtime: `react`, `react-dom`.
 - Abonnement ou monetisation active.
 - Commentaires persistants.
 - Workflow communautaire reel.
+- Collecte de donnees utilisateur via le prototype de contribution.
 
 ## 5. Structure des fichiers importants
 
@@ -126,6 +128,7 @@ src/
     collections.ts
     collections.test.ts
     formatters.ts
+    resourceText.ts
   types/resourceMarkdown.ts
   types/community.ts
   types/access.ts
@@ -205,7 +208,7 @@ Le validateur local verifie seulement une conformite minimale des exemples Markd
 
 Les champs d'acces et de soutenabilite sont conceptuels et facultatifs: `accessLevel`, `monetizationStatus`, `visibilityNotes`, `licenseNotes`. Ils ne creent aucune restriction reelle.
 
-L'analyse du corpus Drive recommande de documenter ou d'etudier plus tard trois notions supplementaires avant tout import: completude pedagogique, statut des droits et usage comme reference temporaire.
+L'analyse du corpus Drive recommande de documenter ou d'etudier plus tard trois notions supplementaires avant tout import: `pedagogicalCompleteness`, `rightsStatus` et `referenceUse`. Ces notions sont documentees dans `docs/resource-model.md` mais ne sont pas encore ajoutees au type TypeScript.
 
 ## 7. Decisions importantes
 
@@ -217,6 +220,7 @@ L'analyse du corpus Drive recommande de documenter ou d'etudier plus tard trois 
 - IA et Supabase anticipes uniquement par types, taxonomie et documentation.
 - Tests unitaires legers avec Vitest.
 - Markdown + frontmatter YAML retenu comme format de contribution lisible et versionnable.
+- Les gabarits issus de l'analyse Drive peuvent inspirer des structures et exemples fictifs, jamais une copie de contenu.
 - Le validateur Markdown est autonome en Node et n'ajoute aucune dependance YAML.
 - Le projet est deployable sur Vercel comme site statique Vite: build `npm run build`, sortie `dist`.
 - URL Vercel publique verifiee: `https://fle-commons-lab.vercel.app`.
@@ -228,6 +232,9 @@ L'analyse du corpus Drive recommande de documenter ou d'etudier plus tard trois 
 - Aucun paiement, abonnement, Stripe, restriction reelle, auth ou backend n'est actif.
 - L'identite visuelle appliquee reste une v0 sobre: tokens CSS, logo temporaire, favicon, badges typographiques et cartes type fiche d'index.
 - L'interface suit une lecture progressive: carte = decision rapide; fiche detail = prise en main puis blocs experts repliables.
+- L'interface publique doit privilegier le vocabulaire enseignant: copier, imprimer, proposer une ressource, corrige, guide professeur. Les termes Markdown, YAML, pull request, fork, build ou repository ne doivent pas devenir le parcours principal.
+- Les boutons de copie utilisent les sections existantes du modele (`studentInstructions`, `teacherGuide`, `answerKey`) et une transformation locale en texte propre; ils n'envoient aucune donnee.
+- Le prototype de proposition de ressource brute est visuel et non connecte: aucun stockage, aucune API, aucun `localStorage`.
 - Aucune information du modele n'a ete supprimee: les metadonnees, versions, retours, propositions, audit, IA, numerique, licence et acces restent disponibles.
 - Le corpus Google Drive observe sert uniquement de reference de conception pour gabarits et exemples fictifs; les documents sources ne doivent pas etre importes ni publies sans verification.
 - `AGENTS.md` est le guide de travail prioritaire pour Codex, ChatGPT, Antigravity et autres LLM.
@@ -295,15 +302,16 @@ Variables obligatoires: aucune
 4. Lire `docs/drive-corpus-analysis.md` avant de creer de nouveaux gabarits ou exemples Markdown inspires de supports existants.
 5. Utiliser `docs/change-report-template.md` comme format standard de bilan.
 6. Relire `AGENTS.md` avec les pratiques reelles du projet.
-7. Ameliorer le validateur local si de nouveaux exemples Markdown apparaissent.
-8. Tester l'architecture d'information avec deux ou trois enseignants FLE.
-9. Ajouter quelques supports libres convertis en ressources structurees.
-10. Preciser une charte de validation pedagogique.
-11. Documenter un schema Supabase futur sans installer Supabase.
-12. Definir une charte d'usage IA avant tout prototype actif.
-13. Prioriser les fonctions copier, imprimer, exporter Word/PDF avant tout workflow communautaire complexe.
-14. Prototyper plus tard un formulaire non persistant de proposition de ressource brute.
-15. Prototyper plus tard un formulaire non persistant de retour d'usage court.
+7. Tester les 5 exemples Markdown avec des enseignants FLE pour verifier la clarte des gabarits.
+8. Tester les boutons de copie et le rendu d'impression avec des enseignants FLE.
+9. Ameliorer le validateur local si de nouveaux exemples Markdown apparaissent.
+10. Tester l'architecture d'information avec deux ou trois enseignants FLE.
+11. Ajouter quelques supports libres convertis en ressources structurees.
+12. Preciser une charte de validation pedagogique.
+13. Documenter un schema Supabase futur sans installer Supabase.
+14. Definir une charte d'usage IA avant tout prototype actif.
+15. Prioriser les fonctions copier, imprimer, exporter Word/PDF avant tout workflow communautaire complexe.
+16. Prototyper plus tard un formulaire non persistant de retour d'usage court.
 
 ## 11. A ne pas faire sans validation explicite
 
@@ -315,6 +323,7 @@ Variables obligatoires: aucune
 - Creer une cle API ou `.env.local`.
 - Ajouter une base de donnees.
 - Ajouter upload ou stockage de fichiers.
+- Connecter le prototype de contribution a une API ou a `localStorage`.
 - Ajouter un import automatique Markdown ou `.docx`.
 - Ajouter un import automatique Google Drive.
 - Ajouter une dependance YAML sans decision explicite.

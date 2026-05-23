@@ -22,6 +22,7 @@ import {
 } from '../utils/formatters'
 import { Badge } from './Badge'
 import { CollapsibleSection } from './CollapsibleSection'
+import { ResourceCopyActions } from './ResourceCopyActions'
 
 type ResourceDetailProps = {
   resource: Resource
@@ -81,6 +82,8 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
           <Fact label="Matériel" value={materialNeeded} />
         </div>
       </section>
+
+      <ResourceCopyActions resource={resource} />
 
       <section className="detail-section">
         <h2>Contenu pédagogique principal</h2>

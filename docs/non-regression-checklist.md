@@ -30,6 +30,8 @@
 - Les retours d’usage simulés ou le placeholder sont visibles.
 - Les propositions d’amélioration simulées ou le placeholder sont visibles.
 - La mention de non-persistance est claire.
+- Les boutons de copie restent locaux et n'envoient aucune donnée.
+- Le rendu d'impression masque la navigation et garde les blocs pédagogiques lisibles.
 
 ## Architecture De L'information UX
 
@@ -46,6 +48,7 @@
 - Chaque collection ouvre sa page détail.
 - Les ressources associées à une collection existent dans les données locales.
 - La page Communauté rappelle qu’il n’y a pas de workflow persistant.
+- Le prototype de proposition de ressource brute ne stocke rien, ne transmet rien et ne crée aucun upload.
 - Les templates GitHub ne demandent pas de clé, de donnée personnelle ou de contenu protégé.
 
 ## Sécurité Et Sobriété
@@ -65,6 +68,8 @@
 - Le projet ne devient pas dépendant d’un fournisseur IA.
 - La v0 fonctionne sans variable d’environnement.
 - Aucun import automatique Markdown, `.docx` ou fichier utilisateur n’est ajouté sans décision explicite.
+- Aucun import Google Drive n'est ajouté sans décision explicite.
+- Aucun contenu exact d'un corpus externe n'est copié dans les exemples publics.
 - `npm run validate:resources` passe sur les exemples Markdown.
 
 ## Format Markdown Et Conversion

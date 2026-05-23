@@ -161,3 +161,23 @@ Journal chronologique synthétique des interventions importantes. Les dates sont
 - Décisions : utiliser le corpus Drive comme référence de conception, pas comme source publiable par défaut; ne pas importer automatiquement les documents; créer plus tard des exemples fictifs ou anonymisés
 - Limites volontaires : pas d'import Drive, pas de copie de contenus protégés, pas d'accès réel, pas de Supabase, pas d'upload, pas de backend
 - Commit associé si connu : `61e6562 docs: add Drive corpus analysis`
+
+## 2026-05-23 — Gabarits Markdown inspirés du corpus Drive
+
+- Outil principal : Codex
+- Objectif : exploiter `docs/drive-corpus-analysis.md` comme référence de conception sans importer les documents Drive
+- Résultat : documentation des six gabarits de ressources, clarification support brut / ressource publiable et deux exemples Markdown fictifs supplémentaires
+- Fichiers principaux : `docs/markdown-resource-format.md`, `docs/resource-model.md`, `examples/resources-markdown/grammaire-b1-b2-medias-nominalisation.md`, `examples/resources-markdown/evaluation-b1-b2-vie-etudiante.md`
+- Décisions : garder `pedagogicalCompleteness`, `rightsStatus` et `referenceUse` documentaires pour l'instant; ne pas alourdir le type `Resource`
+- Limites volontaires : aucun accès Drive, aucune copie de contenu exact, aucun import automatique, aucun backend
+- Commit associé si connu : commit en cours
+
+## 2026-05-23 — Usage enseignant immédiat
+
+- Outil principal : Codex
+- Objectif : rendre les fiches plus copiables, adaptables et imprimables sans ajouter de backend
+- Résultat : boutons de copie pour support étudiant, guide professeur, corrigé et fiche complète; bouton d'impression; styles print; prototype non persistant de proposition de ressource brute
+- Fichiers principaux : `src/components/ResourceDetail.tsx`, `src/components/ResourceCopyActions.tsx`, `src/utils/resourceText.ts`, `src/pages/ContributionSpacePage.tsx`, `src/styles/global.css`
+- Décisions : utiliser les sections existantes du modèle pour produire du texte copiable; garder le formulaire de contribution purement visuel
+- Limites volontaires : aucune donnée envoyée, aucun stockage local, aucun upload, aucune authentification, aucune restriction d'accès
+- Commit associé si connu : commit en cours

@@ -29,14 +29,17 @@ L'IA est documentee et anticipee, mais aucune API IA n'est appelee par l'applica
 - 18 ressources de demonstration.
 - Bibliotheque filtrable et recherche texte.
 - Pages Accueil, Demo, Bibliotheque, Collections, Detail ressource, Communaute, Gabarits, Vision, Technologies et IA, Documentation.
+- Fiches ressources copiables et imprimables pour un usage enseignant immédiat.
 - Page conceptuelle Espace de contribution.
+- Prototype non persistant de proposition de ressource brute.
 - Page Format pour expliquer la logique Markdown + YAML.
 - Guide `AGENTS.md` pour les agents IA.
 - Documentation des roles contributeurs futurs.
 - Documentation conceptuelle des accès et de la soutenabilité.
 - Première couche d'identité visuelle "Laboratoire Typographique".
 - Interface de bibliothèque organisée par divulgation progressive: cartes allégées, filtres avancés repliables et détails experts consultables à la demande.
-- Exemples Markdown dans `examples/resources-markdown/`.
+- 5 exemples Markdown fictifs dans `examples/resources-markdown/`.
+- Analyse du corpus Drive documentée comme référence de conception, sans import ni copie des documents originaux.
 - Validateur local minimal des exemples Markdown.
 - Tests Vitest sur les filtres et les collections.
 - Templates GitHub pour bugs, suggestions de ressources, propositions d'amelioration et pull requests.
@@ -114,6 +117,8 @@ PROJECT_STATE_FOR_LLMS.md
 - Aucun paiement, abonnement ou restriction réelle d'accès.
 - Aucun stockage de PDF ou upload.
 - Aucun import automatique de fichiers Markdown.
+- Aucun import Google Drive.
+- Aucun stockage des donnees saisies dans le prototype de contribution.
 - Le validateur Markdown ne crée aucune ressource dans l'application.
 
 ## Documentation utile
@@ -140,6 +145,7 @@ PROJECT_STATE_FOR_LLMS.md
 - `docs/markdown-resource-format.md`
 - `docs/conversion-workflow.md`
 - `docs/conversion-experiments.md`
+- `docs/drive-corpus-analysis.md`
 - `docs/technology-and-ai.md`
 - `docs/deployment.md`
 - `docs/git-sync-audit.md`

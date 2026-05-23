@@ -171,3 +171,13 @@ Ce fichier consigne les décisions structurantes du projet. Une décision active
 - Conséquences : les futurs niveaux d'accès devront reconnaître des contributions diverses, non seulement des ressources complètes.
 - Ce qu'il ne faut pas faire sans nouvelle décision : activer un paywall, imposer un paiement, restreindre réellement les ressources en v0 ou confondre contribution et compétence technique.
 - Documents liés : `docs/access-and-sustainability-model.md`, `docs/community-model.md`, `docs/horizon-reception-product-consequences.md`
+
+## Décision 18 — Utiliser les corpus externes comme références, pas comme sources publiables
+
+- Statut : active
+- Contexte : l'analyse `docs/drive-corpus-analysis.md` montre un corpus riche mais hétérogène, avec risques de droits, données personnelles et provenance incertaine.
+- Décision : exploiter ce type de corpus pour concevoir des gabarits et exemples fictifs, sans importer ni copier les documents originaux.
+- Raisons : préserver la sobriété juridique, la confidentialité et la vocation open source du projet.
+- Conséquences : les exemples Markdown doivent être originaux; les notions `pedagogicalCompleteness`, `rightsStatus` et `referenceUse` restent documentaires tant qu'un vrai workflow de conversion n'existe pas.
+- Ce qu'il ne faut pas faire sans nouvelle décision : accéder au Drive depuis Codex, importer les fichiers, copier du contenu exact, publier des annexes ou ajouter un importeur automatique.
+- Documents liés : `docs/drive-corpus-analysis.md`, `docs/markdown-resource-format.md`, `docs/resource-model.md`

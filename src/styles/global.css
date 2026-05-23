@@ -57,14 +57,16 @@ a {
 
 button,
 input,
-select {
+select,
+textarea {
   font: inherit;
 }
 
 button,
 a,
 input,
-select {
+select,
+textarea {
   letter-spacing: 0;
 }
 
@@ -484,8 +486,28 @@ select {
 }
 
 input:focus,
-select:focus {
+select:focus,
+textarea:focus {
   border-color: var(--color-border-strong);
+}
+
+textarea {
+  width: 100%;
+  min-height: 140px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  color: var(--text-strong);
+  background: white;
+  padding: 10px;
+  resize: vertical;
+}
+
+input:disabled,
+select:disabled,
+textarea:disabled,
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.72;
 }
 
 .results-heading {
@@ -558,6 +580,32 @@ select:focus {
 
 .quick-facts {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.copy-actions-panel {
+  display: grid;
+  gap: 14px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 18px 22px;
+}
+
+.copy-actions-panel h2 {
+  margin: 0 0 6px;
+}
+
+.copy-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.copy-status {
+  color: var(--accent-strong);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
 }
 
 .collapsible-section {
@@ -672,6 +720,49 @@ select:focus {
   margin-bottom: 28px;
 }
 
+.prototype-form-section {
+  display: grid;
+  gap: 16px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 22px;
+}
+
+.prototype-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.prototype-form .field-wide {
+  grid-column: 1 / -1;
+}
+
+.prototype-fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  grid-column: 1 / -1;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+}
+
+.prototype-fieldset legend {
+  color: var(--text-strong);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.prototype-fieldset label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .doc-list {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -731,6 +822,7 @@ select:focus {
   .content-grid,
   .detail-grid,
   .quick-facts,
+  .prototype-form,
   .doc-list {
     grid-template-columns: 1fr;
   }
@@ -746,5 +838,110 @@ select:focus {
   .hero-panel {
     min-height: auto;
     padding: 36px 0;
+  }
+}
+
+@media print {
+  @page {
+    margin: 14mm;
+  }
+
+  :root {
+    --bg: white;
+    --surface: white;
+    --surface-muted: white;
+    --text: #111111;
+    --text-strong: #111111;
+    --muted: #333333;
+    --border: #999999;
+    --color-border-strong: #111111;
+  }
+
+  body {
+    background: white;
+    color: #111111;
+    font-size: 11pt;
+  }
+
+  .site-header,
+  .back-link,
+  .copy-actions-panel,
+  .filters-panel,
+  .resource-card-footer,
+  .non-persistent-note.action-note {
+    display: none !important;
+  }
+
+  .app-frame,
+  .page,
+  .readable-page {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 24pt;
+  }
+
+  h2 {
+    font-size: 15pt;
+  }
+
+  h3 {
+    font-size: 12pt;
+  }
+
+  .detail-hero,
+  .detail-section,
+  .collapsible-section,
+  .content-section,
+  .feedback-card {
+    break-inside: avoid;
+    border: 1px solid #999999;
+    box-shadow: none;
+    page-break-inside: avoid;
+  }
+
+  .detail-hero,
+  .detail-section,
+  .collapsible-content {
+    padding: 12pt;
+  }
+
+  .collapsible-section summary {
+    border-bottom: 1px solid #999999;
+    padding: 10pt 12pt;
+  }
+
+  .collapsible-section,
+  .collapsible-section[open] {
+    display: block;
+  }
+
+  .collapsible-section:not([open]) > *:not(summary) {
+    display: grid;
+  }
+
+  .collapsible-content {
+    display: grid;
+  }
+
+  .detail-grid,
+  .quick-facts,
+  .content-grid,
+  .score-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .badge,
+  .tag-list span {
+    border-color: #999999;
+    color: #111111;
+    background: white;
+  }
+
+  a {
+    text-decoration: none;
   }
 }

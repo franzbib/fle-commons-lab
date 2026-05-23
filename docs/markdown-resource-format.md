@@ -119,6 +119,178 @@ Pour une contribution minimale, renseigner:
 - `techMetadata`
 - `aiMetadata`
 
+## Gabarits issus de l'analyse du corpus Drive
+
+`docs/drive-corpus-analysis.md` sert de reference de conception uniquement. Les gabarits ci-dessous decrivent des structures observees dans des supports FLE reels, mais aucun contenu exact du corpus Drive ne doit etre copie dans les exemples publics.
+
+### Sequence grammaticale inductive longue
+
+Usage pedagogique: organiser une progression B1/B2 autour d'un theme, d'un corpus d'observation, de reperages, d'exercices systematiques et d'un reemploi contextualise.
+
+Rubriques recommandees:
+
+- Objectifs;
+- Corpus d'observation;
+- Questions de reperage;
+- Exercices systematiques;
+- Exercices de transformation;
+- Synthese grammaticale;
+- Reemploi contextualise;
+- Corrige;
+- Guide professeur;
+- Variantes;
+- Licence et sources.
+
+Champs frontmatter particulierement importants:
+
+- `level`;
+- `durationMinutes` et `durationCategory`;
+- `mainSkill`;
+- `grammarPoints`;
+- `resourceType: "sequence"`;
+- `resourceTemplate: "grammaire_inductive"`;
+- `reuseReadiness`;
+- `license`;
+- `sourceType`.
+
+Limites et precautions: un document long n'est pas forcement une ressource complete. Il faut verifier la progression, expliciter les objectifs, ajouter un corrige fiable et distinguer les exemples originaux des documents authentiques.
+
+### Fiche grammaire thematique
+
+Usage pedagogique: traiter un point de langue cible dans un theme concret, par exemple medias, sante, logement ou vie etudiante.
+
+Rubriques recommandees:
+
+- Mise en route thematique;
+- Lexique utile;
+- Observation;
+- Exercices guides;
+- Exercices systematiques;
+- Point de langue;
+- Reemploi;
+- Corrige.
+
+Champs frontmatter particulierement importants:
+
+- `mainSkill: "grammaire"`;
+- `secondarySkills`;
+- `theme`;
+- `grammarPoints`;
+- `resourceType: "fiche"` ou `"exercice"`;
+- `resourceTemplate: "grammaire_inductive"`;
+- `teacherPreparationLevel`.
+
+Limites et precautions: la fiche doit rester reutilisable sans contexte de cours trop implicite. Les exemples doivent etre originaux ou clairement libres.
+
+### Evaluation contextualisee
+
+Usage pedagogique: evaluer plusieurs acquis dans un contexte identifiable, avec consignes, exercices courts, production finale et bareme.
+
+Rubriques recommandees:
+
+- Informations generales;
+- Points evalues;
+- Sujet etudiant;
+- Exercices;
+- Production finale;
+- Bareme detaille;
+- Corrige ou criteres;
+- Remarques professeur;
+- Licence et sources.
+
+Champs frontmatter particulierement importants:
+
+- `resourceType: "evaluation"`;
+- `resourceTemplate: "evaluation"`;
+- `durationMinutes`;
+- `level`;
+- `mainSkill` et `secondarySkills`;
+- `status`;
+- `reuseReadiness`;
+- `license`.
+
+Limites et precautions: une evaluation doit annoncer clairement ce qui est note, ne pas exposer de donnees personnelles et rester separee des corriges si elle doit etre utilisee en classe.
+
+### Sujet court de production ecrite
+
+Usage pedagogique: transformer une consigne breve en tache utilisable, avec situation, contraintes et criteres de reussite.
+
+Rubriques recommandees:
+
+- Situation;
+- Consigne;
+- Contraintes linguistiques;
+- Aides lexicales;
+- Criteres de reussite;
+- Variante guidee;
+- Variante libre.
+
+Champs frontmatter particulierement importants:
+
+- `mainSkill: "expression_ecrite"`;
+- `resourceType: "exercice"`;
+- `resourceTemplate: "production_assistee"`;
+- `durationMinutes`;
+- `level`;
+- `theme`;
+- `reuseReadiness`.
+
+Limites et precautions: une consigne seule est rarement suffisante pour devenir une ressource mutualisable. Ajouter objectifs, criteres, variantes et notes professeur.
+
+### Activite lexique + interaction orale
+
+Usage pedagogique: faire passer les apprenants du lexique vers une interaction guidee puis une tache orale.
+
+Rubriques recommandees:
+
+- Lexique declencheur;
+- Classement ou association;
+- Expressions utiles;
+- Micro-dialogues;
+- Interaction guidee;
+- Debat ou tache finale;
+- Variantes.
+
+Champs frontmatter particulierement importants:
+
+- `mainSkill: "interaction_orale"`;
+- `secondarySkills`;
+- `lexicalThemes`;
+- `activityFormat`;
+- `classroomMode`;
+- `resourceTemplate: "lexique_actif"` ou `"conversation_guidee"`;
+- `materialNeeded`.
+
+Limites et precautions: prevoir une alternative si le theme mobilise des documents audio, video ou images dont les droits ne sont pas verifies.
+
+### Ressource avec annexe multimedia
+
+Usage pedagogique: exploiter une image, un audio, une video, une capture ou un document support comme declencheur ou support de comprehension.
+
+Rubriques recommandees:
+
+- Document support;
+- Statut des droits;
+- Avant ecoute ou visionnage;
+- Pendant ecoute ou visionnage;
+- Apres ecoute ou visionnage;
+- Transcription eventuelle;
+- Corrige;
+- Restrictions d'usage.
+
+Champs frontmatter particulierement importants:
+
+- `sourceType`;
+- `license`;
+- `licenseNotes` si disponible;
+- `techMetadata`;
+- `materialNeeded`;
+- `teacherPreparationLevel`;
+- `reuseReadiness`;
+- `status`.
+
+Limites et precautions: ne pas publier d'images de personnes, extraits de manuels, audios, videos ou captures sans verification des droits et autorisations. Utiliser `a_verifier` si le statut est incertain.
+
 ## Metadonnees numeriques et IA
 
 Les champs `techMetadata` et `aiMetadata` servent a documenter un usage possible. Ils ne declenchent aucun outil.
