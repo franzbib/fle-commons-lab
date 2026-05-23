@@ -60,6 +60,15 @@ git status
 - Ne pas supprimer de documentation sans raison explicite.
 - Ne pas modifier massivement les ressources de demonstration sans demande precise.
 
+## Documentation obligatoire après intervention
+
+- Mettre à jour `PROJECT_STATE_FOR_LLMS.md` si l'état du projet change.
+- Ajouter une entrée à `docs/project-journal.md` si l'intervention est significative.
+- Ajouter une décision à `docs/decision-log.md` si une décision structurante est prise.
+- Utiliser `docs/change-report-template.md` pour structurer le bilan final.
+- Vérifier `docs/prompting-rules.md` avant de lancer une tâche multi-agent.
+- Ne jamais laisser le code et la documentation diverger.
+
 ## Variables d'environnement
 
 La v0 ne necessite aucune variable d'environnement.

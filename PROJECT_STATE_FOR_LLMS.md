@@ -36,6 +36,10 @@ Fonctionnalites presentes:
 - audit de synchronisation GitHub / local / Vercel dans `docs/git-sync-audit.md`.
 - guide permanent des agents IA dans `AGENTS.md`.
 - documentation des roles contributeurs futurs et de l'espace de contribution conceptuel.
+- journal chronologique dans `docs/project-journal.md`.
+- journal des décisions structurantes dans `docs/decision-log.md`.
+- modèle de rapport dans `docs/change-report-template.md`.
+- règles de prompting dans `docs/prompting-rules.md`.
 
 Le dossier local est un depot Git rattache a:
 
@@ -117,6 +121,7 @@ scripts/
   validate-markdown-resources.test.mjs
 docs/
   agent-workflow.md
+  change-report-template.md
   community-model.md
   collections.md
   contribution-workflow-v0.md
@@ -125,8 +130,11 @@ docs/
   conversion-experiments.md
   conversion-workflow.md
   deployment.md
+  decision-log.md
   git-sync-audit.md
   markdown-resource-format.md
+  project-journal.md
+  prompting-rules.md
   resource-model.md
   technology-and-ai.md
   environment.md
@@ -187,6 +195,7 @@ Le validateur local vérifie seulement une conformité minimale des exemples Mar
 - La demo publique ne collecte pas de donnees utilisateur.
 - Les roles contributeurs sont purement descriptifs dans `src/types/community.ts`.
 - `AGENTS.md` est le guide de travail prioritaire pour Codex, ChatGPT, Antigravity et autres LLM.
+- Toute intervention significative doit maintenir la documentation de traçabilité: `PROJECT_STATE_FOR_LLMS.md`, `docs/project-journal.md`, `docs/decision-log.md` si nécessaire.
 - Validation enseignante obligatoire pour niveau, consignes, corriges, droits et licences.
 
 ## 8. Variables d'environnement
@@ -242,12 +251,13 @@ Variables obligatoires: aucune
 
 1. Relire les collections et propositions simulees avec des enseignants FLE.
 2. Stabiliser les statuts de contribution avant toute persistance.
-3. Relire `AGENTS.md` avec les pratiques reelles du projet.
-4. Améliorer le validateur local si de nouveaux exemples Markdown apparaissent.
-5. Ajouter quelques supports libres convertis en ressources structurees.
-6. Preciser une charte de validation pedagogique.
-7. Documenter un schema Supabase futur sans installer Supabase.
-8. Definir une charte d'usage IA avant tout prototype actif.
+3. Utiliser `docs/change-report-template.md` comme format standard de bilan.
+4. Relire `AGENTS.md` avec les pratiques reelles du projet.
+5. Améliorer le validateur local si de nouveaux exemples Markdown apparaissent.
+6. Ajouter quelques supports libres convertis en ressources structurees.
+7. Preciser une charte de validation pedagogique.
+8. Documenter un schema Supabase futur sans installer Supabase.
+9. Definir une charte d'usage IA avant tout prototype actif.
 
 ## 11. A ne pas faire sans validation explicite
 

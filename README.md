@@ -115,6 +115,11 @@ PROJECT_STATE_FOR_LLMS.md
 ## Documentation utile
 
 - `AGENTS.md`
+- `PROJECT_STATE_FOR_LLMS.md`
+- `docs/project-journal.md`
+- `docs/decision-log.md`
+- `docs/change-report-template.md`
+- `docs/prompting-rules.md`
 - `docs/resource-model.md`
 - `docs/agent-workflow.md`
 - `docs/community-model.md`
@@ -129,7 +134,17 @@ PROJECT_STATE_FOR_LLMS.md
 - `docs/deployment.md`
 - `docs/git-sync-audit.md`
 - `docs/environment.md`
-- `PROJECT_STATE_FOR_LLMS.md`
+
+## Documentation du projet
+
+Les fichiers de reprise et de traçabilité sont:
+
+- `PROJECT_STATE_FOR_LLMS.md`: état actuel pour agents IA.
+- `AGENTS.md`: règles permanentes pour agents IA.
+- `docs/project-journal.md`: journal chronologique des interventions.
+- `docs/decision-log.md`: décisions structurantes.
+- `docs/change-report-template.md`: modèle de bilan d'intervention.
+- `docs/prompting-rules.md`: règles pour rédiger les prompts Codex, Antigravity et autres LLM.
 
 ## Prochaines etapes possibles
 

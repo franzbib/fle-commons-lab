@@ -71,3 +71,11 @@
 - Les limites volontaires de la v0 sont encore explicites.
 - Les nouvelles décisions sont documentées.
 - Les données de démonstration restent originales et pédagogiquement plausibles.
+
+## Documentation et traçabilité
+
+- `PROJECT_STATE_FOR_LLMS.md` est mis à jour si nécessaire.
+- `docs/project-journal.md` est mis à jour si l'intervention est significative.
+- `docs/decision-log.md` est mis à jour si une décision structurante est prise.
+- `README.md` est mis à jour si commandes, structure ou comportement visible changent.
+- Aucun document ne présente comme existante une fonctionnalité seulement future.
