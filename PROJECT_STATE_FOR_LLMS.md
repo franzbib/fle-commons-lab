@@ -35,8 +35,9 @@ Fonctionnalites presentes:
 - page Documentation reorganisee par grands blocs;
 - templates GitHub pour issues et pull requests.
 - rapport Antigravity `docs/conversion-experiments.md`;
-- 8 exemples de ressources Markdown fictifs et originaux dans `examples/resources-markdown/`.
+- 9 exemples de ressources Markdown fictifs, originaux ou normalises dans `examples/resources-markdown/`.
 - validateur local minimal des exemples Markdown via `npm run validate:resources`.
+- generation statique des exemples Markdown valides vers `src/data/generatedMarkdownResources.ts` via `npm run generate:resources`.
 - documentation de deploiement Vercel dans `docs/deployment.md`.
 - audit de synchronisation GitHub / local / Vercel dans `docs/git-sync-audit.md`.
 - guide permanent des agents IA dans `AGENTS.md`.
@@ -123,6 +124,8 @@ src/
     CollapsibleSection.tsx
     CompactTagList.tsx
   data/demoResources.ts
+  data/generatedMarkdownResources.ts
+  data/aiWorkshop.ts
   pages/
     HomePage.tsx
     LibraryPage.tsx
@@ -151,9 +154,9 @@ src/
   types/resourceMarkdown.ts
   types/community.ts
   types/access.ts
-  data/aiWorkshop.ts
 scripts/
   validate-markdown-resources.mjs
+  generate-markdown-resources.mjs
   validate-markdown-resources.test.mjs
 docs/
   access-and-sustainability-model.md
@@ -246,6 +249,8 @@ Le format Markdown + frontmatter YAML est documente comme format source futur. I
 
 Le validateur local verifie seulement une conformite minimale des exemples Markdown: frontmatter, champs obligatoires, sections attendues et valeurs controlees simples. Il ne cree aucune ressource affichee, ne remplace pas la relecture enseignante et ne verifie pas juridiquement les licences.
 
+La commande `npm run generate:resources` lit les fichiers Markdown valides de `examples/resources-markdown/` et regenere `src/data/generatedMarkdownResources.ts`. L'application affiche ensuite `demoResources` et `generatedMarkdownResources` ensemble. Cette generation reste statique: aucun fichier Markdown n'est lu dans le navigateur, aucun backend n'est ajoute et aucune ressource brute n'est publiee automatiquement comme fiche etalon.
+
 Les champs d'acces et de soutenabilite sont conceptuels et facultatifs: `accessLevel`, `monetizationStatus`, `visibilityNotes`, `licenseNotes`. Ils ne creent aucune restriction reelle.
 
 L'analyse du corpus Drive recommande de documenter ou d'etudier plus tard trois notions supplementaires avant tout import: `pedagogicalCompleteness`, `rightsStatus` et `referenceUse`. Ces notions sont documentees dans `docs/resource-model.md` mais ne sont pas encore ajoutees au type TypeScript.
@@ -262,6 +267,7 @@ L'analyse du corpus Drive recommande de documenter ou d'etudier plus tard trois 
 - Markdown + frontmatter YAML retenu comme format de contribution lisible et versionnable.
 - Les gabarits issus de l'analyse Drive peuvent inspirer des structures et exemples fictifs, jamais une copie de contenu.
 - Le validateur Markdown est autonome en Node et n'ajoute aucune dependance YAML.
+- Le generateur Markdown est autonome en Node, sans dependance YAML. Il transforme les sections `Objectifs`, `Deroule`, `Support etudiant`, `Guide professeur`, `Corrige`, `Variantes`, `Retours d'usage` et `Historique des versions` en sections `ResourceContent` affichables.
 - Le projet est deployable sur Vercel comme site statique Vite: build `npm run build`, sortie `dist`.
 - URL Vercel publique verifiee: `https://fle-commons-lab.vercel.app`.
 - Synchronisation verifiee: `HEAD` local = `origin/main` = `3b038c16bbc04be9145ebb79e2faa95a37217d81` au moment de l'audit du 2026-05-23.
@@ -329,6 +335,7 @@ npm run typecheck
 npm run lint
 npm run test
 npm run validate:resources
+npm run generate:resources
 npm run build
 git status
 git remote -v
@@ -377,7 +384,7 @@ Variables obligatoires: aucune
 - Ajouter une base de donnees.
 - Ajouter upload ou stockage de fichiers.
 - Connecter le prototype de contribution a une API ou a `localStorage`.
-- Ajouter un import automatique Markdown ou `.docx`.
+- Ajouter un import dynamique Markdown, Word ou `.docx`.
 - Ajouter un import automatique Google Drive.
 - Ajouter une dependance YAML sans decision explicite.
 - Ajouter un chat, forum ou messagerie.

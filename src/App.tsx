@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Layout } from './components/Layout'
 import { demoCollections, demoResources, themes } from './data/demoResources'
+import { generatedMarkdownResources } from './data/generatedMarkdownResources'
 import { AboutPage } from './pages/AboutPage'
 import { AiWorkshopPage } from './pages/AiWorkshopPage'
 import { CollectionPage } from './pages/CollectionPage'
@@ -17,6 +18,11 @@ import { TemplatesPage } from './pages/TemplatesPage'
 import { TechnologyAndAiPage } from './pages/TechnologyAndAiPage'
 import { getCollectionById } from './utils/collections'
 import { emptyResourceFilters, type ResourceFiltersValue } from './utils/filters'
+
+const allResources = [...demoResources, ...generatedMarkdownResources]
+const allThemes = Array.from(
+  new Set([...themes, ...generatedMarkdownResources.map((resource) => resource.theme)]),
+).sort()
 
 export type AppRoute =
   | 'home'
@@ -59,7 +65,7 @@ function App() {
   }, [])
 
   const parsedRoute = useMemo(() => parseHash(locationHash), [locationHash])
-  const currentResource = demoResources.find(
+  const currentResource = allResources.find(
     (resource) => resource.id === parsedRoute.resourceId,
   )
   const currentCollection = getCollectionById(demoCollections, parsedRoute.collectionId)
@@ -69,9 +75,9 @@ function App() {
       {parsedRoute.route === 'home' ? <HomePage /> : null}
       {parsedRoute.route === 'library' ? (
         <LibraryPage
-          resources={demoResources}
+          resources={allResources}
           filters={filters}
-          themes={themes}
+          themes={allThemes}
           onFiltersChange={setFilters}
           onFiltersReset={() => setFilters(emptyResourceFilters)}
         />
@@ -80,10 +86,10 @@ function App() {
       {parsedRoute.route === 'projectStatus' ? <ProjectStatusPage /> : null}
       {parsedRoute.route === 'resourceFormat' ? <ResourceFormatPage /> : null}
       {parsedRoute.route === 'collections' ? (
-        <CollectionsPage collections={demoCollections} resources={demoResources} />
+        <CollectionsPage collections={demoCollections} resources={allResources} />
       ) : null}
       {parsedRoute.route === 'collection' ? (
-        <CollectionPage collection={currentCollection} resources={demoResources} />
+        <CollectionPage collection={currentCollection} resources={allResources} />
       ) : null}
       {parsedRoute.route === 'community' ? <CommunityPage /> : null}
       {parsedRoute.route === 'contributionSpace' ? <ContributionSpacePage /> : null}

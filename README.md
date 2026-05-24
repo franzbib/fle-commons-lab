@@ -18,7 +18,7 @@ Le projet prepare:
 - des collections locales;
 - des propositions d'amelioration simulees;
 - une future logique de contribution ouverte.
-- un futur format source Markdown avec frontmatter YAML.
+- un format source Markdown avec frontmatter YAML et generation statique vers l'interface.
 - un Atelier IA & FLE statique avec mini-tutoriels et prompts copiables.
 
 L'IA est documentee et anticipee, mais aucune API IA n'est appelee par l'application.
@@ -41,9 +41,10 @@ L'IA est documentee et anticipee, mais aucune API IA n'est appelee par l'applica
 - Documentation conceptuelle des accès et de la soutenabilité.
 - Première couche d'identité visuelle "Laboratoire Typographique".
 - Interface de bibliothèque organisée par divulgation progressive: cartes allégées, filtres avancés repliables et détails experts consultables à la demande.
-- 8 exemples Markdown fictifs dans `examples/resources-markdown/`.
+- 9 exemples Markdown fictifs ou normalises dans `examples/resources-markdown/`.
 - Analyse du corpus Drive documentée comme référence de conception, sans import ni copie des documents originaux.
 - Validateur local minimal des exemples Markdown via `npm run validate:resources`.
+- Generation statique des ressources Markdown affichees via `npm run generate:resources`.
 - Tests Vitest sur les filtres et les collections.
 - Templates GitHub pour bugs, suggestions de ressources, propositions d'amelioration et pull requests.
 
@@ -72,6 +73,7 @@ npm run typecheck
 npm run lint
 npm run test
 npm run validate:resources
+npm run generate:resources
 npm run build
 git status
 ```
@@ -119,10 +121,11 @@ PROJECT_STATE_FOR_LLMS.md
 - Aucun chat, forum ou messagerie.
 - Aucun paiement, abonnement ou restriction réelle d'accès.
 - Aucun stockage de PDF ou upload.
-- Aucun import automatique de fichiers Markdown.
+- Aucun import dynamique de fichiers Markdown dans le navigateur.
+- Les fichiers Markdown valides peuvent etre convertis en donnees statiques affichees via `npm run generate:resources`.
 - Aucun import Google Drive.
 - Aucun stockage des donnees saisies dans le prototype de contribution.
-- Le validateur Markdown ne crée aucune ressource dans l'application.
+- Le validateur Markdown ne crée aucune ressource dans l'application; la generation statique est une commande separee.
 - Les champs IA, accès et soutenabilité restent descriptifs ou conceptuels.
 
 ## Documentation utile

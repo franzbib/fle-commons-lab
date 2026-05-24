@@ -6,7 +6,7 @@ La recommandation issue de `docs/conversion-experiments.md` est d'utiliser Markd
 
 Markdown est lisible par un enseignant, facile a versionner avec Git et compatible avec une publication open source. Le frontmatter YAML permet d'ajouter des metadonnees structurees sans imposer tout de suite une base de donnees.
 
-Ce format peut etre relu humainement et exploite plus tard par un import local, un validateur ou une base Supabase. Aucun de ces outils n'est actif dans la v0.
+Ce format peut etre relu humainement, valide localement et transforme en donnees TypeScript statiques pour l'interface. Il ne cree pas de backend et ne publie pas automatiquement une ressource comme fiche etalon.
 
 ## Validation locale minimale
 
@@ -24,15 +24,34 @@ Ce validateur contrôle seulement:
 - les sections Markdown minimales;
 - l'absence de champs obligatoires manifestement vides.
 
-Il ne crée pas de ressource dans l'application, ne transforme pas Markdown en objet `Resource` et ne remplace pas la relecture enseignante.
+Il ne cree pas de ressource dans l'application et ne remplace pas la relecture enseignante. La generation des objets affichables se fait par une commande separee.
+
+## Generation statique pour l'interface
+
+La commande suivante lit les fichiers valides de `examples/resources-markdown/` et regenere `src/data/generatedMarkdownResources.ts`:
+
+```bash
+npm run generate:resources
+```
+
+Le fichier genere exporte `generatedMarkdownResources`, un tableau `Resource[]` consomme par l'application avec les ressources de demonstration existantes.
+
+Cette generation reste volontairement sobre:
+
+- elle lit uniquement les fichiers Markdown locaux;
+- elle ne charge aucun fichier cote navigateur;
+- elle n'ajoute pas de base de donnees;
+- elle n'importe pas Word, PDF ou Google Drive;
+- elle ne valide pas la qualite pedagogique complete;
+- elle ne confirme pas juridiquement les licences.
 
 ## Ressource source et ressource affichee
 
 Une ressource source est un fichier `.md` place par exemple dans `examples/resources-markdown/`.
 
-Une ressource affichee dans l'application est aujourd'hui un objet TypeScript dans `src/data/demoResources.ts`.
+Une ressource affichee dans l'application est un objet TypeScript: soit une ressource de demonstration dans `src/data/demoResources.ts`, soit une ressource generee depuis Markdown dans `src/data/generatedMarkdownResources.ts`.
 
-La v0 ne convertit pas automatiquement les fichiers Markdown en ressources affichees. Les exemples servent a stabiliser le futur format de contribution.
+La v0 ne fait pas d'import dynamique ni de publication automatique. Les exemples Markdown deviennent visibles seulement apres validation puis generation statique avec `npm run generate:resources`.
 
 ## Structure recommandee
 
@@ -334,7 +353,8 @@ Un enseignant doit relire:
 
 ## Limites de cette v0
 
-- Pas d'import automatique.
+- Pas d'import dynamique dans l'application.
+- Generation statique locale possible avec `npm run generate:resources`.
 - Pas de parser YAML complet.
 - Pas d'upload.
 - Pas de stockage fichier.
@@ -383,4 +403,4 @@ Contenu original de demonstration.
 
 ## Alignement editorial 2026-05-23
 
-Le dossier `examples/resources-markdown/` contient des exemples sources valides pour tester le format. La commande `npm run validate:resources` verifie leur structure minimale, mais ne les importe pas dans l'application et ne les transforme pas en ressources validees. La relecture enseignante et la verification des droits restent obligatoires.
+Le dossier `examples/resources-markdown/` contient des exemples sources valides pour tester le format. La commande `npm run validate:resources` verifie leur structure minimale. La commande `npm run generate:resources` produit ensuite les objets TypeScript affichables. La relecture enseignante et la verification des droits restent obligatoires.

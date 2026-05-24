@@ -355,3 +355,13 @@ Journal chronologique synthÃ©tique des interventions importantes. Les dates so
 - Verifications : typecheck OK, lint OK, 24/24 tests OK, validate:resources 8/8 OK, build OK.  
 - Limites volontaires : aucun backend, aucun Supabase, aucune authentification, aucun appel IA, aucun stockage, aucune nouvelle dependance, aucune nouvelle fonctionnalite technique.  
 - Commit associe si connu : commit en cours 
+
+## 2026-05-24 � Generation statique des ressources Markdown
+
+- Outil principal : Codex
+- Objectif : rendre visibles dans la bibliotheque publique les ressources Markdown validees sans les recopier manuellement dans `src/data/demoResources.ts`.
+- Resultat : ajout de `scripts/generate-markdown-resources.mjs`, generation de `src/data/generatedMarkdownResources.ts`, et branchement minimal de l'application pour afficher `demoResources` et `generatedMarkdownResources` ensemble.
+- Fichiers principaux : `scripts/generate-markdown-resources.mjs`, `src/data/generatedMarkdownResources.ts`, `src/App.tsx`, `package.json`, `docs/markdown-resource-format.md`, `README.md`, `PROJECT_STATE_FOR_LLMS.md`.
+- Decisions : garder une generation statique locale, separee de `npm run validate:resources`; ne pas lire les Markdown dans le navigateur; ne pas ajouter de dependance YAML.
+- Limites volontaires : aucun import Word/PDF, aucun backend, aucun Supabase, aucune authentification, aucun appel IA, aucune publication automatique comme fiche etalon.
+- Commit associe si connu : commit en cours
