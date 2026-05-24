@@ -563,6 +563,15 @@ button:disabled {
   gap: 14px;
 }
 
+.atelier-link {
+  justify-self: start;
+  color: var(--accent-strong);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
 .detail-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
@@ -1185,6 +1194,36 @@ button:disabled {
   padding: 24px;
 }
 
+.atelier-page {
+  display: grid;
+  gap: 22px;
+}
+
+.atelier-resource-list {
+  display: grid;
+  gap: 12px;
+}
+
+.atelier-resource-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  padding: 16px;
+}
+
+.atelier-resource-row h2 {
+  margin: 10px 0 6px;
+}
+
+.content-section-empty {
+  border-style: dashed;
+  background: var(--surface-muted);
+}
+
 @media (max-width: 1100px) {
   .filters-panel,
   .filters-essential,
@@ -1220,6 +1259,10 @@ button:disabled {
   .action-note {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .atelier-resource-row {
+    grid-template-columns: 1fr;
   }
 
   .page {

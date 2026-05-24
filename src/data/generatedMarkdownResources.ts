@@ -180,6 +180,11 @@ export const generatedMarkdownResources: Resource[] = [
       "safeguards": [
         "Interdire l'aide automatique pendant l'evaluation si elle est sommative."
       ]
+    },
+    "normalizationMetadata": {
+      "originalFormat": "markdown",
+      "originalSourceUrl": "examples/resources-markdown/evaluation-b1-b2-vie-etudiante.md",
+      "normalizationStatus": "en_normalisation"
     }
   },
   {
@@ -357,6 +362,11 @@ export const generatedMarkdownResources: Resource[] = [
       "safeguards": [
         "Utiliser uniquement des exemples inventes ou libres."
       ]
+    },
+    "normalizationMetadata": {
+      "originalFormat": "markdown",
+      "originalSourceUrl": "examples/resources-markdown/grammaire-b1-b2-medias-nominalisation.md",
+      "normalizationStatus": "en_normalisation"
     }
   },
   {
@@ -390,6 +400,7 @@ export const generatedMarkdownResources: Resource[] = [
     "status": "brouillon",
     "reuseReadiness": "a_completer",
     "license": "CC_BY_SA",
+    "visibilityNotes": "Contexte source: Support de cours ISPA, groupe B1+, theme hebdomadaire de l'enquete.\nPotentiel de reutilisation: eleve",
     "licenseNotes": "Source de depart: support de cours contextualise ISPA, groupe B1+, theme de l'enquete.\nContenu de cette version Markdown: normalisation et reecriture pour Laforge. Licence proposee: CC BY-SA, a confirmer par l'auteur avant publication publique.\nAucune source externe protegee n'est reproduite dans cette version. Les noms, lieux et objets peuvent etre adaptes pour une reutilisation hors contexte ISPA.",
     "authors": [
       "Francois Carbonnier"
@@ -697,6 +708,11 @@ export const generatedMarkdownResources: Resource[] = [
       "safeguards": [
         "Ressource en normalisation: relecture enseignante necessaire avant publication comme fiche etalon."
       ]
+    },
+    "normalizationMetadata": {
+      "originalFormat": "markdown",
+      "originalSourceUrl": "examples/resources-markdown/grammaire-b1-plus-pronoms-cod-coi-enquete.md",
+      "normalizationStatus": "en_normalisation"
     }
   },
   {
@@ -877,6 +893,11 @@ export const generatedMarkdownResources: Resource[] = [
       "safeguards": [
         "Prevoir une correction humaine des productions."
       ]
+    },
+    "normalizationMetadata": {
+      "originalFormat": "markdown",
+      "originalSourceUrl": "examples/resources-markdown/grammaire-b1-pronoms-y-en.md",
+      "normalizationStatus": "en_normalisation"
     }
   },
   {
@@ -1077,6 +1098,11 @@ export const generatedMarkdownResources: Resource[] = [
         "Travailler sur une reponse fictive ou fournie par l'enseignant.",
         "Faire justifier chaque correction."
       ]
+    },
+    "normalizationMetadata": {
+      "originalFormat": "markdown",
+      "originalSourceUrl": "examples/resources-markdown/ia-b2-esprit-critique.md",
+      "normalizationStatus": "en_normalisation"
     }
   },
   {
@@ -1260,6 +1286,11 @@ export const generatedMarkdownResources: Resource[] = [
       "safeguards": [
         "Ne pas utiliser de donnees personnelles de logement reel."
       ]
+    },
+    "normalizationMetadata": {
+      "originalFormat": "markdown",
+      "originalSourceUrl": "examples/resources-markdown/oral-a2-logement.md",
+      "normalizationStatus": "en_normalisation"
     }
   },
   {
@@ -1390,8 +1421,9 @@ export const generatedMarkdownResources: Resource[] = [
     },
     "normalizationMetadata": {
       "originalFormat": "pdf",
-      "submittedBy": "MarieFLE",
+      "originalSourceUrl": "examples/resources-markdown/res-eval-baguette.md",
       "normalizationStatus": "normalisee",
+      "submittedBy": "MarieFLE",
       "legalWarning": "Texte source retiré pour raisons de droits d'auteur."
     }
   },
@@ -1525,8 +1557,9 @@ export const generatedMarkdownResources: Resource[] = [
     },
     "normalizationMetadata": {
       "originalFormat": "texte_brut",
-      "submittedBy": "ProfToulouse",
-      "normalizationStatus": "normalisee"
+      "originalSourceUrl": "examples/resources-markdown/res-oral-monstre.md",
+      "normalizationStatus": "normalisee",
+      "submittedBy": "ProfToulouse"
     }
   },
   {
@@ -1657,8 +1690,9 @@ export const generatedMarkdownResources: Resource[] = [
     },
     "normalizationMetadata": {
       "originalFormat": "texte_brut",
-      "submittedBy": "ProfFLE_42",
-      "normalizationStatus": "normalisee"
+      "originalSourceUrl": "examples/resources-markdown/res-subj-001.md",
+      "normalizationStatus": "normalisee",
+      "submittedBy": "ProfFLE_42"
     }
   }
 ]

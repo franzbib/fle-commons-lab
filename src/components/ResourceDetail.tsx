@@ -22,7 +22,6 @@ import {
 } from '../utils/formatters'
 import { Badge } from './Badge'
 import { CollapsibleSection } from './CollapsibleSection'
-import { ResourceCopyActions } from './ResourceCopyActions'
 import { ResourceDetailTabs, type ResourceDetailTab } from './ResourceDetailTabs'
 import { ResourceViewActions } from './ResourceViewActions'
 import { TeacherPreparationAlerts } from './TeacherPreparationAlerts'
@@ -89,7 +88,7 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
           <Badge tone="level">{resource.level}</Badge>
           <Badge>{formatResourceType(resource.resourceType)}</Badge>
           <Badge>{formatResourceTemplate(resource.resourceTemplate)}</Badge>
-          <Badge tone="status">{formatStatus(resource.status)}</Badge>
+          <Badge tone="status">{formatPublicStatus(resource)}</Badge>
           {resource.techMetadata?.usesDigitalTool ? <Badge tone="tech">Numérique</Badge> : null}
           {resource.aiMetadata?.usesAI ? <Badge tone="ai">IA documentée</Badge> : null}
         </div>
@@ -100,6 +99,9 @@ export function ResourceDetail({ resource }: ResourceDetailProps) {
             Licence à vérifier avant toute publication ou diffusion publique.
           </p>
         ) : null}
+        <a className="atelier-link" href={`#/atelier/${resource.id}`}>
+          Vue atelier
+        </a>
       </header>
 
       <ResourceDetailTabs tabs={tabs} defaultTabId="overview" />
@@ -125,7 +127,7 @@ function OverviewTab({
           <Fact label="Durée" value={`${resource.durationMinutes} min`} />
           <Fact label="Compétence" value={formatSkill(resource.mainSkill)} />
           <Fact label="Type" value={formatResourceType(resource.resourceType)} />
-          <Fact label="Statut" value={formatStatus(resource.status)} />
+          <Fact label="Statut" value={formatPublicStatus(resource)} />
           <Fact label="Objectif" value={firstObjective} />
           <Fact label="Modalité" value={formatClassroomMode(resource.classroomMode)} />
           <Fact label="Matériel" value={materialNeeded} />
@@ -133,8 +135,6 @@ function OverviewTab({
       </section>
 
       <TeacherPreparationAlerts resource={resource} variant="summary" />
-
-      <ResourceCopyActions resource={resource} />
 
       <section className="detail-section">
         <h2>Aperçu du déroulé</h2>
@@ -504,4 +504,15 @@ function Fact({ label, value }: { label: string; value: string }) {
       <dd>{value}</dd>
     </div>
   )
+}
+
+function formatPublicStatus(resource: Resource) {
+  if (
+    resource.status === 'brouillon' &&
+    resource.normalizationMetadata?.normalizationStatus === 'en_normalisation'
+  ) {
+    return 'En normalisation'
+  }
+
+  return formatStatus(resource.status)
 }

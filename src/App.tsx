@@ -4,6 +4,7 @@ import { demoCollections, demoResources, themes } from './data/demoResources'
 import { generatedMarkdownResources } from './data/generatedMarkdownResources'
 import { AboutPage } from './pages/AboutPage'
 import { AiWorkshopPage } from './pages/AiWorkshopPage'
+import { AtelierPage } from './pages/AtelierPage'
 import { CollectionPage } from './pages/CollectionPage'
 import { CollectionsPage } from './pages/CollectionsPage'
 import { CommunityPage } from './pages/CommunityPage'
@@ -38,6 +39,8 @@ export type AppRoute =
   | 'about'
   | 'technology'
   | 'aiWorkshop'
+  | 'atelier'
+  | 'atelierResource'
   | 'docs'
 
 type ParsedRoute = {
@@ -97,6 +100,10 @@ function App() {
       {parsedRoute.route === 'about' ? <AboutPage /> : null}
       {parsedRoute.route === 'technology' ? <TechnologyAndAiPage /> : null}
       {parsedRoute.route === 'aiWorkshop' ? <AiWorkshopPage /> : null}
+      {parsedRoute.route === 'atelier' ? <AtelierPage resources={allResources} /> : null}
+      {parsedRoute.route === 'atelierResource' ? (
+        <AtelierPage resources={allResources} resource={currentResource} />
+      ) : null}
       {parsedRoute.route === 'docs' ? <DocumentationPage /> : null}
     </Layout>
   )
@@ -156,6 +163,14 @@ function parseHash(hash: string): ParsedRoute {
 
   if (routeSegment === 'ai-workshop') {
     return { route: 'aiWorkshop' }
+  }
+
+  if (routeSegment === 'atelier' && resourceId) {
+    return { route: 'atelierResource', resourceId }
+  }
+
+  if (routeSegment === 'atelier') {
+    return { route: 'atelier' }
   }
 
   if (routeSegment === 'docs') {

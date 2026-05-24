@@ -15,6 +15,7 @@ Fonctionnalites presentes:
 - accueil oriente autour de deux portes d'entree: bibliotheque de ressources FLE et Atelier IA & FLE;
 - page Demo / Etat du projet;
 - bibliotheque de 18 ressources de demonstration;
+- vue atelier statique `#/atelier` pour inspecter les metadonnees completes, sections extraites et traces de normalisation sans authentification;
 - ressources de demonstration realignees progressivement sur la doctrine enseignant: copier, imprimer, adapter et contribuer sans competence technique;
 - recherche texte;
 - filtres pedagogiques, numeriques et IA;
@@ -140,6 +141,7 @@ src/
     AboutPage.tsx
     TechnologyAndAiPage.tsx
     AiWorkshopPage.tsx
+    AtelierPage.tsx
     DocumentationPage.tsx
   styles/global.css
   types/resource.ts
@@ -164,6 +166,7 @@ docs/
   ai-workshop-implementation.md
   ai-workshop-copy-guidelines.md
   ai-workshop-review.md
+  atelier-view.md
   agent-workflow.md
   branding-directions.md
   change-report-template.md
@@ -294,6 +297,7 @@ L'analyse du corpus Drive recommande de documenter ou d'etudier plus tard trois 
 - Aucune information du modele n'a ete supprimee: les metadonnees, versions, retours, propositions, audit, IA, numerique, licence et acces restent disponibles.
 - Le corpus Google Drive observe sert uniquement de reference de conception pour gabarits et exemples fictifs; les documents sources ne doivent pas etre importes ni publies sans verification.
 - `AGENTS.md` est le guide de travail prioritaire pour Codex, ChatGPT, Antigravity et autres LLM.
+- La vue publique et la vue atelier sont separees: la vue publique privilegie consultation, copie et impression; la vue atelier concentre les metadonnees completes, normalisation, audit et historique. Cette separation ne cree aucun role reel ni authentification.
 - Toute intervention significative doit maintenir la documentation de tracabilite: `PROJECT_STATE_FOR_LLMS.md`, `docs/project-journal.md`, `docs/decision-log.md` si necessaire.
 - Validation enseignante obligatoire pour niveau, consignes, corriges, droits et licences.
 - L'infrastructure Markdown/YAML/Git doit rester invisible pour l'utilisateur enseignant non technicien.

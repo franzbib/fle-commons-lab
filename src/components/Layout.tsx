@@ -19,11 +19,16 @@ const navItems: Array<{ route: AppRoute; label: string }> = [
   { route: 'about', label: 'Vision' },
   { route: 'technology', label: 'Technologies et IA' },
   { route: 'aiWorkshop', label: 'Atelier IA & FLE' },
+  { route: 'atelier', label: 'Atelier' },
   { route: 'docs', label: 'Documentation' },
 ]
 
 function isCurrentRoute(currentRoute: AppRoute, itemRoute: AppRoute) {
-  return currentRoute === itemRoute || (currentRoute === 'collection' && itemRoute === 'collections')
+  return (
+    currentRoute === itemRoute ||
+    (currentRoute === 'collection' && itemRoute === 'collections') ||
+    (currentRoute === 'atelierResource' && itemRoute === 'atelier')
+  )
 }
 
 export function Layout({ children, currentRoute }: LayoutProps) {
@@ -50,8 +55,10 @@ export function Layout({ children, currentRoute }: LayoutProps) {
                       ? '#/resource-format'
                       : item.route === 'contributionSpace'
                         ? '#/contribution-space'
-                        : item.route === 'aiWorkshop'
-                          ? '#/ai-workshop'
+                    : item.route === 'aiWorkshop'
+                      ? '#/ai-workshop'
+                      : item.route === 'atelier'
+                        ? '#/atelier'
                         : `#/${item.route}`
               }
               aria-current={isCurrentRoute(currentRoute, item.route) ? 'page' : undefined}

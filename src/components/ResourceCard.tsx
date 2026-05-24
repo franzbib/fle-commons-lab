@@ -19,7 +19,7 @@ export function ResourceCard({ resource }: ResourceCardProps) {
       <div className="card-topline">
         <Badge tone="level">{resource.level}</Badge>
         <Badge>{formatResourceType(resource.resourceType)}</Badge>
-        <Badge tone="status">{formatStatus(resource.status)}</Badge>
+        <Badge tone="status">{formatPublicStatus(resource)}</Badge>
         {resource.normalizationMetadata?.normalizationStatus === 'en_analyse' ? (
           <Badge tone="status">Brouillon / Brut</Badge>
         ) : null}
@@ -54,4 +54,15 @@ export function ResourceCard({ resource }: ResourceCardProps) {
       </div>
     </article>
   )
+}
+
+function formatPublicStatus(resource: Resource) {
+  if (
+    resource.status === 'brouillon' &&
+    resource.normalizationMetadata?.normalizationStatus === 'en_normalisation'
+  ) {
+    return 'En normalisation'
+  }
+
+  return formatStatus(resource.status)
 }

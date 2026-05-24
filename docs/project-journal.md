@@ -365,3 +365,13 @@ Journal chronologique synthÃ©tique des interventions importantes. Les dates so
 - Decisions : garder une generation statique locale, separee de `npm run validate:resources`; ne pas lire les Markdown dans le navigateur; ne pas ajouter de dependance YAML.
 - Limites volontaires : aucun import Word/PDF, aucun backend, aucun Supabase, aucune authentification, aucun appel IA, aucune publication automatique comme fiche etalon.
 - Commit associe si connu : commit en cours
+
+## 2026-05-24 � Separation vue publique et vue atelier
+
+- Outil principal : Codex
+- Objectif : alleger l'experience publique tout en gardant les informations completes de suivi editorial accessibles.
+- Resultat : ajout de la route statique `#/atelier`, d'une page de liste et de detail atelier, d'un lien `Vue atelier` depuis les fiches publiques et d'un statut public plus lisible `En normalisation` pour les ressources Markdown generees en brouillon.
+- Fichiers principaux : `src/pages/AtelierPage.tsx`, `src/App.tsx`, `src/components/ResourceDetail.tsx`, `src/components/ResourceCard.tsx`, `src/styles/global.css`, `docs/atelier-view.md`.
+- Decisions : utiliser le terme `Atelier` plutot qu'administration; ne creer ni authentification, ni role, ni backend; separer l'usage enseignant des traces editoriales.
+- Limites volontaires : aucune securisation reelle, aucune persistence, aucune suppression d'information, aucune refonte globale.
+- Commit associe si connu : commit en cours

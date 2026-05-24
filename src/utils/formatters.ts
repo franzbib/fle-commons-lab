@@ -225,6 +225,20 @@ const contributionStatusLabels: LabelMap<ContributionStatus> = {
   integree: 'Intégrée',
 }
 
+const sectionLabels: LabelMap<ResourceSectionKey> = {
+  objectives: 'Objectifs',
+  prerequisites: 'Pre-requis',
+  lessonPlan: 'Deroule',
+  studentInstructions: 'Support etudiant',
+  teacherGuide: 'Guide professeur',
+  answerKey: 'Corrige',
+  variants: 'Variantes',
+  usageNotes: "Retours d'usage",
+  techNotes: 'Notes numeriques',
+  aiNotes: 'Notes IA',
+  versionHistory: 'Historique des versions',
+}
+
 export const sectionOrder: ResourceSectionKey[] = [
   'objectives',
   'prerequisites',
@@ -309,6 +323,10 @@ export function formatContributionType(value: ContributionType): string {
 
 export function formatContributionStatus(value: ContributionStatus): string {
   return contributionStatusLabels[value]
+}
+
+export function formatSectionLabel(value: ResourceSectionKey): string {
+  return sectionLabels[value]
 }
 
 export function formatBoolean(value: boolean): string {

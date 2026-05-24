@@ -129,6 +129,10 @@ function markdownToResource(fileName, markdown) {
     status: metadata.status,
     reuseReadiness: metadata.reuseReadiness,
     license: metadata.license,
+    visibilityNotes: formatOptionalNotes([
+      metadata.sourceContext ? `Contexte source: ${metadata.sourceContext}` : undefined,
+      metadata.reusePotential ? `Potentiel de reutilisation: ${metadata.reusePotential}` : undefined,
+    ]),
     licenseNotes: licenseAndSources ? sectionContentToPlainText(licenseAndSources.content) : undefined,
     authors: asArray(metadata.authors),
     tags: asArray(metadata.tags),
@@ -154,7 +158,12 @@ function markdownToResource(fileName, markdown) {
     reviewSummary: generatedReviewSummary,
     techMetadata: normalizeTechMetadata(metadata.techMetadata),
     aiMetadata: normalizeAiMetadata(metadata.aiMetadata),
-    normalizationMetadata: metadata.normalizationMetadata,
+    normalizationMetadata: {
+      originalFormat: 'markdown',
+      originalSourceUrl: `examples/resources-markdown/${fileName}`,
+      normalizationStatus: metadata.status === 'brouillon' ? 'en_normalisation' : 'normalisee',
+      ...(isObject(metadata.normalizationMetadata) ? metadata.normalizationMetadata : {}),
+    },
   }
 }
 
@@ -376,6 +385,11 @@ function asArray(value) {
 
 function isObject(value) {
   return typeof value === 'object' && value !== null && !Array.isArray(value)
+}
+
+function formatOptionalNotes(notes) {
+  const availableNotes = notes.filter((note) => note !== undefined && note !== '')
+  return availableNotes.length > 0 ? availableNotes.join('\n') : undefined
 }
 
 function normalizeHeading(value) {

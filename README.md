@@ -29,6 +29,7 @@ L'IA est documentee et anticipee, mais aucune API IA n'est appelee par l'applica
 - Donnees locales TypeScript.
 - 18 ressources de demonstration, dont un lot aligne sur l'usage enseignant: copier, imprimer, adapter, contribuer.
 - Bibliotheque filtrable et recherche texte.
+- Vue atelier statique pour inspecter les metadonnees completes et le suivi editorial sans authentification.
 - Pages Accueil, Demo, Bibliotheque, Collections, Detail ressource, Communaute, Gabarits, Vision, Technologies et IA, Atelier IA & FLE, Documentation.
 - Accueil organise autour de deux portes d'entree: ressources FLE et Atelier IA & FLE.
 - Page Atelier IA & FLE statique: mini-tutoriels, prompts commentes et garde-fous pour enseignants, sans appel IA ni collecte.
@@ -117,6 +118,7 @@ PROJECT_STATE_FOR_LLMS.md
 - Aucun backend.
 - Aucun Supabase installe.
 - Aucun systeme de contribution persistant.
+- Aucune administration securisee; la vue atelier est seulement une vue editoriale statique.
 - Aucun commentaire persistant.
 - Aucun chat, forum ou messagerie.
 - Aucun paiement, abonnement ou restriction réelle d'accès.

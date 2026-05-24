@@ -165,3 +165,11 @@
 - Aucun appel OpenAI, Claude, Gemini ou autre fournisseur IA n'est ajoute.
 - La page indique clairement que les prompts sont a copier dans l'outil choisi par l'enseignant.
 - Les garde-fous restent visibles: pas de donnees personnelles, verification humaine, respect des droits, controle enseignant.
+
+## Vue publique et vue atelier
+
+- La bibliotheque publique et la fiche publique doivent rester orientees enseignant: comprendre, consulter, copier, imprimer, adapter.
+- Les metadonnees completes, traces de generation, source Markdown, notes de normalisation, versions, audit et historique doivent rester accessibles en `#/atelier`, sans envahir la vue publique.
+- La vue atelier ne doit pas etre presentee comme une administration securisee: aucun role, aucune authentification et aucun backend ne sont actifs.
+- Les ressources Markdown en cours de normalisation peuvent afficher un statut public lisible comme `En normalisation`, mais le statut technique doit rester inspectable en atelier.
+- Aucune information ne doit etre supprimee lors du passage en vue publique; elle doit etre deplacee, repliee ou reservee a la vue adaptee.
