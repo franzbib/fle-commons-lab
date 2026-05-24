@@ -324,3 +324,34 @@ Journal chronologique synth√É¬©tique des interventions importantes. Les dates so
 - Decisions : garder une page sobre, non commerciale, sans nouvelle fonctionnalite metier; clarifier ce qui fonctionne vraiment et ce qui reste futur ou conceptuel.
 - Limites volontaires : aucun backend, aucun Supabase, aucune authentification, aucun paiement, aucun appel IA, aucune collecte, aucune nouvelle dependance.
 - Commit associe si connu : commit en cours
+
+## 2026-05-24 ó Amelioration UX de l'accueil et de la navigation globale
+
+- Outil principal : Codex
+- Objectif : Appliquer les recommandations de la revue de coherence pour clarifier la promesse du site et l'absence d'IA integree.
+- Resultat : Simplification de la navigation (3 entrees), allegement de la page d'accueil avec des actions claires, et ajout d'un bandeau d'avertissement rouge tres visible sur l'Atelier IA. Remplacement du mot "prompts" par "instructions a copier".
+- Fichiers principaux : src/components/Layout.tsx, src/pages/HomePage.tsx, src/pages/AiWorkshopPage.tsx, docs/project-journal.md.
+- Decisions : Ne conserver que les entrees essentielles dans le menu principal pour eviter la surcharge.
+- Limites volontaires : Aucun backend, aucune authentification, aucun stockage, aucun appel IA, aucune modification des ressources.
+- Commit associe si connu : commit en cours
+
+## 2026-05-24 ó Amelioration UX de la Bibliotheque
+
+- Outil principal : Codex
+- Objectif : Optimiser l'experience de recherche pour les enseignants presses (reduire le temps d'acces aux fiches utilisables).
+- Resultat : Remontee des filtres Duree et Theme dans les filtres essentiels. Ajout de nouveaux filtres rapides (Pret pour la classe, Avec corrige, Avec guide prof). Clarification du vocabulaire (Type d'activite, Statut editorial). Clarification de l'etat vide (empty state).
+- Fichiers principaux : src/utils/filters.ts, src/components/ResourceFilters.tsx, src/pages/LibraryPage.tsx.
+- Decisions : La vue ResourceCard repond deja au besoin de lecture rapide sans surcharge. L'architecture des donnees n'a pas ete touchee pour garantir la vitesse de recherche cote client.
+- Limites volontaires : Aucun backend, aucune requete asynchrone, aucune modification des ressources de demonstration.
+- Commit associe si connu : commit en cours
+  
+## 2026-05-24 - Passe editoriale sur 6 ressources demo  
+  
+- Outil principal : Claude Sonnet 4.6 Thinking  
+- Objectif : rendre 6 ressources squelettiques ou insuffisamment exploitables directement utilisables par un enseignant.  
+- Ressources modifiees : b1-pronoms-y-en-ville, b1-debat-limiter-ecrans, b2-notes-video-courte, b1-b2-atelier-ia-ameliorer-consigne, mixte-creer-ressource-fle-ouverte, b1-prompt-roleplay-entretien.  
+- Ameliorations : guide prof sequence (pronoms y/en); resume oriente action (debat ecrans); brouillon prise de notes video passe en utilisable avec guide en 2 ecoutes et version v1.0; atelier IA consigne complet (support etudiant, guide, criteres, variantes, retour d'usage, passage en utilisable); projet communs avec checklist contributeur, guide animateur, criteres de validation et retour usage; jeu de role entretien B1 complet (situation fictive mediathäque, cartes roles, deroulee, guide prof, criteres, variantes, retour d'usage).  
+- Tests : src/utils/filters.test.ts mis a jour pour reflechir l'etat reel des donnees (status utilisable, tag contribution).  
+- Verifications : typecheck OK, lint OK, 24/24 tests OK, validate:resources 8/8 OK, build OK.  
+- Limites volontaires : aucun backend, aucun Supabase, aucune authentification, aucun appel IA, aucun stockage, aucune nouvelle dependance, aucune nouvelle fonctionnalite technique.  
+- Commit associe si connu : commit en cours 

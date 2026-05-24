@@ -45,10 +45,10 @@ describe('filterResources', () => {
   })
 
   it('filters by editorial status', () => {
-    const results = filterResources(demoResources, withFilters({ status: 'brouillon' }))
+    const results = filterResources(demoResources, withFilters({ status: 'utilisable' }))
 
     expect(results.length).toBeGreaterThan(0)
-    expect(results.every((resource) => resource.status === 'brouillon')).toBe(true)
+    expect(results.every((resource) => resource.status === 'utilisable')).toBe(true)
   })
 
   it('filters resources that use a digital tool', () => {
@@ -106,7 +106,7 @@ describe('filterResources', () => {
 
   it('searches in title, summary, tags and themes', () => {
     const byTitle = filterResources(demoResources, withFilters({ search: 'phonétique' }))
-    const byTag = filterResources(demoResources, withFilters({ search: 'versionnage' }))
+    const byTag = filterResources(demoResources, withFilters({ search: 'contribution' }))
     const byTheme = filterResources(demoResources, withFilters({ search: 'administration' }))
 
     expect(byTitle.some((resource) => resource.id === 'a1-a2-phonetique-y-u')).toBe(true)
