@@ -37,7 +37,7 @@ Une ressource complète contient :
 - **Contexte technique** : outils numériques, IA documentée, conditions d'accès.
 
 **Exemple** : `b1-enquete-suspect-temoin-indice` est une ressource complète.  
-**Exemple futur** : `b1-pronoms-cod-coi-enquete` sera une ressource complète (maquette dans `docs/document-output-and-composition-strategy.md`, section 4).
+**Exemple** : `b1-pronoms-cod-coi-enquete` est une ressource complète (statut : utilisable, 90 min, grammaire inductive, CC BY-SA).
 
 Une ressource complète est l'unité de référence pour :
 - la recherche dans la bibliothèque ;
@@ -103,13 +103,13 @@ Dans la v0, les éléments internes sont les `string[]` dans chaque `ResourceSec
 
 ## 3. Application à la ressource "Les pronoms COD/COI dans une enquête"
 
-Cette ressource n'existe pas encore dans `demoResources.ts`. Elle est documentée comme maquette dans `docs/document-output-and-composition-strategy.md`, section 4. Cette section l'applique concrètement à la doctrine de granularité.
+Cette ressource existe dans `demoResources.ts` sous l'ID `b1-pronoms-cod-coi-enquete` (statut : utilisable, 90 min, grammaire inductive, CC BY-SA). Elle illustre concrètement la doctrine de granularité et sert de ressource exemplaire de référence.
 
 ### Décomposition en blocs
 
 ```
 RESSOURCE : b1-pronoms-cod-coi-enquete
-Niveau B1 — 55 min — Grammaire / Interaction orale
+Niveau B1 — 90 min — Grammaire / Interaction orale
 
 Bloc 1 : situation_entree
   Public : apprenant
@@ -196,7 +196,7 @@ Remplacer le contexte "enquête policière" par "enquête médicale" ou "enquêt
 
 ### Pour la composition documentaire future
 
-Quand un enseignant veut une fiche de 25 minutes au lieu de 55, il peut demander seulement les blocs `situation_entree` + `exercice_transformation` + `bilan_grammatical`. C'est l'idée du futur Fleator (voir section 6).
+Quand un enseignant veut une fiche de 25 minutes au lieu de 90, il peut sélectionner seulement les blocs `situation_entree` + `exercice_transformation` + `bilan_grammatical`. C'est l'idée du futur Fleator (voir section 6).
 
 ### Pour la contribution partielle
 
@@ -291,8 +291,8 @@ Améliorer `@media print` dans `src/styles/global.css` pour masquer les métadon
 
 ### Étape 3 — Ressources exemplaires structurées
 
-Créer 3 à 5 ressources dont les sections sont explicitement structurées comme des blocs autonomes :
-- La ressource `b1-pronoms-cod-coi-enquete` est le premier candidat (maquette disponible dans `docs/document-output-and-composition-strategy.md`).
+Consolider 3 à 5 ressources dont les sections sont explicitement structurées comme des blocs autonomes :
+- La ressource `b1-pronoms-cod-coi-enquete` est la première ressource exemplaire existante structurée selon cette doctrine.
 - Chaque section doit avoir un titre qui reflète son rôle (pas "Contenu" mais "Situation d'entrée : l'enquête au musée").
 
 ### Étape 4 — Documentation d'un modèle de blocs optionnel
@@ -340,7 +340,7 @@ Un agent Codex qui lit ce document pourrait vouloir coder le modèle de blocs, l
 
 **Pour le prochain agent éditorial :**
 
-3. Créer la ressource `b1-pronoms-cod-coi-enquete` dans `src/data/demoResources.ts` en suivant la maquette de `docs/document-output-and-composition-strategy.md`, section 4. Utiliser des titres de section qui reflètent le rôle du bloc (pas "Support étudiant" mais "Situation d'entrée : l'enquête au musée").
+3. La ressource `b1-pronoms-cod-coi-enquete` existe déjà dans `src/data/demoResources.ts`. Vérifier que ses titres de section reflètent bien le rôle de chaque bloc. Si une section s'intitule "Support étudiant" au lieu de "Situation d'entrée : l'enquête au musée", la renommer dans une prochaine passe éditoriale légère.
 
 **Pour une future session de doctrine :**
 

@@ -398,3 +398,12 @@ Journal chronologique synthÃƒÂ©tique des interventions importantes. Les date
 - Aucun fichier de code modifie.  
 - Limites volontaires : aucun code, aucun backend, aucun TypeScript, aucun Supabase, aucune auth, aucun Fleator, aucun DOCX/PDF, aucune modification des ressources demo.  
 - Commit associe : a venir 
+  
+## 2026-05-25 - Synchronisation resource-granularity-strategy.md  
+  
+- Outil : Antigravity (micro-maintenance documentaire, aucun developpement)  
+- Contexte : b1-pronoms-cod-coi-enquete existe desormais dans demoResources.ts mais le document de granularite l'indiquait encore comme maquette inexistante.  
+- Corrections : 5 passages mis a jour (mention maquette, duree 55min->90min, etape 3, recommandations agent editorial, exemple niveau 1).  
+- Fichiers modifies : docs/resource-granularity-strategy.md, docs/project-journal.md  
+- Aucun fichier de code modifie. Doctrine de granularite stable pour la v0.  
+- Commit associe : a venir 
