@@ -47,6 +47,7 @@ Fonctionnalites presentes:
 - journal des decisions structurantes dans `docs/decision-log.md`.
 - modele de rapport dans `docs/change-report-template.md`.
 - regles de prompting dans `docs/prompting-rules.md`.
+- regles de routage des agents IA dans `docs/agent-routing-rules.md` pour choisir Antigravity, Codex ou un autre modele selon la tache et verifier la synchronisation Git avant intervention.
 - documentation conceptuelle des acces et de la soutenabilite dans `docs/access-and-sustainability-model.md`.
 - direction visuelle "Laboratoire Typographique" documentee dans `docs/branding-directions.md` et `docs/visual-identity-v0.md`.
 - premiere couche UI appliquee dans `src/styles/global.css` avec notes dans `docs/ui-implementation-notes.md`.
@@ -173,6 +174,7 @@ docs/
   agent-workflow.md
   branding-directions.md
   change-report-template.md
+  agent-routing-rules.md
   community-model.md
   collections.md
   contribution-workflow-v0.md

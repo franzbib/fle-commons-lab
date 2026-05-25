@@ -459,3 +459,13 @@ Journal chronologique synthÃƒÂ©tique des interventions importantes. Les date
 - Decisions : conserver la structure `Resource` existante; ne pas modifier `ResourceDetail.tsx`, `resourceText.ts` ni le modele TypeScript.
 - Limites volontaires : aucune nouvelle fonctionnalite, aucun backend, aucun Supabase, aucune authentification, aucun upload, aucun stockage, aucun appel IA, aucune dependance, aucun export DOCX/PDF reel, aucun Fleator, aucun contenu protege.
 - Commit associe si connu : commit en cours
+
+## 2026-05-25 � Regles de routage des agents IA
+
+- Outil principal : Codex
+- Objectif : creer un document court pour choisir le bon agent IA, verifier Git avant intervention et eviter les doublons ou modifications hors perimetre.
+- Resultat : creation de `docs/agent-routing-rules.md` avec synchronisation Git obligatoire, repartition Antigravity/Codex, chaines de travail, garde-fous v0, format de prompt et etat Git final attendu.
+- Fichiers principaux : `docs/agent-routing-rules.md`, `PROJECT_STATE_FOR_LLMS.md`, `docs/project-journal.md`.
+- Decisions : document organisationnel durable; aucune nouvelle decision technique, aucun changement de code.
+- Limites volontaires : aucun `src/` modifie, aucun package modifie, aucun backend, aucun Supabase, aucune authentification, aucun upload, aucun stockage, aucun appel IA, aucun export DOCX/PDF reel, aucun Fleator.
+- Commit associe si connu : commit en cours
