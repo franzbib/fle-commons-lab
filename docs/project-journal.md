@@ -418,3 +418,13 @@ Journal chronologique synthÃƒÂ©tique des interventions importantes. Les date
 - Aucun fichier de code modifie. Aucun contenu protege reproduit.  
 - Garde-fous : tableau juridique inclus, Fleator marque DIFFERE, generateur PDF/DOCX non implemente.  
 - Commit associe : a venir 
+
+## 2026-05-25 - Plan de montee en qualite des ressources de demonstration
+
+- Outil : Antigravity (audit editorial et pedagogique, aucun developpement)
+- Objectif : auditer les 19 ressources actuelles, selectionner 10 candidates etalons, proposer une feuille de route en 3 passes.
+- Resultat : creation de docs/demo-resources-quality-upgrade-plan.md avec 4 categories (solides / prometteuses / trop demonstratives / modele-test), 10 candidats etalons, propositions de montee en qualite par ressource, garde-fous juridiques.
+- Fichiers crees : docs/demo-resources-quality-upgrade-plan.md
+- Fichiers modifies : docs/project-journal.md
+- Aucun fichier de code modifie. Aucun contenu protege reproduit.
+- Commit associe : a venir
