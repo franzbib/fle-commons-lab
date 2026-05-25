@@ -407,3 +407,43 @@ Journal chronologique synthÃƒÂ©tique des interventions importantes. Les date
 - Fichiers modifies : docs/resource-granularity-strategy.md, docs/project-journal.md  
 - Aucun fichier de code modifie. Doctrine de granularite stable pour la v0.  
 - Commit associe : a venir 
+
+## 2026-05-25 — Rendu document d'usage des fiches ressources
+
+- Outil principal : Codex
+- Objectif : ameliorer la lisibilite des fiches ressources cote enseignant en distinguant mieux fiche etudiant, guide professeur et corrige.
+- Resultat : la vue publique des ressources privilegie des blocs documentaires aeres; l'onglet etudiant devient une fiche distribuable/projetable; l'onglet professeur regroupe guide, corrige, variantes et retours utiles; les details techniques restent reserves a la vue atelier.
+- Fichiers principaux : `src/components/ResourceDetail.tsx`, `src/components/ResourceCopyActions.tsx`, `src/utils/resourceText.ts`, `src/styles/global.css`, `PROJECT_STATE_FOR_LLMS.md`.
+- Decisions : ne pas ajouter d'export Word/PDF reel; continuer avec copie locale et impression navigateur; ne pas modifier le modele Resource.
+- Limites volontaires : aucun backend, aucun Supabase, aucune authentification, aucun stockage, aucun appel IA, aucune dependance, aucune refonte du parcours de contribution.
+- Commit associe si connu : commit en cours
+
+## 2026-05-25 — Corrections copie et impression navigateur
+
+- Outil principal : Codex
+- Objectif : appliquer les deux corrections indispensables de l'audit critique v0: texte copie moins plat et impression navigateur moins chargee.
+- Resultat : `resourceText.ts` produit des documents copies avec titres, metadonnees utiles, separateurs et sections lisibles; le CSS print masque davantage les elements interactifs, badges, notes descriptives et annexes secondaires.
+- Fichiers principaux : `src/utils/resourceText.ts`, `src/styles/global.css`, `docs/document-output-and-composition-strategy.md`, `PROJECT_STATE_FOR_LLMS.md`, `docs/project-journal.md`.
+- Decisions : rester sur copie locale et impression navigateur; marquer le futur modele de blocs et le Fleator comme `[DIFFERE - ne pas implementer en v0]`.
+- Limites volontaires : aucun export Word/PDF reel, aucun backend, aucun Supabase, aucune authentification, aucun stockage, aucun appel IA, aucune dependance.
+- Commit associe si connu : commit en cours
+
+## 2026-05-25 — Ressource demo etalon COD/COI
+
+- Outil principal : Codex
+- Objectif : ajouter une ressource de demonstration exemplaire pour tester la doctrine fiche apprenant, guide professeur, corrige, copie et impression.
+- Resultat : ajout de `b1-pronoms-cod-coi-enquete`, ressource B1 fictive et juridiquement sure autour d'une enquete, avec support apprenant, guide professeur, corrige, variantes et retour d'usage simule.
+- Fichiers principaux : `src/data/demoResources.ts`, `PROJECT_STATE_FOR_LLMS.md`, `docs/project-journal.md`.
+- Decisions : creer une ressource locale statique dans `demoResources.ts`; ne pas modifier le modele TypeScript; ne pas implementer le Fleator ni d'export Word/PDF reel.
+- Limites volontaires : aucun backend, aucun Supabase, aucune authentification, aucun stockage, aucun upload, aucun appel IA, aucune dependance, aucun contenu protege.
+- Commit associe si connu : commit en cours
+
+## 2026-05-25 — Correction editoriale de la ressource COD/COI
+
+- Outil principal : Codex
+- Objectif : rendre la ressource `b1-pronoms-cod-coi-enquete` plus exploitable comme fiche class-ready.
+- Resultat : correction des accents et apostrophes, resume raccourci, titre clarifie et ajout de marqueurs de blocs pedagogiques dans la fiche apprenant, le guide professeur et le corrige.
+- Fichiers principaux : `src/data/demoResources.ts`, `docs/project-journal.md`.
+- Decisions : convention editoriale provisoire dans les listes; aucune modification du modele, de `ResourceDetail.tsx` ou de `resourceText.ts`.
+- Limites volontaires : aucune nouvelle fonctionnalite, aucun backend, aucun Supabase, aucune authentification, aucun stockage, aucun appel IA, aucune dependance.
+- Commit associe si connu : commit en cours
