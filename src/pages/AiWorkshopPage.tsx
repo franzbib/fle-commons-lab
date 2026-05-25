@@ -53,23 +53,15 @@ export function AiWorkshopPage() {
   return (
     <main className="page ai-workshop-page">
       <header className="page-header">
-        <p className="eyebrow">Atelier IA & FLE</p>
+        <div style={{ backgroundColor: '#fee2e2', color: '#991b1b', padding: '16px', borderRadius: '4px', border: '1px solid #f87171', fontWeight: 'bold', marginBottom: '16px' }}>
+          Ce site n’integre pas d’IA. Les instructions proposees ici sont a copier dans votre outil habituel : ChatGPT, Claude, Gemini ou autre.
+        </div>
+        <p className="eyebrow">Atelier IA — boite a outils</p>
         <h1>Utiliser l’IA comme brouillon, jamais comme pilote automatique</h1>
         <p>
-          Cette section accompagne les enseignants de FLE avec des tutoriels courts, des
-          prompts copiables et des garde-fous. Aucune IA n’est integree au site: les prompts
-          sont a copier dans l’outil choisi par l’enseignant, puis a relire humainement.
+          Cette section accompagne les enseignants de FLE avec des tutoriels courts, des instructions a copier et des garde-fous.
         </p>
       </header>
-
-      <section className="ai-static-notice" aria-labelledby="ai-static-notice-title">
-        <h2 id="ai-static-notice-title">Pas d’IA integree ici</h2>
-        <p>
-          FLE Commons Lab n'execute aucun prompt. Aucun texte n'est collecte, stocke ou
-          envoye a un modele. Les instructions ci-dessous sont des modeles a copier dans
-          l'outil IA choisi par l'enseignant, avec relecture humaine obligatoire.
-        </p>
-      </section>
 
       <section className="detail-section ai-safety-panel">
         <h2>Garde-fous non negociables</h2>
@@ -137,8 +129,8 @@ export function AiWorkshopPage() {
 
       <section>
         <div className="results-heading">
-          <h2>Bibliotheque de prompts</h2>
-          <span>{filteredPrompts.length} prompts affiches</span>
+          <h2>Boite a outils IA : instructions a copier</h2>
+          <span>{filteredPrompts.length} instructions affichees</span>
         </div>
 
         <div className="filters-panel ai-workshop-filters">
@@ -194,9 +186,9 @@ export function AiWorkshopPage() {
                 </p>
               ) : null}
 
-              <h4 className="prompt-block-title">Prompt modele</h4>
+              <h4 className="prompt-block-title">Instruction modele</h4>
               <pre className="prompt-text">{prompt.promptText}</pre>
-              <CopyPromptButton promptText={prompt.promptText} label="Copier le prompt modele" />
+              <CopyPromptButton promptText={prompt.promptText} label="Copier l'instruction modele" />
 
               <h4 className="prompt-block-title">Exemple rempli</h4>
               <pre className="prompt-text prompt-text-example">{prompt.filledExample}</pre>

@@ -8,19 +8,9 @@ type LayoutProps = {
 }
 
 const navItems: Array<{ route: AppRoute; label: string }> = [
-  { route: 'home', label: 'Accueil' },
-  { route: 'projectStatus', label: 'Demo' },
   { route: 'library', label: 'Bibliotheque' },
-  { route: 'collections', label: 'Collections' },
-  { route: 'community', label: 'Communaute' },
+  { route: 'aiWorkshop', label: 'Boite a outils IA' },
   { route: 'contributionSpace', label: 'Contribuer' },
-  { route: 'templates', label: 'Gabarits' },
-  { route: 'resourceFormat', label: 'Format' },
-  { route: 'about', label: 'Vision' },
-  { route: 'technology', label: 'Technologies et IA' },
-  { route: 'aiWorkshop', label: 'Atelier IA & FLE' },
-  { route: 'atelier', label: 'Atelier' },
-  { route: 'docs', label: 'Documentation' },
 ]
 
 function isCurrentRoute(currentRoute: AppRoute, itemRoute: AppRoute) {

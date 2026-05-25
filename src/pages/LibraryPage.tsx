@@ -55,7 +55,7 @@ export function LibraryPage({
           ))}
         </section>
       ) : (
-        <p className="empty-state">Aucune ressource ne correspond aux filtres actifs.</p>
+        <p className="empty-state">Aucune ressource ne correspond à ces critères. Essayez d'élargir le niveau ou le type d'activité.</p>
       )}
     </main>
   )

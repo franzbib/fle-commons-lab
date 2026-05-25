@@ -8,6 +8,7 @@ import {
   resourceTypes,
   sourceTypes,
   teacherPreparationLevels,
+  durationCategories,
 } from '../types/resource'
 import {
   formatLicense,
@@ -17,6 +18,7 @@ import {
   formatSourceType,
   formatStatus,
   formatTeacherPreparation,
+  formatDurationCategory,
 } from '../utils/formatters'
 import type { ResourceFiltersValue } from '../utils/filters'
 
@@ -41,7 +43,7 @@ export function ResourceFilters({
           <input
             type="search"
             value={filters.search}
-            placeholder="Titre, résumé, tag, thème..."
+            placeholder="Titre, résumé, mot-clé, thème..."
             onChange={(event) => onChange({ ...filters, search: event.target.value })}
           />
         </label>
@@ -64,7 +66,7 @@ export function ResourceFilters({
         </label>
 
         <label className="field">
-          <span>Compétence principale</span>
+          <span>Compétence</span>
           <select
             value={filters.mainSkill}
             onChange={(event) =>
@@ -84,7 +86,7 @@ export function ResourceFilters({
         </label>
 
         <label className="field">
-          <span>Type</span>
+          <span>Type d'activité</span>
           <select
             value={filters.resourceType}
             onChange={(event) =>
@@ -102,21 +104,78 @@ export function ResourceFilters({
             ))}
           </select>
         </label>
+        
+        <label className="field">
+          <span>Thème</span>
+          <select
+            value={filters.theme}
+            onChange={(event) => onChange({ ...filters, theme: event.target.value })}
+          >
+            <option value="all">Tous</option>
+            {themes.map((theme) => (
+              <option key={theme} value={theme}>
+                {theme}
+              </option>
+            ))}
+          </select>
+        </label>
 
         <label className="field">
-          <span>Statut</span>
+          <span>Durée</span>
           <select
-            value={filters.status}
+            value={filters.durationCategory}
             onChange={(event) =>
-              onChange({ ...filters, status: event.target.value as ResourceFiltersValue['status'] })
+              onChange({ ...filters, durationCategory: event.target.value as ResourceFiltersValue['durationCategory'] })
+            }
+          >
+            <option value="all">Toutes</option>
+            {durationCategories.map((duration) => (
+              <option key={duration} value={duration}>
+                {formatDurationCategory(duration)}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label className="field">
+          <span>Prêt pour la classe</span>
+          <select
+            value={filters.readyForClass}
+            onChange={(event) =>
+              onChange({ ...filters, readyForClass: event.target.value as ResourceFiltersValue['readyForClass'] })
             }
           >
             <option value="all">Tous</option>
-            {editorialStatuses.map((status) => (
-              <option key={status} value={status}>
-                {formatStatus(status)}
-              </option>
-            ))}
+            <option value="yes">Oui</option>
+            <option value="no">Non</option>
+          </select>
+        </label>
+
+        <label className="field">
+          <span>Avec corrigé</span>
+          <select
+            value={filters.hasAnswerKey}
+            onChange={(event) =>
+              onChange({ ...filters, hasAnswerKey: event.target.value as ResourceFiltersValue['hasAnswerKey'] })
+            }
+          >
+            <option value="all">Tous</option>
+            <option value="yes">Oui</option>
+            <option value="no">Non</option>
+          </select>
+        </label>
+
+        <label className="field">
+          <span>Avec guide prof</span>
+          <select
+            value={filters.hasTeacherGuide}
+            onChange={(event) =>
+              onChange({ ...filters, hasTeacherGuide: event.target.value as ResourceFiltersValue['hasTeacherGuide'] })
+            }
+          >
+            <option value="all">Tous</option>
+            <option value="yes">Oui</option>
+            <option value="no">Non</option>
           </select>
         </label>
 
@@ -128,6 +187,24 @@ export function ResourceFilters({
       <details className="advanced-filters-panel">
         <summary>Afficher les filtres avancés</summary>
         <div className="advanced-filters-grid">
+          
+          <label className="field">
+            <span>Statut éditorial</span>
+            <select
+              value={filters.status}
+              onChange={(event) =>
+                onChange({ ...filters, status: event.target.value as ResourceFiltersValue['status'] })
+              }
+            >
+              <option value="all">Tous</option>
+              {editorialStatuses.map((status) => (
+                <option key={status} value={status}>
+                  {formatStatus(status)}
+                </option>
+              ))}
+            </select>
+          </label>
+
           <label className="field">
             <span>Gabarit</span>
             <select
@@ -143,21 +220,6 @@ export function ResourceFilters({
               {resourceTemplates.map((template) => (
                 <option key={template} value={template}>
                   {formatResourceTemplate(template)}
-                </option>
-              ))}
-            </select>
-          </label>
-
-          <label className="field">
-            <span>Thème</span>
-            <select
-              value={filters.theme}
-              onChange={(event) => onChange({ ...filters, theme: event.target.value })}
-            >
-              <option value="all">Tous</option>
-              {themes.map((theme) => (
-                <option key={theme} value={theme}>
-                  {theme}
                 </option>
               ))}
             </select>

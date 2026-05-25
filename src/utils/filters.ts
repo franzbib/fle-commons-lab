@@ -11,6 +11,7 @@ import type {
   ResourceType,
   SourceType,
   TeacherPreparationLevel,
+  DurationCategory,
 } from '../types/resource'
 
 export type ResourceFiltersValue = {
@@ -27,6 +28,10 @@ export type ResourceFiltersValue = {
   license: ResourceLicense | 'all'
   teacherPreparationLevel: TeacherPreparationLevel | 'all'
   sourceType: SourceType | 'all'
+  durationCategory: DurationCategory | 'all'
+  hasAnswerKey: 'all' | 'yes' | 'no'
+  hasTeacherGuide: 'all' | 'yes' | 'no'
+  readyForClass: 'all' | 'yes' | 'no'
 }
 
 export const emptyResourceFilters: ResourceFiltersValue = {
@@ -43,6 +48,10 @@ export const emptyResourceFilters: ResourceFiltersValue = {
   license: 'all',
   teacherPreparationLevel: 'all',
   sourceType: 'all',
+  durationCategory: 'all',
+  hasAnswerKey: 'all',
+  hasTeacherGuide: 'all',
+  readyForClass: 'all',
 }
 
 export function filterResources(
@@ -95,6 +104,17 @@ export function filterResources(
       resource.teacherPreparationLevel === filters.teacherPreparationLevel
     const matchesSource =
       filters.sourceType === 'all' || resource.sourceType === filters.sourceType
+    const matchesDuration =
+      filters.durationCategory === 'all' || resource.durationCategory === filters.durationCategory
+    const matchesAnswerKey =
+      filters.hasAnswerKey === 'all' ||
+      (filters.hasAnswerKey === 'yes' ? !!resource.content.answerKey : !resource.content.answerKey)
+    const matchesTeacherGuide =
+      filters.hasTeacherGuide === 'all' ||
+      (filters.hasTeacherGuide === 'yes' ? !!resource.content.teacherGuide : !resource.content.teacherGuide)
+    const matchesReady =
+      filters.readyForClass === 'all' ||
+      (filters.readyForClass === 'yes' ? ['utilisable', 'teste', 'valide'].includes(resource.status) : !['utilisable', 'teste', 'valide'].includes(resource.status))
 
     return (
       matchesSearch &&
@@ -109,7 +129,11 @@ export function filterResources(
       matchesAccess &&
       matchesLicense &&
       matchesPreparation &&
-      matchesSource
+      matchesSource &&
+      matchesDuration &&
+      matchesAnswerKey &&
+      matchesTeacherGuide &&
+      matchesReady
     )
   })
 }
