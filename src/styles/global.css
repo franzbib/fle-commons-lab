@@ -704,6 +704,116 @@ button:disabled {
   background: var(--surface);
 }
 
+.document-view {
+  display: grid;
+  gap: 16px;
+}
+
+.document-view-intro {
+  max-width: 78ch;
+  margin: -4px 0 2px;
+  color: var(--muted);
+}
+
+.document-grid {
+  grid-template-columns: 1fr;
+}
+
+.document-grid-teacher {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.document-section {
+  position: relative;
+  display: grid;
+  gap: 12px;
+  border-color: var(--color-border-strong);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.08);
+}
+
+.document-section-learner {
+  background: #fffdfa;
+}
+
+.document-section-teacher {
+  background: var(--surface);
+}
+
+.document-section-answerKey {
+  border-left: 5px solid var(--color-warning);
+}
+
+.document-section-teacherGuide,
+.document-section-lessonPlan {
+  border-left: 5px solid var(--color-info);
+}
+
+.document-section-studentInstructions {
+  border-left: 5px solid var(--color-success);
+}
+
+.document-section-label {
+  width: fit-content;
+  border: 1px solid var(--border);
+  background: var(--surface-muted);
+  padding: 3px 6px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.document-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.document-item {
+  line-height: 1.6;
+}
+
+.document-subheading {
+  margin: 14px 0 2px;
+  list-style: none;
+  color: var(--text-strong);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.document-subheading::before {
+  color: var(--accent-strong);
+  content: '## ';
+}
+
+.document-item-multiline {
+  display: grid;
+  gap: 5px;
+}
+
+.document-line,
+.document-line-heading {
+  display: block;
+}
+
+.document-line-heading {
+  margin-top: 8px;
+  color: var(--text-strong);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.public-use-summary {
+  border-style: dashed;
+}
+
 .lesson-plan-preview {
   display: grid;
   gap: 8px;
@@ -1324,16 +1434,24 @@ button:disabled {
     background: white;
     color: #111111;
     font-size: 11pt;
-    line-height: 1.45;
+    line-height: 1.5;
   }
 
   .site-header,
   .back-link,
+  .atelier-link,
   .copy-actions-panel,
   .view-actions-panel,
   .resource-tab-list,
   .filters-panel,
   .resource-card-footer,
+  .detail-hero .card-topline,
+  .detail-hero p,
+  .tab-description,
+  .learner-mode-note,
+  .document-view-intro,
+  .document-section-label,
+  .document-section-usageNotes,
   .non-persistent-note.action-note {
     display: none !important;
   }
@@ -1346,8 +1464,22 @@ button:disabled {
     padding: 0;
   }
 
+  .detail-hero {
+    margin: 0 0 10pt;
+    border: 0;
+    border-bottom: 1px solid #999999;
+    padding: 0 0 8pt;
+    box-shadow: none;
+  }
+
+  .detail-hero h1 {
+    margin: 0;
+    font-size: 18pt;
+    line-height: 1.2;
+  }
+
   h1 {
-    font-size: 24pt;
+    font-size: 20pt;
   }
 
   h2 {
@@ -1383,8 +1515,6 @@ button:disabled {
     text-transform: uppercase;
   }
 
-  .tab-description,
-  .learner-mode-note,
   .preparation-summary,
   .preparation-alerts,
   .preparation-alert-card,
@@ -1404,6 +1534,23 @@ button:disabled {
     break-inside: avoid;
     border: 1px solid #bbbbbb;
     box-shadow: none;
+    page-break-inside: avoid;
+  }
+
+  .detail-section,
+  .resource-tab-panel,
+  .content-section,
+  .document-section {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  .document-view,
+  .document-section,
+  .document-list,
+  .document-item,
+  .document-item-multiline {
+    break-inside: avoid;
     page-break-inside: avoid;
   }
 
@@ -1442,13 +1589,45 @@ button:disabled {
     gap: 10pt;
   }
 
+  .document-grid,
+  .document-grid-teacher {
+    grid-template-columns: 1fr;
+  }
+
   .content-section {
     padding: 10pt;
+  }
+
+  .document-section {
+    border-left: 2pt solid #777777;
+    background: white;
+    box-shadow: none;
+    margin-bottom: 8pt;
+  }
+
+  .document-section-label,
+  .document-subheading,
+  .document-line-heading {
+    color: #111111;
+  }
+
+  .document-subheading {
+    break-after: avoid-page;
+    page-break-after: avoid;
   }
 
   .content-section ul,
   .timeline ul {
     margin-bottom: 0;
+  }
+
+  .document-list {
+    gap: 4pt;
+    padding-left: 14pt;
+  }
+
+  .document-item {
+    line-height: 1.45;
   }
 
   .badge,

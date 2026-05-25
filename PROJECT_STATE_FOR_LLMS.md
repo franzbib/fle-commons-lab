@@ -14,7 +14,7 @@ Fonctionnalites presentes:
 
 - accueil oriente autour de deux portes d'entree: bibliotheque de ressources FLE et Atelier IA & FLE;
 - page Demo / Etat du projet;
-- bibliotheque de 18 ressources de demonstration;
+- bibliotheque de 19 ressources de demonstration;
 - vue atelier statique `#/atelier` pour inspecter les metadonnees completes, sections extraites et traces de normalisation sans authentification;
 - ressources de demonstration realignees progressivement sur la doctrine enseignant: copier, imprimer, adapter et contribuer sans competence technique;
 - recherche texte;
@@ -53,7 +53,10 @@ Fonctionnalites presentes:
 - rapport Antigravity `docs/ux-progressive-disclosure.md` et documentation d'architecture d'information dans `docs/ux-information-architecture.md`.
 - divulgation progressive appliquee a l'interface: cartes ressource allegees, filtres avances repliables et sections de detail consultables a la demande.
 - separation apprenant / enseignant documentee dans `docs/ux-resource-tabs.md`; le contenu apprenant masque les corriges, notes professeur, retours d'usage et audit simule.
-- styles d'impression dedies pour rendre les fiches ressources plus lisibles sur papier.
+- rendu des fiches ressources renforce en "document d'usage": fiche etudiant, guide professeur et corrige sont visuellement distingues, avec metadonnees techniques reservees a la vue atelier.
+- ressource demo etalon `b1-pronoms-cod-coi-enquete` pour tester une fiche apprenant, un guide professeur et un corrige clairement separes.
+- texte copie mieux structure pour reprise dans Word ou LibreOffice: titres de document, metadonnees utiles, sections separees et blocs fiche apprenant / guide professeur / corrige.
+- styles d'impression dedies pour rendre les fiches ressources plus lisibles sur papier, sans export PDF/Word reel.
 - notes QA impression dans `docs/print-qa-notes.md` pour les ressources longues et les limites de `window.print`.
 - documentation des alertes de preparation enseignant dans `docs/teacher-preparation-alerts.md`.
 - trace d'absence du rapport `docs/teacher-quick-test-report.md` dans `docs/teacher-quick-test-report-missing.md`; les corrections prioritaires connues ont ete traitees par `178cf04`.
@@ -179,6 +182,7 @@ docs/
   conversion-workflow.md
   deployment.md
   decision-log.md
+  document-output-and-composition-strategy.md
   export-and-print-strategy.md
   drive-corpus-analysis.md
   editorial-copy-audit.md
@@ -285,7 +289,7 @@ L'analyse du corpus Drive recommande de documenter ou d'etudier plus tard trois 
 - L'onglet `Contenu apprenant` ne doit jamais afficher les corriges, le guide professeur, les retours d'usage, l'audit simule ou les notes internes.
 - Les alertes de preparation enseignant sont optionnelles (`preparationAlerts`) et ne doivent jamais apparaitre dans l'onglet `Contenu apprenant`.
 - Les actions de copie/impression restent locales: `navigator.clipboard.writeText` et `window.print`; elles ne generent pas de PDF/Word et n'envoient aucune donnee.
-- L'impression navigateur imprime la vue active avec un titre de vue, en gardant les boutons et la navigation hors impression; la fiche apprenant imprimee ne contient pas les corriges.
+- L'impression navigateur imprime la vue active avec un titre de vue, en gardant les boutons, la navigation et les annexes techniques hors impression; la fiche apprenant imprimee ne contient pas les corriges.
 - L'interface publique doit privilegier le vocabulaire enseignant: copier, imprimer, proposer une ressource, corrige, guide professeur. Les termes Markdown, YAML, pull request, fork, build ou repository ne doivent pas devenir le parcours principal.
 - Les pages visibles doivent distinguer explicitement ce qui fonctionne, ce qui est simule, ce qui est conceptuel et ce qui reste en roadmap.
 - Les boutons de copie utilisent les sections existantes du modele (`studentInstructions`, `teacherGuide`, `answerKey`) et une transformation locale en texte propre; ils n'envoient aucune donnee.

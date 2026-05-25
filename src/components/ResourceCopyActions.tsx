@@ -12,7 +12,7 @@ type CopyAction = {
 }
 
 const copyTargets: Array<{ key: ResourceSectionKey; label: string }> = [
-  { key: 'studentInstructions', label: 'Copier le support étudiant' },
+  { key: 'studentInstructions', label: 'Copier la fiche étudiant' },
   { key: 'teacherGuide', label: 'Copier le guide professeur' },
   { key: 'answerKey', label: 'Copier le corrigé' },
 ]
@@ -28,7 +28,7 @@ export function ResourceCopyActions({ resource }: ResourceCopyActionsProps) {
         text: formatResourceSectionForCopy(resource, key),
       })),
     {
-      label: 'Copier toute la fiche',
+      label: 'Copier la fiche complète',
       text: formatResourceForCopy(resource),
     },
   ]
@@ -38,7 +38,7 @@ export function ResourceCopyActions({ resource }: ResourceCopyActionsProps) {
       await navigator.clipboard.writeText(action.text)
       setStatus(`${action.label.replace('Copier ', '')} copié.`)
     } catch {
-      setStatus("Copie impossible dans ce navigateur. Vous pouvez sélectionner le texte de la fiche.")
+      setStatus('Copie impossible dans ce navigateur. Vous pouvez sélectionner le texte de la fiche.')
     }
   }
 
@@ -72,7 +72,11 @@ export function ResourceCopyActions({ resource }: ResourceCopyActionsProps) {
           Imprimer
         </button>
       </div>
-      {status ? <p className="copy-status" role="status">{status}</p> : null}
+      {status ? (
+        <p className="copy-status" role="status">
+          {status}
+        </p>
+      ) : null}
     </section>
   )
 }

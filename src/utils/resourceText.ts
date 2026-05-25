@@ -1,4 +1,4 @@
-import type { Resource, ResourceSectionKey } from '../types/resource'
+import type { Resource, ResourceSection, ResourceSectionKey } from '../types/resource'
 import {
   formatClassroomMode,
   formatLicense,
@@ -31,10 +31,18 @@ const teacherSectionOrder: ResourceSectionKey[] = [
   'answerKey',
   'variants',
   'usageNotes',
-  'techNotes',
-  'aiNotes',
-  'versionHistory',
 ]
+
+const sectionTitleOverrides: Partial<Record<ResourceSectionKey, string>> = {
+  objectives: 'Objectifs',
+  prerequisites: 'Pre-requis',
+  lessonPlan: 'Deroule',
+  studentInstructions: 'Fiche apprenant',
+  teacherGuide: 'Guide professeur',
+  answerKey: 'Corrige',
+  variants: 'Variantes',
+  usageNotes: "Retours d'usage",
+}
 
 export function formatResourceSectionForCopy(
   resource: Resource,
@@ -46,85 +54,156 @@ export function formatResourceSectionForCopy(
     return ''
   }
 
-  return [`# ${resource.title}`, '', `## ${section.title}`, '', ...section.items.map((item) => `- ${item}`)].join(
-    '\n',
-  )
+  return [
+    buildDocumentTitle('EXTRAIT DE RESSOURCE'),
+    ...buildMetadata(resource),
+    '',
+    ...formatSection(section, sectionKey),
+  ].join('\n')
 }
 
 export function formatResourceForCopy(resource: Resource): string {
-  const metadata = [
-    `# ${resource.title}`,
-    '',
-    resource.summary,
-    '',
-    `Niveau: ${resource.level}`,
-    `Durée: ${resource.durationMinutes} min`,
-    `Compétence principale: ${formatSkill(resource.mainSkill)}`,
-    `Type: ${formatResourceType(resource.resourceType)}`,
-    `Gabarit: ${formatResourceTemplate(resource.resourceTemplate)}`,
-    `Statut: ${formatStatus(resource.status)}`,
-    `Modalité: ${formatClassroomMode(resource.classroomMode)}`,
-    `Licence: ${formatLicense(resource.license)}`,
-    `Auteurs: ${resource.authors.join(', ')}`,
-  ]
-
-  const sections = printableSectionOrder
-    .map((sectionKey) => resource.content[sectionKey])
-    .filter((section) => section !== undefined)
-    .flatMap((section) => ['', `## ${section.title}`, '', ...section.items.map((item) => `- ${item}`)])
-
-  return [...metadata, ...sections].join('\n')
+  return [
+    buildDocumentTitle('FICHE COMPLETE'),
+    ...buildMetadata(resource, true),
+    ...formatSections(resource, printableSectionOrder),
+  ].join('\n')
 }
 
 export function formatLearnerViewForCopy(resource: Resource): string {
-  return formatResourceSectionsForCopy(resource, learnerSectionOrder, 'Contenu apprenant')
+  return [
+    buildDocumentTitle('FICHE APPRENANT'),
+    ...buildMetadata(resource),
+    ...formatSections(resource, learnerSectionOrder),
+  ].join('\n')
 }
 
 export function formatTeacherViewForCopy(resource: Resource): string {
-  const sections = formatResourceSectionsForCopy(
-    resource,
-    teacherSectionOrder,
-    'Corriges et notes professeur',
-  )
+  const feedbacks = formatUsageFeedbacks(resource)
 
-  const feedbacks =
-    resource.usageFeedbacks && resource.usageFeedbacks.length > 0
-      ? [
-          '',
-          '## Retours d’usage',
-          '',
-          ...resource.usageFeedbacks.flatMap((feedback) => [
-            `- ${feedback.authorName} (${feedback.groupLevel}, ${feedback.actualDurationMinutes} min)`,
-            `  - Ce qui a fonctionné: ${feedback.whatWorked}`,
-            `  - Difficultés: ${feedback.difficulties}`,
-            `  - Suggestion: ${feedback.suggestedChanges}`,
-          ]),
-        ]
-      : []
-
-  return [sections, ...feedbacks].join('\n')
+  return [
+    buildDocumentTitle('GUIDE PROFESSEUR'),
+    ...buildMetadata(resource),
+    ...formatSections(resource, teacherSectionOrder),
+    ...feedbacks,
+  ].join('\n')
 }
 
-function formatResourceSectionsForCopy(
-  resource: Resource,
-  sectionKeys: ResourceSectionKey[],
-  heading: string,
-): string {
+function buildDocumentTitle(title: string) {
+  return [title, '='.repeat(title.length), '']
+}
+
+function buildMetadata(resource: Resource, includeExtra = false) {
   const metadata = [
-    `# ${resource.title}`,
-    '',
-    resource.summary,
-    '',
-    `Vue: ${heading}`,
-    `Niveau: ${resource.level}`,
-    `Durée: ${resource.durationMinutes} min`,
-    `Compétence principale: ${formatSkill(resource.mainSkill)}`,
+    `Titre : ${resource.title}`,
+    `Niveau : ${resource.level}`,
+    `Duree : ${resource.durationMinutes} min`,
+    `Competence principale : ${formatSkill(resource.mainSkill)}`,
   ]
 
-  const sections = sectionKeys
-    .map((sectionKey) => resource.content[sectionKey])
-    .filter((section) => section !== undefined)
-    .flatMap((section) => ['', `## ${section.title}`, '', ...section.items.map((item) => `- ${item}`)])
+  if (includeExtra) {
+    metadata.push(
+      `Type : ${formatResourceType(resource.resourceType)}`,
+      `Gabarit : ${formatResourceTemplate(resource.resourceTemplate)}`,
+      `Statut : ${formatStatus(resource.status)}`,
+      `Modalite : ${formatClassroomMode(resource.classroomMode)}`,
+      `Licence : ${formatLicense(resource.license)}`,
+      `Auteurs : ${resource.authors.join(', ')}`,
+    )
+  }
 
-  return [...metadata, ...sections].join('\n')
+  return [...metadata, '', '---']
+}
+
+function formatSections(resource: Resource, sectionKeys: ResourceSectionKey[]) {
+  return sectionKeys.flatMap((sectionKey) => {
+    const section = resource.content[sectionKey]
+
+    return section ? ['', ...formatSection(section, sectionKey)] : []
+  })
+}
+
+function formatSection(section: ResourceSection, sectionKey: ResourceSectionKey) {
+  const title = (sectionTitleOverrides[sectionKey] ?? section.title).toUpperCase()
+  const content = section.items.filter(Boolean).flatMap(formatItemLines)
+
+  if (content.length === 0) {
+    return [title, '-'.repeat(title.length), '', 'Section a completer.']
+  }
+
+  return [title, '-'.repeat(title.length), '', ...content]
+}
+
+function formatItemLines(item: string) {
+  const lines = item
+    .split('\n')
+    .map((line) => line.trim())
+    .filter(Boolean)
+
+  if (lines.length === 0) {
+    return []
+  }
+
+  return lines.flatMap((line) => {
+    if (looksLikeSubheading(line)) {
+      const title = line.replace(/:$/, '').toUpperCase()
+
+      return ['', title, '-'.repeat(title.length), '']
+    }
+
+    return [line, '']
+  })
+}
+
+function formatUsageFeedbacks(resource: Resource) {
+  if (!resource.usageFeedbacks || resource.usageFeedbacks.length === 0) {
+    return []
+  }
+
+  return [
+    '',
+    'RETOURS D USAGE',
+    '---------------',
+    '',
+    ...resource.usageFeedbacks.flatMap((feedback) => [
+      `${feedback.authorName} - ${feedback.groupLevel} - ${feedback.actualDurationMinutes} min`,
+      `Contexte : ${feedback.context}`,
+      `Ce qui a fonctionne : ${feedback.whatWorked}`,
+      `Difficultes : ${feedback.difficulties}`,
+      `Suggestion : ${feedback.suggestedChanges}`,
+      '',
+    ]),
+  ]
+}
+
+function looksLikeSubheading(item: string) {
+  const trimmed = item.trim()
+  const knownHeadings = [
+    'situation',
+    'verbes utiles',
+    'intention pedagogique',
+    'intention pédagogique',
+    'public conseille',
+    'public conseillé',
+    'duree et formats possibles',
+    'durée et formats possibles',
+    'points de vigilance',
+    'gestion possible en classe',
+    'conseils de correction',
+    'pronoms dans le recit:',
+    'pronoms dans le récit:',
+    'justifications utiles pour les cas sensibles:',
+    'reponses ouvertes. verifier:',
+    'réponses ouvertes. vérifier:',
+    'exemple acceptable:',
+    'notes de normalisation',
+    'a completer apres test en classe:',
+    'à compléter après test en classe:',
+  ]
+
+  return (
+    /^[A-F]\.\s/.test(trimmed) ||
+    knownHeadings.includes(trimmed.toLowerCase()) ||
+    (trimmed.length <= 52 && /:$/.test(trimmed))
+  )
 }
