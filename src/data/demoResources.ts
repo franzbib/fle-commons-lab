@@ -448,7 +448,7 @@ export const demoResources: Resource[] = [
     activityFormat: 'binomes',
     classroomMode: 'presentiel',
     status: 'utilisable',
-    reuseReadiness: 'pret_a_tester',
+    reuseReadiness: 'pret_a_utiliser',
     license: 'CC_BY_SA',
     authors: ['Equipe demo FLE'],
     tags: ['pronoms', 'COD', 'COI', 'enquête', 'fiche étudiant', 'corrigé inclus'],

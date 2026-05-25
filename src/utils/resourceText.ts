@@ -178,6 +178,7 @@ function formatUsageFeedbacks(resource: Resource) {
 
 function looksLikeSubheading(item: string) {
   const trimmed = item.trim()
+  const hasEditorialMarkers = /^—\s+.{1,80}\s+—$/.test(trimmed) || /^-\s+.{1,80}\s+-$/.test(trimmed)
   const knownHeadings = [
     'situation',
     'verbes utiles',
@@ -203,6 +204,7 @@ function looksLikeSubheading(item: string) {
 
   return (
     /^[A-F]\.\s/.test(trimmed) ||
+    hasEditorialMarkers ||
     knownHeadings.includes(trimmed.toLowerCase()) ||
     (trimmed.length <= 52 && /:$/.test(trimmed))
   )

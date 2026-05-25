@@ -469,3 +469,13 @@ Journal chronologique synthÃƒÆ’Ã‚Â©tique des interventions importantes. Les date
 - Decisions : document organisationnel durable; aucune nouvelle decision technique, aucun changement de code.
 - Limites volontaires : aucun `src/` modifie, aucun package modifie, aucun backend, aucun Supabase, aucune authentification, aucun upload, aucun stockage, aucun appel IA, aucun export DOCX/PDF reel, aucun Fleator.
 - Commit associe si connu : commit en cours
+
+## 2026-05-25 — Micro-corrections passe 1
+
+- Outil principal : Codex
+- Objectif : appliquer les micro-corrections restantes apres l'audit post-synchronisation de la passe 1.
+- Resultat : reconnaissance des marqueurs de sous-titres `— Titre —` et `- Titre -` dans la copie et l'affichage HTML, impression plus sobre avec `.detail-hero` masque en print, et coherence `reuseReadiness` de `b1-pronoms-cod-coi-enquete` passee a `pret_a_utiliser`.
+- Fichiers principaux : `src/utils/resourceText.ts`, `src/components/ResourceDetail.tsx`, `src/styles/global.css`, `src/data/demoResources.ts`, `docs/project-journal.md`.
+- Decisions : conserver la convention editoriale v0 sans creer de modele `Block`; ne pas modifier la structure des donnees.
+- Limites volontaires : aucun backend, aucun Supabase, aucune authentification, aucun upload, aucun stockage, aucun appel IA, aucune dependance, aucun export DOCX/PDF reel, aucun Fleator.
+- Commit associe si connu : commit en cours

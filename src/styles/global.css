@@ -1445,6 +1445,7 @@ button:disabled {
   .resource-tab-list,
   .filters-panel,
   .resource-card-footer,
+  .detail-hero,
   .detail-hero .card-topline,
   .detail-hero p,
   .tab-description,
@@ -1462,20 +1463,6 @@ button:disabled {
     width: 100%;
     max-width: none;
     padding: 0;
-  }
-
-  .detail-hero {
-    margin: 0 0 10pt;
-    border: 0;
-    border-bottom: 1px solid #999999;
-    padding: 0 0 8pt;
-    box-shadow: none;
-  }
-
-  .detail-hero h1 {
-    margin: 0;
-    font-size: 18pt;
-    line-height: 1.2;
   }
 
   h1 {
@@ -1525,7 +1512,6 @@ button:disabled {
     color: #111111;
   }
 
-  .detail-hero,
   .detail-section,
   .resource-tab-panel,
   .collapsible-section,
@@ -1554,7 +1540,6 @@ button:disabled {
     page-break-inside: avoid;
   }
 
-  .detail-hero,
   .detail-section,
   .collapsible-content {
     padding: 10pt;
