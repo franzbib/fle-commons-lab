@@ -428,3 +428,23 @@ Journal chronologique synthÃƒÂ©tique des interventions importantes. Les date
 - Fichiers modifies : docs/project-journal.md
 - Aucun fichier de code modifie. Aucun contenu protege reproduit.
 - Commit associe : a venir
+
+## 2026-05-25 � Mini-pack imprimable COD/COI
+
+- Outil principal : Codex
+- Objectif : rendre la ressource `b1-pronoms-cod-coi-enquete` plus exploitable comme mini-pack pedagogique imprimable.
+- Resultat : ajout de lignes de reponse, d'un tableau d'observation COD/COI, d'un exercice de reperage en tableau, d'espaces a completer et d'une zone `A retenir` dans la fiche apprenant.
+- Fichiers principaux : `src/data/demoResources.ts`, `docs/project-journal.md`.
+- Decisions : conserver la convention editoriale en listes plates; ne pas modifier le modele TypeScript, `ResourceDetail.tsx` ni le systeme de copie/impression.
+- Limites volontaires : aucune nouvelle fonctionnalite, aucun backend, aucun Supabase, aucune authentification, aucun stockage, aucun appel IA, aucune dependance, aucun export Word/PDF reel.
+- Commit associe si connu : commit en cours
+
+## 2026-05-25 � Synchronisation du plan qualite des ressources demo
+
+- Outil principal : Codex
+- Objectif : mettre a jour le plan de montee en qualite des ressources demo avec l'etat reel du projet.
+- Resultat : `b1-pronoms-cod-coi-enquete` est marquee comme premiere ressource etalon v0 sous reserve de revue finale d'usage; les prochaines etapes Codex deviennent `a2-passe-compose-week-end` et `a1-a2-phonetique-y-u`.
+- Fichiers principaux : `docs/demo-resources-quality-upgrade-plan.md`, `docs/project-journal.md`.
+- Decisions : conserver le plan Antigravity comme base et le synchroniser avec les corrections deja realisees sur copie, impression et COD/COI.
+- Limites volontaires : aucune modification de code pour cette synchronisation documentaire, aucun backend, aucun Supabase, aucune authentification, aucun upload, aucun appel IA, aucun export DOCX/PDF reel, aucun Fleator.
+- Commit associe si connu : commit en cours

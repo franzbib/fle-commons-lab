@@ -16,7 +16,7 @@ Ces ressources ont une structure complète, un guide prof concret, un corrigé u
 
 | ID | Titre | Niveau | Famille | Problème principal |
 |----|-------|--------|---------|-------------------|
-| `b1-pronoms-cod-coi-enquete` | Les pronoms COD et COI dans une enquête | B1 | Grammaire inductive | Accents absents, titres internes non différenciés, espaces de réponse manquants |
+| `b1-pronoms-cod-coi-enquete` | COD ou COI ? Une enquête pour choisir le bon pronom | B1 | Grammaire inductive | Première ressource étalon v0, sous réserve de revue finale d'usage |
 | `b1-enquete-suspect-temoin-indice` | Enquête en classe : interroger, comparer, accuser | B1 | Activité scénarisée | Bonne structure, retour d'usage, variantes — à vérifier pour les accents |
 | `b2-notes-video-courte` | Prise de notes B2 : l'essentiel d'une vidéo courte | B2 | Compréhension / méthodologie | Gabarit fort (grille 3 colonnes), retours d'usage — vérifier accents |
 | `a1-a2-phonetique-y-u` | Phonétique : entendre et dire [y] / [u] | A1/A2 | Phonétique | Rituel testé, 30 min, réutilisable — le plus court du catalogue |
@@ -97,8 +97,9 @@ Les 10 candidats sont choisis pour couvrir 8 familles pédagogiques distinctes e
 ### Passe 1 — 3 ressources prioritaires (intervention immédiate)
 
 **Candidate 1 : `b1-pronoms-cod-coi-enquete`** — Grammaire inductive
-- Statut actuel : solide mais accents absents, titres internes non différenciés, espaces de réponse manquants
-- C'est la ressource étalon la plus avancée — un étalon en attente de finition
+- Statut actuel : première ressource étalon v0, sous réserve de revue finale d'usage
+- Les corrections prioritaires sont réalisées : accents, apostrophes, marqueurs internes, copie structurée, impression plus sobre, tableaux, espaces de réponse et zone `À retenir`
+- Prochaine action : revue finale d'usage sur impression A4 et charge cognitive B1
 
 **Candidate 2 : `a2-passe-compose-week-end`** — Grammaire narrative
 - Statut actuel : prometteuse, mais guide prof court et corrigé à compléter
@@ -152,14 +153,14 @@ Les 10 candidats sont choisis pour couvrir 8 familles pédagogiques distinctes e
 **Résumé orienté enseignant** :
 "Fiche B1 prête à imprimer. Situation d'enquête fictive, observation guidée, exercices de transformation COD/COI, mini-dialogue final. Guide professeur et corrigé dans l'onglet enseignant."
 
-**Modifications éditoriales** :
-- Corriger tous les accents et apostrophes (priorité absolue)
-- Préfixer les titres internes : `▸ Situation`, `▸ Exercice 1 — Repérage`, `▸ Bilan grammatical`
-- Ajouter un tableau COD/COI ASCII dans les instructions apprenant
-- Ajouter des espaces de réponse (`___`) dans les exercices 1-3
-- Passer `reuseReadiness` à `pret_a_utiliser` après corrections
+**Modifications éditoriales réalisées** :
+- Accents, apostrophes, titre et résumé corrigés
+- Marqueurs internes ajoutés : `— Situation —`, `— Observation guidée —`, `— Exercice 1 : repérage —`, `— Petit bilan grammatical —`
+- Mini-tableau COD/COI ajouté dans la fiche apprenant
+- Espaces de réponse (`___`) et zones à compléter ajoutés dans les exercices
+- Zone `À retenir` ajoutée pour rendre la fiche plus imprimable et manipulable
 
-**Statut visé** : ressource étalon grammaire inductive B1
+**Statut actuel** : première ressource étalon grammaire inductive B1 pour la v0, sous réserve de revue finale d'usage
 
 ---
 
@@ -359,7 +360,7 @@ Les 10 candidats sont choisis pour couvrir 8 familles pédagogiques distinctes e
 
 | Ressource | Action principale | Durée estimée |
 |-----------|-------------------|---------------|
-| `b1-pronoms-cod-coi-enquete` | Correction accents + marqueurs internes + tableau COD/COI + espaces réponse | 2-3h éditorial |
+| `b1-pronoms-cod-coi-enquete` | Réalisé : accents + marqueurs internes + tableau COD/COI + espaces réponse + zone `À retenir`; reste une revue finale d'usage | revue courte |
 | `a2-passe-compose-week-end` | Enrichissement guide + corrigé + tableau être/avoir + espaces réponse | 2h éditorial |
 | `a1-a2-phonetique-y-u` | Tableau paires minimales + auto-évaluation + guide articulatoire | 1-2h éditorial |
 
@@ -412,16 +413,15 @@ Les 10 candidats sont choisis pour couvrir 8 familles pédagogiques distinctes e
 
 ## 7. Recommandations pour Codex
 
-### Corrections techniques liées aux ressources étalons
+### Prochaines passes éditoriales
 
-**Priorité technique 1 (indépendant du contenu)** :
-Améliorer `formatLearnerViewForCopy` dans `src/utils/resourceText.ts` pour produire des séparateurs `---` et des titres en majuscules entre les sections. Cette amélioration bénéficiera à toutes les ressources, pas seulement aux étalons.
+Les anciennes priorités techniques et éditoriales sont réalisées : `formatLearnerViewForCopy` produit une copie structurée, l'impression navigateur est plus sobre et `b1-pronoms-cod-coi-enquete` a été enrichie en mini-pack imprimable.
 
-**Priorité technique 2 (indépendant du contenu)** :
-Masquer `.detail-hero` dans `@media print` de `src/styles/global.css`. Cela améliore l'impression de toutes les ressources.
+**Prochaine priorité 1 (dans `src/data/demoResources.ts`)** :
+Enrichir `a2-passe-compose-week-end` avec une fiche apprenant plus manipulable, un tableau auxiliaire / participe passé / indicateur temporel, des espaces de réponse, un guide professeur plus concret et un corrigé complet.
 
-**Priorité éditoriale 1 (dans `src/data/demoResources.ts`)** :
-Corriger les accents et apostrophes de `b1-pronoms-cod-coi-enquete`. C'est la seule ressource dont les textes sont systématiquement dépourvus d'accents.
+**Prochaine priorité 2 (dans `src/data/demoResources.ts`)** :
+Enrichir `a1-a2-phonetique-y-u` avec des paires minimales lisibles, une grille d'écoute ou de pointage, un guidage professeur plus explicite, des critères de réussite simples et une variante sans audio.
 
 **Note importante pour Codex** :
 Les tableaux ASCII dans `studentInstructions` et `answerKey` sont stockés comme items de `string[]` normaux. Un tableau à deux colonnes peut s'écrire :
