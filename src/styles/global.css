@@ -1445,9 +1445,10 @@ button:disabled {
   .resource-tab-list,
   .filters-panel,
   .resource-card-footer,
-  .detail-hero,
   .detail-hero .card-topline,
   .detail-hero p,
+  .detail-hero .badge-row,
+  .detail-hero .atelier-link,
   .tab-description,
   .learner-mode-note,
   .document-view-intro,
@@ -1467,6 +1468,22 @@ button:disabled {
 
   h1 {
     font-size: 20pt;
+  }
+
+  .detail-hero {
+    display: block;
+    margin: 0 0 12pt;
+    border: 0;
+    border-bottom: 1px solid #999999;
+    border-radius: 0;
+    background: white;
+    box-shadow: none;
+    padding: 0 0 8pt;
+  }
+
+  .detail-hero h1 {
+    margin: 0;
+    color: #111111;
   }
 
   h2 {
@@ -1531,7 +1548,6 @@ button:disabled {
     page-break-inside: auto;
   }
 
-  .document-view,
   .document-section,
   .document-list,
   .document-item,

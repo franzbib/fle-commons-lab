@@ -490,3 +490,13 @@ Journal chronologique synthÃƒÂ©tique des interventions importantes. Les date
 - Decisions : conserver le modele `Resource` existant et la convention editoriale v0 en listes; ne pas modifier `ResourceDetail.tsx`, `resourceText.ts` ni le CSS.
 - Limites volontaires : aucune nouvelle fonctionnalite, aucun backend, aucun Supabase, aucune authentification, aucun upload, aucun stockage, aucun appel IA, aucune dependance, aucun export DOCX/PDF reel, aucun Fleator, aucun contenu protege.
 - Commit associe si connu : commit en cours
+
+## 2026-05-25 � Finition orthotypographique et impression des six ressources etalons v0
+
+- Outil principal : Codex
+- Objectif : stabiliser la qualite d'usage avant generalisation des gabarits.
+- Ressources concernees : `b1-pronoms-cod-coi-enquete`, `a2-passe-compose-week-end`, `a1-a2-phonetique-y-u`, `b1-enquete-suspect-temoin-indice`, `b1-debat-limiter-ecrans`, `b2-notes-video-courte`.
+- Resultat : titre principal conserve a l'impression, `.document-view` laisse les longues fiches se fractionner naturellement, titres de sections apprenant harmonises, ponctuation francaise et marqueurs internes uniformises localement.
+- Fichiers principaux : `src/data/demoResources.ts`, `src/styles/global.css`, `docs/project-journal.md`.
+- Limites volontaires : aucune nouvelle fonctionnalite, aucun backend, aucun Supabase, aucune authentification, aucun upload, aucun stockage, aucun appel IA, aucune dependance, aucun export DOCX/PDF reel, aucun Fleator.
+- Commit associe si connu : commit en cours
