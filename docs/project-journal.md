@@ -479,3 +479,14 @@ Journal chronologique synthÃƒÂ©tique des interventions importantes. Les date
 - Decisions : conserver la convention editoriale v0 sans creer de modele `Block`; ne pas modifier la structure des donnees.
 - Limites volontaires : aucun backend, aucun Supabase, aucune authentification, aucun upload, aucun stockage, aucun appel IA, aucune dependance, aucun export DOCX/PDF reel, aucun Fleator.
 - Commit associe si connu : commit en cours
+
+## 2026-05-25 � Passe 2 ressources demo interaction, debat et methodologie
+
+- Outil principal : Codex
+- Objectif : lancer la passe 2 de montee en qualite des ressources demo avec trois mini-packs sobres et exploitables.
+- Ressources modifiees : `b1-enquete-suspect-temoin-indice`, `b1-debat-limiter-ecrans`, `b2-notes-video-courte`.
+- Resultat : ajout de marqueurs de blocs, grilles simples, espaces de reponse, roles explicites, criteres observables, guides professeur minutes et points de vigilance.
+- Fichiers principaux : `src/data/demoResources.ts`, `docs/project-journal.md`.
+- Decisions : conserver le modele `Resource` existant et la convention editoriale v0 en listes; ne pas modifier `ResourceDetail.tsx`, `resourceText.ts` ni le CSS.
+- Limites volontaires : aucune nouvelle fonctionnalite, aucun backend, aucun Supabase, aucune authentification, aucun upload, aucun stockage, aucun appel IA, aucune dependance, aucun export DOCX/PDF reel, aucun Fleator, aucun contenu protege.
+- Commit associe si connu : commit en cours
