@@ -387,33 +387,14 @@ Journal chronologique synthÃƒÂ©tique des interventions importantes. Les date
 - Decisions : utiliser le terme `Atelier` plutot qu'administration; ne creer ni authentification, ni role, ni backend; separer l'usage enseignant des traces editoriales.
 - Limites volontaires : aucune securisation reelle, aucune persistence, aucune suppression d'information, aucune refonte globale.
 - Commit associe si connu : commit en cours
-
-## 2026-05-25 — Rendu document d'usage des fiches ressources
-
-- Outil principal : Codex
-- Objectif : ameliorer la lisibilite des fiches ressources cote enseignant en distinguant mieux fiche etudiant, guide professeur et corrige.
-- Resultat : la vue publique des ressources privilegie des blocs documentaires aeres; l'onglet etudiant devient une fiche distribuable/projetable; l'onglet professeur regroupe guide, corrige, variantes et retours utiles; les details techniques restent reserves a la vue atelier.
-- Fichiers principaux : `src/components/ResourceDetail.tsx`, `src/components/ResourceCopyActions.tsx`, `src/utils/resourceText.ts`, `src/styles/global.css`, `PROJECT_STATE_FOR_LLMS.md`.
-- Decisions : ne pas ajouter d'export Word/PDF reel; continuer avec copie locale et impression navigateur; ne pas modifier le modele Resource.
-- Limites volontaires : aucun backend, aucun Supabase, aucune authentification, aucun stockage, aucun appel IA, aucune dependance, aucune refonte du parcours de contribution.
-- Commit associe si connu : commit en cours
-
-## 2026-05-25 — Corrections copie et impression navigateur
-
-- Outil principal : Codex
-- Objectif : appliquer les deux corrections indispensables de l'audit critique v0: texte copie moins plat et impression navigateur moins chargee.
-- Resultat : `resourceText.ts` produit des documents copies avec titres, metadonnees utiles, separateurs et sections lisibles; le CSS print masque davantage les elements interactifs, badges, notes descriptives et annexes secondaires.
-- Fichiers principaux : `src/utils/resourceText.ts`, `src/styles/global.css`, `docs/document-output-and-composition-strategy.md`, `PROJECT_STATE_FOR_LLMS.md`, `docs/project-journal.md`.
-- Decisions : rester sur copie locale et impression navigateur; marquer le futur modele de blocs et le Fleator comme `[DIFFERE - ne pas implementer en v0]`.
-- Limites volontaires : aucun export Word/PDF reel, aucun backend, aucun Supabase, aucune authentification, aucun stockage, aucun appel IA, aucune dependance.
-- Commit associe si connu : commit en cours
-
-## 2026-05-25 — Ressource demo etalon COD/COI
-
-- Outil principal : Codex
-- Objectif : ajouter une ressource de demonstration exemplaire pour tester la doctrine fiche apprenant, guide professeur, corrige, copie et impression.
-- Resultat : ajout de `b1-pronoms-cod-coi-enquete`, ressource B1 fictive et juridiquement sure autour d'une enquete, avec support apprenant, guide professeur, corrige, variantes et retour d'usage simule.
-- Fichiers principaux : `src/data/demoResources.ts`, `PROJECT_STATE_FOR_LLMS.md`, `docs/project-journal.md`.
-- Decisions : creer une ressource locale statique dans `demoResources.ts`; ne pas modifier le modele TypeScript; ne pas implementer le Fleator ni d'export Word/PDF reel.
-- Limites volontaires : aucun backend, aucun Supabase, aucune authentification, aucun stockage, aucun upload, aucun appel IA, aucune dependance, aucun contenu protege.
-- Commit associe si connu : commit en cours
+  
+## 2026-05-25 - Doctrine de granularite des ressources pedagogiques  
+  
+- Outil principal : Antigravity (conception documentaire, aucun developpement)  
+- Objectif : formaliser une doctrine de granularite pour preparer la reutilisation et la composition future des blocs pedagogiques.  
+- Resultat : creation de docs/resource-granularity-strategy.md avec trois niveaux (ressource complete / bloc pedagogique / element interne), catalogue de 16 types de blocs, application a la ressource COD/COI enquete, section Fleator clairement marquee DIFFERE.  
+- Fichiers crees : docs/resource-granularity-strategy.md  
+- Fichiers modifies : docs/project-journal.md  
+- Aucun fichier de code modifie.  
+- Limites volontaires : aucun code, aucun backend, aucun TypeScript, aucun Supabase, aucune auth, aucun Fleator, aucun DOCX/PDF, aucune modification des ressources demo.  
+- Commit associe : a venir 
