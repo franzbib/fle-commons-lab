@@ -448,3 +448,14 @@ Journal chronologique synthÃƒÂ©tique des interventions importantes. Les date
 - Decisions : conserver le plan Antigravity comme base et le synchroniser avec les corrections deja realisees sur copie, impression et COD/COI.
 - Limites volontaires : aucune modification de code pour cette synchronisation documentaire, aucun backend, aucun Supabase, aucune authentification, aucun upload, aucun appel IA, aucun export DOCX/PDF reel, aucun Fleator.
 - Commit associe si connu : commit en cours
+
+## 2026-05-25 � Passe 1 ressources etalons A2 et phonetique
+
+- Outil principal : Codex
+- Objectif : poursuivre la montee en qualite des ressources demo candidates etalons apres la ressource COD/COI.
+- Ressources modifiees : `a2-passe-compose-week-end`, `a1-a2-phonetique-y-u`.
+- Resultat : enrichissement en mini-packs imprimables avec marqueurs de blocs, tableaux, espaces de reponse, grilles simples, guides professeur renforces et corriges/criteres plus exploitables.
+- Fichiers principaux : `src/data/demoResources.ts`, `docs/project-journal.md`.
+- Decisions : conserver la structure `Resource` existante; ne pas modifier `ResourceDetail.tsx`, `resourceText.ts` ni le modele TypeScript.
+- Limites volontaires : aucune nouvelle fonctionnalite, aucun backend, aucun Supabase, aucune authentification, aucun upload, aucun stockage, aucun appel IA, aucune dependance, aucun export DOCX/PDF reel, aucun Fleator, aucun contenu protege.
+- Commit associe si connu : commit en cours
